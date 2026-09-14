@@ -1,0 +1,9 @@
+{
+  "name": "pc-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "People and Culture dashboard fed by Power Automate from Employment Hero and JobAdder",
+  "engines": {
+    "node": ">=20"
+  }
+}
