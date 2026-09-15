@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>People &amp; Culture dashboard</title>
+<title>People &amp; Culture Dashboard</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -146,9 +146,16 @@
     vertical-align: 6px;
   }
 
-  .up { color: var(--blue); }
-  .down { color: var(--pink); }
+  .good { color: var(--blue); }
+  .bad { color: var(--pink); }
   .flat { color: var(--muted); }
+
+  .note {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--muted);
+    max-width: 68ch;
+  }
 
   /* Cost centre table */
   table { width: 100%; border-collapse: collapse; background: var(--paper); }
@@ -255,7 +262,7 @@
 
 <div class="band">
   <div class="band-inner">
-    <h1>People &amp; Culture dashboard</h1>
+    <h1>People &amp; Culture Dashboard</h1>
     <div class="meta" id="meta">Loading figures</div>
   </div>
 </div>
@@ -268,14 +275,26 @@
 const $ = (id) => document.getElementById(id);
 const n = (v) => (v === null || v === undefined || v === "" ? "0" : Number(v).toLocaleString("en-AU"));
 
-function delta(now, prior, suffix) {
+// higherIsBetter: true  -> a rise is good (headcount, female representation)
+//                 false -> a rise is bad  (turnover, leavers, pay gap, days to hire)
+//                 null  -> neutral, show the movement without colouring it
+function delta(now, prior, suffix, higherIsBetter) {
   const a = Number(now), b = Number(prior);
-  if (!isFinite(a) || !isFinite(b)) return "";
+  if (!isFinite(a) || !isFinite(b) || prior === null || prior === undefined || prior === "") return "";
   const d = Math.round((a - b) * 10) / 10;
   if (d === 0) return '<span class="delta flat">no change</span>';
-  const cls = d > 0 ? "up" : "down";
   const arrow = d > 0 ? "\u2191" : "\u2193";
+  let cls = "flat";
+  if (higherIsBetter === true) cls = d > 0 ? "good" : "bad";
+  if (higherIsBetter === false) cls = d > 0 ? "bad" : "good";
   return '<span class="delta ' + cls + '">' + arrow + " " + Math.abs(d) + (suffix || "") + "</span>";
+}
+
+function tile(label, value, prior, unit, higherIsBetter) {
+  const shown = value === null || value === undefined || value === "" ? "0" : value;
+  return '<div class="metric"><div class="label">' + label + "</div>" +
+    '<div class="value">' + shown + (unit || "") +
+    delta(value, prior, unit === "%" ? "pp" : "", higherIsBetter) + "</div></div>";
 }
 
 function sparkline(points) {
@@ -301,46 +320,74 @@ function render(d) {
   const cc = d.costCentres || [];
   const pipe = d.pipeline || [];
   const ent = d.entities || [];
+  const lvl = d.churnByLevel4 || [];
+  const dq = d.dataQuality || {};
   const maxHead = Math.max(1, ...cc.map(c => Number(c.headcount) || 0));
   const maxStage = Math.max(1, ...pipe.map(s => Number(s.count) || 0));
 
   const stamp = d.generatedUtc
     ? new Date(d.generatedUtc).toLocaleString("en-AU", { dateStyle: "medium", timeStyle: "short" })
     : "unknown";
-  $("meta").textContent = (d.periodLabel || "Current period") + " \u00B7 refreshed " + stamp;
+  $("meta").textContent = (d.periodLabel || "Current period") +
+    (d.priorLabel ? " compared with " + d.priorLabel : "") + " \u00B7 refreshed " + stamp;
 
   $("root").innerHTML = `
     <div class="hero">
       <div>
         <div class="figure">${n(p.headcount)}</div>
-        <div class="caption">Active headcount ${delta(p.headcount, p.headcountPrior, "")} on last month</div>
+        <div class="caption">Active headcount ${delta(p.headcount, p.headcountPrior, "", true)} on last month</div>
       </div>
       <div>
         ${sparkline(trend)}
-        <div class="spark-labels">
-          ${trend.map(t => "<span>" + t.month + "</span>").join("")}
-        </div>
+        <div class="spark-labels">${trend.map(t => "<span>" + t.month + "</span>").join("")}</div>
       </div>
     </div>
 
     <section>
       <h2>People metrics</h2>
       <div class="metrics">
-        <div class="metric"><div class="label">Female representation</div>
-          <div class="value">${p.femalePct || "0"}%${delta(p.femalePct, p.femalePctPrior, "pp")}</div></div>
-        <div class="metric"><div class="label">Leavers this month (total)</div>
-          <div class="value">${n(p.leaversMonth)}</div></div>
-        <div class="metric"><div class="label">Leavers this month (voluntary)</div>
-          <div class="value">${n(p.leaversVoluntaryMonth)}</div></div>
-        <div class="metric"><div class="label">Turnover YTD (total)</div>
-          <div class="value">${p.turnoverYtdTotal || "0"}%</div></div>
-        <div class="metric"><div class="label">Turnover YTD (voluntary)</div>
-          <div class="value">${p.turnoverYtdVoluntary || "0"}%</div></div>
-        <div class="metric"><div class="label">Annualised turnover (total)</div>
-          <div class="value">${p.turnoverAnnualisedTotal || "0"}%</div></div>
-        <div class="metric"><div class="label">Annualised turnover (voluntary)</div>
-          <div class="value">${p.turnoverAnnualisedVoluntary || "0"}%</div></div>
+        ${tile("Female representation", p.femalePct, p.femalePctPrior, "%", true)}
+        ${tile("Leavers this month (total)", p.leaversMonth, p.leaversMonthPrior, "", false)}
+        ${tile("Leavers this month (voluntary)", p.leaversVoluntaryMonth, p.leaversVoluntaryMonthPrior, "", false)}
+        ${tile("Churn LTM (total)", p.churnTotal, p.churnTotalPrior, "%", false)}
+        ${tile("Churn LTM (voluntary)", p.churnVoluntary, p.churnVoluntaryPrior, "%", false)}
+        ${tile("YTD annualised turnover (total)", p.ytdAnnualisedTotal, p.ytdAnnualisedTotalPrior, "%", false)}
+        ${tile("YTD annualised turnover (voluntary)", p.ytdAnnualisedVoluntary, p.ytdAnnualisedVoluntaryPrior, "%", false)}
       </div>
+      <div class="note">Churn is leavers over the last twelve months divided by average headcount over the
+      same period (${p.avgHeadcountLtm || "0"}), taking active internal employees at each month end.</div>
+    </section>
+
+    <section>
+      <h2>Gender pay gap</h2>
+      <div class="metrics">
+        ${tile("Gender pay gap (mean)", p.gpgMean, p.gpgMeanPrior, "%", false)}
+        ${tile("Gender pay gap (median)", p.gpgMedian, p.gpgMedianPrior, "%", false)}
+      </div>
+      <div class="note">Calculated on full-time equivalent base salary. Part-time salaries are scaled to a
+      38 hour week and casual rates converted at hourly rate multiplied by 38 by 52.</div>
+    </section>
+
+    <section>
+      <h2>Churn by Level 4</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Group</th>
+            <th class="num">Leavers LTM</th>
+            <th class="num">Churn (total)</th>
+            <th class="num">Churn (voluntary)</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${lvl.map(g => `<tr>
+            <td>${g.group}</td>
+            <td class="num">${n(g.leaversLtm)}</td>
+            <td class="num">${g.churnTotal || "0"}%</td>
+            <td class="num">${g.churnVoluntary || "0"}%</td>
+          </tr>`).join("")}
+        </tbody>
+      </table>
     </section>
 
     <section>
@@ -353,15 +400,19 @@ function render(d) {
             <th class="num">Female</th>
             <th class="num">Female %</th>
             <th class="num">Leavers this month</th>
+            <th class="num">Pay gap (mean)</th>
+            <th class="num">Pay gap (median)</th>
           </tr>
         </thead>
         <tbody>
           ${ent.map(e => `<tr>
             <td>${e.name || e.code}</td>
-            <td class="num">${n(e.headcount)}</td>
+            <td class="num">${n(e.headcount)}${delta(e.headcount, e.headcountPrior, "", true)}</td>
             <td class="num">${n(e.female)}</td>
             <td class="num">${e.femalePct || "0"}%</td>
             <td class="num">${n(e.leaversMonth)}</td>
+            <td class="num">${e.gpgMean || "0"}%</td>
+            <td class="num">${e.gpgMedian || "0"}%</td>
           </tr>`).join("")}
         </tbody>
       </table>
@@ -370,10 +421,10 @@ function render(d) {
     <section>
       <h2>Recruitment</h2>
       <div class="metrics">
-        <div class="metric"><div class="label">Open roles</div><div class="value">${n(r.openRoles)}</div></div>
-        <div class="metric"><div class="label">Roles filled this month</div><div class="value">${n(r.filledMonth)}</div></div>
-        <div class="metric"><div class="label">Average days open</div><div class="value">${r.avgDaysOpen || "0"}</div></div>
-        <div class="metric"><div class="label">Average days to hire</div><div class="value">${r.avgDaysToHire || "0"}</div></div>
+        ${tile("Open roles", r.openRoles, r.openRolesPrior, "", null)}
+        ${tile("Roles filled this month", r.filledMonth, r.filledMonthPrior, "", true)}
+        ${tile("Average days open", r.avgDaysOpen, r.avgDaysOpenPrior, "", false)}
+        ${tile("Average days to hire", r.avgDaysToHire, r.avgDaysToHirePrior, "", false)}
       </div>
       <div class="pipeline" style="margin-top:20px">
         ${pipe.map(s => `
@@ -425,6 +476,11 @@ function render(d) {
 
     <div class="foot">
       Source: Employment Hero and the Recruitment Forecast list, refreshed by a scheduled Power Automate flow.
+      Excluded from headcount: ${n(dq.excludedBlankLocation)} with no location,
+      ${n(dq.excludedAuInUkEntity)} Australian records in the UK organisation,
+      ${n(dq.excludedUkInAuEntity)} UK records in the Australian organisation.
+      ${n(dq.excludedNoSalary)} excluded from the pay gap for want of salary data.
+      ${n(dq.partTimeConverted)} part-time and ${n(dq.casualsConverted)} casual salaries converted to full-time equivalent.
       Figures are aggregate only. Confidential to ADP Consulting.
     </div>`;
 }
@@ -439,7 +495,7 @@ fetch("data.json", { cache: "no-store" })
     $("meta").textContent = "Figures unavailable";
     $("root").innerHTML =
       '<div class="error"><strong>The dashboard could not load data.json.</strong>' +
-      "<p>Check that the scheduled Power Automate flow committed data.json to the repository and that Render finished deploying. Details: " +
+      "<p>Check that the scheduled Power Automate flow committed data.json to the repository and that Vercel finished deploying. Details: " +
       String(err.message) + "</p></div>";
   });
 </script>
