@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>People &amp; Culture Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #0000D0;
+    --pink: #FF3184;
+    --orange: #FF6D2E;
+    --aqua: #43D8C9;
+    --lightblue: #06CDFF;
+    --purple: #AB76FF;
+    --ink: #101024;
+    --muted: #5A5A76;
+    --rule: #E2E2EE;
+    --paper: #FFFFFF;
+    --wash: #F6F6FB;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--wash);
+    color: var(--ink);
+    font-family: Archivo, "Segoe UI", system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .band {
+    background: var(--blue);
+    color: #fff;
+    padding: 28px 24px 24px;
+  }
+
+  .band-inner, .sheet {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .band h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+  }
+
+  .band .meta {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #C9C9FF;
+  }
+
+  .sheet { padding: 0 24px 64px; }
+
+  section { margin-top: 36px; }
+
+  h2 {
+    margin: 0 0 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 0.01em;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* Hero figure */
+  .hero {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    margin-top: -20px;
+    padding: 26px 28px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+    gap: 32px;
+    align-items: center;
+  }
+
+  .hero .figure {
+    font-size: clamp(56px, 11vw, 84px);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: var(--blue);
+  }
+
+  .hero .caption {
+    margin-top: 8px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .spark { width: 100%; height: 96px; display: block; }
+
+  .spark-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* Metric rows */
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(184px, 1fr));
+    background: var(--rule);
+    gap: 1px;
+    border: 1px solid var(--rule);
+  }
+
+  .metric {
+    background: var(--paper);
+    padding: 16px 18px 18px;
+  }
+
+  .metric .label {
+    font-size: 12.5px;
+    color: var(--muted);
+    min-height: 34px;
+  }
+
+  .metric .value {
+    margin-top: 6px;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+
+  .delta {
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    vertical-align: 6px;
+  }
+
+  .good { color: var(--blue); }
+  .bad { color: var(--pink); }
+  .flat { color: var(--muted); }
+
+  .note {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--muted);
+    max-width: 68ch;
+  }
+
+  /* Cost centre table */
+  table { width: 100%; border-collapse: collapse; background: var(--paper); }
+
+  th, td {
+    text-align: left;
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--rule);
+    font-size: 14px;
+  }
+
+  th {
+    background: var(--pink);
+    color: #fff;
+    font-weight: 600;
+    font-size: 12.5px;
+  }
+
+  td.num, th.num { text-align: right; }
+
+  tbody tr:last-child td { border-bottom: none; }
+
+  .bar-cell { width: 42%; }
+
+  .bar {
+    height: 9px;
+    background: var(--blue);
+    display: block;
+    min-width: 2px;
+  }
+
+  .bar-female {
+    height: 9px;
+    background: var(--aqua);
+    display: block;
+    margin-top: 2px;
+    min-width: 2px;
+  }
+
+  .legend {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--muted);
+    display: flex;
+    gap: 18px;
+  }
+
+  .swatch {
+    display: inline-block;
+    width: 22px;
+    height: 8px;
+    margin-right: 6px;
+    vertical-align: 1px;
+  }
+
+  /* Pipeline */
+  .pipeline { background: var(--paper); border: 1px solid var(--rule); padding: 18px 20px; }
+
+  .stage {
+    display: grid;
+    grid-template-columns: 128px minmax(0, 1fr) 52px;
+    gap: 12px;
+    align-items: center;
+    padding: 7px 0;
+  }
+
+  .stage .name { font-size: 13.5px; }
+
+  .stage .track { background: var(--wash); height: 20px; }
+
+  .stage .fill { height: 20px; background: var(--purple); min-width: 2px; }
+
+  .stage:nth-child(1) .fill { background: var(--blue); }
+  .stage:nth-child(2) .fill { background: var(--lightblue); }
+  .stage:nth-child(3) .fill { background: var(--aqua); }
+  .stage:nth-child(4) .fill { background: var(--orange); }
+  .stage:nth-child(5) .fill { background: var(--pink); }
+
+  .stage .count { text-align: right; font-weight: 600; font-size: 14px; }
+
+  .foot {
+    margin-top: 40px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .error {
+    background: var(--paper);
+    border-left: 4px solid var(--orange);
+    padding: 16px 18px;
+    margin-top: 24px;
+  }
+
+  @media (max-width: 720px) {
+    .hero { grid-template-columns: 1fr; gap: 20px; }
+    .bar-cell { display: none; }
+    .stage { grid-template-columns: 96px minmax(0, 1fr) 44px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="band">
+  <div class="band-inner">
+    <h1>People &amp; Culture Dashboard</h1>
+    <div class="meta" id="meta">Loading figures</div>
+  </div>
+</div>
+
+<div class="sheet">
+  <div id="root"></div>
+</div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const n = (v) => (v === null || v === undefined || v === "" ? "0" : Number(v).toLocaleString("en-AU"));
+
+// higherIsBetter: true  -> a rise is good (headcount, female representation)
+//                 false -> a rise is bad  (turnover, leavers, pay gap, days to hire)
+//                 null  -> neutral, show the movement without colouring it
+function delta(now, prior, suffix, higherIsBetter) {
+  const a = Number(now), b = Number(prior);
+  if (!isFinite(a) || !isFinite(b) || prior === null || prior === undefined || prior === "") return "";
+  const d = Math.round((a - b) * 10) / 10;
+  if (d === 0) return '<span class="delta flat">no change</span>';
+  const arrow = d > 0 ? "\u2191" : "\u2193";
+  let cls = "flat";
+  if (higherIsBetter === true) cls = d > 0 ? "good" : "bad";
+  if (higherIsBetter === false) cls = d > 0 ? "bad" : "good";
+  return '<span class="delta ' + cls + '">' + arrow + " " + Math.abs(d) + (suffix || "") + "</span>";
+}
+
+function tile(label, value, prior, unit, higherIsBetter) {
+  const shown = value === null || value === undefined || value === "" ? "0" : value;
+  return '<div class="metric"><div class="label">' + label + "</div>" +
+    '<div class="value">' + shown + (unit || "") +
+    delta(value, prior, unit === "%" ? "pp" : "", higherIsBetter) + "</div></div>";
+}
+
+function sparkline(points) {
+  if (!points.length) return "";
+  const w = 560, h = 96, pad = 10;
+  const vals = points.map(p => Number(p.headcount));
+  const min = Math.min(...vals), max = Math.max(...vals);
+  const span = max - min || 1;
+  const x = (i) => pad + (i * (w - pad * 2)) / Math.max(points.length - 1, 1);
+  const y = (v) => h - pad - ((v - min) / span) * (h - pad * 2);
+  const line = vals.map((v, i) => (i ? "L" : "M") + x(i).toFixed(1) + " " + y(v).toFixed(1)).join(" ");
+  const area = line + " L" + x(vals.length - 1).toFixed(1) + " " + h + " L" + x(0).toFixed(1) + " " + h + " Z";
+  const dots = vals.map((v, i) => '<circle cx="' + x(i).toFixed(1) + '" cy="' + y(v).toFixed(1) + '" r="3" fill="#0000D0"/>').join("");
+  return '<svg class="spark" viewBox="0 0 ' + w + " " + h + '" preserveAspectRatio="none" role="img" aria-label="Headcount over the last six months">' +
+    '<path d="' + area + '" fill="#0000D0" opacity="0.07"/>' +
+    '<path d="' + line + '" fill="none" stroke="#0000D0" stroke-width="2.5" vector-effect="non-scaling-stroke"/>' +
+    dots + "</svg>";
+}
+
+function render(d) {
+  const p = d.people || {}, r = d.recruitment || {};
+  const trend = d.headcountTrend || [];
+  const cc = d.costCentres || [];
+  const pipe = d.pipeline || [];
+  const ent = d.entities || [];
+  const lvl = d.churnByLevel4 || [];
+  const dq = d.dataQuality || {};
+  const maxHead = Math.max(1, ...cc.map(c => Number(c.headcount) || 0));
+  const maxStage = Math.max(1, ...pipe.map(s => Number(s.count) || 0));
+
+  const stamp = d.generatedUtc
+    ? new Date(d.generatedUtc).toLocaleString("en-AU", { dateStyle: "medium", timeStyle: "short" })
+    : "unknown";
+  $("meta").textContent = (d.periodLabel || "Current period") +
+    (d.priorLabel ? " compared with " + d.priorLabel : "") + " \u00B7 refreshed " + stamp;
+
+  $("root").innerHTML = `
+    <div class="hero">
+      <div>
+        <div class="figure">${n(p.headcount)}</div>
+        <div class="caption">Active headcount ${delta(p.headcount, p.headcountPrior, "", true)} on last month</div>
+      </div>
+      <div>
+        ${sparkline(trend)}
+        <div class="spark-labels">${trend.map(t => "<span>" + t.month + "</span>").join("")}</div>
+      </div>
+    </div>
+
+    <section>
+      <h2>People metrics</h2>
+      <div class="metrics">
+        ${tile("Female representation", p.femalePct, p.femalePctPrior, "%", true)}
+        ${tile("Leavers this month (total)", p.leaversMonth, p.leaversMonthPrior, "", false)}
+        ${tile("Leavers this month (voluntary)", p.leaversVoluntaryMonth, p.leaversVoluntaryMonthPrior, "", false)}
+        ${tile("Churn LTM (total)", p.churnTotal, p.churnTotalPrior, "%", false)}
+        ${tile("Churn LTM (voluntary)", p.churnVoluntary, p.churnVoluntaryPrior, "%", false)}
+        ${tile("YTD annualised turnover (total)", p.ytdAnnualisedTotal, p.ytdAnnualisedTotalPrior, "%", false)}
+        ${tile("YTD annualised turnover (voluntary)", p.ytdAnnualisedVoluntary, p.ytdAnnualisedVoluntaryPrior, "%", false)}
+      </div>
+      <div class="note">Churn is leavers over the last twelve months divided by average headcount over the
+      same period (${p.avgHeadcountLtm || "0"}), taking active internal employees at each month end.</div>
+    </section>
+
+    <section>
+      <h2>Gender pay gap</h2>
+      <div class="metrics">
+        ${tile("Gender pay gap (mean)", p.gpgMean, p.gpgMeanPrior, "%", false)}
+        ${tile("Gender pay gap (median)", p.gpgMedian, p.gpgMedianPrior, "%", false)}
+      </div>
+      <div class="note">Calculated on full-time equivalent base salary. Part-time salaries are scaled to a
+      38 hour week and casual rates converted at hourly rate multiplied by 38 by 52.</div>
+    </section>
+
+    <section>
+      <h2>Churn by Level 4</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Group</th>
+            <th class="num">Leavers LTM</th>
+            <th class="num">Churn (total)</th>
+            <th class="num">Churn (voluntary)</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${lvl.map(g => `<tr>
+            <td>${g.group}</td>
+            <td class="num">${n(g.leaversLtm)}</td>
+            <td class="num">${g.churnTotal || "0"}%</td>
+            <td class="num">${g.churnVoluntary || "0"}%</td>
+          </tr>`).join("")}
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>By entity</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Entity</th>
+            <th class="num">Headcount</th>
+            <th class="num">Female</th>
+            <th class="num">Female %</th>
+            <th class="num">Leavers this month</th>
+            <th class="num">Pay gap (mean)</th>
+            <th class="num">Pay gap (median)</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${ent.map(e => `<tr>
+            <td>${e.name || e.code}</td>
+            <td class="num">${n(e.headcount)}${delta(e.headcount, e.headcountPrior, "", true)}</td>
+            <td class="num">${n(e.female)}</td>
+            <td class="num">${e.femalePct || "0"}%</td>
+            <td class="num">${n(e.leaversMonth)}</td>
+            <td class="num">${e.gpgMean || "0"}%</td>
+            <td class="num">${e.gpgMedian || "0"}%</td>
+          </tr>`).join("")}
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Recruitment</h2>
+      <div class="metrics">
+        ${tile("Open roles", r.openRoles, r.openRolesPrior, "", null)}
+        ${tile("Roles filled this month", r.filledMonth, r.filledMonthPrior, "", true)}
+        ${tile("Average days open", r.avgDaysOpen, r.avgDaysOpenPrior, "", false)}
+        ${tile("Average days to hire", r.avgDaysToHire, r.avgDaysToHirePrior, "", false)}
+      </div>
+      <div class="pipeline" style="margin-top:20px">
+        ${pipe.map(s => `
+          <div class="stage">
+            <div class="name">${s.stage}</div>
+            <div class="track"><div class="fill" style="width:${((Number(s.count) || 0) / maxStage * 100).toFixed(1)}%"></div></div>
+            <div class="count">${n(s.count)}</div>
+          </div>`).join("")}
+      </div>
+    </section>
+
+    <section>
+      <h2>Cost centres</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Cost centre</th>
+            <th class="num">Headcount</th>
+            <th class="num">Female</th>
+            <th class="num">Female %</th>
+            <th class="num">Open roles</th>
+            <th class="bar-cell"></th>
+          </tr>
+        </thead>
+        <tbody>
+          ${cc.map(c => {
+            const head = Number(c.headcount) || 0;
+            const fem = Number(c.female) || 0;
+            const pct = head ? ((fem / head) * 100).toFixed(1) : "0.0";
+            return `<tr>
+              <td>${c.code}</td>
+              <td class="num">${n(head)}</td>
+              <td class="num">${n(fem)}</td>
+              <td class="num">${pct}%</td>
+              <td class="num">${n(c.openRoles)}</td>
+              <td class="bar-cell">
+                <span class="bar" style="width:${(head / maxHead * 100).toFixed(1)}%"></span>
+                <span class="bar-female" style="width:${(fem / maxHead * 100).toFixed(1)}%"></span>
+              </td>
+            </tr>`;
+          }).join("")}
+        </tbody>
+      </table>
+      <div class="legend">
+        <span><span class="swatch" style="background:#0000D0"></span>Headcount</span>
+        <span><span class="swatch" style="background:#43D8C9"></span>Female employees</span>
+      </div>
+    </section>
+
+    <div class="foot">
+      Source: Employment Hero and the Recruitment Forecast list, refreshed by a scheduled Power Automate flow.
+      Excluded from headcount: ${n(dq.excludedBlankLocation)} with no location,
+      ${n(dq.excludedAuInUkEntity)} Australian records in the UK organisation,
+      ${n(dq.excludedUkInAuEntity)} UK records in the Australian organisation.
+      ${n(dq.excludedNoSalary)} excluded from the pay gap for want of salary data.
+      ${n(dq.partTimeConverted)} part-time and ${n(dq.casualsConverted)} casual salaries converted to full-time equivalent.
+      Figures are aggregate only. Confidential to ADP Consulting.
+    </div>`;
+}
+
+fetch("data.json", { cache: "no-store" })
+  .then(res => {
+    if (!res.ok) throw new Error("data.json returned " + res.status);
+    return res.json();
+  })
+  .then(render)
+  .catch(err => {
+    $("meta").textContent = "Figures unavailable";
+    $("root").innerHTML =
+      '<div class="error"><strong>The dashboard could not load data.json.</strong>' +
+      "<p>Check that the scheduled Power Automate flow committed data.json to the repository and that Vercel finished deploying. Details: " +
+      String(err.message) + "</p></div>";
+  });
+</script>
+</body>
+</html>
