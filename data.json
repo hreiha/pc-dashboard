@@ -3,8 +3,8 @@
   "periodLabel": "September 2026",
   "priorLabel": "August 2026",
   "people": {
-    "headcount": 389,
-    "headcountPrior": 384,
+    "headcount": 317,
+    "headcountPrior": 321,
     "femalePct": "38.4",
     "femalePctPrior": "37.6",
     "leaversMonth": 5,
@@ -43,9 +43,9 @@
     {
       "code": "AU",
       "name": "ADP Australia",
-      "headcount": 355,
-      "headcountPrior": 351,
-      "female": 136,
+      "headcount": 303,
+      "headcountPrior": 306,
+      "female": 116,
       "femalePct": "38.3",
       "leaversMonth": 4,
       "gpgMean": "14.4",
@@ -54,10 +54,10 @@
     {
       "code": "UK",
       "name": "ADP London",
-      "headcount": 34,
-      "headcountPrior": 33,
-      "female": 13,
-      "femalePct": "38.2",
+      "headcount": 14,
+      "headcountPrior": 15,
+      "female": 5,
+      "femalePct": "35.7",
       "leaversMonth": 1,
       "gpgMean": "12.1",
       "gpgMedian": "9.6"
@@ -98,91 +98,93 @@
   "costCentres": [
     {
       "code": "MEL",
-      "headcount": 112,
-      "female": 43,
+      "headcount": 92,
+      "female": 35,
       "openRoles": 7
     },
     {
       "code": "SYD",
-      "headcount": 82,
-      "female": 31,
+      "headcount": 68,
+      "female": 26,
       "openRoles": 5
     },
     {
       "code": "BNE",
-      "headcount": 71,
-      "female": 28,
+      "headcount": 58,
+      "female": 23,
       "openRoles": 4
     },
     {
       "code": "ADL",
-      "headcount": 29,
-      "female": 11,
+      "headcount": 24,
+      "female": 9,
       "openRoles": 1
     },
     {
       "code": "ESD",
-      "headcount": 26,
-      "female": 9,
+      "headcount": 21,
+      "female": 7,
       "openRoles": 2
     },
     {
       "code": "SPL",
-      "headcount": 20,
-      "female": 7,
+      "headcount": 16,
+      "female": 6,
       "openRoles": 1
     },
     {
       "code": "DIG",
-      "headcount": 18,
-      "female": 7,
-      "openRoles": 1
-    },
-    {
-      "code": "BIM",
       "headcount": 14,
       "female": 5,
       "openRoles": 1
     },
     {
+      "code": "BIM",
+      "headcount": 10,
+      "female": 4,
+      "openRoles": 1
+    },
+    {
       "code": "LON",
-      "headcount": 17,
-      "female": 7,
+      "headcount": 14,
+      "female": 5,
       "openRoles": 1
     }
   ],
   "headcountTrend": [
     {
       "month": "Apr",
-      "headcount": 370
+      "headcount": 324
     },
     {
       "month": "May",
-      "headcount": 374
+      "headcount": 326
     },
     {
       "month": "Jun",
-      "headcount": 377
+      "headcount": 325
     },
     {
       "month": "Jul",
-      "headcount": 380
+      "headcount": 323
     },
     {
       "month": "Aug",
-      "headcount": 384
+      "headcount": 321
     },
     {
       "month": "Sep",
-      "headcount": 389
+      "headcount": 317
     }
   ],
   "dataQuality": {
-    "excludedBlankLocation": 7,
-    "excludedAuInUkEntity": 5,
-    "excludedUkInAuEntity": 2,
-    "excludedNoSalary": 3,
-    "casualsConverted": 11,
-    "partTimeConverted": 42
+    "excludedBlankLocation": 6,
+    "excludedWrongLocationAu": 9,
+    "excludedWrongLocationUk": 4,
+    "excludedContractors": 12,
+    "notYetStarted": 3,
+    "excludedNoSalary": 2,
+    "casualsConverted": 8,
+    "partTimeConverted": 34
   }
 }

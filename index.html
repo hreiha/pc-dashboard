@@ -477,8 +477,10 @@ function render(d) {
     <div class="foot">
       Source: Employment Hero and the Recruitment Forecast list, refreshed by a scheduled Power Automate flow.
       Excluded from headcount: ${n(dq.excludedBlankLocation)} with no location,
-      ${n(dq.excludedAuInUkEntity)} Australian records in the UK organisation,
-      ${n(dq.excludedUkInAuEntity)} UK records in the Australian organisation.
+      ${n(dq.excludedWrongLocationAu)} in the Australian organisation without an Australian location,
+      ${n(dq.excludedWrongLocationUk)} in the UK organisation without a London location,
+      ${n(dq.excludedContractors)} independent contractors,
+      ${n(dq.notYetStarted)} yet to start.
       ${n(dq.excludedNoSalary)} excluded from the pay gap for want of salary data.
       ${n(dq.partTimeConverted)} part-time and ${n(dq.casualsConverted)} casual salaries converted to full-time equivalent.
       Figures are aggregate only. Confidential to ADP Consulting.

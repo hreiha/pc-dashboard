@@ -1,15 +1,10 @@
 /**
- * ComputeMetrics.ts
+ * metrics.mjs
  *
- * Office Script called from Power Automate. Takes the normalised employee array,
- * returns the finished dashboard figures as a JSON string.
+ * All of the calculation: scoping, headcount, churn, gender pay gap, trend.
+ * Pure function, no network and no I/O, so it can be reasoned about and tested on its own.
  *
- * Power Automate cannot sort or sum an array, which rules out a median. It is also
- * painful to reconstruct historical month-end headcount with expressions. Both are
- * trivial here, so all of it lives in this one place where it can be read and audited.
- *
- * The workbook it runs against is not used. Create an empty one in OneDrive and point
- * the Run script action at it.
+ * Edit the configuration block below to match your Employment Hero values.
  */
 
 // ---------------------------------------------------------------- configuration
@@ -29,87 +24,91 @@ const VOLUNTARY_REASONS = [
   "retirement"
 ];
 
-// Entity comes from which Employment Hero organisation the record sits in. Location is
-// only used to strip out people who are in an organisation for access reasons rather than
-// because they work for that entity. Three rules:
+// Entity comes from which Employment Hero organisation the record sits in. Location then
+// decides whether the person actually belongs to that entity.
 //
-//   blank location                        excluded from both
-//   location "Australia" in the UK entity excluded
-//   location "London" in the AU entity    excluded
+// These are ALLOW lists, not exclusion lists. Anyone whose location is not on the list for
+// their organisation is dropped, which covers blank locations, access-only accounts, and
+// anyone sitting in the wrong entity, without having to enumerate every bad value.
 //
-// Matched exactly, ignoring case and surrounding spaces. Add further values to either list
-// if new location options appear in Employment Hero.
-const EXCLUDE_FROM_UK_ENTITY = ["australia"];
-const EXCLUDE_FROM_AU_ENTITY = ["london"];
+// Matched exactly, ignoring case and surrounding spaces. Pull the distinct Location values
+// out of Employment Hero and make these match them, or the counts will come out low.
+const AU_ENTITY_LOCATIONS = [
+  "melbourne",
+  "sydney",
+  "brisbane",
+  "gold coast",
+  "adelaide",
+  "perth",
+  "canberra",
+  "australia"
+];
+const UK_ENTITY_LOCATIONS = ["london"];
+
+// Employment types that are not headcount. Substring match, so "Independent Contractor
+// (Fixed Term)" is caught by "independent contractor". People whose start date is still in
+// the future are excluded automatically by the active-at-date test, no configuration needed.
+const EXCLUDED_EMPLOYMENT_TYPES = [
+  "independent contractor",
+  "contractor",
+  "subcontractor",
+  "agency"
+];
 
 // ---------------------------------------------------------------- types
 
-interface Employee {
-  id: string;
-  gender: string;
-  location: string;
-  employmentType: string;      // Full time | Part time | Casual
-  hoursPerWeek: number;
-  annualSalary: number;
-  hourlyRate: number;
-  startDate: string;           // yyyy-MM-dd
-  terminationDate: string;     // yyyy-MM-dd or empty
-  terminationReason: string;
-  level4: string;              // Corporate | Engineering
-  costCentre: string;
-  entity: string;              // AU | UK, stamped by the flow from the organisation ID
-}
-
-interface Scoped extends Employee {
-  fteSalary: number;           // 0 when no usable pay data
-}
-
 // ---------------------------------------------------------------- helpers
 
-function parseDate(s: string): Date | null {
+function parseDate(s) {
   if (!s) return null;
   const d = new Date(s);
   return isNaN(d.getTime()) ? null : d;
 }
 
-function monthEnd(year: number, monthIndex: number): Date {
+function monthEnd(year, monthIndex) {
   return new Date(Date.UTC(year, monthIndex + 1, 0, 23, 59, 59));
 }
 
-/** Exact match, ignoring case and surrounding spaces. Not a substring match, so a location
- *  of "Australia Wide" would not be caught by "australia". */
-function matchesAny(value: string, list: string[]): boolean {
+/** Exact match, ignoring case and surrounding spaces. */
+function matchesAny(value, list) {
   const v = (value || "").toLowerCase().trim();
   if (!v) return false;
   return list.indexOf(v) >= 0;
 }
 
-function isVoluntary(reason: string): boolean {
+/** Substring match, ignoring case, for employment type values that carry extra wording. */
+function containsAny(value, list) {
+  const v = (value || "").toLowerCase().trim();
+  if (!v) return false;
+  return list.some(token => v.indexOf(token) >= 0);
+}
+
+function isVoluntary(reason) {
   const r = (reason || "").toLowerCase().trim();
   if (!r) return false;
   return VOLUNTARY_REASONS.some(token => r.indexOf(token) >= 0);
 }
 
-function activeAt(e: Employee, when: Date): boolean {
+function activeAt(e, when) {
   const start = parseDate(e.startDate);
   if (!start || start > when) return false;
   const term = parseDate(e.terminationDate);
   return !term || term > when;
 }
 
-function mean(values: number[]): number {
+function mean(values) {
   if (!values.length) return 0;
   return values.reduce((a, b) => a + b, 0) / values.length;
 }
 
-function median(values: number[]): number {
+function median(values) {
   if (!values.length) return 0;
   const sorted = values.slice().sort((a, b) => a - b);
   const mid = Math.floor(sorted.length / 2);
   return sorted.length % 2 === 0 ? (sorted[mid - 1] + sorted[mid]) / 2 : sorted[mid];
 }
 
-function round1(value: number): string {
+function round1(value) {
   if (!isFinite(value)) return "0.0";
   return (Math.round(value * 10) / 10).toFixed(1);
 }
@@ -122,7 +121,7 @@ function round1(value: number): string {
  * Returns 0 when there is nothing usable, so the record can be excluded rather than
  * dragging the average down with a zero.
  */
-function fteSalary(e: Employee): number {
+function fteSalary(e) {
   const type = (e.employmentType || "").toLowerCase();
 
   if (type.indexOf("casual") >= 0) {
@@ -145,31 +144,27 @@ function fteSalary(e: Employee): number {
 }
 
 /** Pay gap as a percentage of the male figure. Positive means men are paid more. */
-function payGap(maleValues: number[], femaleValues: number[], useMedian: boolean): string {
+function payGap(maleValues, femaleValues, useMedian) {
   const m = useMedian ? median(maleValues) : mean(maleValues);
   const f = useMedian ? median(femaleValues) : mean(femaleValues);
   if (m <= 0 || f <= 0) return "0.0";
   return round1(((m - f) / m) * 100);
 }
 
-function isFemale(e: Employee): boolean {
+function isFemale(e) {
   return (e.gender || "").toLowerCase().indexOf("female") === 0;
 }
 
-function isMale(e: Employee): boolean {
+function isMale(e) {
   const g = (e.gender || "").toLowerCase();
   return g === "male" || g === "m";
 }
 
 // ---------------------------------------------------------------- main
 
-function main(
-  workbook: ExcelScript.Workbook,
-  employeesJson: string,
-  asOfIso: string
-): string {
+export function computeMetrics(employees, asOfIso) {
 
-  const raw: Employee[] = JSON.parse(employeesJson) as Employee[];
+  const raw = employees;
   const asOf = parseDate(asOfIso) || new Date();
 
   const thisMonthEnd = monthEnd(asOf.getUTCFullYear(), asOf.getUTCMonth());
@@ -178,25 +173,37 @@ function main(
   // ---- scope: drop blank and unmapped locations, assign entity by location
 
   let excludedBlankLocation = 0;
-  let excludedAuInUkEntity = 0;
-  let excludedUkInAuEntity = 0;
+  let excludedWrongLocationAu = 0;
+  let excludedWrongLocationUk = 0;
+  let excludedContractors = 0;
   let casualsConverted = 0;
   let partTimeConverted = 0;
 
-  const scoped: Scoped[] = [];
+  const scoped = [];
 
   for (const e of raw) {
     const loc = (e.location || "").trim();
     const entity = (e.entity || "").toUpperCase();
 
-    // No location means we cannot tell whether they belong to the entity they sit in
+    // No location means we cannot place them in either entity
     if (!loc) { excludedBlankLocation++; continue; }
 
-    // Location recorded as "Australia" against the UK organisation: access accounts
-    if (entity === "UK" && matchesAny(loc, EXCLUDE_FROM_UK_ENTITY)) { excludedAuInUkEntity++; continue; }
+    // Allow list per organisation: anything else is an access-only account or a
+    // person recorded against the wrong entity
+    if (entity === "AU" && !matchesAny(loc, AU_ENTITY_LOCATIONS)) {
+      excludedWrongLocationAu++;
+      continue;
+    }
+    if (entity === "UK" && !matchesAny(loc, UK_ENTITY_LOCATIONS)) {
+      excludedWrongLocationUk++;
+      continue;
+    }
 
-    // Location recorded as "London" against the Australian organisation
-    if (entity === "AU" && matchesAny(loc, EXCLUDE_FROM_AU_ENTITY)) { excludedUkInAuEntity++; continue; }
+    // Independent contractors and similar are not headcount
+    if (containsAny(e.employmentType, EXCLUDED_EMPLOYMENT_TYPES)) {
+      excludedContractors++;
+      continue;
+    }
 
     const type = (e.employmentType || "").toLowerCase();
     if (type.indexOf("casual") >= 0) casualsConverted++;
@@ -222,6 +229,13 @@ function main(
 
   // ---- headcount, now and a month ago
 
+  // Anyone whose start date is still ahead of us is not headcount yet. The active-at-date
+  // test already handles this; the counter is only so the number is visible on the dashboard.
+  const notYetStarted = scoped.filter(e => {
+    const start = parseDate(e.startDate);
+    return start !== null && start > thisMonthEnd;
+  }).length;
+
   const activeNow = scoped.filter(e => activeAt(e, thisMonthEnd));
   const activePrior = scoped.filter(e => activeAt(e, priorMonthEnd));
 
@@ -230,7 +244,7 @@ function main(
 
   // ---- month-end headcount for the last 13 months, used for LTM averages and the trend
 
-  const monthEnds: Date[] = [];
+  const monthEnds = [];
   for (let i = 11; i >= 0; i--) {
     monthEnds.push(monthEnd(asOf.getUTCFullYear(), asOf.getUTCMonth() - i));
   }
@@ -238,7 +252,7 @@ function main(
   const avgHeadcountLtm = mean(monthlyHeadcount);
 
   // The same window shifted back a month, so the churn figure has something to compare to
-  const priorMonthEnds: Date[] = [];
+  const priorMonthEnds = [];
   for (let i = 12; i >= 1; i--) {
     priorMonthEnds.push(monthEnd(asOf.getUTCFullYear(), asOf.getUTCMonth() - i));
   }
@@ -246,7 +260,7 @@ function main(
 
   // ---- leavers
 
-  function leaversBetween(from: Date, to: Date, pool: Scoped[]): Scoped[] {
+  function leaversBetween(from, to, pool) {
     return pool.filter(e => {
       const t = parseDate(e.terminationDate);
       return t !== null && t > from && t <= to;
@@ -276,18 +290,18 @@ function main(
   const leaversYtd = leaversBetween(fyStart, thisMonthEnd, scoped);
   const leaversYtdPrior = leaversBetween(fyStart, priorMonthEnd, scoped);
 
-  const ytdMonthEnds: Date[] = [];
+  const ytdMonthEnds = [];
   for (let i = 0; i < Math.max(monthsElapsed, 1); i++) {
     ytdMonthEnds.push(monthEnd(fyStartYear, 6 + i));
   }
   const avgHeadcountYtd = mean(ytdMonthEnds.map(d => scoped.filter(e => activeAt(e, d)).length));
 
-  function annualised(leavers: number, avgHead: number, months: number): string {
+  function annualised(leavers, avgHead, months) {
     if (avgHead <= 0 || months <= 0) return "0.0";
     return round1((leavers / avgHead) * (12 / months) * 100);
   }
 
-  function churn(leavers: Scoped[], avgHead: number, voluntaryOnly: boolean): string {
+  function churn(leavers, avgHead, voluntaryOnly) {
     if (avgHead <= 0) return "0.0";
     const count = voluntaryOnly
       ? leavers.filter(e => isVoluntary(e.terminationReason)).length
@@ -297,7 +311,7 @@ function main(
 
   // ---- pay gap
 
-  function gapFor(pool: Scoped[], useMedian: boolean): string {
+  function gapFor(pool, useMedian) {
     const males = pool.filter(e => isMale(e) && e.fteSalary > 0).map(e => e.fteSalary);
     const females = pool.filter(e => isFemale(e) && e.fteSalary > 0).map(e => e.fteSalary);
     return payGap(males, females, useMedian);
@@ -331,7 +345,7 @@ function main(
 
   // ---- churn split by Level 4
 
-  const level4Values: string[] = [];
+  const level4Values = [];
   for (const e of scoped) {
     const v = (e.level4 || "Unassigned").trim();
     if (level4Values.indexOf(v) < 0) level4Values.push(v);
@@ -351,7 +365,7 @@ function main(
 
   // ---- cost centres
 
-  const ccValues: string[] = [];
+  const ccValues = [];
   for (const e of activeNow) {
     const v = (e.costCentre || "Unassigned").trim();
     if (ccValues.indexOf(v) < 0) ccValues.push(v);
@@ -412,13 +426,15 @@ function main(
     headcountTrend: headcountTrend,
     dataQuality: {
       excludedBlankLocation: excludedBlankLocation,
-      excludedAuInUkEntity: excludedAuInUkEntity,
-      excludedUkInAuEntity: excludedUkInAuEntity,
+      excludedWrongLocationAu: excludedWrongLocationAu,
+      excludedWrongLocationUk: excludedWrongLocationUk,
+      excludedContractors: excludedContractors,
+      notYetStarted: notYetStarted,
       excludedNoSalary: excludedNoSalary,
       casualsConverted: casualsConverted,
       partTimeConverted: partTimeConverted
     }
   };
 
-  return JSON.stringify(result);
+  return result;
 }
