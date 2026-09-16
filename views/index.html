@@ -106,9 +106,10 @@
   .spark-labels {
     display: flex;
     justify-content: space-between;
-    font-size: 11px;
+    font-size: 10px;
     color: var(--muted);
     margin-top: 4px;
+    letter-spacing: -0.01em;
   }
 
   /* Metric rows */
@@ -144,6 +145,14 @@
     font-size: 13px;
     font-weight: 500;
     vertical-align: 6px;
+  }
+
+  .maintained {
+    width: 14px;
+    height: 3px;
+    background: var(--yellow);
+    vertical-align: 4px;
+    border-radius: 1px;
   }
 
   .good { color: var(--blue); }
@@ -289,7 +298,7 @@ function delta(now, prior, suffix, higherIsBetter) {
   const a = Number(now), b = Number(prior);
   if (!isFinite(a) || !isFinite(b) || prior === null || prior === undefined || prior === "") return "";
   const d = Math.round((a - b) * 10) / 10;
-  if (d === 0) return '<span class="delta flat">no change</span>';
+  if (d === 0) return '<span class="delta maintained" title="Maintained"></span>';
   const arrow = d > 0 ? "\u2191" : "\u2193";
   let cls = "flat";
   if (higherIsBetter === true) cls = d > 0 ? "good" : "bad";
@@ -315,7 +324,7 @@ function sparkline(points) {
   const line = vals.map((v, i) => (i ? "L" : "M") + x(i).toFixed(1) + " " + y(v).toFixed(1)).join(" ");
   const area = line + " L" + x(vals.length - 1).toFixed(1) + " " + h + " L" + x(0).toFixed(1) + " " + h + " Z";
   const dots = vals.map((v, i) => '<circle cx="' + x(i).toFixed(1) + '" cy="' + y(v).toFixed(1) + '" r="3" fill="#0000D0"/>').join("");
-  return '<svg class="spark" viewBox="0 0 ' + w + " " + h + '" preserveAspectRatio="none" role="img" aria-label="Headcount over the last six months">' +
+  return '<svg class="spark" viewBox="0 0 ' + w + " " + h + '" preserveAspectRatio="none" role="img" aria-label="Headcount over the last twelve months">' +
     '<path d="' + area + '" fill="#0000D0" opacity="0.07"/>' +
     '<path d="' + line + '" fill="none" stroke="#0000D0" stroke-width="2.5" vector-effect="non-scaling-stroke"/>' +
     dots + "</svg>";
@@ -344,6 +353,7 @@ function render(d) {
       <div>
         <div class="figure">${n(p.headcount)}</div>
         <div class="caption">Active headcount ${delta(p.headcount, p.headcountPrior, "", true)} on last month</div>
+        <div class="caption" style="margin-top:2px;font-size:12px">Trend shows the last twelve months</div>
       </div>
       <div>
         ${sparkline(trend)}
@@ -355,25 +365,21 @@ function render(d) {
       <h2>People metrics</h2>
       <div class="metrics">
         ${tile("Female representation", p.femalePct, p.femalePctPrior, "%", true)}
-        ${tile("Leavers this month (total)", p.leaversMonth, p.leaversMonthPrior, "", false)}
+        ${tile("New hires this month", p.hiresMonth, p.hiresMonthPrior, "", true)}
         ${tile("Leavers this month (voluntary)", p.leaversVoluntaryMonth, p.leaversVoluntaryMonthPrior, "", false)}
-        ${tile("Churn LTM (total)", p.churnTotal, p.churnTotalPrior, "%", false)}
+        ${tile("Leavers this month (total)", p.leaversMonth, p.leaversMonthPrior, "", false)}
         ${tile("Churn LTM (voluntary)", p.churnVoluntary, p.churnVoluntaryPrior, "%", false)}
-        ${tile("YTD annualised turnover (total)", p.ytdAnnualisedTotal, p.ytdAnnualisedTotalPrior, "%", false)}
+        ${tile("Churn LTM (total)", p.churnTotal, p.churnTotalPrior, "%", false)}
         ${tile("YTD annualised turnover (voluntary)", p.ytdAnnualisedVoluntary, p.ytdAnnualisedVoluntaryPrior, "%", false)}
-      </div>
-      <div class="note">Churn is leavers over the last twelve months divided by average headcount over the
-      same period (${p.avgHeadcountLtm || "0"}), taking active internal employees at each month end.</div>
-    </section>
-
-    <section>
-      <h2>Gender pay gap</h2>
-      <div class="metrics">
+        ${tile("YTD annualised turnover (total)", p.ytdAnnualisedTotal, p.ytdAnnualisedTotalPrior, "%", false)}
         ${tile("Gender pay gap (mean)", p.gpgMean, p.gpgMeanPrior, "%", false)}
         ${tile("Gender pay gap (median)", p.gpgMedian, p.gpgMedianPrior, "%", false)}
       </div>
-      <div class="note">Calculated on full-time equivalent base salary. Part-time salaries are scaled to a
-      38 hour week and casual rates converted at hourly rate multiplied by 38 by 52.</div>
+      <div class="note">Churn is leavers over the last twelve months divided by average headcount over the
+      same period (${p.avgHeadcountLtm || "0"}), taking active internal employees at each month end.
+      Voluntary covers resignations and voluntary cessations. The pay gap is calculated on full-time
+      equivalent base salary, with part-time scaled to a 38 hour week and casual rates converted at
+      hourly rate multiplied by 38 by 52. A positive figure means men are paid more.</div>
     </section>
 
     <section>
@@ -431,9 +437,10 @@ function render(d) {
             <th class="num">Headcount</th>
             <th class="num">Female %</th>
             <th class="num">Leavers LTM</th>
-            <th class="num">Churn LTM</th>
+            <th class="num">Vol turnover</th>
+            <th class="num">Total turnover</th>
             <th class="num">Open roles</th>
-            <th class="bar-cell">Churn against the company rate of ${p.churnTotal || "0"}%</th>
+            <th class="bar-cell">Total turnover against the company rate of ${p.churnTotal || "0"}%</th>
           </tr>
         </thead>
         <tbody>
@@ -447,6 +454,7 @@ function render(d) {
               <td class="num">${n(c.headcount)}</td>
               <td class="num">${c.femalePct || "0"}%</td>
               <td class="num">${n(c.leaversLtm)}</td>
+              <td class="num">${c.churnVoluntary || "0"}%</td>
               <td class="num ${above ? "flag" : ""}">${c.churnTotal || "0"}%</td>
               <td class="num">${n(c.openRoles)}</td>
               <td class="bar-cell">
@@ -467,7 +475,8 @@ function render(d) {
       <div class="note">Churn is measured against each cost centre's own average headcount over the
       last twelve months, so a small team losing two people shows a high rate on a small base.
       Read it alongside the leaver count rather than on its own. NAT cost centres are combined
-      across offices, so NAT-ESD covers every location.</div>
+      across offices, so NAT-ESD covers every location, and WA is reported within Melbourne.
+      Voluntary covers resignations and voluntary cessations; total covers every leaver.</div>
     </section>
 
     <div class="foot">

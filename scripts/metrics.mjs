@@ -46,6 +46,11 @@ const UK_ENTITY_LOCATIONS = ["london"];
 // Employment types that are not headcount. Substring match, so "Independent Contractor
 // (Fixed Term)" is caught by "independent contractor". People whose start date is still in
 // the future are excluded automatically by the active-at-date test, no configuration needed.
+// Cost centres folded into another one. Keys are matched after normalisation, lower case.
+const COST_CENTRE_MERGES = {
+  "wa": "Melbourne"
+};
+
 // Cost centre values that mean "not set". Normalised to Unassigned.
 const UNASSIGNED_COST_CENTRES = ["adp consulting pty ltd", "adp consulting", "n/a", "-"];
 
@@ -105,6 +110,9 @@ function normaliseCostCentre(value) {
   v = v.replace(/\s*-\s*/g, "-");
   const nat = v.match(/^(NAT-[A-Za-z]+)/);
   if (nat) return nat[1].toUpperCase();
+
+  const merged = COST_CENTRE_MERGES[v.toLowerCase()];
+  if (merged) return merged;
 
   return v;
 }
@@ -317,6 +325,13 @@ export function computeMetrics(employees, asOfIso) {
     });
   }
 
+  function startersBetween(from, to, pool) {
+    return pool.filter(e => {
+      const st = parseDate(e.startDate);
+      return st !== null && st > from && st <= to;
+    });
+  }
+
   const ltmStart = monthEnd(asOf.getUTCFullYear(), asOf.getUTCMonth() - 12);
   const ltmStartPrior = monthEnd(asOf.getUTCFullYear(), asOf.getUTCMonth() - 13);
 
@@ -324,6 +339,9 @@ export function computeMetrics(employees, asOfIso) {
   const leaversLtmPrior = leaversBetween(ltmStartPrior, priorMonthEnd, scoped);
 
   const monthStart = new Date(Date.UTC(asOf.getUTCFullYear(), asOf.getUTCMonth(), 0, 23, 59, 59));
+  const priorMonthStart = new Date(Date.UTC(asOf.getUTCFullYear(), asOf.getUTCMonth() - 1, 0, 23, 59, 59));
+  const hiresMonth = startersBetween(monthStart, thisMonthEnd, scoped);
+  const hiresMonthPrior = startersBetween(priorMonthStart, priorMonthEnd, scoped);
   const leaversMonth = leaversBetween(monthStart, thisMonthEnd, scoped);
   const leaversMonthPrior = leaversBetween(
     new Date(Date.UTC(asOf.getUTCFullYear(), asOf.getUTCMonth() - 1, 0, 23, 59, 59)),
@@ -425,9 +443,9 @@ export function computeMetrics(employees, asOfIso) {
   // ---- six month trend
 
   const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  const headcountTrend = monthEnds.slice(-6).map((d, i) => ({
+  const headcountTrend = monthEnds.map((d, i) => ({
     month: monthNames[d.getUTCMonth()],
-    headcount: monthlyHeadcount[monthlyHeadcount.length - 6 + i]
+    headcount: monthlyHeadcount[i]
   }));
 
   // ---- assemble
@@ -444,6 +462,8 @@ export function computeMetrics(employees, asOfIso) {
       leaversMonthPrior: leaversMonthPrior.length,
       leaversVoluntaryMonth: leaversMonth.filter(e => isVoluntary(e.terminationReason)).length,
       leaversVoluntaryMonthPrior: leaversMonthPrior.filter(e => isVoluntary(e.terminationReason)).length,
+      hiresMonth: hiresMonth.length,
+      hiresMonthPrior: hiresMonthPrior.length,
       churnTotal: churn(leaversLtm, avgHeadcountLtm, false),
       churnTotalPrior: churn(leaversLtmPrior, avgHeadcountLtmPrior, false),
       churnVoluntary: churn(leaversLtm, avgHeadcountLtm, true),

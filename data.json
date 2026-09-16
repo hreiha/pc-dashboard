@@ -7,10 +7,10 @@
     "headcountPrior": 321,
     "femalePct": "38.4",
     "femalePctPrior": "37.6",
-    "leaversMonth": 5,
-    "leaversMonthPrior": 3,
-    "leaversVoluntaryMonth": 4,
-    "leaversVoluntaryMonthPrior": 2,
+    "leaversMonth": 8,
+    "leaversMonthPrior": 10,
+    "leaversVoluntaryMonth": 7,
+    "leaversVoluntaryMonthPrior": 8,
     "churnTotal": "13.8",
     "churnTotalPrior": "13.1",
     "churnVoluntary": "10.4",
@@ -23,7 +23,9 @@
     "gpgMeanPrior": "14.9",
     "gpgMedian": "21.3",
     "gpgMedianPrior": "12.3",
-    "avgHeadcountLtm": "376.4"
+    "avgHeadcountLtm": "376.4",
+    "hiresMonth": 1,
+    "hiresMonthPrior": 4
   },
   "entities": [
     {
@@ -84,7 +86,7 @@
   "costCentres": [
     {
       "code": "Melbourne",
-      "headcount": 91,
+      "headcount": 92,
       "female": 18,
       "femalePct": "19.8",
       "leaversLtm": 34,
@@ -191,20 +193,33 @@
       "churnVoluntary": "18.2",
       "avgHeadcountLtm": "5.5",
       "openRoles": 1
-    },
-    {
-      "code": "WA",
-      "headcount": 1,
-      "female": 0,
-      "femalePct": "0.0",
-      "leaversLtm": 0,
-      "churnTotal": "0.0",
-      "churnVoluntary": "0.0",
-      "avgHeadcountLtm": "1.0",
-      "openRoles": 0
     }
   ],
   "headcountTrend": [
+    {
+      "month": "Oct",
+      "headcount": 331
+    },
+    {
+      "month": "Nov",
+      "headcount": 334
+    },
+    {
+      "month": "Dec",
+      "headcount": 330
+    },
+    {
+      "month": "Jan",
+      "headcount": 327
+    },
+    {
+      "month": "Feb",
+      "headcount": 329
+    },
+    {
+      "month": "Mar",
+      "headcount": 326
+    },
     {
       "month": "Apr",
       "headcount": 324
@@ -215,11 +230,11 @@
     },
     {
       "month": "Jun",
-      "headcount": 325
+      "headcount": 323
     },
     {
       "month": "Jul",
-      "headcount": 323
+      "headcount": 321
     },
     {
       "month": "Aug",
@@ -227,7 +242,7 @@
     },
     {
       "month": "Sep",
-      "headcount": 317
+      "headcount": 318
     }
   ],
   "dataQuality": {
