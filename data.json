@@ -1,57 +1,57 @@
 {
-  "generatedUtc": "2026-09-16T00:55:31.484Z",
+  "generatedUtc": "2026-09-16T01:12:18.904Z",
   "periodLabel": "Sep 2026",
   "priorLabel": "Aug 2026",
   "people": {
-    "headcount": 18,
-    "headcountPrior": 17,
-    "femalePct": "11.1",
-    "femalePctPrior": "11.8",
-    "leaversMonth": 0,
-    "leaversMonthPrior": 0,
-    "leaversVoluntaryMonth": 0,
-    "leaversVoluntaryMonthPrior": 0,
-    "churnTotal": "24.1",
-    "churnTotalPrior": "30.5",
-    "churnVoluntary": "0.0",
-    "churnVoluntaryPrior": "0.0",
-    "ytdAnnualisedTotal": "23.1",
-    "ytdAnnualisedTotalPrior": "34.6",
-    "ytdAnnualisedVoluntary": "0.0",
-    "ytdAnnualisedVoluntaryPrior": "0.0",
+    "headcount": 319,
+    "headcountPrior": 321,
+    "femalePct": "25.4",
+    "femalePctPrior": "25.2",
+    "leaversMonth": 8,
+    "leaversMonthPrior": 10,
+    "leaversVoluntaryMonth": 3,
+    "leaversVoluntaryMonthPrior": 7,
+    "churnTotal": "37.2",
+    "churnTotalPrior": "38.5",
+    "churnVoluntary": "23.5",
+    "churnVoluntaryPrior": "25.5",
+    "ytdAnnualisedTotal": "47.3",
+    "ytdAnnualisedTotalPrior": "56.0",
+    "ytdAnnualisedVoluntary": "24.9",
+    "ytdAnnualisedVoluntaryPrior": "31.7",
     "gpgMean": "0.0",
     "gpgMeanPrior": "0.0",
     "gpgMedian": "0.0",
     "gpgMedianPrior": "0.0",
-    "avgHeadcountLtm": "16.6"
+    "avgHeadcountLtm": "336.1"
   },
   "churnByLevel4": [
     {
       "group": "Unassigned",
-      "leaversLtm": 4,
-      "churnTotal": "24.1",
-      "churnVoluntary": "0.0"
+      "leaversLtm": 125,
+      "churnTotal": "37.2",
+      "churnVoluntary": "23.5"
     }
   ],
   "entities": [
     {
       "code": "AU",
       "name": "ADP Australia",
-      "headcount": 0,
-      "headcountPrior": 0,
-      "female": 0,
-      "femalePct": "0.0",
-      "leaversMonth": 0,
+      "headcount": 300,
+      "headcountPrior": 303,
+      "female": 79,
+      "femalePct": "26.3",
+      "leaversMonth": 8,
       "gpgMean": "0.0",
       "gpgMedian": "0.0"
     },
     {
       "code": "UK",
       "name": "ADP London",
-      "headcount": 18,
-      "headcountPrior": 17,
+      "headcount": 19,
+      "headcountPrior": 18,
       "female": 2,
-      "femalePct": "11.1",
+      "femalePct": "10.5",
       "leaversMonth": 0,
       "gpgMean": "0.0",
       "gpgMedian": "0.0"
@@ -87,46 +87,142 @@
   ],
   "costCentres": [
     {
+      "code": "Melbourne",
+      "headcount": 91,
+      "female": 18,
+      "openRoles": 0
+    },
+    {
+      "code": "Sydney",
+      "headcount": 60,
+      "female": 13,
+      "openRoles": 0
+    },
+    {
+      "code": "Brisbane",
+      "headcount": 34,
+      "female": 9,
+      "openRoles": 0
+    },
+    {
+      "code": "NAT-CORP Melbourne",
+      "headcount": 23,
+      "female": 10,
+      "openRoles": 0
+    },
+    {
       "code": "Unassigned",
-      "headcount": 18,
+      "headcount": 19,
       "female": 2,
+      "openRoles": 0
+    },
+    {
+      "code": "Adelaide",
+      "headcount": 17,
+      "female": 4,
+      "openRoles": 0
+    },
+    {
+      "code": "NAT-SPL Melbourne",
+      "headcount": 16,
+      "female": 5,
+      "openRoles": 0
+    },
+    {
+      "code": "NAT-SPL Sydney",
+      "headcount": 13,
+      "female": 3,
+      "openRoles": 0
+    },
+    {
+      "code": "NAT-ESD Melbourne",
+      "headcount": 13,
+      "female": 6,
+      "openRoles": 0
+    },
+    {
+      "code": "NAT-SPL Brisbane",
+      "headcount": 10,
+      "female": 2,
+      "openRoles": 0
+    },
+    {
+      "code": "NAT-ESD Brisbane",
+      "headcount": 5,
+      "female": 2,
+      "openRoles": 0
+    },
+    {
+      "code": "NAT-ESD Sydney",
+      "headcount": 5,
+      "female": 2,
+      "openRoles": 0
+    },
+    {
+      "code": "NAT-DIG Melbourne",
+      "headcount": 5,
+      "female": 0,
+      "openRoles": 0
+    },
+    {
+      "code": "NAT-CORP Sydney",
+      "headcount": 3,
+      "female": 3,
+      "openRoles": 0
+    },
+    {
+      "code": "NAT-CORP Brisbane",
+      "headcount": 2,
+      "female": 2,
+      "openRoles": 0
+    },
+    {
+      "code": "NAT-SPL Adelaide",
+      "headcount": 2,
+      "female": 0,
+      "openRoles": 0
+    },
+    {
+      "code": "WA",
+      "headcount": 1,
+      "female": 0,
       "openRoles": 0
     }
   ],
   "headcountTrend": [
     {
       "month": "Apr",
-      "headcount": 17
+      "headcount": 334
     },
     {
       "month": "May",
-      "headcount": 17
+      "headcount": 334
     },
     {
       "month": "Jun",
-      "headcount": 18
+      "headcount": 344
     },
     {
       "month": "Jul",
-      "headcount": 17
+      "headcount": 325
     },
     {
       "month": "Aug",
-      "headcount": 17
+      "headcount": 321
     },
     {
       "month": "Sep",
-      "headcount": 18
+      "headcount": 319
     }
   ],
   "dataQuality": {
     "excludedBlankLocation": 25,
-    "excludedWrongLocationAu": 1035,
+    "excludedWrongLocationAu": 3,
     "excludedWrongLocationUk": 13,
     "excludedContractors": 0,
-    "notYetStarted": 0,
-    "excludedNoSalary": 18,
-    "casualsConverted": 0,
-    "partTimeConverted": 2
+    "notYetStarted": 3,
+    "excludedNoSalary": 319,
+    "casualsConverted": 64,
+    "partTimeConverted": 44
   }
 }
