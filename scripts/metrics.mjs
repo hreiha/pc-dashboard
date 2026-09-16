@@ -12,16 +12,15 @@
 const STANDARD_HOURS_PER_WEEK = 38;
 const WEEKS_PER_YEAR = 52;
 
-// Leaving reasons counted as voluntary. Match these to your Employment Hero values
-// exactly, in lower case. Anything not listed counts as involuntary.
+// Termination type values that count as voluntary. From the export, the volumes are
+// Voluntary cessation, resignation, termination, other, Dismissal, Contract cessation,
+// Redundancy, Transfer and Deceased. "other" is deliberately left out: it is ambiguous
+// and there are enough of them to move the number. Add it if your reporting treats it
+// as voluntary.
 const VOLUNTARY_REASONS = [
+  "voluntary cessation",
   "resignation",
-  "resigned",
-  "voluntary",
-  "career change",
-  "personal reasons",
-  "relocation",
-  "retirement"
+  "resigned"
 ];
 
 // Entity comes from which Employment Hero organisation the record sits in. Location then
@@ -34,14 +33,13 @@ const VOLUNTARY_REASONS = [
 // Matched exactly, ignoring case and surrounding spaces. Pull the distinct Location values
 // out of Employment Hero and make these match them, or the counts will come out low.
 const AU_ENTITY_LOCATIONS = [
-  "melbourne",
-  "sydney",
-  "brisbane",
-  "gold coast",
-  "adelaide",
-  "perth",
-  "canberra",
-  "australia"
+  "melbourne victoria",
+  "sydney new south wales",
+  "brisbane queensland",
+  "adelaide south australia",
+  "gold coast queensland",
+  "perth western australia",
+  "canberra australian capital territory"
 ];
 const UK_ENTITY_LOCATIONS = ["london"];
 
@@ -61,7 +59,17 @@ const EXCLUDED_EMPLOYMENT_TYPES = [
 
 function parseDate(s) {
   if (!s) return null;
-  const d = new Date(s);
+  const v = String(s).trim();
+  if (!v || v.toUpperCase() === "N/A" || v === "-") return null;
+
+  // dd/mm/yyyy. Left to the JS parser this reads as mm/dd/yyyy and is silently wrong
+  // for every day past the twelfth of the month.
+  const dmy = v.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  if (dmy) {
+    return new Date(Date.UTC(Number(dmy[3]), Number(dmy[2]) - 1, Number(dmy[1])));
+  }
+
+  const d = new Date(v);
   return isNaN(d.getTime()) ? null : d;
 }
 
@@ -91,7 +99,15 @@ function isVoluntary(reason) {
 
 function activeAt(e, when) {
   const start = parseDate(e.startDate);
-  if (!start || start > when) return false;
+
+  // A missing start date means the record predates the field. Treat them as already
+  // started rather than dropping them, which would understate every historical month.
+  if (start && start > when) return false;
+
+  // Employment status wins over the termination date. Some current employees carry a
+  // stale termination date from an earlier stint, and counting those loses real people.
+  if (String(e.status || "").toLowerCase() === "active") return true;
+
   const term = parseDate(e.terminationDate);
   return !term || term > when;
 }
@@ -199,8 +215,9 @@ export function computeMetrics(employees, asOfIso) {
       continue;
     }
 
-    // Independent contractors and similar are not headcount
-    if (containsAny(e.employmentType, EXCLUDED_EMPLOYMENT_TYPES)) {
+    // Independent contractors are not headcount. The explicit Employment Hero flag is
+    // authoritative; the employment type list is a fallback for anything it misses.
+    if (e.independentContractor === true || containsAny(e.employmentType, EXCLUDED_EMPLOYMENT_TYPES)) {
       excludedContractors++;
       continue;
     }
@@ -222,6 +239,8 @@ export function computeMetrics(employees, asOfIso) {
       terminationReason: e.terminationReason,
       level4: e.level4,
       costCentre: e.costCentre,
+      independentContractor: e.independentContractor === true,
+      status: e.status,
       entity: entity,
       fteSalary: fteSalary(e)
     });

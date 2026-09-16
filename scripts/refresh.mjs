@@ -30,16 +30,16 @@ const PAGE_SIZE = 100;
  */
 const FIELDS = {
   gender:            ["gender", "sex"],
-  location:          ["location", "office", "work_location", "primary_location"],
-  employmentType:    ["employment_type", "employmentType", "employee_type"],
-  hoursPerWeek:      ["hours_per_week", "weekly_hours", "contracted_hours"],
-  annualSalary:      ["annual_salary", "salary", "base_salary", "annual_salary_rate"],
-  hourlyRate:        ["hourly_rate", "rate", "hourly_salary_rate"],
-  startDate:         ["start_date", "employment_start_date", "hire_date"],
-  terminationDate:   ["termination_date", "end_date", "employment_end_date"],
-  terminationReason: ["termination_reason", "reason_for_leaving", "separation_reason"],
-  level4:            ["level_4", "level4", "division", "business_unit"],
-  costCentre:        ["cost_centre", "cost_center", "team", "department"]
+  location:          ["location", "office", "work_location"],
+  employmentType:    ["employment_type", "payroll_type"],
+  hoursPerWeek:      ["typical_work_day", "hours_per_week", "weekly_hours"],
+  annualSalary:      ["annual_salary", "salary", "base_salary"],
+  hourlyRate:        ["hourly_rate", "rate"],
+  startDate:         ["start_date", "global_teams_start_date"],
+  terminationDate:   ["termination_date"],
+  terminationReason: ["termination_summary", "termination_reason"],
+  level4:            ["teams", "division", "business_unit"],
+  costCentre:        ["primary_cost_centre", "cost_centre", "teams"]
 };
 
 function required(name) {
@@ -139,6 +139,9 @@ function normalise({ raw, entity }) {
     terminationReason: String(pick(raw, FIELDS.terminationReason)),
     level4: String(pick(raw, FIELDS.level4)),
     costCentre: String(pick(raw, FIELDS.costCentre)),
+    // Employment Hero carries an explicit flag, which beats matching employment type text
+    independentContractor: raw.independent_contractor === true,
+    status: String(pick(raw, ["status"])),
     entity
   };
 }
@@ -147,6 +150,17 @@ function normalise({ raw, entity }) {
  * Recruitment figures are not in Employment Hero. If recruitment.json exists in the repo it
  * is merged in, otherwise the recruitment section renders as zeros and the rest still works.
  */
+function loadJson(name) {
+  const path = join(ROOT, name);
+  if (!existsSync(path)) return null;
+  try {
+    return JSON.parse(readFileSync(path, "utf8"));
+  } catch (err) {
+    console.warn(`${name} could not be parsed, ignoring it: ${err.message}`);
+    return null;
+  }
+}
+
 function loadRecruitment() {
   const path = join(ROOT, "recruitment.json");
   if (!existsSync(path)) {
@@ -196,6 +210,24 @@ async function main() {
 
   const metrics = computeMetrics(employees, new Date().toISOString());
   const recruitment = loadRecruitment();
+
+  // Pay is not on the employees endpoint, so the gap is calculated locally from the CSV
+  // export by tools/Get-PayGap.ps1 and committed as paygap.json.
+  const paygap = loadJson("paygap.json");
+  if (paygap) {
+    metrics.people.gpgMean = paygap.combined?.gpgMean ?? "0.0";
+    metrics.people.gpgMedian = paygap.combined?.gpgMedian ?? "0.0";
+    for (const entity of metrics.entities) {
+      const e = paygap.entities?.[entity.code];
+      if (e) {
+        entity.gpgMean = e.gpgMean;
+        entity.gpgMedian = e.gpgMedian;
+      }
+    }
+    console.log(`Pay gap from paygap.json, generated ${paygap.generatedUtc}`);
+  } else {
+    console.log("No paygap.json found. Run tools/Get-PayGap.ps1 and commit the result.");
+  }
 
   const output = {
     generatedUtc: new Date().toISOString(),
