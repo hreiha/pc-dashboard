@@ -46,6 +46,13 @@ const UK_ENTITY_LOCATIONS = ["london"];
 // Employment types that are not headcount. Substring match, so "Independent Contractor
 // (Fixed Term)" is caught by "independent contractor". People whose start date is still in
 // the future are excluded automatically by the active-at-date test, no configuration needed.
+// Cost centre values that mean "not set". Normalised to Unassigned.
+const UNASSIGNED_COST_CENTRES = ["adp consulting pty ltd", "adp consulting", "n/a", "-"];
+
+// A record with no employment type has no contract type, no pay and no job title either.
+// In the London entity these are shell or access records rather than staff.
+const REQUIRE_EMPLOYMENT_TYPE = true;
+
 const EXCLUDED_EMPLOYMENT_TYPES = [
   "independent contractor",
   "contractor",
@@ -85,6 +92,23 @@ function matchesAny(value, list) {
 }
 
 /** Substring match, ignoring case, for employment type values that carry extra wording. */
+/**
+ * Groups the NAT cost centres so NAT-ESD Melbourne and NAT-ESD Sydney both become NAT-ESD.
+ * Everything else is left as recorded, with blanks and placeholder values as Unassigned.
+ */
+function normaliseCostCentre(value) {
+  let v = String(value || "").trim();
+  if (!v) return "Unassigned";
+  if (UNASSIGNED_COST_CENTRES.indexOf(v.toLowerCase()) >= 0) return "Unassigned";
+
+  // "NAT - CORP" and "NAT-CORP Melbourne" both need to land on NAT-CORP
+  v = v.replace(/\s*-\s*/g, "-");
+  const nat = v.match(/^(NAT-[A-Za-z]+)/);
+  if (nat) return nat[1].toUpperCase();
+
+  return v;
+}
+
 function containsAny(value, list) {
   const v = (value || "").toLowerCase().trim();
   if (!v) return false;
@@ -192,6 +216,7 @@ export function computeMetrics(employees, asOfIso) {
   let excludedWrongLocationAu = 0;
   let excludedWrongLocationUk = 0;
   let excludedContractors = 0;
+  let excludedIncomplete = 0;
   let casualsConverted = 0;
   let partTimeConverted = 0;
 
@@ -222,6 +247,12 @@ export function computeMetrics(employees, asOfIso) {
       continue;
     }
 
+    // Shell records: no employment type, and with it no contract type, pay or job title
+    if (REQUIRE_EMPLOYMENT_TYPE && !String(e.employmentType || "").trim()) {
+      excludedIncomplete++;
+      continue;
+    }
+
     const type = (e.employmentType || "").toLowerCase();
     if (type.indexOf("casual") >= 0) casualsConverted++;
     else if (type.indexOf("part") >= 0) partTimeConverted++;
@@ -238,7 +269,7 @@ export function computeMetrics(employees, asOfIso) {
       terminationDate: e.terminationDate,
       terminationReason: e.terminationReason,
       level4: e.level4,
-      costCentre: e.costCentre,
+      costCentre: normaliseCostCentre(e.costCentre),
       independentContractor: e.independentContractor === true,
       status: e.status,
       entity: entity,
@@ -362,43 +393,34 @@ export function computeMetrics(employees, asOfIso) {
     };
   });
 
-  // ---- churn split by Level 4
-
-  const level4Values = [];
-  for (const e of scoped) {
-    const v = (e.level4 || "Unassigned").trim();
-    if (level4Values.indexOf(v) < 0) level4Values.push(v);
-  }
-
-  const churnByLevel4 = level4Values.map(group => {
-    const groupPool = scoped.filter(e => (e.level4 || "Unassigned").trim() === group);
-    const groupAvgHead = mean(monthEnds.map(d => groupPool.filter(e => activeAt(e, d)).length));
-    const groupLeavers = leaversBetween(ltmStart, thisMonthEnd, groupPool);
-    return {
-      group: group,
-      leaversLtm: groupLeavers.length,
-      churnTotal: churn(groupLeavers, groupAvgHead, false),
-      churnVoluntary: churn(groupLeavers, groupAvgHead, true)
-    };
-  });
-
-  // ---- cost centres
+  // ---- cost centres, with churn against each one's own denominator
 
   const ccValues = [];
-  for (const e of activeNow) {
-    const v = (e.costCentre || "Unassigned").trim();
+  for (const e of scoped) {
+    const v = e.costCentre || "Unassigned";
     if (ccValues.indexOf(v) < 0) ccValues.push(v);
   }
 
   const costCentres = ccValues.map(code => {
-    const pool = activeNow.filter(e => (e.costCentre || "Unassigned").trim() === code);
+    const pool = scoped.filter(e => (e.costCentre || "Unassigned") === code);
+    const nowPool = pool.filter(e => activeAt(e, thisMonthEnd));
+    const avgHead = mean(monthEnds.map(d => pool.filter(e => activeAt(e, d)).length));
+    const leavers = leaversBetween(ltmStart, thisMonthEnd, pool);
+    const fem = nowPool.filter(isFemale);
     return {
       code: code,
-      headcount: pool.length,
-      female: pool.filter(isFemale).length,
-      openRoles: 0   // merged in by Power Automate from the Recruitment Forecast list
+      headcount: nowPool.length,
+      female: fem.length,
+      femalePct: nowPool.length ? round1((fem.length / nowPool.length) * 100) : "0.0",
+      leaversLtm: leavers.length,
+      churnTotal: churn(leavers, avgHead, false),
+      churnVoluntary: churn(leavers, avgHead, true),
+      avgHeadcountLtm: round1(avgHead),
+      openRoles: 0   // merged in from recruitment.json
     };
-  }).sort((a, b) => b.headcount - a.headcount);
+  })
+    .filter(c => c.headcount > 0 || c.leaversLtm > 0)
+    .sort((a, b) => b.headcount - a.headcount);
 
   // ---- six month trend
 
@@ -439,7 +461,6 @@ export function computeMetrics(employees, asOfIso) {
       gpgMedianPrior: gapFor(activePrior, true),
       avgHeadcountLtm: round1(avgHeadcountLtm)
     },
-    churnByLevel4: churnByLevel4,
     entities: entities,
     costCentres: costCentres,
     headcountTrend: headcountTrend,
@@ -448,6 +469,7 @@ export function computeMetrics(employees, asOfIso) {
       excludedWrongLocationAu: excludedWrongLocationAu,
       excludedWrongLocationUk: excludedWrongLocationUk,
       excludedContractors: excludedContractors,
+      excludedIncomplete: excludedIncomplete,
       notYetStarted: notYetStarted,
       excludedNoSalary: excludedNoSalary,
       casualsConverted: casualsConverted,

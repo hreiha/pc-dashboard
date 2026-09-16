@@ -178,22 +178,29 @@
 
   tbody tr:last-child td { border-bottom: none; }
 
-  .bar-cell { width: 42%; }
+  .bar-cell { width: 34%; }
 
-  .bar {
-    height: 9px;
-    background: var(--blue);
+  .churn-track {
+    position: relative;
     display: block;
-    min-width: 2px;
+    height: 12px;
+    background: var(--wash);
+    width: 100%;
   }
 
-  .bar-female {
-    height: 9px;
-    background: var(--aqua);
-    display: block;
-    margin-top: 2px;
-    min-width: 2px;
+  .churn-bar { display: block; height: 12px; min-width: 2px; }
+  .churn-bar.under { background: var(--blue); }
+  .churn-bar.over { background: var(--pink); }
+
+  .churn-marker {
+    position: absolute;
+    top: -3px;
+    width: 2px;
+    height: 18px;
+    background: var(--ink);
   }
+
+  td.flag { color: var(--pink); font-weight: 600; }
 
   .legend {
     margin-top: 10px;
@@ -320,10 +327,11 @@ function render(d) {
   const cc = d.costCentres || [];
   const pipe = d.pipeline || [];
   const ent = d.entities || [];
-  const lvl = d.churnByLevel4 || [];
   const dq = d.dataQuality || {};
   const maxHead = Math.max(1, ...cc.map(c => Number(c.headcount) || 0));
   const maxStage = Math.max(1, ...pipe.map(s => Number(s.count) || 0));
+  const companyChurn = Number(p.churnTotal) || 0;
+  const maxChurn = Math.max(1, companyChurn, ...cc.map(c => Number(c.churnTotal) || 0));
 
   const stamp = d.generatedUtc
     ? new Date(d.generatedUtc).toLocaleString("en-AU", { dateStyle: "medium", timeStyle: "short" })
@@ -366,28 +374,6 @@ function render(d) {
       </div>
       <div class="note">Calculated on full-time equivalent base salary. Part-time salaries are scaled to a
       38 hour week and casual rates converted at hourly rate multiplied by 38 by 52.</div>
-    </section>
-
-    <section>
-      <h2>Churn by Level 4</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Group</th>
-            <th class="num">Leavers LTM</th>
-            <th class="num">Churn (total)</th>
-            <th class="num">Churn (voluntary)</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${lvl.map(g => `<tr>
-            <td>${g.group}</td>
-            <td class="num">${n(g.leaversLtm)}</td>
-            <td class="num">${g.churnTotal || "0"}%</td>
-            <td class="num">${g.churnVoluntary || "0"}%</td>
-          </tr>`).join("")}
-        </tbody>
-      </table>
     </section>
 
     <section>
@@ -443,35 +429,45 @@ function render(d) {
           <tr>
             <th>Cost centre</th>
             <th class="num">Headcount</th>
-            <th class="num">Female</th>
             <th class="num">Female %</th>
+            <th class="num">Leavers LTM</th>
+            <th class="num">Churn LTM</th>
             <th class="num">Open roles</th>
-            <th class="bar-cell"></th>
+            <th class="bar-cell">Churn against the company rate of ${p.churnTotal || "0"}%</th>
           </tr>
         </thead>
         <tbody>
           ${cc.map(c => {
-            const head = Number(c.headcount) || 0;
-            const fem = Number(c.female) || 0;
-            const pct = head ? ((fem / head) * 100).toFixed(1) : "0.0";
+            const churn = Number(c.churnTotal) || 0;
+            const width = Math.min(churn / maxChurn * 100, 100);
+            const marker = Math.min(companyChurn / maxChurn * 100, 100);
+            const above = churn > companyChurn;
             return `<tr>
               <td>${c.code}</td>
-              <td class="num">${n(head)}</td>
-              <td class="num">${n(fem)}</td>
-              <td class="num">${pct}%</td>
+              <td class="num">${n(c.headcount)}</td>
+              <td class="num">${c.femalePct || "0"}%</td>
+              <td class="num">${n(c.leaversLtm)}</td>
+              <td class="num ${above ? "flag" : ""}">${c.churnTotal || "0"}%</td>
               <td class="num">${n(c.openRoles)}</td>
               <td class="bar-cell">
-                <span class="bar" style="width:${(head / maxHead * 100).toFixed(1)}%"></span>
-                <span class="bar-female" style="width:${(fem / maxHead * 100).toFixed(1)}%"></span>
+                <span class="churn-track">
+                  <span class="churn-bar ${above ? "over" : "under"}" style="width:${width.toFixed(1)}%"></span>
+                  <span class="churn-marker" style="left:${marker.toFixed(1)}%"></span>
+                </span>
               </td>
             </tr>`;
           }).join("")}
         </tbody>
       </table>
       <div class="legend">
-        <span><span class="swatch" style="background:#0000D0"></span>Headcount</span>
-        <span><span class="swatch" style="background:#43D8C9"></span>Female employees</span>
+        <span><span class="swatch" style="background:#0000D0"></span>At or below the company churn rate</span>
+        <span><span class="swatch" style="background:#FF3184"></span>Above it</span>
+        <span><span class="swatch" style="background:#101024;width:2px"></span>Company rate</span>
       </div>
+      <div class="note">Churn is measured against each cost centre's own average headcount over the
+      last twelve months, so a small team losing two people shows a high rate on a small base.
+      Read it alongside the leaver count rather than on its own. NAT cost centres are combined
+      across offices, so NAT-ESD covers every location.</div>
     </section>
 
     <div class="foot">
@@ -480,6 +476,7 @@ function render(d) {
       ${n(dq.excludedWrongLocationAu)} in the Australian organisation without an Australian location,
       ${n(dq.excludedWrongLocationUk)} in the UK organisation without a London location,
       ${n(dq.excludedContractors)} independent contractors,
+      ${n(dq.excludedIncomplete)} incomplete records with no employment type,
       ${n(dq.notYetStarted)} yet to start.
       ${n(dq.excludedNoSalary)} excluded from the pay gap for want of salary data.
       ${n(dq.partTimeConverted)} part-time and ${n(dq.casualsConverted)} casual salaries converted to full-time equivalent.
