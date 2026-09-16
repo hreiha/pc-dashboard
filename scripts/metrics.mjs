@@ -51,6 +51,14 @@ const COST_CENTRE_MERGES = {
   "wa": "Melbourne"
 };
 
+// NAT prefixes that report to their local office rather than rolling up nationally.
+// NAT-STR Melbourne becomes Melbourne, NAT-STR Sydney becomes Sydney.
+const NAT_REPORT_LOCALLY = ["NAT-STR"];
+
+// Below this average headcount a turnover rate is too volatile to be worth showing:
+// one leaver from a team of two reads as 50 per cent and tells you nothing.
+const MIN_HEADCOUNT_FOR_RATE = 3;
+
 // Cost centre values that mean "not set". Normalised to Unassigned.
 const UNASSIGNED_COST_CENTRES = ["adp consulting pty ltd", "adp consulting", "n/a", "-"];
 
@@ -108,8 +116,16 @@ function normaliseCostCentre(value) {
 
   // "NAT - CORP" and "NAT-CORP Melbourne" both need to land on NAT-CORP
   v = v.replace(/\s*-\s*/g, "-");
-  const nat = v.match(/^(NAT-[A-Za-z]+)/);
-  if (nat) return nat[1].toUpperCase();
+  const nat = v.match(/^(NAT-[A-Za-z]+)\s*(.*)$/);
+  if (nat) {
+    const prefix = nat[1].toUpperCase();
+    const office = (nat[2] || "").trim();
+    // Some disciplines report to their office instead of rolling up nationally
+    if (NAT_REPORT_LOCALLY.indexOf(prefix) >= 0) {
+      return office ? office : "Unassigned";
+    }
+    return prefix;
+  }
 
   const merged = COST_CENTRE_MERGES[v.toLowerCase()];
   if (merged) return merged;
@@ -431,8 +447,8 @@ export function computeMetrics(employees, asOfIso) {
       female: fem.length,
       femalePct: nowPool.length ? round1((fem.length / nowPool.length) * 100) : "0.0",
       leaversLtm: leavers.length,
-      churnTotal: churn(leavers, avgHead, false),
-      churnVoluntary: churn(leavers, avgHead, true),
+      churnTotal: avgHead >= MIN_HEADCOUNT_FOR_RATE ? churn(leavers, avgHead, false) : null,
+      churnVoluntary: avgHead >= MIN_HEADCOUNT_FOR_RATE ? churn(leavers, avgHead, true) : null,
       avgHeadcountLtm: round1(avgHead),
       openRoles: 0   // merged in from recruitment.json
     };

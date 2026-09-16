@@ -362,24 +362,45 @@ function render(d) {
     </div>
 
     <section>
-      <h2>People metrics</h2>
+      <h2>This month</h2>
       <div class="metrics">
+        ${tile("New hires", p.hiresMonth, p.hiresMonthPrior, "", true)}
+        ${tile("Leavers (voluntary)", p.leaversVoluntaryMonth, p.leaversVoluntaryMonthPrior, "", false)}
+        ${tile("Leavers (total)", p.leaversMonth, p.leaversMonthPrior, "", false)}
         ${tile("Female representation", p.femalePct, p.femalePctPrior, "%", true)}
-        ${tile("New hires this month", p.hiresMonth, p.hiresMonthPrior, "", true)}
-        ${tile("Leavers this month (voluntary)", p.leaversVoluntaryMonth, p.leaversVoluntaryMonthPrior, "", false)}
-        ${tile("Leavers this month (total)", p.leaversMonth, p.leaversMonthPrior, "", false)}
-        ${tile("Churn LTM (voluntary)", p.churnVoluntary, p.churnVoluntaryPrior, "%", false)}
-        ${tile("Churn LTM (total)", p.churnTotal, p.churnTotalPrior, "%", false)}
-        ${tile("YTD annualised turnover (voluntary)", p.ytdAnnualisedVoluntary, p.ytdAnnualisedVoluntaryPrior, "%", false)}
-        ${tile("YTD annualised turnover (total)", p.ytdAnnualisedTotal, p.ytdAnnualisedTotalPrior, "%", false)}
-        ${tile("Gender pay gap (mean)", p.gpgMean, p.gpgMeanPrior, "%", false)}
-        ${tile("Gender pay gap (median)", p.gpgMedian, p.gpgMedianPrior, "%", false)}
       </div>
-      <div class="note">Churn is leavers over the last twelve months divided by average headcount over the
-      same period (${p.avgHeadcountLtm || "0"}), taking active internal employees at each month end.
-      Voluntary covers resignations and voluntary cessations. The pay gap is calculated on full-time
-      equivalent base salary, with part-time scaled to a 38 hour week and casual rates converted at
-      hourly rate multiplied by 38 by 52. A positive figure means men are paid more.</div>
+    </section>
+
+    <section>
+      <h2>Turnover, last twelve months</h2>
+      <div class="metrics">
+        ${tile("Voluntary", p.churnVoluntary, p.churnVoluntaryPrior, "%", false)}
+        ${tile("Total", p.churnTotal, p.churnTotalPrior, "%", false)}
+      </div>
+      <div class="note">Leavers over the last twelve months divided by average headcount over the same
+      period (${p.avgHeadcountLtm || "0"}), taking active employees at each month end. Voluntary covers
+      resignations and voluntary cessations.</div>
+    </section>
+
+    <section>
+      <h2>Turnover, year to date annualised</h2>
+      <div class="metrics">
+        ${tile("Voluntary", p.ytdAnnualisedVoluntary, p.ytdAnnualisedVoluntaryPrior, "%", false)}
+        ${tile("Total", p.ytdAnnualisedTotal, p.ytdAnnualisedTotalPrior, "%", false)}
+      </div>
+      <div class="note">Leavers since 1 July divided by average headcount across the financial year to
+      date, scaled to a full year.</div>
+    </section>
+
+    <section>
+      <h2>Gender pay gap</h2>
+      <div class="metrics">
+        ${tile("Mean", p.gpgMean, p.gpgMeanPrior, "%", false)}
+        ${tile("Median", p.gpgMedian, p.gpgMedianPrior, "%", false)}
+      </div>
+      <div class="note">${Number(p.gpgMean) > 0
+        ? "Calculated on full-time equivalent base salary. Part-time is scaled to a 38 hour week and casual rates converted at hourly rate multiplied by 38 by 52. A positive figure means men are paid more."
+        : "No pay data available. Run tools/Get-PayGap.ps1 against the Employment Hero export and commit paygap.json."}</div>
     </section>
 
     <section>
@@ -445,7 +466,8 @@ function render(d) {
         </thead>
         <tbody>
           ${cc.map(c => {
-            const churn = Number(c.churnTotal) || 0;
+            const hasRate = c.churnTotal !== null && c.churnTotal !== undefined;
+            const churn = hasRate ? Number(c.churnTotal) : 0;
             const width = Math.min(churn / maxChurn * 100, 100);
             const marker = Math.min(companyChurn / maxChurn * 100, 100);
             const above = churn > companyChurn;
@@ -454,12 +476,12 @@ function render(d) {
               <td class="num">${n(c.headcount)}</td>
               <td class="num">${c.femalePct || "0"}%</td>
               <td class="num">${n(c.leaversLtm)}</td>
-              <td class="num">${c.churnVoluntary || "0"}%</td>
-              <td class="num ${above ? "flag" : ""}">${c.churnTotal || "0"}%</td>
+              <td class="num">${hasRate ? c.churnVoluntary + "%" : "&ndash;"}</td>
+              <td class="num ${above && hasRate ? "flag" : ""}">${hasRate ? c.churnTotal + "%" : "&ndash;"}</td>
               <td class="num">${n(c.openRoles)}</td>
               <td class="bar-cell">
                 <span class="churn-track">
-                  <span class="churn-bar ${above ? "over" : "under"}" style="width:${width.toFixed(1)}%"></span>
+                  ${hasRate ? `<span class="churn-bar ${above ? "over" : "under"}" style="width:${width.toFixed(1)}%"></span>` : ""}
                   <span class="churn-marker" style="left:${marker.toFixed(1)}%"></span>
                 </span>
               </td>
@@ -476,7 +498,9 @@ function render(d) {
       last twelve months, so a small team losing two people shows a high rate on a small base.
       Read it alongside the leaver count rather than on its own. NAT cost centres are combined
       across offices, so NAT-ESD covers every location, and WA is reported within Melbourne.
-      Voluntary covers resignations and voluntary cessations; total covers every leaver.</div>
+      Voluntary covers resignations and voluntary cessations; total covers every leaver.
+      NAT-STR reports to its local office rather than nationally. A dash means the team averaged
+      fewer than three people over the year, where a rate would be misleading.</div>
     </section>
 
     <div class="foot">
