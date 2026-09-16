@@ -1,40 +1,40 @@
 {
-  "generatedUtc": "2026-09-16T03:05:13.240Z",
+  "generatedUtc": "2026-09-16T22:43:25.435Z",
   "periodLabel": "Sep 2026",
   "priorLabel": "Aug 2026",
   "people": {
-    "headcount": 319,
+    "headcount": 318,
     "headcountPrior": 321,
-    "femalePct": "25.4",
-    "femalePctPrior": "25.2",
+    "femalePct": "26.1",
+    "femalePctPrior": "25.9",
     "leaversMonth": 8,
     "leaversMonthPrior": 10,
-    "leaversVoluntaryMonth": 3,
+    "leaversVoluntaryMonth": 4,
     "leaversVoluntaryMonthPrior": 7,
     "hiresMonth": 2,
     "hiresMonthPrior": 6,
     "churnTotal": "37.2",
     "churnTotalPrior": "38.5",
-    "churnVoluntary": "23.5",
+    "churnVoluntary": "23.8",
     "churnVoluntaryPrior": "25.5",
     "ytdAnnualisedTotal": "47.3",
     "ytdAnnualisedTotalPrior": "56.0",
-    "ytdAnnualisedVoluntary": "24.9",
+    "ytdAnnualisedVoluntary": "26.1",
     "ytdAnnualisedVoluntaryPrior": "31.7",
     "gpgMean": "0.0",
     "gpgMeanPrior": "0.0",
     "gpgMedian": "0.0",
     "gpgMedianPrior": "0.0",
-    "avgHeadcountLtm": "336.1"
+    "avgHeadcountLtm": "336.0"
   },
   "entities": [
     {
       "code": "AU",
       "name": "ADP Australia",
-      "headcount": 300,
+      "headcount": 299,
       "headcountPrior": 303,
       "female": 79,
-      "femalePct": "26.3",
+      "femalePct": "26.4",
       "leaversMonth": 8,
       "gpgMean": "0.0",
       "gpgMedian": "0.0"
@@ -44,8 +44,8 @@
       "name": "ADP London",
       "headcount": 19,
       "headcountPrior": 18,
-      "female": 2,
-      "femalePct": "10.5",
+      "female": 4,
+      "femalePct": "21.1",
       "leaversMonth": 0,
       "gpgMean": "0.0",
       "gpgMedian": "0.0"
@@ -82,13 +82,13 @@
   "costCentres": [
     {
       "code": "Melbourne",
-      "headcount": 92,
+      "headcount": 91,
       "female": 18,
-      "femalePct": "19.6",
+      "femalePct": "19.8",
       "leaversLtm": 38,
       "churnTotal": "39.9",
-      "churnVoluntary": "24.1",
-      "avgHeadcountLtm": "95.3",
+      "churnVoluntary": "25.2",
+      "avgHeadcountLtm": "95.2",
       "openRoles": 0
     },
     {
@@ -149,8 +149,8 @@
     {
       "code": "Unassigned",
       "headcount": 19,
-      "female": 2,
-      "femalePct": "10.5",
+      "female": 4,
+      "femalePct": "21.1",
       "leaversLtm": 5,
       "churnTotal": "27.9",
       "churnVoluntary": "5.6",
@@ -227,7 +227,7 @@
     },
     {
       "month": "Sep",
-      "headcount": 319
+      "headcount": 318
     }
   ],
   "dataQuality": {
@@ -237,7 +237,7 @@
     "excludedContractors": 0,
     "excludedIncomplete": 0,
     "notYetStarted": 3,
-    "excludedNoSalary": 319,
+    "excludedNoSalary": 318,
     "casualsConverted": 64,
     "partTimeConverted": 44
   }
