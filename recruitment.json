@@ -1,22 +1,12 @@
+json
 {
   "recruitment": {
-    "openRoles": 23,
-    "filledMonth": 6,
-    "avgDaysOpen": "41.2",
-    "avgDaysToHire": "58.6"
+    "openRoles": 36,
+    "filledMonth": 0,
+    "avgDaysOpen": "0.0",
+    "avgDaysToHire": "0.0"
   },
-  "pipeline": [
-    { "stage": "Approved", "count": 7 },
-    { "stage": "Advertised", "count": 6 },
-    { "stage": "Interviewing", "count": 5 },
-    { "stage": "Offer", "count": 3 },
-    { "stage": "Accepted", "count": 2 }
-  ],
-  "costCentres": [
-    { "code": "MEL", "openRoles": 7 },
-    { "code": "SYD", "openRoles": 5 },
-    { "code": "BNE", "openRoles": 4 },
-    { "code": "ADL", "openRoles": 1 },
-    { "code": "LON", "openRoles": 1 }
-  ]
+  "pipeline": [{"stage":"2. Search & Prepare","count":29},{"stage":"1. Search & Secure","count":7}],
+  "costCentres": 
 }
+
