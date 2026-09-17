@@ -39,7 +39,8 @@ const FIELDS = {
   terminationDate:   ["termination_date"],
   terminationReason: ["termination_summary", "termination_reason"],
   level4:            ["teams", "division", "business_unit"],
-  costCentre:        ["primary_cost_centre", "cost_centre", "teams"]
+  costCentre:        ["primary_cost_centre", "cost_centre", "teams"],
+  rehire:            ["rehire_this_personnel", "rehire", "eligible_for_rehire", "re_hire"]
 };
 
 function required(name) {
@@ -61,6 +62,16 @@ function pick(record, candidates) {
     return v;
   }
   return "";
+}
+
+/** Yes / No / blank, however it is spelled, as true / false / null. */
+function toTriState(value) {
+  if (value === true) return true;
+  if (value === false) return false;
+  const v = String(value ?? "").trim().toLowerCase();
+  if (v === "yes" || v === "true" || v === "y" || v === "1") return true;
+  if (v === "no" || v === "false" || v === "n" || v === "0") return false;
+  return null;
 }
 
 function toNumber(value) {
@@ -141,6 +152,8 @@ function normalise({ raw, entity }) {
     costCentre: String(pick(raw, FIELDS.costCentre)),
     // Employment Hero carries an explicit flag, which beats matching employment type text
     independentContractor: raw.independent_contractor === true,
+    // Drives the regrettable departure rate. Tri-state: true, false, or null when not recorded.
+    rehire: toTriState(pick(raw, FIELDS.rehire)),
     status: String(pick(raw, ["status"])),
     entity
   };

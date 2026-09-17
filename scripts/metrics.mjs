@@ -295,6 +295,7 @@ export function computeMetrics(employees, asOfIso) {
       level4: e.level4,
       costCentre: normaliseCostCentre(e.costCentre),
       independentContractor: e.independentContractor === true,
+      rehire: e.rehire === true ? true : (e.rehire === false ? false : null),
       status: e.status,
       entity: entity,
       fteSalary: fteSalary(e)
@@ -365,6 +366,58 @@ export function computeMetrics(employees, asOfIso) {
     scoped
   );
 
+  // ---- turnover, one engine for every period
+  //
+  // Rate = terminations in the period / average monthly headcount across the period x 100.
+  // The denominator is the mean of each month-end headcount inside the period, not the
+  // average of opening and closing, which misreads any period where headcount moves about.
+
+  function monthEndsBetween(from, to) {
+    const ends = [];
+    let y = from.getUTCFullYear();
+    let m = from.getUTCMonth();
+    for (let i = 0; i < 120; i++) {
+      const end = monthEnd(y, m);
+      if (end > to) break;
+      if (end > from) ends.push(end);
+      m += 1;
+      if (m > 11) { m = 0; y += 1; }
+    }
+    if (!ends.length) ends.push(to);
+    return ends;
+  }
+
+  function rate(count, avgHead) {
+    if (avgHead <= 0) return "0.0";
+    return round1((count / avgHead) * 100);
+  }
+
+  function turnoverFor(pool, from, to, key, label) {
+    const ends = monthEndsBetween(from, to);
+    const avgHead = mean(ends.map(d => pool.filter(e => activeAt(e, d)).length));
+    const leavers = leaversBetween(from, to, pool);
+    const vol = leavers.filter(e => isVoluntary(e.terminationReason));
+    const regrettable = vol.filter(e => e.rehire === true);
+    const months = ends.length;
+
+    return {
+      key: key,
+      label: label,
+      months: months,
+      avgHeadcount: round1(avgHead),
+      leavers: leavers.length,
+      leaversVoluntary: vol.length,
+      leaversRegrettable: regrettable.length,
+      total: rate(leavers.length, avgHead),
+      voluntary: rate(vol.length, avgHead),
+      regrettable: rate(regrettable.length, avgHead),
+      totalAnnualised: months > 0 ? round1(Number(rate(leavers.length, avgHead)) * (12 / months)) : "0.0",
+      voluntaryAnnualised: months > 0 ? round1(Number(rate(vol.length, avgHead)) * (12 / months)) : "0.0",
+      regrettableShareOfLeavers: leavers.length ? round1((regrettable.length / leavers.length) * 100) : "0.0",
+      rehireFlagMissing: leavers.filter(e => e.rehire === null).length
+    };
+  }
+
   // ---- financial year to date, starting 1 July
 
   const fyStartYear = asOf.getUTCMonth() >= 6 ? asOf.getUTCFullYear() : asOf.getUTCFullYear() - 1;
@@ -379,6 +432,23 @@ export function computeMetrics(employees, asOfIso) {
     ytdMonthEnds.push(monthEnd(fyStartYear, 6 + i));
   }
   const avgHeadcountYtd = mean(ytdMonthEnds.map(d => scoped.filter(e => activeAt(e, d)).length));
+
+  const periods = [
+    turnoverFor(scoped, ltmStart, thisMonthEnd, "ltm", "Rolling 12 months"),
+    turnoverFor(scoped, fyStart, thisMonthEnd, "ytd", `Financial year to date (${monthsElapsed} month${monthsElapsed === 1 ? "" : "s"})`),
+    turnoverFor(scoped, monthEnd(asOf.getUTCFullYear(), asOf.getUTCMonth() - 6), thisMonthEnd, "last6", "Last 6 months"),
+    turnoverFor(scoped, monthEnd(asOf.getUTCFullYear(), asOf.getUTCMonth() - 3), thisMonthEnd, "last3", "Last 3 months"),
+    turnoverFor(
+      scoped,
+      new Date(Date.UTC(fyStartYear - 1, 5, 30, 23, 59, 59)),
+      new Date(Date.UTC(fyStartYear, 5, 30, 23, 59, 59)),
+      "lastfy",
+      `FY ${String(fyStartYear - 1).slice(2)}/${String(fyStartYear).slice(2)}`
+    )
+  ];
+
+  const ltmPeriod = periods[0];
+  const ytdPeriod = periods[1];
 
   function annualised(leavers, avgHead, months) {
     if (avgHead <= 0 || months <= 0) return "0.0";
@@ -440,6 +510,8 @@ export function computeMetrics(employees, asOfIso) {
     const nowPool = pool.filter(e => activeAt(e, thisMonthEnd));
     const avgHead = mean(monthEnds.map(d => pool.filter(e => activeAt(e, d)).length));
     const leavers = leaversBetween(ltmStart, thisMonthEnd, pool);
+    const volLeavers = leavers.filter(e => isVoluntary(e.terminationReason));
+    const regrettableLeavers = volLeavers.filter(e => e.rehire === true);
     const fem = nowPool.filter(isFemale);
     return {
       code: code,
@@ -447,8 +519,12 @@ export function computeMetrics(employees, asOfIso) {
       female: fem.length,
       femalePct: nowPool.length ? round1((fem.length / nowPool.length) * 100) : "0.0",
       leaversLtm: leavers.length,
+      leaversVoluntary: volLeavers.length,
+      leaversRegrettable: regrettableLeavers.length,
       churnTotal: avgHead >= MIN_HEADCOUNT_FOR_RATE ? churn(leavers, avgHead, false) : null,
       churnVoluntary: avgHead >= MIN_HEADCOUNT_FOR_RATE ? churn(leavers, avgHead, true) : null,
+      churnRegrettable: avgHead >= MIN_HEADCOUNT_FOR_RATE
+        ? round1((regrettableLeavers.length / avgHead) * 100) : null,
       avgHeadcountLtm: round1(avgHead),
       openRoles: 0   // merged in from recruitment.json
     };
@@ -484,6 +560,12 @@ export function computeMetrics(employees, asOfIso) {
       churnTotalPrior: churn(leaversLtmPrior, avgHeadcountLtmPrior, false),
       churnVoluntary: churn(leaversLtm, avgHeadcountLtm, true),
       churnVoluntaryPrior: churn(leaversLtmPrior, avgHeadcountLtmPrior, true),
+      ytdTotal: ytdPeriod.total,
+      ytdVoluntary: ytdPeriod.voluntary,
+      regrettableLtm: ltmPeriod.regrettable,
+      regrettableCountLtm: ltmPeriod.leaversRegrettable,
+      regrettableShareOfLeavers: ltmPeriod.regrettableShareOfLeavers,
+      rehireFlagMissing: ltmPeriod.rehireFlagMissing,
       ytdAnnualisedTotal: annualised(leaversYtd.length, avgHeadcountYtd, monthsElapsed),
       ytdAnnualisedTotalPrior: annualised(leaversYtdPrior.length, avgHeadcountYtd, Math.max(monthsElapsed - 1, 1)),
       ytdAnnualisedVoluntary: annualised(
@@ -498,6 +580,7 @@ export function computeMetrics(employees, asOfIso) {
       avgHeadcountLtm: round1(avgHeadcountLtm)
     },
     entities: entities,
+    turnoverPeriods: periods,
     costCentres: costCentres,
     headcountTrend: headcountTrend,
     dataQuality: {
