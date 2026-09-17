@@ -51,6 +51,12 @@ const COST_CENTRE_MERGES = {
   "wa": "Melbourne"
 };
 
+// The London entity records no cost centre at all, so it gets one. Applied after
+// normalisation, so it wins regardless of what is or is not on the record.
+const ENTITY_COST_CENTRE = {
+  UK: "London"
+};
+
 // NAT prefixes that report to their local office rather than rolling up nationally.
 // NAT-STR Melbourne becomes Melbourne, NAT-STR Sydney becomes Sydney.
 const NAT_REPORT_LOCALLY = ["NAT-STR"];
@@ -293,7 +299,7 @@ export function computeMetrics(employees, asOfIso) {
       terminationDate: e.terminationDate,
       terminationReason: e.terminationReason,
       level4: e.level4,
-      costCentre: normaliseCostCentre(e.costCentre),
+      costCentre: ENTITY_COST_CENTRE[entity] || normaliseCostCentre(e.costCentre),
       independentContractor: e.independentContractor === true,
       rehire: e.rehire === true ? true : (e.rehire === false ? false : null),
       status: e.status,

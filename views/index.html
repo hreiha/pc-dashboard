@@ -37,6 +37,14 @@
     font-variant-numeric: tabular-nums;
   }
 
+  .sample-banner {
+    background: var(--orange);
+    color: #fff;
+    padding: 10px 24px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
   .band {
     background: var(--blue);
     color: #fff;
@@ -102,6 +110,38 @@
   }
 
   .spark { width: 100%; height: 96px; display: block; }
+
+  .spark-caption {
+    font-size: 11px;
+    color: var(--muted);
+    text-align: right;
+    margin-top: 2px;
+  }
+
+  .split {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    gap: 28px;
+  }
+
+  .split-item { display: block; }
+
+  .split-value {
+    display: block;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  .split-label {
+    display: block;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 1px;
+  }
 
   .spark-labels {
     display: flex;
@@ -365,7 +405,7 @@ function render(d) {
   const pipe = d.pipeline || [];
   const ent = d.entities || [];
   const dq = d.dataQuality || {};
-  const periods = d.turnoverPeriods || [];
+  const periods = turnoverPeriods(d);
   const maxHead = Math.max(1, ...cc.map(c => Number(c.headcount) || 0));
   const maxStage = Math.max(1, ...pipe.map(s => Number(s.count) || 0));
   const companyChurn = Number(p.churnTotal) || 0;
@@ -374,6 +414,14 @@ function render(d) {
   const stamp = d.generatedUtc
     ? new Date(d.generatedUtc).toLocaleString("en-AU", { dateStyle: "medium", timeStyle: "short" })
     : "unknown";
+  if (d.sample === true) {
+    const warn = document.createElement("div");
+    warn.className = "sample-banner";
+    warn.textContent = "These are placeholder figures, not your data. Run the Refresh dashboard data " +
+      "workflow in GitHub Actions to replace them.";
+    document.body.insertBefore(warn, document.body.firstChild);
+  }
+
   $("meta").textContent = (d.periodLabel || "Current period") +
     (d.priorLabel ? " compared with " + d.priorLabel : "") + " \u00B7 refreshed " + stamp;
 
@@ -382,11 +430,17 @@ function render(d) {
       <div>
         <div class="figure">${n(p.headcount)}</div>
         <div class="caption">Active headcount ${delta(p.headcount, p.headcountPrior, "", true)} on last month</div>
-        <div class="caption" style="margin-top:2px;font-size:12px">Trend shows the last twelve months</div>
+        <div class="split">
+          ${ent.map(e => `<span class="split-item">
+            <span class="split-value">${n(e.headcount)}</span>
+            <span class="split-label">${e.name || e.code}</span>
+          </span>`).join("")}
+        </div>
       </div>
       <div>
         ${sparkline(trend)}
         <div class="spark-labels">${trend.map(t => "<span>" + t.month + "</span>").join("")}</div>
+        <div class="spark-caption">Last twelve months</div>
       </div>
     </div>
 
@@ -410,17 +464,6 @@ function render(d) {
     </section>
 
     <section>
-      <h2>Gender pay gap</h2>
-      <div class="metrics">
-        ${tile("Mean", p.gpgMean, p.gpgMeanPrior, "%", false)}
-        ${tile("Median", p.gpgMedian, p.gpgMedianPrior, "%", false)}
-      </div>
-      <div class="note">${Number(p.gpgMean) > 0
-        ? "Calculated on full-time equivalent base salary. Part-time is scaled to a 38 hour week and casual rates converted at hourly rate multiplied by 38 by 52. A positive figure means men are paid more."
-        : "No pay data available. Run tools/Get-PayGap.ps1 against the Employment Hero export and commit paygap.json."}</div>
-    </section>
-
-    <section>
       <h2>By entity</h2>
       <table>
         <thead>
@@ -430,8 +473,6 @@ function render(d) {
             <th class="num">Female</th>
             <th class="num">Female %</th>
             <th class="num">Leavers this month</th>
-            <th class="num">Pay gap (mean)</th>
-            <th class="num">Pay gap (median)</th>
           </tr>
         </thead>
         <tbody>
@@ -441,8 +482,6 @@ function render(d) {
             <td class="num">${n(e.female)}</td>
             <td class="num">${e.femalePct || "0"}%</td>
             <td class="num">${n(e.leaversMonth)}</td>
-            <td class="num">${e.gpgMean || "0"}%</td>
-            <td class="num">${e.gpgMedian || "0"}%</td>
           </tr>`).join("")}
         </tbody>
       </table>
@@ -476,7 +515,6 @@ function render(d) {
             <th class="num">Female %</th>
             <th class="num">Leavers LTM</th>
             <th class="num">Vol turnover</th>
-            <th class="num">Regrettable</th>
             <th class="num">Total turnover</th>
             <th class="num">Open roles</th>
             <th class="bar-cell">Total turnover against the company rate of ${p.churnTotal || "0"}%</th>
@@ -495,7 +533,6 @@ function render(d) {
               <td class="num">${c.femalePct || "0"}%</td>
               <td class="num">${n(c.leaversLtm)}</td>
               <td class="num">${hasRate ? c.churnVoluntary + "%" : "&ndash;"}</td>
-              <td class="num">${hasRate && c.churnRegrettable !== null ? c.churnRegrettable + "%" : "&ndash;"}</td>
               <td class="num ${above && hasRate ? "flag" : ""}">${hasRate ? c.churnTotal + "%" : "&ndash;"}</td>
               <td class="num">${n(c.openRoles)}</td>
               <td class="bar-cell">
@@ -530,10 +567,30 @@ function render(d) {
       ${n(dq.excludedContractors)} independent contractors,
       ${n(dq.excludedIncomplete)} incomplete records with no employment type,
       ${n(dq.notYetStarted)} yet to start.
-      ${n(dq.excludedNoSalary)} excluded from the pay gap for want of salary data.
-      ${n(dq.partTimeConverted)} part-time and ${n(dq.casualsConverted)} casual salaries converted to full-time equivalent.
+
+
       Figures are aggregate only. Confidential to ADP Consulting.
     </div>`;
+}
+
+/** Periods from the data, or a single rolling twelve month entry built from the headline
+ *  figures, so the Turnover section is never blank. */
+function turnoverPeriods(d) {
+  const given = d.turnoverPeriods || [];
+  if (given.length) return given;
+  const p = d.people || {};
+  return [{
+    key: "ltm",
+    label: "Rolling 12 months",
+    months: 12,
+    avgHeadcount: p.avgHeadcountLtm || "0",
+    leavers: 0,
+    leaversVoluntary: 0,
+    total: p.churnTotal || "0.0",
+    voluntary: p.churnVoluntary || "0.0",
+    totalAnnualised: p.churnTotal || "0.0",
+    voluntaryAnnualised: p.churnVoluntary || "0.0"
+  }];
 }
 
 function renderTurnover(periods, index) {
@@ -543,23 +600,17 @@ function renderTurnover(periods, index) {
   $("turnover").innerHTML =
     tile("Voluntary", pr.voluntary, null, "%", false) +
     tile("Total", pr.total, null, "%", false) +
-    tile("Regrettable", pr.regrettable, null, "%", false) +
     tile("Leavers", pr.leavers, null, "", false) +
     (pr.months !== 12
       ? tile("Voluntary annualised", pr.voluntaryAnnualised, null, "%", false) +
         tile("Total annualised", pr.totalAnnualised, null, "%", false)
       : "");
 
-  const missing = Number(pr.rehireFlagMissing) || 0;
   $("turnover-note").innerHTML =
     "Leavers in the period divided by average monthly headcount across the same period (" +
     pr.avgHeadcount + " over " + pr.months + " month" + (pr.months === 1 ? "" : "s") +
     "), taking headcount at each month end rather than averaging the opening and closing figures. " +
-    "Voluntary covers resignations and voluntary cessations. Regrettable counts voluntary leavers " +
-    "flagged for rehire, " + pr.leaversRegrettable + " of " + pr.leavers + " leavers (" +
-    pr.regrettableShareOfLeavers + "%)." +
-    (missing ? " " + missing + " leaver" + (missing === 1 ? " has" : "s have") +
-      " no rehire flag recorded and are counted as not regrettable." : "");
+    "Voluntary covers resignations and voluntary cessations.";
 
   document.querySelectorAll(".period").forEach((b, i) => b.classList.toggle("on", i === index));
 }
@@ -571,7 +622,7 @@ fetch("data.json", { cache: "no-store" })
   })
   .then(d => {
     render(d);
-    const periods = d.turnoverPeriods || [];
+    const periods = turnoverPeriods(d);
     renderTurnover(periods, 0);
     document.querySelectorAll(".period").forEach(btn => {
       btn.addEventListener("click", () => renderTurnover(periods, Number(btn.dataset.i)));

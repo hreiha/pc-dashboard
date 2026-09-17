@@ -247,7 +247,7 @@ async function main() {
     periodLabel: metrics.periodLabel,
     priorLabel: metrics.priorLabel,
     people: metrics.people,
-    churnByLevel4: metrics.churnByLevel4,
+    turnoverPeriods: metrics.turnoverPeriods,
     entities: metrics.entities,
     recruitment: recruitment?.recruitment ?? {
       openRoles: 0, filledMonth: 0, avgDaysOpen: "0.0", avgDaysToHire: "0.0"
