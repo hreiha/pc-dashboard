@@ -1,102 +1,102 @@
 {
-  "generatedUtc": "2026-09-17T07:06:44.387Z",
+  "generatedUtc": "2026-09-17T22:43:49.529Z",
   "periodLabel": "Sep 2026",
   "priorLabel": "Aug 2026",
   "people": {
-    "headcount": 314,
-    "headcountPrior": 317,
-    "femalePct": "26.4",
-    "femalePctPrior": "26.2",
+    "headcount": 315,
+    "headcountPrior": 318,
+    "femalePct": "26.3",
+    "femalePctPrior": "26.1",
     "leaversMonth": 8,
     "leaversMonthPrior": 10,
     "leaversVoluntaryMonth": 4,
     "leaversVoluntaryMonthPrior": 7,
     "hiresMonth": 2,
     "hiresMonthPrior": 6,
-    "churnTotal": "37.7",
-    "churnTotalPrior": "38.9",
+    "churnTotal": "37.3",
+    "churnTotalPrior": "38.6",
     "churnVoluntary": "24.1",
-    "churnVoluntaryPrior": "25.8",
-    "ytdTotal": "12.0",
+    "churnVoluntaryPrior": "25.7",
+    "ytdTotal": "11.6",
     "ytdVoluntary": "6.6",
     "regrettableLtm": "0.0",
     "regrettableCountLtm": 0,
     "regrettableShareOfLeavers": "0.0",
-    "rehireFlagMissing": 125,
-    "ytdAnnualisedTotal": "47.9",
-    "ytdAnnualisedTotalPrior": "56.7",
-    "ytdAnnualisedVoluntary": "26.5",
-    "ytdAnnualisedVoluntaryPrior": "32.1",
+    "rehireFlagMissing": 124,
+    "ytdAnnualisedTotal": "46.5",
+    "ytdAnnualisedTotalPrior": "54.7",
+    "ytdAnnualisedVoluntary": "26.4",
+    "ytdAnnualisedVoluntaryPrior": "32.0",
     "gpgMean": "0.0",
     "gpgMeanPrior": "0.0",
     "gpgMedian": "0.0",
     "gpgMedianPrior": "0.0",
-    "avgHeadcountLtm": "332.0"
+    "avgHeadcountLtm": "332.3"
   },
   "turnoverPeriods": [
     {
       "key": "ltm",
       "label": "Rolling 12 months",
       "months": 12,
-      "avgHeadcount": "332.0",
-      "leavers": 125,
+      "avgHeadcount": "332.3",
+      "leavers": 124,
       "leaversVoluntary": 80,
       "leaversRegrettable": 0,
-      "total": "37.7",
+      "total": "37.3",
       "voluntary": "24.1",
       "regrettable": "0.0",
-      "totalAnnualised": "37.7",
+      "totalAnnualised": "37.3",
       "voluntaryAnnualised": "24.1",
       "regrettableShareOfLeavers": "0.0",
-      "rehireFlagMissing": 125
+      "rehireFlagMissing": 124
     },
     {
       "key": "ytd",
       "label": "Financial year to date (3 months)",
       "months": 3,
-      "avgHeadcount": "317.3",
-      "leavers": 38,
+      "avgHeadcount": "318.3",
+      "leavers": 37,
       "leaversVoluntary": 21,
       "leaversRegrettable": 0,
-      "total": "12.0",
+      "total": "11.6",
       "voluntary": "6.6",
       "regrettable": "0.0",
-      "totalAnnualised": "48.0",
+      "totalAnnualised": "46.4",
       "voluntaryAnnualised": "26.4",
       "regrettableShareOfLeavers": "0.0",
-      "rehireFlagMissing": 38
+      "rehireFlagMissing": 37
     },
     {
       "key": "last6",
       "label": "Last 6 months",
       "months": 6,
-      "avgHeadcount": "325.3",
-      "leavers": 65,
+      "avgHeadcount": "325.8",
+      "leavers": 64,
       "leaversVoluntary": 42,
       "leaversRegrettable": 0,
-      "total": "20.0",
+      "total": "19.6",
       "voluntary": "12.9",
       "regrettable": "0.0",
-      "totalAnnualised": "40.0",
+      "totalAnnualised": "39.2",
       "voluntaryAnnualised": "25.8",
       "regrettableShareOfLeavers": "0.0",
-      "rehireFlagMissing": 65
+      "rehireFlagMissing": 64
     },
     {
       "key": "last3",
       "label": "Last 3 months",
       "months": 3,
-      "avgHeadcount": "317.3",
-      "leavers": 38,
+      "avgHeadcount": "318.3",
+      "leavers": 37,
       "leaversVoluntary": 21,
       "leaversRegrettable": 0,
-      "total": "12.0",
+      "total": "11.6",
       "voluntary": "6.6",
       "regrettable": "0.0",
-      "totalAnnualised": "48.0",
+      "totalAnnualised": "46.4",
       "voluntaryAnnualised": "26.4",
       "regrettableShareOfLeavers": "0.0",
-      "rehireFlagMissing": 38
+      "rehireFlagMissing": 37
     },
     {
       "key": "lastfy",
@@ -119,10 +119,10 @@
     {
       "code": "AU",
       "name": "ADP Australia",
-      "headcount": 299,
-      "headcountPrior": 303,
+      "headcount": 300,
+      "headcountPrior": 304,
       "female": 79,
-      "femalePct": "26.4",
+      "femalePct": "26.3",
       "leaversMonth": 8,
       "gpgMean": "0.0",
       "gpgMedian": "0.0"
@@ -163,16 +163,16 @@
     },
     {
       "code": "Sydney",
-      "headcount": 60,
+      "headcount": 61,
       "female": 13,
-      "femalePct": "21.7",
-      "leaversLtm": 36,
+      "femalePct": "21.3",
+      "leaversLtm": 35,
       "leaversVoluntary": 26,
       "leaversRegrettable": 0,
-      "churnTotal": "51.6",
-      "churnVoluntary": "37.2",
+      "churnTotal": "49.9",
+      "churnVoluntary": "37.1",
       "churnRegrettable": "0.0",
-      "avgHeadcountLtm": "69.8",
+      "avgHeadcountLtm": "70.1",
       "openRoles": 0
     },
     {
@@ -327,15 +327,15 @@
     },
     {
       "month": "Jul",
-      "headcount": 321
+      "headcount": 322
     },
     {
       "month": "Aug",
-      "headcount": 317
+      "headcount": 318
     },
     {
       "month": "Sep",
-      "headcount": 314
+      "headcount": 315
     }
   ],
   "dataQuality": {
@@ -345,7 +345,7 @@
     "excludedContractors": 0,
     "excludedIncomplete": 0,
     "notYetStarted": 3,
-    "excludedNoSalary": 314,
+    "excludedNoSalary": 315,
     "casualsConverted": 64,
     "partTimeConverted": 44
   }
