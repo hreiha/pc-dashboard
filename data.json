@@ -1,37 +1,37 @@
 {
-  "generatedUtc": "2026-09-17T04:33:56.279Z",
+  "generatedUtc": "2026-09-17T05:20:23.225Z",
   "periodLabel": "Sep 2026",
   "priorLabel": "Aug 2026",
   "people": {
-    "headcount": 318,
-    "headcountPrior": 321,
-    "femalePct": "26.1",
-    "femalePctPrior": "25.9",
+    "headcount": 314,
+    "headcountPrior": 317,
+    "femalePct": "26.4",
+    "femalePctPrior": "26.2",
     "leaversMonth": 8,
     "leaversMonthPrior": 10,
     "leaversVoluntaryMonth": 4,
     "leaversVoluntaryMonthPrior": 7,
     "hiresMonth": 2,
     "hiresMonthPrior": 6,
-    "churnTotal": "37.2",
-    "churnTotalPrior": "38.5",
-    "churnVoluntary": "23.8",
-    "churnVoluntaryPrior": "25.5",
-    "ytdTotal": "11.8",
-    "ytdVoluntary": "6.5",
+    "churnTotal": "37.7",
+    "churnTotalPrior": "38.9",
+    "churnVoluntary": "24.1",
+    "churnVoluntaryPrior": "25.8",
+    "ytdTotal": "12.0",
+    "ytdVoluntary": "6.6",
     "regrettableLtm": "0.0",
     "regrettableCountLtm": 0,
     "regrettableShareOfLeavers": "0.0",
     "rehireFlagMissing": 125,
-    "ytdAnnualisedTotal": "47.3",
-    "ytdAnnualisedTotalPrior": "56.0",
-    "ytdAnnualisedVoluntary": "26.1",
-    "ytdAnnualisedVoluntaryPrior": "31.7",
+    "ytdAnnualisedTotal": "47.9",
+    "ytdAnnualisedTotalPrior": "56.7",
+    "ytdAnnualisedVoluntary": "26.5",
+    "ytdAnnualisedVoluntaryPrior": "32.1",
     "gpgMean": "0.0",
     "gpgMeanPrior": "0.0",
     "gpgMedian": "0.0",
     "gpgMedianPrior": "0.0",
-    "avgHeadcountLtm": "336.0"
+    "avgHeadcountLtm": "332.0"
   },
   "entities": [
     {
@@ -48,10 +48,10 @@
     {
       "code": "UK",
       "name": "ADP London",
-      "headcount": 19,
-      "headcountPrior": 18,
+      "headcount": 15,
+      "headcountPrior": 14,
       "female": 4,
-      "femalePct": "21.1",
+      "femalePct": "26.7",
       "leaversMonth": 0,
       "gpgMean": "0.0",
       "gpgMedian": "0.0"
@@ -171,20 +171,6 @@
       "openRoles": 0
     },
     {
-      "code": "Unassigned",
-      "headcount": 19,
-      "female": 4,
-      "femalePct": "21.1",
-      "leaversLtm": 5,
-      "leaversVoluntary": 1,
-      "leaversRegrettable": 0,
-      "churnTotal": "27.9",
-      "churnVoluntary": "5.6",
-      "churnRegrettable": "0.0",
-      "avgHeadcountLtm": "17.9",
-      "openRoles": 0
-    },
-    {
       "code": "Adelaide",
       "headcount": 17,
       "female": 4,
@@ -196,6 +182,20 @@
       "churnVoluntary": "12.1",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "16.5",
+      "openRoles": 0
+    },
+    {
+      "code": "Unassigned",
+      "headcount": 15,
+      "female": 4,
+      "femalePct": "26.7",
+      "leaversLtm": 5,
+      "leaversVoluntary": 1,
+      "leaversRegrettable": 0,
+      "churnTotal": "35.9",
+      "churnVoluntary": "7.2",
+      "churnRegrettable": "0.0",
+      "avgHeadcountLtm": "13.9",
       "openRoles": 0
     },
     {
@@ -216,61 +216,61 @@
   "headcountTrend": [
     {
       "month": "Oct",
-      "headcount": 342
+      "headcount": 338
     },
     {
       "month": "Nov",
-      "headcount": 350
+      "headcount": 346
     },
     {
       "month": "Dec",
-      "headcount": 344
+      "headcount": 340
     },
     {
       "month": "Jan",
-      "headcount": 339
+      "headcount": 335
     },
     {
       "month": "Feb",
-      "headcount": 342
+      "headcount": 338
     },
     {
       "month": "Mar",
-      "headcount": 339
+      "headcount": 335
     },
     {
       "month": "Apr",
-      "headcount": 334
+      "headcount": 330
     },
     {
       "month": "May",
-      "headcount": 334
+      "headcount": 330
     },
     {
       "month": "Jun",
-      "headcount": 344
+      "headcount": 340
     },
     {
       "month": "Jul",
-      "headcount": 325
-    },
-    {
-      "month": "Aug",
       "headcount": 321
     },
     {
+      "month": "Aug",
+      "headcount": 317
+    },
+    {
       "month": "Sep",
-      "headcount": 318
+      "headcount": 314
     }
   ],
   "dataQuality": {
-    "excludedBlankLocation": 25,
+    "excludedBlankLocation": 24,
     "excludedWrongLocationAu": 3,
-    "excludedWrongLocationUk": 13,
+    "excludedWrongLocationUk": 19,
     "excludedContractors": 0,
     "excludedIncomplete": 0,
     "notYetStarted": 3,
-    "excludedNoSalary": 318,
+    "excludedNoSalary": 314,
     "casualsConverted": 64,
     "partTimeConverted": 44
   }
