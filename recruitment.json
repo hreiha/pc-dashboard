@@ -6,7 +6,7 @@ json
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
   },
-  "pipeline": [{"stage":"2. Search & Prepare","count":29},{"stage":"1. Search & Secure","count":7}],
+  "pipeline": [{"stage":"2. Search & Prepare","count":28},{"stage":"1. Search & Secure","count":8}],
   "costCentres": 
 }
 
