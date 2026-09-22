@@ -381,6 +381,18 @@ function tile(label, value, prior, unit, higherIsBetter) {
     delta(value, prior, unit === "%" ? "pp" : "", higherIsBetter) + "</div></div>";
 }
 
+/** Finds a stage count by name, ignoring the "1. " prefix, case and the ampersand spacing. */
+function stageCount(pipeline, name) {
+  const norm = (v) => String(v || "")
+    .replace(/^\s*\d+[.)]\s*/, "")
+    .replace(/\s*&\s*/g, " and ")
+    .toLowerCase()
+    .trim();
+  const target = norm(name);
+  const hit = (pipeline || []).find(s => norm(s.stage) === target);
+  return hit ? hit.count : 0;
+}
+
 function sparkline(points) {
   if (!points.length) return "";
   const w = 560, h = 96, pad = 10;
@@ -490,15 +502,15 @@ function render(d) {
     <section>
       <h2>Recruitment</h2>
       <div class="metrics">
+        ${tile("Search &amp; Secure", stageCount(pipe, "Search & Secure"), null, "", null)}
+        ${tile("Search &amp; Prepare", stageCount(pipe, "Search & Prepare"), null, "", null)}
+        ${tile("Role On Hold", stageCount(pipe, "Role On Hold"), null, "", null)}
         ${tile("Open roles", r.openRoles, r.openRolesPrior, "", null)}
-        ${tile("Roles filled this month", r.filledMonth, r.filledMonthPrior, "", true)}
-        ${tile("Average days open", r.avgDaysOpen, r.avgDaysOpenPrior, "", false)}
-        ${tile("Average days to hire", r.avgDaysToHire, r.avgDaysToHirePrior, "", false)}
       </div>
-      <div class="pipeline" style="margin-top:20px">
+      <div class="pipeline" style="margin-top:20px;${pipe.length ? "" : "display:none"}">
         ${pipe.map(s => `
           <div class="stage">
-            <div class="name">${s.stage}</div>
+            <div class="name">${String(s.stage).replace(/^\s*\d+[.)]\s*/, "")}</div>
             <div class="track"><div class="fill" style="width:${((Number(s.count) || 0) / maxStage * 100).toFixed(1)}%"></div></div>
             <div class="count">${n(s.count)}</div>
           </div>`).join("")}
@@ -565,6 +577,7 @@ function render(d) {
       ${n(dq.excludedWrongLocationAu)} in the Australian organisation without an Australian location,
       ${n(dq.excludedWrongLocationUk)} in the UK organisation without a London location,
       ${n(dq.excludedContractors)} independent contractors,
+      ${n(dq.excludedNoCostCentre)} with no cost centre,
       ${n(dq.excludedIncomplete)} incomplete records with no employment type,
       ${n(dq.notYetStarted)} yet to start.
 

@@ -5,6 +5,15 @@ on:
     # 20:00 UTC is 6:00am in Brisbane. Queensland has no daylight saving, so this
     # stays correct all year.
     - cron: "0 20 * * *"
+
+  # Rebuild as soon as the Recruitment Forecast flow commits new figures, rather than
+  # leaving them unused until the next morning. Limited to that one file, so the commit
+  # this workflow makes to data.json does not set it off again.
+  push:
+    branches: [main]
+    paths:
+      - recruitment.json
+
   workflow_dispatch:
 
 permissions:
@@ -20,10 +29,10 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: "20"
 
@@ -46,4 +55,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data.json
           git commit -m "Dashboard refresh $(date -u '+%Y-%m-%d %H:%M') UTC"
+          # The Recruitment Forecast flow may have committed while this ran
+          git pull --rebase origin main
           git push

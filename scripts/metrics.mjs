@@ -72,6 +72,11 @@ const UNASSIGNED_COST_CENTRES = ["adp consulting pty ltd", "adp consulting", "n/
 // In the London entity these are shell or access records rather than staff.
 const REQUIRE_EMPLOYMENT_TYPE = true;
 
+// Every current employee has a cost centre. A record without one is an external contractor
+// or similar, so it counts for neither headcount nor leavers. London is exempt because the
+// entity sets its cost centre rather than the record carrying one.
+const REQUIRE_COST_CENTRE = true;
+
 const EXCLUDED_EMPLOYMENT_TYPES = [
   "independent contractor",
   "contractor",
@@ -247,6 +252,7 @@ export function computeMetrics(employees, asOfIso) {
   let excludedWrongLocationUk = 0;
   let excludedContractors = 0;
   let excludedIncomplete = 0;
+  let excludedNoCostCentre = 0;
   let casualsConverted = 0;
   let partTimeConverted = 0;
 
@@ -283,6 +289,13 @@ export function computeMetrics(employees, asOfIso) {
       continue;
     }
 
+    // No cost centre means not on the books as an employee
+    const centre = ENTITY_COST_CENTRE[entity] || normaliseCostCentre(e.costCentre);
+    if (REQUIRE_COST_CENTRE && centre === "Unassigned") {
+      excludedNoCostCentre++;
+      continue;
+    }
+
     const type = (e.employmentType || "").toLowerCase();
     if (type.indexOf("casual") >= 0) casualsConverted++;
     else if (type.indexOf("part") >= 0) partTimeConverted++;
@@ -299,7 +312,7 @@ export function computeMetrics(employees, asOfIso) {
       terminationDate: e.terminationDate,
       terminationReason: e.terminationReason,
       level4: e.level4,
-      costCentre: ENTITY_COST_CENTRE[entity] || normaliseCostCentre(e.costCentre),
+      costCentre: centre,
       independentContractor: e.independentContractor === true,
       rehire: e.rehire === true ? true : (e.rehire === false ? false : null),
       status: e.status,
@@ -535,7 +548,10 @@ export function computeMetrics(employees, asOfIso) {
       openRoles: 0   // merged in from recruitment.json
     };
   })
-    .filter(c => c.headcount > 0 || c.leaversLtm > 0)
+    // Only cost centres that currently have people. A centre with no headcount and a
+    // stray leaver is a record with the field unset, not a team worth a row of its own.
+    // Those leavers still count in the company totals.
+    .filter(c => c.headcount > 0)
     .sort((a, b) => b.headcount - a.headcount);
 
   // ---- six month trend
@@ -595,6 +611,7 @@ export function computeMetrics(employees, asOfIso) {
       excludedWrongLocationUk: excludedWrongLocationUk,
       excludedContractors: excludedContractors,
       excludedIncomplete: excludedIncomplete,
+      excludedNoCostCentre: excludedNoCostCentre,
       notYetStarted: notYetStarted,
       excludedNoSalary: excludedNoSalary,
       casualsConverted: casualsConverted,
