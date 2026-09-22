@@ -177,15 +177,50 @@ function loadJson(name) {
 function loadRecruitment() {
   const path = join(ROOT, "recruitment.json");
   if (!existsSync(path)) {
-    console.log("No recruitment.json found, recruitment figures will show as zero.");
+    console.log("Recruitment: no recruitment.json in the repo, figures will show as zero.");
     return null;
   }
+
+  let parsed;
   try {
-    return JSON.parse(readFileSync(path, "utf8"));
+    parsed = JSON.parse(readFileSync(path, "utf8"));
+    // Power Automate sometimes encodes the file twice, leaving a JSON string that itself
+    // contains the JSON. Unwrap it rather than silently reading nothing.
+    if (typeof parsed === "string") {
+      console.log("Recruitment: file was double encoded, unwrapping it.");
+      parsed = JSON.parse(parsed);
+    }
   } catch (err) {
-    console.warn(`recruitment.json could not be parsed, ignoring it: ${err.message}`);
+    console.warn(`Recruitment: recruitment.json could not be parsed, ignoring it: ${err.message}`);
     return null;
   }
+
+  const open = parsed?.recruitment?.openRoles;
+  const stages = Array.isArray(parsed?.pipeline) ? parsed.pipeline : null;
+  const centres = Array.isArray(parsed?.costCentres) ? parsed.costCentres : null;
+
+  console.log(`Recruitment: openRoles ${open ?? "missing"}`);
+  if (stages) {
+    console.log(`Recruitment: ${stages.length} stage(s): ` +
+      stages.map(st => `${st.stage}=${st.count}`).join(", "));
+  } else {
+    console.log(`Recruitment: pipeline is ${typeof parsed?.pipeline}, expected an array. ` +
+      "If it is a string, the Compose in the flow has quotes around @{variables('Pipeline')}.");
+  }
+  if (centres) {
+    console.log(`Recruitment: ${centres.length} cost centre(s) with open roles`);
+  } else {
+    console.log(`Recruitment: costCentres is ${typeof parsed?.costCentres}, expected an array.`);
+  }
+
+  // Arrays that arrived as strings are recoverable, so recover them
+  for (const key of ["pipeline", "costCentres"]) {
+    if (typeof parsed?.[key] === "string") {
+      try { parsed[key] = JSON.parse(parsed[key]); } catch { parsed[key] = []; }
+    }
+  }
+
+  return parsed;
 }
 
 async function main() {
