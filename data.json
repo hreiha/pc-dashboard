@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-09-23T04:41:21.340Z",
+  "generatedUtc": "2026-09-23T05:34:35.169Z",
   "periodLabel": "Sep 2026",
   "priorLabel": "Aug 2026",
   "people": {
@@ -163,6 +163,52 @@
       "count": 1
     }
   ],
+  "stageDetail": [
+    {
+      "stage": "Phone Screen",
+      "count": 3
+    },
+    {
+      "stage": "1st Interview",
+      "count": 6
+    },
+    {
+      "stage": "SC Approval Pending",
+      "count": 1
+    },
+    {
+      "stage": "SC Declined",
+      "count": 1
+    },
+    {
+      "stage": "2nd Interview",
+      "count": 3
+    },
+    {
+      "stage": "Declined",
+      "count": 1
+    },
+    {
+      "stage": "Needs approval",
+      "count": 1
+    },
+    {
+      "stage": "New",
+      "count": 7
+    },
+    {
+      "stage": "Sourcing",
+      "count": 13
+    },
+    {
+      "stage": "Present to HM",
+      "count": 1
+    },
+    {
+      "stage": "Offer Pending",
+      "count": 3
+    }
+  ],
   "costCentres": [
     {
       "code": "Melbourne",
@@ -289,6 +335,74 @@
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "4.8",
       "openRoles": 0
+    }
+  ],
+  "locations": [
+    {
+      "name": "Melbourne",
+      "headcount": 142,
+      "female": 37,
+      "femalePct": "26.1",
+      "leaversLtm": 56,
+      "leaversVoluntary": 35,
+      "churnTotal": "37.7",
+      "churnVoluntary": "23.6",
+      "avgHeadcountLtm": "148.5"
+    },
+    {
+      "name": "Sydney",
+      "headcount": 84,
+      "female": 21,
+      "femalePct": "25.0",
+      "leaversLtm": 42,
+      "leaversVoluntary": 31,
+      "churnTotal": "43.7",
+      "churnVoluntary": "32.2",
+      "avgHeadcountLtm": "96.2"
+    },
+    {
+      "name": "Brisbane",
+      "headcount": 47,
+      "female": 14,
+      "femalePct": "29.8",
+      "leaversLtm": 18,
+      "leaversVoluntary": 13,
+      "churnTotal": "35.4",
+      "churnVoluntary": "25.5",
+      "avgHeadcountLtm": "50.9"
+    },
+    {
+      "name": "Adelaide",
+      "headcount": 19,
+      "female": 4,
+      "femalePct": "21.1",
+      "leaversLtm": 3,
+      "leaversVoluntary": 2,
+      "churnTotal": "16.4",
+      "churnVoluntary": "10.9",
+      "avgHeadcountLtm": "18.3"
+    },
+    {
+      "name": "London",
+      "headcount": 15,
+      "female": 4,
+      "femalePct": "26.7",
+      "leaversLtm": 4,
+      "leaversVoluntary": 1,
+      "churnTotal": "29.4",
+      "churnVoluntary": "7.4",
+      "avgHeadcountLtm": "13.6"
+    },
+    {
+      "name": "Gold Coast",
+      "headcount": 4,
+      "female": 1,
+      "femalePct": "25.0",
+      "leaversLtm": 2,
+      "leaversVoluntary": 1,
+      "churnTotal": "49.0",
+      "churnVoluntary": "24.5",
+      "avgHeadcountLtm": "4.1"
     }
   ],
   "headcountTrend": [
