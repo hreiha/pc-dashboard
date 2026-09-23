@@ -518,7 +518,6 @@ function render(d) {
           <tr>
             <th>Entity</th>
             <th class="num">Headcount</th>
-            <th class="num">Female</th>
             <th class="num">Female %</th>
             <th class="num">New starters this month</th>
             <th class="num">Leavers this month</th>
@@ -528,7 +527,6 @@ function render(d) {
           ${ent.map(e => `<tr>
             <td>${e.name || e.code}</td>
             <td class="num">${n(e.headcount)}${delta(e.headcount, e.headcountPrior, "", true)}</td>
-            <td class="num">${n(e.female)}</td>
             <td class="num">${e.femalePct || "0"}%</td>
             <td class="num">${n(e.hiresMonth)}</td>
             <td class="num">${n(e.leaversMonth)}</td>
@@ -624,7 +622,7 @@ function render(d) {
             <th class="num">Leavers LTM</th>
             <th class="num">Vol turnover</th>
             <th class="num">Total turnover</th>
-            <th class="num">Open roles</th>
+            <th class="num">Active roles</th>
             <th class="bar-cell">Voluntary turnover against the company rate of ${p.churnVoluntary || "0"}%</th>
           </tr>
         </thead>

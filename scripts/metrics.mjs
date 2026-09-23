@@ -468,22 +468,22 @@ export function computeMetrics(employees, asOfIso) {
   }
   const avgHeadcountYtd = mean(ytdMonthEnds.map(d => scoped.filter(e => activeAt(e, d)).length));
 
+  const calYear = asOf.getUTCFullYear();
+  const calYtdStart = monthEnd(calYear - 1, 11);            // 31 December last year
+  const lastCalStart = monthEnd(calYear - 2, 11);
+  const lastCalEnd = monthEnd(calYear - 1, 11);
+
   const periods = [
     turnoverFor(scoped, ltmStart, thisMonthEnd, "ltm", "Rolling 12 months"),
-    turnoverFor(scoped, fyStart, thisMonthEnd, "ytd", `Financial year to date (${monthsElapsed} month${monthsElapsed === 1 ? "" : "s"})`),
+    turnoverFor(scoped, calYtdStart, thisMonthEnd, "ytd", "Year to date"),
+    turnoverFor(scoped, fyStart, thisMonthEnd, "fytd", "FYTD"),
     turnoverFor(scoped, monthEnd(asOf.getUTCFullYear(), asOf.getUTCMonth() - 6), thisMonthEnd, "last6", "Last 6 months"),
     turnoverFor(scoped, monthEnd(asOf.getUTCFullYear(), asOf.getUTCMonth() - 3), thisMonthEnd, "last3", "Last 3 months"),
-    turnoverFor(
-      scoped,
-      new Date(Date.UTC(fyStartYear - 1, 5, 30, 23, 59, 59)),
-      new Date(Date.UTC(fyStartYear, 5, 30, 23, 59, 59)),
-      "lastfy",
-      `FY ${String(fyStartYear - 1).slice(2)}/${String(fyStartYear).slice(2)}`
-    )
+    turnoverFor(scoped, lastCalStart, lastCalEnd, "lastcy", String(calYear - 1))
   ];
 
   const ltmPeriod = periods[0];
-  const ytdPeriod = periods[1];
+  const ytdPeriod = periods[2];   // FYTD, to match the report
 
   function annualised(leavers, avgHead, months) {
     if (avgHead <= 0 || months <= 0) return "0.0";
