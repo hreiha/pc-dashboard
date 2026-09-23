@@ -527,6 +527,7 @@ export function computeMetrics(employees, asOfIso) {
       female: fem.length,
       femalePct: now.length ? round1((fem.length / now.length) * 100) : "0.0",
       leaversMonth: leaversMonth.filter(e => e.entity === cfg.code).length,
+      hiresMonth: hiresMonth.filter(e => e.entity === cfg.code).length,
       gpgMean: gapFor(now, false),
       gpgMedian: gapFor(now, true)
     };

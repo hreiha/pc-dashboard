@@ -385,6 +385,20 @@ function tile(label, value, prior, unit, higherIsBetter) {
     delta(value, prior, unit === "%" ? "pp" : "", higherIsBetter) + "</div></div>";
 }
 
+// The Stage choice list in its own order, so the chart reads as a process rather than
+// in whatever order the distinct values came back.
+const STAGE_ORDER = [
+  "needs approval", "new", "phone screen", "present to hm", "1st interview", "2nd interview",
+  "sourcing", "on hold", "references", "referee detail request sent", "references requested",
+  "km to get sc approval", "sc approval pending", "ja approved", "sc approved", "sc declined",
+  "offer pending", "contract sent", "accepted", "declined", "withdrawn"
+];
+
+function stageRank(name) {
+  const i = STAGE_ORDER.indexOf(String(name || "").toLowerCase().trim());
+  return i < 0 ? STAGE_ORDER.length : i;   // anything unrecognised sorts to the end
+}
+
 // Stage labels as we report them, where they differ from the list's wording
 const STAGE_LABELS = { "waiting for approval": "Role Requested" };
 
@@ -433,7 +447,8 @@ function render(d) {
   const maxHead = Math.max(1, ...cc.map(c => Number(c.headcount) || 0));
   const maxStage = Math.max(1, ...pipe.map(s => Number(s.count) || 0));
   const locs = d.locations || [];
-  const detail = d.stageDetail || [];
+  const detail = (d.stageDetail || []).slice()
+    .sort((a, b) => stageRank(a.stage) - stageRank(b.stage) || String(a.stage).localeCompare(String(b.stage)));
   const maxDetail = Math.max(1, ...detail.map(st => Number(st.count) || 0));
   const companyChurn = Number(p.churnTotal) || 0;
   const maxChurn = Math.max(1, companyChurn,
@@ -501,6 +516,7 @@ function render(d) {
             <th class="num">Headcount</th>
             <th class="num">Female</th>
             <th class="num">Female %</th>
+            <th class="num">New starters this month</th>
             <th class="num">Leavers this month</th>
           </tr>
         </thead>
@@ -510,6 +526,7 @@ function render(d) {
             <td class="num">${n(e.headcount)}${delta(e.headcount, e.headcountPrior, "", true)}</td>
             <td class="num">${n(e.female)}</td>
             <td class="num">${e.femalePct || "0"}%</td>
+            <td class="num">${n(e.hiresMonth)}</td>
             <td class="num">${n(e.leaversMonth)}</td>
           </tr>`).join("")}
         </tbody>
