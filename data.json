@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-09-23T03:58:02.171Z",
+  "generatedUtc": "2026-09-23T04:08:38.035Z",
   "periodLabel": "Sep 2026",
   "priorLabel": "Aug 2026",
   "people": {
@@ -140,12 +140,25 @@
     }
   ],
   "recruitment": {
-    "openRoles": 0,
+    "openRoles": 35,
     "filledMonth": 0,
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
   },
-  "pipeline": [],
+  "pipeline": [
+    {
+      "stage": "2. Search & Prepare",
+      "count": 26
+    },
+    {
+      "stage": "1. Search & Secure",
+      "count": 8
+    },
+    {
+      "stage": "4. Role On Hold",
+      "count": 1
+    }
+  ],
   "costCentres": [
     {
       "code": "Melbourne",
