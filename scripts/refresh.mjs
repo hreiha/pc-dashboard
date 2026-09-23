@@ -303,15 +303,51 @@ async function main() {
   console.log(`Excluded: ${JSON.stringify(output.dataQuality)}`);
 }
 
+/**
+ * The Recruitment Forecast list uses short cost centre codes; Employment Hero uses full
+ * names. Without this map every cost centre would show zero open roles.
+ */
+const RF_CODE_TO_COST_CENTRE = {
+  mel: "Melbourne",
+  syd: "Sydney",
+  bne: "Brisbane",
+  adl: "Adelaide",
+  per: "Perth",
+  lon: "London",
+  corp: "NAT-CORP",
+  esd: "NAT-ESD",
+  spl: "NAT-SPL",
+  dig: "NAT-DIG",
+  str: "NAT-STR",
+  bim: "NAT-BIM"
+};
+
 /** Open role counts live in recruitment.json, headcount comes from Employment Hero. */
 function mergeOpenRoles(costCentres, recruitmentCostCentres) {
   if (!Array.isArray(recruitmentCostCentres)) return costCentres;
-  return costCentres.map(cc => {
-    const match = recruitmentCostCentres.find(
-      r => String(r.code).toLowerCase().trim() === String(cc.code).toLowerCase().trim()
-    );
-    return { ...cc, openRoles: match ? Number(match.openRoles) || 0 : 0 };
+
+  // Roll the recruitment codes up to the same names the metrics use
+  const byName = new Map();
+  for (const r of recruitmentCostCentres) {
+    const raw = String(r.code || "").trim();
+    const name = RF_CODE_TO_COST_CENTRE[raw.toLowerCase()] || raw;
+    byName.set(name.toLowerCase(), (byName.get(name.toLowerCase()) || 0) + (Number(r.openRoles) || 0));
+  }
+
+  const matched = new Set();
+  const merged = costCentres.map(cc => {
+    const key = String(cc.code).toLowerCase().trim();
+    if (byName.has(key)) matched.add(key);
+    return { ...cc, openRoles: byName.get(key) || 0 };
   });
+
+  const unmatched = [...byName.keys()].filter(k => !matched.has(k));
+  if (unmatched.length) {
+    console.warn("Recruitment: these cost centres had open roles but no matching headcount: " +
+      unmatched.join(", ") + ". Add them to RF_CODE_TO_COST_CENTRE if the code is wrong.");
+  }
+
+  return merged;
 }
 
 main().catch(err => {
