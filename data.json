@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-09-23T06:28:31.580Z",
+  "generatedUtc": "2026-09-23T06:36:16.950Z",
   "periodLabel": "Sep 2026",
   "priorLabel": "Aug 2026",
   "people": {
@@ -349,7 +349,8 @@
       "leaversVoluntary": 35,
       "churnTotal": "37.7",
       "churnVoluntary": "23.6",
-      "avgHeadcountLtm": "148.5"
+      "avgHeadcountLtm": "148.5",
+      "activeRoles": 18
     },
     {
       "name": "Sydney",
@@ -360,7 +361,8 @@
       "leaversVoluntary": 31,
       "churnTotal": "43.7",
       "churnVoluntary": "32.2",
-      "avgHeadcountLtm": "96.2"
+      "avgHeadcountLtm": "96.2",
+      "activeRoles": 14
     },
     {
       "name": "Brisbane",
@@ -371,7 +373,8 @@
       "leaversVoluntary": 13,
       "churnTotal": "35.4",
       "churnVoluntary": "25.5",
-      "avgHeadcountLtm": "50.9"
+      "avgHeadcountLtm": "50.9",
+      "activeRoles": 15
     },
     {
       "name": "Adelaide",
@@ -382,7 +385,8 @@
       "leaversVoluntary": 2,
       "churnTotal": "16.4",
       "churnVoluntary": "10.9",
-      "avgHeadcountLtm": "18.3"
+      "avgHeadcountLtm": "18.3",
+      "activeRoles": 6
     },
     {
       "name": "London",
@@ -393,7 +397,8 @@
       "leaversVoluntary": 1,
       "churnTotal": "29.4",
       "churnVoluntary": "7.4",
-      "avgHeadcountLtm": "13.6"
+      "avgHeadcountLtm": "13.6",
+      "activeRoles": 0
     },
     {
       "name": "Gold Coast",
@@ -404,7 +409,8 @@
       "leaversVoluntary": 1,
       "churnTotal": "49.0",
       "churnVoluntary": "24.5",
-      "avgHeadcountLtm": "4.1"
+      "avgHeadcountLtm": "4.1",
+      "activeRoles": 0
     }
   ],
   "headcountTrend": [
