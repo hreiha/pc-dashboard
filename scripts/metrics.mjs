@@ -17,6 +17,10 @@ const WEEKS_PER_YEAR = 52;
 // Redundancy, Transfer and Deceased. "other" is deliberately left out: it is ambiguous
 // and there are enough of them to move the number. Add it if your reporting treats it
 // as voluntary.
+// Termination types that are not exits from the group at all. These count in neither
+// voluntary nor total turnover, and the person is not treated as a leaver.
+const NON_LEAVER_REASONS = ["transfer"];
+
 const VOLUNTARY_REASONS = [
   "voluntary cessation",
   "resignation",
@@ -164,6 +168,13 @@ function containsAny(value, list) {
   const v = (value || "").toLowerCase().trim();
   if (!v) return false;
   return list.some(token => v.indexOf(token) >= 0);
+}
+
+/** A transfer is a move, not a departure. */
+function isNonLeaver(reason) {
+  const r = (reason || "").toLowerCase().trim();
+  if (!r) return false;
+  return NON_LEAVER_REASONS.some(token => r.indexOf(token) >= 0);
 }
 
 function isVoluntary(reason) {
@@ -372,6 +383,7 @@ export function computeMetrics(employees, asOfIso) {
 
   function leaversBetween(from, to, pool) {
     return pool.filter(e => {
+      if (isNonLeaver(e.terminationReason)) return false;
       const t = parseDate(e.terminationDate);
       return t !== null && t > from && t <= to;
     });
