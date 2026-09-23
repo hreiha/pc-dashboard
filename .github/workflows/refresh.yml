@@ -51,10 +51,36 @@ jobs:
             echo "No change to data.json, nothing to commit."
             exit 0
           fi
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data.json
-          git commit -m "Dashboard refresh $(date -u '+%Y-%m-%d %H:%M') UTC"
-          # The Recruitment Forecast flow may have committed while this ran
-          git pull --rebase origin main
-          git push
+
+          # data.json is generated output, so there is never anything to merge: the newest
+          # run wins. Reset to the remote and reapply, which cannot conflict the way a
+          # rebase does when the recruitment flow commits while this is running.
+          cp data.json /tmp/data.json
+
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/data.json data.json
+
+            if git diff --quiet -- data.json; then
+              echo "Remote already has these figures, nothing to commit."
+              exit 0
+            fi
+
+            git add data.json
+            git commit -m "Dashboard refresh $(date -u '+%Y-%m-%d %H:%M') UTC"
+
+            if git push; then
+              echo "Pushed on attempt $attempt."
+              exit 0
+            fi
+
+            echo "Push rejected, someone else committed. Retrying."
+            sleep 5
+          done
+
+          echo "Could not push after 3 attempts."
+          exit 1
