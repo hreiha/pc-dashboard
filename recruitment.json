@@ -1,12 +1,1 @@
-json
-{
-  "recruitment": {
-    "openRoles": 35,
-    "filledMonth": 0,
-    "avgDaysOpen": "0.0",
-    "avgDaysToHire": "0.0"
-  },
-  "pipeline": [{"stage":"2. Search & Prepare","count":26},{"stage":"1. Search & Secure","count":8},{"stage":"4. Role On Hold","count":1}],
-  "costCentres": 
-}
-
+{"recruitment":{"openRoles":40,"filledMonth":0,"avgDaysOpen":"0.0","avgDaysToHire":"0.0"},"pipeline":[{"stage":"2. Search & Prepare","count":26},{"stage":"3. Waiting for Approval","count":5},{"stage":"1. Search & Secure","count":8},{"stage":"4. Role On Hold","count":1}],"costCentres":[{"code":"ADL","openRoles":4},{"code":"BNE","openRoles":9},{"code":"SPL","openRoles":38},{"code":"ESD","openRoles":2},{"code":"MEL","openRoles":12},{"code":"Unassigned","openRoles":0},{"code":"SYD","openRoles":8}]}
