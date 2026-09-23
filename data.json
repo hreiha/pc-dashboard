@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-09-23T06:36:16.950Z",
+  "generatedUtc": "2026-09-23T06:59:30.364Z",
   "periodLabel": "Sep 2026",
   "priorLabel": "Aug 2026",
   "people": {
@@ -52,7 +52,23 @@
     },
     {
       "key": "ytd",
-      "label": "Financial year to date (3 months)",
+      "label": "Year to date",
+      "months": 9,
+      "avgHeadcount": "328.7",
+      "leavers": 99,
+      "leaversVoluntary": 67,
+      "leaversRegrettable": 0,
+      "total": "30.1",
+      "voluntary": "20.4",
+      "regrettable": "0.0",
+      "totalAnnualised": "40.1",
+      "voluntaryAnnualised": "27.2",
+      "regrettableShareOfLeavers": "0.0",
+      "rehireFlagMissing": 99
+    },
+    {
+      "key": "fytd",
+      "label": "FYTD",
       "months": 3,
       "avgHeadcount": "317.0",
       "leavers": 39,
@@ -99,20 +115,20 @@
       "rehireFlagMissing": 39
     },
     {
-      "key": "lastfy",
-      "label": "FY 25/26",
+      "key": "lastcy",
+      "label": "2025",
       "months": 12,
-      "avgHeadcount": "334.6",
-      "leavers": 116,
-      "leaversVoluntary": 80,
+      "avgHeadcount": "320.0",
+      "leavers": 108,
+      "leaversVoluntary": 71,
       "leaversRegrettable": 0,
-      "total": "34.7",
-      "voluntary": "23.9",
+      "total": "33.8",
+      "voluntary": "22.2",
       "regrettable": "0.0",
-      "totalAnnualised": "34.7",
-      "voluntaryAnnualised": "23.9",
+      "totalAnnualised": "33.8",
+      "voluntaryAnnualised": "22.2",
       "regrettableShareOfLeavers": "0.0",
-      "rehireFlagMissing": 116
+      "rehireFlagMissing": 108
     }
   ],
   "entities": [
