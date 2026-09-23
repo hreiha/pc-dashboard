@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-09-23T05:39:53.222Z",
+  "generatedUtc": "2026-09-23T06:00:24.068Z",
   "periodLabel": "Sep 2026",
   "priorLabel": "Aug 2026",
   "people": {
@@ -124,6 +124,7 @@
       "female": 77,
       "femalePct": "26.0",
       "leaversMonth": 10,
+      "hiresMonth": 1,
       "gpgMean": "0.0",
       "gpgMedian": "0.0"
     },
@@ -135,6 +136,7 @@
       "female": 4,
       "femalePct": "26.7",
       "leaversMonth": 0,
+      "hiresMonth": 1,
       "gpgMean": "0.0",
       "gpgMedian": "0.0"
     }
