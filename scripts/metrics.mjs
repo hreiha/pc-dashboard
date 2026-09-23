@@ -144,6 +144,22 @@ function normaliseCostCentre(value) {
   return v;
 }
 
+// Location values carry the state, which is noise on a dashboard.
+const STATE_SUFFIXES = [
+  "victoria", "new south wales", "queensland", "south australia",
+  "western australia", "australian capital territory", "tasmania", "northern territory"
+];
+
+function tidyLocation(value) {
+  let v = String(value || "").trim();
+  if (!v) return "Unassigned";
+  const lower = v.toLowerCase();
+  for (const state of STATE_SUFFIXES) {
+    if (lower.endsWith(" " + state)) return v.slice(0, v.length - state.length - 1).trim();
+  }
+  return v;
+}
+
 function containsAny(value, list) {
   const v = (value || "").toLowerCase().trim();
   if (!v) return false;
@@ -554,6 +570,36 @@ export function computeMetrics(employees, asOfIso) {
     .filter(c => c.headcount > 0)
     .sort((a, b) => b.headcount - a.headcount);
 
+  // ---- locations, same method as cost centres
+
+  const locValues = [];
+  for (const e of scoped) {
+    const v = tidyLocation(e.location);
+    if (locValues.indexOf(v) < 0) locValues.push(v);
+  }
+
+  const locations = locValues.map(name => {
+    const pool = scoped.filter(e => tidyLocation(e.location) === name);
+    const nowPool = pool.filter(e => activeAt(e, thisMonthEnd));
+    const avgHead = mean(monthEnds.map(d => pool.filter(e => activeAt(e, d)).length));
+    const leavers = leaversBetween(ltmStart, thisMonthEnd, pool);
+    const volLeavers = leavers.filter(e => isVoluntary(e.terminationReason));
+    const fem = nowPool.filter(isFemale);
+    return {
+      name: name,
+      headcount: nowPool.length,
+      female: fem.length,
+      femalePct: nowPool.length ? round1((fem.length / nowPool.length) * 100) : "0.0",
+      leaversLtm: leavers.length,
+      leaversVoluntary: volLeavers.length,
+      churnTotal: avgHead >= MIN_HEADCOUNT_FOR_RATE ? churn(leavers, avgHead, false) : null,
+      churnVoluntary: avgHead >= MIN_HEADCOUNT_FOR_RATE ? churn(leavers, avgHead, true) : null,
+      avgHeadcountLtm: round1(avgHead)
+    };
+  })
+    .filter(l => l.headcount > 0)
+    .sort((a, b) => b.headcount - a.headcount);
+
   // ---- six month trend
 
   const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -604,6 +650,7 @@ export function computeMetrics(employees, asOfIso) {
     entities: entities,
     turnoverPeriods: periods,
     costCentres: costCentres,
+    locations: locations,
     headcountTrend: headcountTrend,
     dataQuality: {
       excludedBlankLocation: excludedBlankLocation,

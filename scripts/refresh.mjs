@@ -303,7 +303,9 @@ async function main() {
       openRoles: 0, filledMonth: 0, avgDaysOpen: "0.0", avgDaysToHire: "0.0"
     },
     pipeline: recruitment?.pipeline ?? [],
+    stageDetail: recruitment?.stageDetail ?? [],
     costCentres: mergeOpenRoles(metrics.costCentres, recruitment?.costCentres),
+    locations: metrics.locations,
     headcountTrend: metrics.headcountTrend,
     dataQuality: metrics.dataQuality
   };

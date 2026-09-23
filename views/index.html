@@ -289,6 +289,10 @@
   .stage:nth-child(3) .fill { background: var(--aqua); }
   .stage:nth-child(4) .fill { background: var(--orange); }
   .stage:nth-child(5) .fill { background: var(--pink); }
+  .stage:nth-child(n+6) .fill { background: var(--purple); }
+
+  .stage.alt:nth-child(odd) .fill { background: var(--blue); }
+  .stage.alt:nth-child(even) .fill { background: var(--lightblue); }
 
   .stage .count { text-align: right; font-weight: 600; font-size: 14px; }
 
@@ -381,6 +385,14 @@ function tile(label, value, prior, unit, higherIsBetter) {
     delta(value, prior, unit === "%" ? "pp" : "", higherIsBetter) + "</div></div>";
 }
 
+// Stage labels as we report them, where they differ from the list's wording
+const STAGE_LABELS = { "waiting for approval": "Role Requested" };
+
+function stageLabel(raw) {
+  const clean = String(raw || "").replace(/^\s*\d+[.)]\s*/, "").trim();
+  return STAGE_LABELS[clean.toLowerCase()] || clean;
+}
+
 /** Finds a stage count by name, ignoring the "1. " prefix, case and the ampersand spacing. */
 function stageCount(pipeline, name) {
   const norm = (v) => String(v || "")
@@ -420,8 +432,13 @@ function render(d) {
   const periods = turnoverPeriods(d);
   const maxHead = Math.max(1, ...cc.map(c => Number(c.headcount) || 0));
   const maxStage = Math.max(1, ...pipe.map(s => Number(s.count) || 0));
+  const locs = d.locations || [];
+  const detail = d.stageDetail || [];
+  const maxDetail = Math.max(1, ...detail.map(st => Number(st.count) || 0));
   const companyChurn = Number(p.churnTotal) || 0;
-  const maxChurn = Math.max(1, companyChurn, ...cc.map(c => Number(c.churnTotal) || 0));
+  const maxChurn = Math.max(1, companyChurn,
+    ...cc.map(c => Number(c.churnTotal) || 0),
+    ...locs.map(l => Number(l.churnTotal) || 0));
 
   const stamp = d.generatedUtc
     ? new Date(d.generatedUtc).toLocaleString("en-AU", { dateStyle: "medium", timeStyle: "short" })
@@ -505,16 +522,72 @@ function render(d) {
         ${tile("Search &amp; Secure", stageCount(pipe, "Search & Secure"), null, "", null)}
         ${tile("Search &amp; Prepare", stageCount(pipe, "Search & Prepare"), null, "", null)}
         ${tile("Role On Hold", stageCount(pipe, "Role On Hold"), null, "", null)}
-        ${tile("Open roles", r.openRoles, r.openRolesPrior, "", null)}
+        ${tile("Total active roles", stageCount(pipe, "Search & Secure") + stageCount(pipe, "Search & Prepare"), null, "", null)}
       </div>
       <div class="pipeline" style="margin-top:20px;${pipe.length ? "" : "display:none"}">
         ${pipe.map(s => `
           <div class="stage">
-            <div class="name">${String(s.stage).replace(/^\s*\d+[.)]\s*/, "")}</div>
+            <div class="name">${stageLabel(s.stage)}</div>
             <div class="track"><div class="fill" style="width:${((Number(s.count) || 0) / maxStage * 100).toFixed(1)}%"></div></div>
             <div class="count">${n(s.count)}</div>
           </div>`).join("")}
       </div>
+    </section>
+
+    <section${detail.length ? "" : ' style="display:none"'}>
+      <h2>Roles by stage</h2>
+      <div class="pipeline">
+        ${detail.map(st => `
+          <div class="stage alt">
+            <div class="name">${st.stage}</div>
+            <div class="track"><div class="fill" style="width:${((Number(st.count) || 0) / maxDetail * 100).toFixed(1)}%"></div></div>
+            <div class="count">${n(st.count)}</div>
+          </div>`).join("")}
+      </div>
+      <div class="note">Where each role currently sits in the process, from the Stage column. A role
+      appears once, against its current stage.</div>
+    </section>
+
+    <section>
+      <h2>Turnover by location</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Location</th>
+            <th class="num">Headcount</th>
+            <th class="num">Female %</th>
+            <th class="num">Leavers LTM</th>
+            <th class="num">Vol turnover</th>
+            <th class="num">Total turnover</th>
+            <th class="bar-cell">Total turnover against the company rate of ${p.churnTotal || "0"}%</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${locs.map(l => {
+            const hasRate = l.churnTotal !== null && l.churnTotal !== undefined;
+            const churn = hasRate ? Number(l.churnTotal) : 0;
+            const width = Math.min(churn / maxChurn * 100, 100);
+            const marker = Math.min(companyChurn / maxChurn * 100, 100);
+            const above = churn > companyChurn;
+            return `<tr>
+              <td>${l.name}</td>
+              <td class="num">${n(l.headcount)}</td>
+              <td class="num">${l.femalePct || "0"}%</td>
+              <td class="num">${n(l.leaversLtm)}</td>
+              <td class="num">${hasRate ? l.churnVoluntary + "%" : "&ndash;"}</td>
+              <td class="num ${above && hasRate ? "flag" : ""}">${hasRate ? l.churnTotal + "%" : "&ndash;"}</td>
+              <td class="bar-cell">
+                <span class="churn-track">
+                  ${hasRate ? `<span class="churn-bar ${above ? "over" : "under"}" style="width:${width.toFixed(1)}%"></span>` : ""}
+                  <span class="churn-marker" style="left:${marker.toFixed(1)}%"></span>
+                </span>
+              </td>
+            </tr>`;
+          }).join("")}
+        </tbody>
+      </table>
+      <div class="note">Office location rather than reporting line, so a person in a national team
+      appears against the office they sit in.</div>
     </section>
 
     <section>
@@ -571,19 +644,7 @@ function render(d) {
       fewer than three people over the year, where a rate would be misleading.</div>
     </section>
 
-    <div class="foot">
-      Source: Employment Hero and the Recruitment Forecast list, refreshed by a scheduled Power Automate flow.
-      Excluded from headcount: ${n(dq.excludedBlankLocation)} with no location,
-      ${n(dq.excludedWrongLocationAu)} in the Australian organisation without an Australian location,
-      ${n(dq.excludedWrongLocationUk)} in the UK organisation without a London location,
-      ${n(dq.excludedContractors)} independent contractors,
-      ${n(dq.excludedNoCostCentre)} with no cost centre,
-      ${n(dq.excludedIncomplete)} incomplete records with no employment type,
-      ${n(dq.notYetStarted)} yet to start.
-
-
-      Figures are aggregate only. Confidential to ADP Consulting.
-    </div>`;
+`;
 }
 
 /** Periods from the data, or a single rolling twelve month entry built from the headline
