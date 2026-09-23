@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-09-23T06:59:30.364Z",
+  "generatedUtc": "2026-09-23T19:00:57.345Z",
   "periodLabel": "Sep 2026",
   "priorLabel": "Aug 2026",
   "people": {
@@ -240,7 +240,7 @@
       "churnVoluntary": "28.5",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "94.8",
-      "openRoles": 12
+      "openRoles": 10
     },
     {
       "code": "Sydney",
@@ -254,7 +254,7 @@
       "churnVoluntary": "37.1",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "70.1",
-      "openRoles": 8
+      "openRoles": 7
     },
     {
       "code": "NAT-SPL",
@@ -282,7 +282,7 @@
       "churnVoluntary": "23.0",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "34.8",
-      "openRoles": 9
+      "openRoles": 8
     },
     {
       "code": "NAT-CORP",
@@ -310,7 +310,7 @@
       "churnVoluntary": "29.8",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "26.8",
-      "openRoles": 2
+      "openRoles": 1
     },
     {
       "code": "Adelaide",
@@ -324,7 +324,7 @@
       "churnVoluntary": "12.1",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "16.5",
-      "openRoles": 4
+      "openRoles": 3
     },
     {
       "code": "London",
