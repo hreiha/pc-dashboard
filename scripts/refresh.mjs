@@ -183,7 +183,22 @@ function loadRecruitment() {
 
   let parsed;
   try {
-    parsed = JSON.parse(readFileSync(path, "utf8"));
+    let text = readFileSync(path, "utf8").trim();
+
+    // A markdown code fence pasted into the Power Automate Compose leaves "json" or
+    // ```json on the first line, which makes the file unparseable. Strip it.
+    text = text.replace(/^```?\s*json\s*\n/i, "").replace(/^json\s*\n/i, "");
+    text = text.replace(/\n```\s*$/i, "").trim();
+
+    // A variable that resolved to nothing leaves "key":  with no value
+    if (/:\s*\n\s*[}\]]/.test(text)) {
+      console.warn("Recruitment: a value in recruitment.json is empty. " +
+        "Check the variables referenced in the flow's Compose action.");
+      text = text.replace(/("(?:costCentres|pipeline)"\s*:)\s*(?=\n\s*[}\]])/g, "$1 [],");
+      text = text.replace(/,(\s*[}\]])/g, "$1");
+    }
+
+    parsed = JSON.parse(text);
     // Power Automate sometimes encodes the file twice, leaving a JSON string that itself
     // contains the JSON. Unwrap it rather than silently reading nothing.
     if (typeof parsed === "string") {
