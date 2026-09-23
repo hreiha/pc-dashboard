@@ -305,7 +305,7 @@ async function main() {
     pipeline: recruitment?.pipeline ?? [],
     stageDetail: recruitment?.stageDetail ?? [],
     costCentres: mergeOpenRoles(metrics.costCentres, recruitment?.costCentres),
-    locations: metrics.locations,
+    locations: mergeActiveRoles(metrics.locations, recruitment?.locations),
     headcountTrend: metrics.headcountTrend,
     dataQuality: metrics.dataQuality
   };
@@ -338,6 +338,16 @@ const RF_CODE_TO_COST_CENTRE = {
   str: "NAT-STR",
   bim: "NAT-BIM"
 };
+
+/** Active role counts per office come from recruitment.json, headcount from Employment Hero. */
+function mergeActiveRoles(locations, recruitmentLocations) {
+  if (!Array.isArray(recruitmentLocations)) return locations;
+  const byName = new Map(
+    recruitmentLocations.map(r => [String(r.name || r.code || "").toLowerCase().trim(),
+                                   Number(r.activeRoles ?? r.openRoles) || 0])
+  );
+  return locations.map(l => ({ ...l, activeRoles: byName.get(String(l.name).toLowerCase().trim()) || 0 }));
+}
 
 /** Open role counts live in recruitment.json, headcount comes from Employment Hero. */
 function mergeOpenRoles(costCentres, recruitmentCostCentres) {

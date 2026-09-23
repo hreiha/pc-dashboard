@@ -394,6 +394,9 @@ const STAGE_ORDER = [
   "offer pending", "contract sent", "accepted", "declined", "withdrawn"
 ];
 
+// Outcomes rather than places in the pipeline, so they are left off the chart
+const STAGE_EXCLUDE = ["sc declined", "declined", "withdrawn"];
+
 function stageRank(name) {
   const i = STAGE_ORDER.indexOf(String(name || "").toLowerCase().trim());
   return i < 0 ? STAGE_ORDER.length : i;   // anything unrecognised sorts to the end
@@ -447,13 +450,14 @@ function render(d) {
   const maxHead = Math.max(1, ...cc.map(c => Number(c.headcount) || 0));
   const maxStage = Math.max(1, ...pipe.map(s => Number(s.count) || 0));
   const locs = d.locations || [];
-  const detail = (d.stageDetail || []).slice()
+  const detail = (d.stageDetail || [])
+    .filter(st => STAGE_EXCLUDE.indexOf(String(st.stage || "").toLowerCase().trim()) < 0)
     .sort((a, b) => stageRank(a.stage) - stageRank(b.stage) || String(a.stage).localeCompare(String(b.stage)));
   const maxDetail = Math.max(1, ...detail.map(st => Number(st.count) || 0));
-  const companyChurn = Number(p.churnTotal) || 0;
+  const companyChurn = Number(p.churnVoluntary) || 0;
   const maxChurn = Math.max(1, companyChurn,
-    ...cc.map(c => Number(c.churnTotal) || 0),
-    ...locs.map(l => Number(l.churnTotal) || 0));
+    ...cc.map(c => Number(c.churnVoluntary) || 0),
+    ...locs.map(l => Number(l.churnVoluntary) || 0));
 
   const stamp = d.generatedUtc
     ? new Date(d.generatedUtc).toLocaleString("en-AU", { dateStyle: "medium", timeStyle: "short" })
@@ -566,7 +570,7 @@ function render(d) {
     </section>
 
     <section>
-      <h2>Turnover by location</h2>
+      <h2>Location</h2>
       <table>
         <thead>
           <tr>
@@ -576,13 +580,14 @@ function render(d) {
             <th class="num">Leavers LTM</th>
             <th class="num">Vol turnover</th>
             <th class="num">Total turnover</th>
-            <th class="bar-cell">Total turnover against the company rate of ${p.churnTotal || "0"}%</th>
+            <th class="num">Active roles</th>
+            <th class="bar-cell">Voluntary turnover against the company rate of ${p.churnVoluntary || "0"}%</th>
           </tr>
         </thead>
         <tbody>
           ${locs.map(l => {
-            const hasRate = l.churnTotal !== null && l.churnTotal !== undefined;
-            const churn = hasRate ? Number(l.churnTotal) : 0;
+            const hasRate = l.churnVoluntary !== null && l.churnVoluntary !== undefined;
+            const churn = hasRate ? Number(l.churnVoluntary) : 0;
             const width = Math.min(churn / maxChurn * 100, 100);
             const marker = Math.min(companyChurn / maxChurn * 100, 100);
             const above = churn > companyChurn;
@@ -591,8 +596,9 @@ function render(d) {
               <td class="num">${n(l.headcount)}</td>
               <td class="num">${l.femalePct || "0"}%</td>
               <td class="num">${n(l.leaversLtm)}</td>
-              <td class="num">${hasRate ? l.churnVoluntary + "%" : "&ndash;"}</td>
-              <td class="num ${above && hasRate ? "flag" : ""}">${hasRate ? l.churnTotal + "%" : "&ndash;"}</td>
+              <td class="num ${above && hasRate ? "flag" : ""}">${hasRate ? l.churnVoluntary + "%" : "&ndash;"}</td>
+              <td class="num">${hasRate ? l.churnTotal + "%" : "&ndash;"}</td>
+              <td class="num">${n(l.activeRoles)}</td>
               <td class="bar-cell">
                 <span class="churn-track">
                   ${hasRate ? `<span class="churn-bar ${above ? "over" : "under"}" style="width:${width.toFixed(1)}%"></span>` : ""}
@@ -619,13 +625,13 @@ function render(d) {
             <th class="num">Vol turnover</th>
             <th class="num">Total turnover</th>
             <th class="num">Open roles</th>
-            <th class="bar-cell">Total turnover against the company rate of ${p.churnTotal || "0"}%</th>
+            <th class="bar-cell">Voluntary turnover against the company rate of ${p.churnVoluntary || "0"}%</th>
           </tr>
         </thead>
         <tbody>
           ${cc.map(c => {
-            const hasRate = c.churnTotal !== null && c.churnTotal !== undefined;
-            const churn = hasRate ? Number(c.churnTotal) : 0;
+            const hasRate = c.churnVoluntary !== null && c.churnVoluntary !== undefined;
+            const churn = hasRate ? Number(c.churnVoluntary) : 0;
             const width = Math.min(churn / maxChurn * 100, 100);
             const marker = Math.min(companyChurn / maxChurn * 100, 100);
             const above = churn > companyChurn;
@@ -634,8 +640,8 @@ function render(d) {
               <td class="num">${n(c.headcount)}</td>
               <td class="num">${c.femalePct || "0"}%</td>
               <td class="num">${n(c.leaversLtm)}</td>
-              <td class="num">${hasRate ? c.churnVoluntary + "%" : "&ndash;"}</td>
-              <td class="num ${above && hasRate ? "flag" : ""}">${hasRate ? c.churnTotal + "%" : "&ndash;"}</td>
+              <td class="num ${above && hasRate ? "flag" : ""}">${hasRate ? c.churnVoluntary + "%" : "&ndash;"}</td>
+              <td class="num">${hasRate ? c.churnTotal + "%" : "&ndash;"}</td>
               <td class="num">${n(c.openRoles)}</td>
               <td class="bar-cell">
                 <span class="churn-track">
@@ -648,17 +654,11 @@ function render(d) {
         </tbody>
       </table>
       <div class="legend">
-        <span><span class="swatch" style="background:#0000D0"></span>At or below the company churn rate</span>
+        <span><span class="swatch" style="background:#0000D0"></span>At or below the company voluntary rate</span>
         <span><span class="swatch" style="background:#FF3184"></span>Above it</span>
         <span><span class="swatch" style="background:#101024;width:2px"></span>Company rate</span>
       </div>
-      <div class="note">Churn is measured against each cost centre's own average headcount over the
-      last twelve months, so a small team losing two people shows a high rate on a small base.
-      Read it alongside the leaver count rather than on its own. NAT cost centres are combined
-      across offices, so NAT-ESD covers every location, and WA is reported within Melbourne.
-      Voluntary covers resignations and voluntary cessations; total covers every leaver.
-      NAT-STR reports to its local office rather than nationally. A dash means the team averaged
-      fewer than three people over the year, where a rate would be misleading.</div>
+
     </section>
 
 `;
