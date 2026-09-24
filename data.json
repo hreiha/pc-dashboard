@@ -1,17 +1,17 @@
 {
-  "generatedUtc": "2026-09-23T23:13:38.952Z",
+  "generatedUtc": "2026-09-24T19:00:55.086Z",
   "periodLabel": "Sep 2026",
   "priorLabel": "Aug 2026",
   "people": {
-    "headcount": 311,
+    "headcount": 310,
     "headcountPrior": 318,
-    "femalePct": "26.0",
+    "femalePct": "26.1",
     "femalePctPrior": "26.1",
     "leaversMonth": 10,
     "leaversMonthPrior": 10,
     "leaversVoluntaryMonth": 7,
     "leaversVoluntaryMonthPrior": 7,
-    "hiresMonth": 2,
+    "hiresMonth": 1,
     "hiresMonthPrior": 6,
     "churnTotal": "37.1",
     "churnTotalPrior": "37.8",
@@ -23,22 +23,22 @@
     "regrettableCountLtm": 0,
     "regrettableShareOfLeavers": "0.0",
     "rehireFlagMissing": 123,
-    "ytdAnnualisedTotal": "47.9",
-    "ytdAnnualisedTotalPrior": "53.0",
+    "ytdAnnualisedTotal": "48.0",
+    "ytdAnnualisedTotalPrior": "53.1",
     "ytdAnnualisedVoluntary": "30.3",
     "ytdAnnualisedVoluntaryPrior": "32.2",
     "gpgMean": "0.0",
     "gpgMeanPrior": "0.0",
     "gpgMedian": "0.0",
     "gpgMedianPrior": "0.0",
-    "avgHeadcountLtm": "331.6"
+    "avgHeadcountLtm": "331.5"
   },
   "turnoverPeriods": [
     {
       "key": "ltm",
       "label": "Rolling 12 months",
       "months": 12,
-      "avgHeadcount": "331.6",
+      "avgHeadcount": "331.5",
       "leavers": 123,
       "leaversVoluntary": 83,
       "leaversRegrettable": 0,
@@ -54,7 +54,7 @@
       "key": "ytd",
       "label": "Year to date",
       "months": 9,
-      "avgHeadcount": "328.7",
+      "avgHeadcount": "328.6",
       "leavers": 97,
       "leaversVoluntary": 67,
       "leaversRegrettable": 0,
@@ -70,7 +70,7 @@
       "key": "fytd",
       "label": "FYTD",
       "months": 3,
-      "avgHeadcount": "317.0",
+      "avgHeadcount": "316.7",
       "leavers": 38,
       "leaversVoluntary": 24,
       "leaversRegrettable": 0,
@@ -86,7 +86,7 @@
       "key": "last6",
       "label": "Last 6 months",
       "months": 6,
-      "avgHeadcount": "325.2",
+      "avgHeadcount": "325.0",
       "leavers": 64,
       "leaversVoluntary": 45,
       "leaversRegrettable": 0,
@@ -102,7 +102,7 @@
       "key": "last3",
       "label": "Last 3 months",
       "months": 3,
-      "avgHeadcount": "317.0",
+      "avgHeadcount": "316.7",
       "leavers": 38,
       "leaversVoluntary": 24,
       "leaversRegrettable": 0,
@@ -135,12 +135,12 @@
     {
       "code": "AU",
       "name": "ADP Australia",
-      "headcount": 296,
+      "headcount": 295,
       "headcountPrior": 304,
       "female": 77,
-      "femalePct": "26.0",
+      "femalePct": "26.1",
       "leaversMonth": 10,
-      "hiresMonth": 1,
+      "hiresMonth": 0,
       "gpgMean": "0.0",
       "gpgMedian": "0.0"
     },
@@ -188,11 +188,11 @@
     },
     {
       "stage": "1st Interview",
-      "count": 6
+      "count": 4
     },
     {
-      "stage": "SC Approval Pending",
-      "count": 1
+      "stage": "Offer Pending",
+      "count": 4
     },
     {
       "stage": "SC Declined",
@@ -200,7 +200,7 @@
     },
     {
       "stage": "2nd Interview",
-      "count": 3
+      "count": 4
     },
     {
       "stage": "Declined",
@@ -219,12 +219,12 @@
       "count": 13
     },
     {
-      "stage": "Present to HM",
+      "stage": "References",
       "count": 1
     },
     {
-      "stage": "Offer Pending",
-      "count": 3
+      "stage": "Present to HM",
+      "count": 1
     }
   ],
   "costCentres": [
@@ -272,16 +272,16 @@
     },
     {
       "code": "Brisbane",
-      "headcount": 34,
+      "headcount": 33,
       "female": 9,
-      "femalePct": "26.5",
+      "femalePct": "27.3",
       "leaversLtm": 11,
       "leaversVoluntary": 8,
       "leaversRegrettable": 0,
       "churnTotal": "31.7",
-      "churnVoluntary": "23.0",
+      "churnVoluntary": "23.1",
       "churnRegrettable": "0.0",
-      "avgHeadcountLtm": "34.8",
+      "avgHeadcountLtm": "34.7",
       "openRoles": 8
     },
     {
@@ -382,14 +382,14 @@
     },
     {
       "name": "Brisbane",
-      "headcount": 47,
+      "headcount": 46,
       "female": 14,
-      "femalePct": "29.8",
+      "femalePct": "30.4",
       "leaversLtm": 18,
       "leaversVoluntary": 13,
       "churnTotal": "35.4",
-      "churnVoluntary": "25.5",
-      "avgHeadcountLtm": "50.9",
+      "churnVoluntary": "25.6",
+      "avgHeadcountLtm": "50.8",
       "activeRoles": 15
     },
     {
@@ -476,7 +476,7 @@
     },
     {
       "month": "Sep",
-      "headcount": 311
+      "headcount": 310
     }
   ],
   "dataQuality": {
@@ -487,7 +487,7 @@
     "excludedIncomplete": 0,
     "excludedNoCostCentre": 361,
     "notYetStarted": 4,
-    "excludedNoSalary": 311,
+    "excludedNoSalary": 310,
     "casualsConverted": 57,
     "partTimeConverted": 42
   }
