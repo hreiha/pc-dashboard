@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-09-24T23:05:05.734Z",
+  "generatedUtc": "2026-09-25T19:00:51.542Z",
   "periodLabel": "Sep 2026",
   "priorLabel": "Aug 2026",
   "people": {
@@ -118,17 +118,17 @@
       "key": "lastcy",
       "label": "2025",
       "months": 12,
-      "avgHeadcount": "320.0",
-      "leavers": 108,
-      "leaversVoluntary": 71,
+      "avgHeadcount": "320.1",
+      "leavers": 109,
+      "leaversVoluntary": 72,
       "leaversRegrettable": 0,
-      "total": "33.8",
-      "voluntary": "22.2",
+      "total": "34.1",
+      "voluntary": "22.5",
       "regrettable": "0.0",
-      "totalAnnualised": "33.8",
-      "voluntaryAnnualised": "22.2",
+      "totalAnnualised": "34.1",
+      "voluntaryAnnualised": "22.5",
       "regrettableShareOfLeavers": "0.0",
-      "rehireFlagMissing": 108
+      "rehireFlagMissing": 109
     }
   ],
   "entities": [
@@ -158,7 +158,7 @@
     }
   ],
   "recruitment": {
-    "openRoles": 40,
+    "openRoles": 41,
     "filledMonth": 0,
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
@@ -170,7 +170,7 @@
     },
     {
       "stage": "3. Waiting for Approval",
-      "count": 5
+      "count": 6
     },
     {
       "stage": "1. Search & Secure",
@@ -188,11 +188,11 @@
     },
     {
       "stage": "1st Interview",
-      "count": 4
+      "count": 3
     },
     {
       "stage": "Offer Pending",
-      "count": 4
+      "count": 5
     },
     {
       "stage": "SC Declined",
@@ -215,12 +215,12 @@
       "count": 7
     },
     {
-      "stage": "Sourcing",
-      "count": 13
+      "stage": "References",
+      "count": 2
     },
     {
-      "stage": "References",
-      "count": 1
+      "stage": "Sourcing",
+      "count": 13
     },
     {
       "stage": "Present to HM",
@@ -254,7 +254,7 @@
       "churnVoluntary": "37.1",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "70.1",
-      "openRoles": 7
+      "openRoles": 6
     },
     {
       "code": "NAT-SPL",
@@ -282,7 +282,7 @@
       "churnVoluntary": "23.1",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "34.7",
-      "openRoles": 8
+      "openRoles": 7
     },
     {
       "code": "NAT-CORP",
@@ -390,7 +390,7 @@
       "churnTotal": "35.4",
       "churnVoluntary": "25.6",
       "avgHeadcountLtm": "50.8",
-      "activeRoles": 15
+      "activeRoles": 16
     },
     {
       "name": "Adelaide",
@@ -480,13 +480,13 @@
     }
   ],
   "dataQuality": {
-    "excludedBlankLocation": 23,
+    "excludedBlankLocation": 22,
     "excludedWrongLocationAu": 3,
     "excludedWrongLocationUk": 20,
     "excludedContractors": 0,
     "excludedIncomplete": 0,
     "excludedNoCostCentre": 361,
-    "notYetStarted": 4,
+    "notYetStarted": 5,
     "excludedNoSalary": 310,
     "casualsConverted": 57,
     "partTimeConverted": 42
