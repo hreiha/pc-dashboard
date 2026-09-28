@@ -313,18 +313,59 @@
     margin-bottom: 4px;
   }
 
-  .filter select {
-    font: inherit;
+  .picker { position: relative; }
+
+  .picker > summary {
     font-size: 13.5px;
-    padding: 7px 10px;
+    padding: 7px 28px 7px 10px;
     border: 1px solid var(--rule);
     background: var(--paper);
-    color: var(--ink);
     min-width: 190px;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+  }
+
+  .picker > summary::-webkit-details-marker { display: none; }
+
+  .picker > summary::after {
+    content: "";
+    position: absolute;
+    right: 11px;
+    top: 14px;
+    border: 4px solid transparent;
+    border-top-color: var(--muted);
+  }
+
+  .picker[open] > summary { outline: 2px solid var(--blue); outline-offset: -1px; }
+
+  .options {
+    position: absolute;
+    z-index: 20;
+    top: calc(100% + 2px);
+    left: 0;
+    min-width: 100%;
+    max-height: 280px;
+    overflow-y: auto;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    box-shadow: 0 6px 18px rgba(16, 16, 36, 0.12);
+    padding: 4px 0;
+  }
+
+  .options label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    font-size: 13.5px;
+    white-space: nowrap;
     cursor: pointer;
   }
 
-  .filter select:focus { outline: 2px solid var(--blue); outline-offset: -1px; }
+  .options label:hover { background: var(--wash); }
+
+  .options input { accent-color: var(--blue); margin: 0; }
 
   .filter-clear {
     font: inherit;
@@ -408,14 +449,20 @@
 
 <div class="sheet">
   <div class="filters" id="filters" hidden>
-    <label class="filter">
+    <div class="filter">
       <span>Location</span>
-      <select id="filter-location"></select>
-    </label>
-    <label class="filter">
+      <details class="picker" id="pick-location">
+        <summary id="sum-location">All locations</summary>
+        <div class="options" id="opt-location"></div>
+      </details>
+    </div>
+    <div class="filter">
       <span>Section</span>
-      <select id="filter-costcentre"></select>
-    </label>
+      <details class="picker" id="pick-costcentre">
+        <summary id="sum-costcentre">All sections</summary>
+        <div class="options" id="opt-costcentre"></div>
+      </details>
+    </div>
     <button type="button" class="filter-clear" id="filter-clear" hidden>Clear</button>
   </div>
   <div id="root"></div>
@@ -502,43 +549,111 @@ function sparkline(points) {
 }
 
 let DATA = null;
-const FILTER = { location: "All", costCentre: "All" };
+
+// Empty means no restriction, which is how "All" is expressed.
+const FILTER = { locations: [], costCentres: [] };
 
 function isFiltered() {
-  return FILTER.location !== "All" || FILTER.costCentre !== "All";
+  return FILTER.locations.length > 0 || FILTER.costCentres.length > 0;
 }
 
-/** The precomputed combination for the current dropdowns, or the headline figures. */
-function currentSlice(d) {
-  const slices = d.slices || [];
-  const hit = slices.find(s => s.location === FILTER.location && s.costCentre === FILTER.costCentre);
-  if (hit) return hit;
-  // A combination with nobody in it is left out of the file, so show zeroes rather than
-  // silently falling back to the company figures.
-  if (isFiltered() && slices.length) {
+function pct(part, whole) {
+  if (!whole) return "0.0";
+  return (Math.round((part / whole) * 1000) / 10).toFixed(1);
+}
+
+/**
+ * Combines the precomputed slices for whatever is ticked. The slices are disjoint, so
+ * counts add and rates are summed leavers over summed average headcount, which is the
+ * same arithmetic the server does for the company figures.
+ */
+function aggregate(d) {
+  const slices = (d.slices || []).filter(sl =>
+    (FILTER.locations.length === 0 || FILTER.locations.indexOf(sl.location) >= 0) &&
+    (FILTER.costCentres.length === 0 || FILTER.costCentres.indexOf(sl.costCentre) >= 0)
+  );
+
+  if (!slices.length) {
     return { headcount: 0, headcountPrior: 0, femalePct: "0.0", femalePctPrior: "0.0",
              hiresMonth: 0, hiresMonthPrior: 0, leaversMonth: 0, leaversMonthPrior: 0,
              leaversVoluntaryMonth: 0, leaversVoluntaryMonthPrior: 0, avgHeadcountLtm: "0.0",
              churnTotal: "0.0", churnVoluntary: "0.0", turnoverPeriods: [], headcountTrend: [] };
   }
-  return d.people || {};
+
+  const sum = (key) => slices.reduce((a, sl) => a + (Number(sl[key]) || 0), 0);
+
+  const headcount = sum("headcount");
+  const headcountPrior = sum("headcountPrior");
+
+  // Periods keep their order and labels from the first slice
+  const periods = (slices[0].turnoverPeriods || []).map((template, i) => {
+    const leavers = slices.reduce((a, sl) => a + (Number(sl.turnoverPeriods[i]?.leavers) || 0), 0);
+    const vol = slices.reduce((a, sl) => a + (Number(sl.turnoverPeriods[i]?.leaversVoluntary) || 0), 0);
+    const avgHead = slices.reduce((a, sl) => a + (Number(sl.turnoverPeriods[i]?.avgHeadcountValue) || 0), 0);
+    const months = Number(template.months) || 12;
+    const total = pct(leavers, avgHead);
+    const voluntary = pct(vol, avgHead);
+    return {
+      key: template.key,
+      label: template.label,
+      months: months,
+      avgHeadcount: (Math.round(avgHead * 10) / 10).toFixed(1),
+      leavers: leavers,
+      leaversVoluntary: vol,
+      total: total,
+      voluntary: voluntary,
+      totalAnnualised: (Math.round(Number(total) * (12 / months) * 10) / 10).toFixed(1),
+      voluntaryAnnualised: (Math.round(Number(voluntary) * (12 / months) * 10) / 10).toFixed(1)
+    };
+  });
+
+  const trend = (slices[0].headcountTrend || []).map((point, i) => ({
+    month: point.month,
+    headcount: slices.reduce((a, sl) => a + (Number(sl.headcountTrend[i]?.headcount) || 0), 0)
+  }));
+
+  const ltm = periods[0] || { total: "0.0", voluntary: "0.0", avgHeadcount: "0.0" };
+
+  return {
+    headcount: headcount,
+    headcountPrior: headcountPrior,
+    femalePct: pct(sum("female"), headcount),
+    femalePctPrior: pct(sum("femalePrior"), headcountPrior),
+    hiresMonth: sum("hiresMonth"),
+    hiresMonthPrior: sum("hiresMonthPrior"),
+    leaversMonth: sum("leaversMonth"),
+    leaversMonthPrior: sum("leaversMonthPrior"),
+    leaversVoluntaryMonth: sum("leaversVoluntaryMonth"),
+    leaversVoluntaryMonthPrior: sum("leaversVoluntaryMonthPrior"),
+    avgHeadcountLtm: ltm.avgHeadcount,
+    churnTotal: ltm.total,
+    churnVoluntary: ltm.voluntary,
+    turnoverPeriods: periods,
+    headcountTrend: trend
+  };
+}
+
+function summarise(values, singular, plural) {
+  if (!values.length) return "All " + plural;
+  if (values.length <= 2) return values.join(", ");
+  return values.length + " " + plural;
 }
 
 function scopeLabel() {
   if (!isFiltered()) return "";
   const parts = [];
-  if (FILTER.location !== "All") parts.push(FILTER.location);
-  if (FILTER.costCentre !== "All") parts.push(FILTER.costCentre);
+  if (FILTER.locations.length) parts.push(summarise(FILTER.locations, "location", "locations"));
+  if (FILTER.costCentres.length) parts.push(summarise(FILTER.costCentres, "section", "sections"));
   return '<span class="scope">' + parts.join(" \u00B7 ") + "</span>";
 }
 
 function render() {
   const d = DATA || {};
   const r = d.recruitment || {};
-  const slice = currentSlice(d);
+  const slice = aggregate(d);
   const p = slice;
   const trend = slice.headcountTrend || d.headcountTrend || [];
-  const cc = (d.costCentres || []).filter(c => FILTER.costCentre === "All" || c.code === FILTER.costCentre);
+  const cc = (d.costCentres || []).filter(c => !FILTER.costCentres.length || FILTER.costCentres.indexOf(c.code) >= 0);
   const pipe = d.pipeline || [];
   const ent = d.entities || [];
   const dq = d.dataQuality || {};
@@ -547,7 +662,7 @@ function render() {
     : turnoverPeriods(d);
   const maxHead = Math.max(1, ...cc.map(c => Number(c.headcount) || 0));
   const maxStage = Math.max(1, ...pipe.map(s => Number(s.count) || 0));
-  const locs = (d.locations || []).filter(l => FILTER.location === "All" || l.name === FILTER.location);
+  const locs = (d.locations || []).filter(l => !FILTER.locations.length || FILTER.locations.indexOf(l.name) >= 0);
   const detail = (d.stageDetail || [])
     .filter(st => STAGE_EXCLUDE.indexOf(String(st.stage || "").toLowerCase().trim()) < 0)
     .sort((a, b) => stageRank(a.stage) - stageRank(b.stage) || String(a.stage).localeCompare(String(b.stage)));
@@ -759,9 +874,6 @@ function render() {
 
 `;
 
-  const clear = $("filter-clear");
-  if (clear) clear.hidden = !isFiltered();
-
   bindPeriods(periods);
 }
 
@@ -818,35 +930,57 @@ function bindPeriods(periods) {
 
 function buildFilters(d) {
   const opts = d.filterOptions || {};
-  const locations = opts.locations || ["All", ...(d.locations || []).map(l => l.name)];
-  const centres = opts.costCentres || ["All", ...(d.costCentres || []).map(c => c.code)];
+  const locations = opts.locations || [];
+  const centres = opts.costCentres || [];
+  if (!locations.length && !centres.length) return;
 
-  // Nothing to filter by means nothing to show
-  if (locations.length < 2 && centres.length < 2) return;
-
-  const fill = (el, values) => {
-    el.innerHTML = values
-      .map(v => '<option value="' + v + '">' + (v === "All" ? "All locations" : v) + "</option>")
+  const picker = (optId, sumId, values, selected, noun, plural) => {
+    const box = $(optId);
+    box.innerHTML = values
+      .map(v => '<label><input type="checkbox" value="' + v + '"><span>' + v + "</span></label>")
       .join("");
+
+    const refresh = () => {
+      $(sumId).textContent = summarise(selected, noun, plural);
+      const clear = $("filter-clear");
+      if (clear) clear.hidden = !isFiltered();
+      render();
+    };
+
+    box.addEventListener("change", (ev) => {
+      const t = ev.target;
+      if (!t || t.type !== "checkbox") return;
+      const i = selected.indexOf(t.value);
+      if (t.checked && i < 0) selected.push(t.value);
+      if (!t.checked && i >= 0) selected.splice(i, 1);
+      refresh();
+    });
+
+    return () => {
+      selected.length = 0;
+      box.querySelectorAll("input").forEach(el => { el.checked = false; });
+      $(sumId).textContent = summarise(selected, noun, plural);
+    };
   };
 
-  const locEl = $("filter-location");
-  const ccEl = $("filter-costcentre");
-
-  fill(locEl, locations);
-  ccEl.innerHTML = centres
-    .map(v => '<option value="' + v + '">' + (v === "All" ? "All sections" : v) + "</option>")
-    .join("");
-
-  locEl.addEventListener("change", () => { FILTER.location = locEl.value; render(); });
-  ccEl.addEventListener("change", () => { FILTER.costCentre = ccEl.value; render(); });
+  const resetLoc = picker("opt-location", "sum-location", locations, FILTER.locations, "location", "locations");
+  const resetCc = picker("opt-costcentre", "sum-costcentre", centres, FILTER.costCentres, "section", "sections");
 
   $("filter-clear").addEventListener("click", () => {
-    FILTER.location = "All";
-    FILTER.costCentre = "All";
-    locEl.value = "All";
-    ccEl.value = "All";
+    resetLoc();
+    resetCc();
+    $("filter-clear").hidden = true;
     render();
+  });
+
+  // Clicking away closes an open picker
+  document.addEventListener("click", (ev) => {
+    ["pick-location", "pick-costcentre"].forEach(id => {
+      const el = $(id);
+      if (el && el.open && ev.target && typeof el.contains === "function" && !el.contains(ev.target)) {
+        el.open = false;
+      }
+    });
   });
 
   $("filters").hidden = false;

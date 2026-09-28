@@ -452,6 +452,7 @@ export function computeMetrics(employees, asOfIso) {
       label: label,
       months: months,
       avgHeadcount: round1(avgHead),
+      avgHeadcountValue: avgHead,
       leavers: leavers.length,
       leaversVoluntary: vol.length,
       leaversRegrettable: regrettable.length,
@@ -643,6 +644,8 @@ export function computeMetrics(employees, asOfIso) {
     return {
       headcount: now.length,
       headcountPrior: prior.length,
+      female: fem.length,
+      femalePrior: femPrior.length,
       femalePct: now.length ? round1((fem.length / now.length) * 100) : "0.0",
       femalePctPrior: prior.length ? round1((femPrior.length / prior.length) * 100) : "0.0",
       hiresMonth: startersBetween(monthStart, thisMonthEnd, pool).length,
@@ -662,19 +665,16 @@ export function computeMetrics(employees, asOfIso) {
     };
   }
 
-  const ALL = "All";
-  const sliceLocations = [ALL, ...locations.map(l => l.name)];
-  const sliceCentres = [ALL, ...costCentres.map(c => c.code)];
+  const sliceLocations = locations.map(l => l.name);
+  const sliceCentres = costCentres.map(c => c.code);
   const slices = [];
 
   for (const loc of sliceLocations) {
     for (const cc of sliceCentres) {
       const pool = scoped.filter(e =>
-        (loc === ALL || tidyLocation(e.location) === loc) &&
-        (cc === ALL || (e.costCentre || "Unassigned") === cc)
+        tidyLocation(e.location) === loc && (e.costCentre || "Unassigned") === cc
       );
-      // Skip combinations nobody has ever been in, to keep the file small
-      if (!pool.length && !(loc === ALL && cc === ALL)) continue;
+      if (!pool.length) continue;   // nobody has ever been in this combination
       slices.push(Object.assign({ location: loc, costCentre: cc }, sliceFor(pool)));
     }
   }
