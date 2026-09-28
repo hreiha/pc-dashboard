@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-09-28T06:51:40.005Z",
+  "generatedUtc": "2026-09-28T19:01:02.907Z",
   "periodLabel": "Sep 2026",
   "priorLabel": "Aug 2026",
   "people": {
@@ -3655,7 +3655,7 @@
   "pipeline": [
     {
       "stage": "2. Search & Prepare",
-      "count": 26
+      "count": 27
     },
     {
       "stage": "3. Waiting for Approval",
@@ -3663,7 +3663,7 @@
     },
     {
       "stage": "1. Search & Secure",
-      "count": 8
+      "count": 7
     },
     {
       "stage": "4. Role On Hold",
@@ -3704,12 +3704,16 @@
       "count": 7
     },
     {
-      "stage": "References",
-      "count": 2
+      "stage": "Referee Detail Request Sent",
+      "count": 1
     },
     {
       "stage": "Sourcing",
       "count": 13
+    },
+    {
+      "stage": "References",
+      "count": 1
     },
     {
       "stage": "Present to HM",
