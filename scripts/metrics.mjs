@@ -485,14 +485,18 @@ export function computeMetrics(employees, asOfIso) {
   const lastCalStart = monthEnd(calYear - 2, 11);
   const lastCalEnd = monthEnd(calYear - 1, 11);
 
-  const periods = [
-    turnoverFor(scoped, ltmStart, thisMonthEnd, "ltm", "Rolling 12 months"),
-    turnoverFor(scoped, calYtdStart, thisMonthEnd, "ytd", "Year to date"),
-    turnoverFor(scoped, fyStart, thisMonthEnd, "fytd", "FYTD"),
-    turnoverFor(scoped, monthEnd(asOf.getUTCFullYear(), asOf.getUTCMonth() - 6), thisMonthEnd, "last6", "Last 6 months"),
-    turnoverFor(scoped, monthEnd(asOf.getUTCFullYear(), asOf.getUTCMonth() - 3), thisMonthEnd, "last3", "Last 3 months"),
-    turnoverFor(scoped, lastCalStart, lastCalEnd, "lastcy", String(calYear - 1))
+  const periodDefs = [
+    { key: "ltm",    label: "Rolling 12 months", from: ltmStart,    to: thisMonthEnd },
+    { key: "ytd",    label: "Year to date",      from: calYtdStart, to: thisMonthEnd },
+    { key: "fytd",   label: "FYTD",              from: fyStart,     to: thisMonthEnd },
+    { key: "last6",  label: "Last 6 months",
+      from: monthEnd(asOf.getUTCFullYear(), asOf.getUTCMonth() - 6), to: thisMonthEnd },
+    { key: "last3",  label: "Last 3 months",
+      from: monthEnd(asOf.getUTCFullYear(), asOf.getUTCMonth() - 3), to: thisMonthEnd },
+    { key: "lastcy", label: String(calYear - 1), from: lastCalStart, to: lastCalEnd }
   ];
+
+  const periods = periodDefs.map(d => turnoverFor(scoped, d.from, d.to, d.key, d.label));
 
   const ltmPeriod = periods[0];
   const ytdPeriod = periods[2];   // FYTD, to match the report
@@ -621,6 +625,60 @@ export function computeMetrics(employees, asOfIso) {
     headcount: monthlyHeadcount[i]
   }));
 
+  // ---- filter slices
+  //
+  // The dashboard holds aggregates, not records, so every combination the dropdowns can
+  // produce is worked out here. Same functions as the headline figures, so a filtered
+  // view can never disagree with the unfiltered one.
+
+  function sliceFor(pool) {
+    const now = pool.filter(e => activeAt(e, thisMonthEnd));
+    const prior = pool.filter(e => activeAt(e, priorMonthEnd));
+    const fem = now.filter(isFemale);
+    const femPrior = prior.filter(isFemale);
+    const monthly = monthEnds.map(d => pool.filter(e => activeAt(e, d)).length);
+    const lm = leaversBetween(monthStart, thisMonthEnd, pool);
+    const lmPrior = leaversBetween(priorMonthStart, priorMonthEnd, pool);
+
+    return {
+      headcount: now.length,
+      headcountPrior: prior.length,
+      femalePct: now.length ? round1((fem.length / now.length) * 100) : "0.0",
+      femalePctPrior: prior.length ? round1((femPrior.length / prior.length) * 100) : "0.0",
+      hiresMonth: startersBetween(monthStart, thisMonthEnd, pool).length,
+      hiresMonthPrior: startersBetween(priorMonthStart, priorMonthEnd, pool).length,
+      leaversMonth: lm.length,
+      leaversMonthPrior: lmPrior.length,
+      leaversVoluntaryMonth: lm.filter(e => isVoluntary(e.terminationReason)).length,
+      leaversVoluntaryMonthPrior: lmPrior.filter(e => isVoluntary(e.terminationReason)).length,
+      avgHeadcountLtm: round1(mean(monthly)),
+      churnTotal: churn(leaversBetween(ltmStart, thisMonthEnd, pool), mean(monthly), false),
+      churnVoluntary: churn(leaversBetween(ltmStart, thisMonthEnd, pool), mean(monthly), true),
+      turnoverPeriods: periodDefs.map(d => turnoverFor(pool, d.from, d.to, d.key, d.label)),
+      headcountTrend: monthEnds.map((d, i) => ({
+        month: monthNames[d.getUTCMonth()],
+        headcount: monthly[i]
+      }))
+    };
+  }
+
+  const ALL = "All";
+  const sliceLocations = [ALL, ...locations.map(l => l.name)];
+  const sliceCentres = [ALL, ...costCentres.map(c => c.code)];
+  const slices = [];
+
+  for (const loc of sliceLocations) {
+    for (const cc of sliceCentres) {
+      const pool = scoped.filter(e =>
+        (loc === ALL || tidyLocation(e.location) === loc) &&
+        (cc === ALL || (e.costCentre || "Unassigned") === cc)
+      );
+      // Skip combinations nobody has ever been in, to keep the file small
+      if (!pool.length && !(loc === ALL && cc === ALL)) continue;
+      slices.push(Object.assign({ location: loc, costCentre: cc }, sliceFor(pool)));
+    }
+  }
+
   // ---- assemble
 
   const result = {
@@ -662,6 +720,8 @@ export function computeMetrics(employees, asOfIso) {
     },
     entities: entities,
     turnoverPeriods: periods,
+    filterOptions: { locations: sliceLocations, costCentres: sliceCentres },
+    slices: slices,
     costCentres: costCentres,
     locations: locations,
     headcountTrend: headcountTrend,

@@ -298,6 +298,8 @@ async function main() {
     priorLabel: metrics.priorLabel,
     people: metrics.people,
     turnoverPeriods: metrics.turnoverPeriods,
+    filterOptions: metrics.filterOptions,
+    slices: metrics.slices,
     entities: metrics.entities,
     recruitment: recruitment?.recruitment ?? {
       openRoles: 0, filledMonth: 0, avgDaysOpen: "0.0", avgDaysToHire: "0.0"

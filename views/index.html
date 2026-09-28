@@ -296,6 +296,57 @@
 
   .stage .count { text-align: right; font-weight: 600; font-size: 14px; }
 
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 14px;
+    padding: 16px 0 4px;
+  }
+
+  .filter { display: block; }
+
+  .filter span {
+    display: block;
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .filter select {
+    font: inherit;
+    font-size: 13.5px;
+    padding: 7px 10px;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    color: var(--ink);
+    min-width: 190px;
+    cursor: pointer;
+  }
+
+  .filter select:focus { outline: 2px solid var(--blue); outline-offset: -1px; }
+
+  .filter-clear {
+    font: inherit;
+    font-size: 12.5px;
+    padding: 7px 12px;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    color: var(--blue);
+    cursor: pointer;
+  }
+
+  .scope {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;
+    background: var(--blue);
+    padding: 2px 8px;
+    vertical-align: 3px;
+  }
+
   .periods {
     display: flex;
     flex-wrap: wrap;
@@ -356,6 +407,17 @@
 </div>
 
 <div class="sheet">
+  <div class="filters" id="filters" hidden>
+    <label class="filter">
+      <span>Location</span>
+      <select id="filter-location"></select>
+    </label>
+    <label class="filter">
+      <span>Section</span>
+      <select id="filter-costcentre"></select>
+    </label>
+    <button type="button" class="filter-clear" id="filter-clear" hidden>Clear</button>
+  </div>
   <div id="root"></div>
 </div>
 
@@ -439,17 +501,53 @@ function sparkline(points) {
     dots + "</svg>";
 }
 
-function render(d) {
-  const p = d.people || {}, r = d.recruitment || {};
-  const trend = d.headcountTrend || [];
-  const cc = d.costCentres || [];
+let DATA = null;
+const FILTER = { location: "All", costCentre: "All" };
+
+function isFiltered() {
+  return FILTER.location !== "All" || FILTER.costCentre !== "All";
+}
+
+/** The precomputed combination for the current dropdowns, or the headline figures. */
+function currentSlice(d) {
+  const slices = d.slices || [];
+  const hit = slices.find(s => s.location === FILTER.location && s.costCentre === FILTER.costCentre);
+  if (hit) return hit;
+  // A combination with nobody in it is left out of the file, so show zeroes rather than
+  // silently falling back to the company figures.
+  if (isFiltered() && slices.length) {
+    return { headcount: 0, headcountPrior: 0, femalePct: "0.0", femalePctPrior: "0.0",
+             hiresMonth: 0, hiresMonthPrior: 0, leaversMonth: 0, leaversMonthPrior: 0,
+             leaversVoluntaryMonth: 0, leaversVoluntaryMonthPrior: 0, avgHeadcountLtm: "0.0",
+             churnTotal: "0.0", churnVoluntary: "0.0", turnoverPeriods: [], headcountTrend: [] };
+  }
+  return d.people || {};
+}
+
+function scopeLabel() {
+  if (!isFiltered()) return "";
+  const parts = [];
+  if (FILTER.location !== "All") parts.push(FILTER.location);
+  if (FILTER.costCentre !== "All") parts.push(FILTER.costCentre);
+  return '<span class="scope">' + parts.join(" \u00B7 ") + "</span>";
+}
+
+function render() {
+  const d = DATA || {};
+  const r = d.recruitment || {};
+  const slice = currentSlice(d);
+  const p = slice;
+  const trend = slice.headcountTrend || d.headcountTrend || [];
+  const cc = (d.costCentres || []).filter(c => FILTER.costCentre === "All" || c.code === FILTER.costCentre);
   const pipe = d.pipeline || [];
   const ent = d.entities || [];
   const dq = d.dataQuality || {};
-  const periods = turnoverPeriods(d);
+  const periods = (slice.turnoverPeriods || []).length
+    ? slice.turnoverPeriods
+    : turnoverPeriods(d);
   const maxHead = Math.max(1, ...cc.map(c => Number(c.headcount) || 0));
   const maxStage = Math.max(1, ...pipe.map(s => Number(s.count) || 0));
-  const locs = d.locations || [];
+  const locs = (d.locations || []).filter(l => FILTER.location === "All" || l.name === FILTER.location);
   const detail = (d.stageDetail || [])
     .filter(st => STAGE_EXCLUDE.indexOf(String(st.stage || "").toLowerCase().trim()) < 0)
     .sort((a, b) => stageRank(a.stage) - stageRank(b.stage) || String(a.stage).localeCompare(String(b.stage)));
@@ -493,7 +591,7 @@ function render(d) {
     </div>
 
     <section>
-      <h2>This month</h2>
+      <h2>This month${scopeLabel()}</h2>
       <div class="metrics">
         ${tile("New hires", p.hiresMonth, p.hiresMonthPrior, "", true)}
         ${tile("Leavers (voluntary)", p.leaversVoluntaryMonth, p.leaversVoluntaryMonthPrior, "", false)}
@@ -503,7 +601,7 @@ function render(d) {
     </section>
 
     <section>
-      <h2>Turnover</h2>
+      <h2>Turnover${scopeLabel()}</h2>
       <div class="periods" id="periods">
         ${periods.map((pr, i) => `<button type="button" class="period${i === 0 ? " on" : ""}" data-i="${i}">${pr.label}</button>`).join("")}
       </div>
@@ -511,7 +609,7 @@ function render(d) {
       <div class="note" id="turnover-note"></div>
     </section>
 
-    <section>
+    <section${isFiltered() ? ' style="display:none"' : ""}>
       <h2>By entity</h2>
       <table>
         <thead>
@@ -535,7 +633,7 @@ function render(d) {
       </table>
     </section>
 
-    <section>
+    <section${isFiltered() ? ' style="display:none"' : ""}>
       <h2>Recruitment</h2>
       <div class="metrics">
         ${tile("Search &amp; Secure", stageCount(pipe, "Search & Secure"), null, "", null)}
@@ -660,6 +758,11 @@ function render(d) {
     </section>
 
 `;
+
+  const clear = $("filter-clear");
+  if (clear) clear.hidden = !isFiltered();
+
+  bindPeriods(periods);
 }
 
 /** Periods from the data, or a single rolling twelve month entry built from the headline
@@ -689,7 +792,8 @@ function renderTurnover(periods, index) {
   $("turnover").innerHTML =
     tile("Voluntary", pr.voluntary, null, "%", false) +
     tile("Total", pr.total, null, "%", false) +
-    tile("Leavers", pr.leavers, null, "", false) +
+    tile("Voluntary leavers", pr.leaversVoluntary, null, "", false) +
+    tile("Total leavers", pr.leavers, null, "", false) +
     (pr.months !== 12
       ? tile("Voluntary annualised", pr.voluntaryAnnualised, null, "%", false) +
         tile("Total annualised", pr.totalAnnualised, null, "%", false)
@@ -704,25 +808,66 @@ function renderTurnover(periods, index) {
   document.querySelectorAll(".period").forEach((b, i) => b.classList.toggle("on", i === index));
 }
 
+/** Wired after each render, since the buttons are rebuilt with the markup. */
+function bindPeriods(periods) {
+  document.querySelectorAll(".period").forEach(btn => {
+    btn.addEventListener("click", () => renderTurnover(periods, Number(btn.dataset.i)));
+  });
+  renderTurnover(periods, 0);
+}
+
+function buildFilters(d) {
+  const opts = d.filterOptions || {};
+  const locations = opts.locations || ["All", ...(d.locations || []).map(l => l.name)];
+  const centres = opts.costCentres || ["All", ...(d.costCentres || []).map(c => c.code)];
+
+  // Nothing to filter by means nothing to show
+  if (locations.length < 2 && centres.length < 2) return;
+
+  const fill = (el, values) => {
+    el.innerHTML = values
+      .map(v => '<option value="' + v + '">' + (v === "All" ? "All locations" : v) + "</option>")
+      .join("");
+  };
+
+  const locEl = $("filter-location");
+  const ccEl = $("filter-costcentre");
+
+  fill(locEl, locations);
+  ccEl.innerHTML = centres
+    .map(v => '<option value="' + v + '">' + (v === "All" ? "All sections" : v) + "</option>")
+    .join("");
+
+  locEl.addEventListener("change", () => { FILTER.location = locEl.value; render(); });
+  ccEl.addEventListener("change", () => { FILTER.costCentre = ccEl.value; render(); });
+
+  $("filter-clear").addEventListener("click", () => {
+    FILTER.location = "All";
+    FILTER.costCentre = "All";
+    locEl.value = "All";
+    ccEl.value = "All";
+    render();
+  });
+
+  $("filters").hidden = false;
+}
+
 fetch("data.json", { cache: "no-store" })
   .then(res => {
     if (!res.ok) throw new Error("data.json returned " + res.status);
     return res.json();
   })
   .then(d => {
-    render(d);
-    const periods = turnoverPeriods(d);
-    renderTurnover(periods, 0);
-    document.querySelectorAll(".period").forEach(btn => {
-      btn.addEventListener("click", () => renderTurnover(periods, Number(btn.dataset.i)));
-    });
+    DATA = d;
+    buildFilters(d);
+    render();
   })
   .catch(err => {
     $("meta").textContent = "Figures unavailable";
     $("root").innerHTML =
       '<div class="error"><strong>The dashboard could not load data.json.</strong>' +
-      "<p>Check that the scheduled Power Automate flow committed data.json to the repository and that Vercel finished deploying. Details: " +
-      String(err.message) + "</p></div>";
+      "<p>Check that the scheduled workflow committed data.json to the repository and that " +
+      "Vercel finished deploying. Details: " + String(err.message) + "</p></div>";
   });
 </script>
 </body>
