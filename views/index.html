@@ -300,8 +300,16 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
+    justify-content: flex-end;
     gap: 14px;
     padding: 16px 0 4px;
+  }
+
+  .options { right: 0; left: auto; }
+
+  @media (max-width: 640px) {
+    .filters { justify-content: flex-start; }
+    .options { left: 0; right: auto; }
   }
 
   .filter { display: block; }
@@ -514,6 +522,20 @@ function stageRank(name) {
 // Stage labels as we report them, where they differ from the list's wording
 const STAGE_LABELS = { "waiting for approval": "Role Requested" };
 
+// Role statuses left off the recruitment chart
+const PIPELINE_EXCLUDE = ["waiting for approval", "role withdrawn", "offered"];
+
+// The three reference steps are one stage for reporting
+const STAGE_MERGE = {
+  "referee detail request sent": "References",
+  "references requested": "References"
+};
+
+function mergeStage(raw) {
+  const clean = String(raw || "").replace(/^\s*\d+[.)]\s*/, "").trim();
+  return STAGE_MERGE[clean.toLowerCase()] || clean;
+}
+
 function stageLabel(raw) {
   const clean = String(raw || "").replace(/^\s*\d+[.)]\s*/, "").trim();
   return STAGE_LABELS[clean.toLowerCase()] || clean;
@@ -654,7 +676,8 @@ function render() {
   const p = slice;
   const trend = slice.headcountTrend || d.headcountTrend || [];
   const cc = (d.costCentres || []).filter(c => !FILTER.costCentres.length || FILTER.costCentres.indexOf(c.code) >= 0);
-  const pipe = d.pipeline || [];
+  const pipe = (d.pipeline || []).filter(st =>
+    PIPELINE_EXCLUDE.indexOf(String(st.stage || "").replace(/^\s*\d+[.)]\s*/, "").trim().toLowerCase()) < 0);
   const ent = d.entities || [];
   const dq = d.dataQuality || {};
   const periods = (slice.turnoverPeriods || []).length
@@ -663,8 +686,14 @@ function render() {
   const maxHead = Math.max(1, ...cc.map(c => Number(c.headcount) || 0));
   const maxStage = Math.max(1, ...pipe.map(s => Number(s.count) || 0));
   const locs = (d.locations || []).filter(l => !FILTER.locations.length || FILTER.locations.indexOf(l.name) >= 0);
-  const detail = (d.stageDetail || [])
-    .filter(st => STAGE_EXCLUDE.indexOf(String(st.stage || "").toLowerCase().trim()) < 0)
+  const detailMerged = new Map();
+  for (const st of d.stageDetail || []) {
+    const name = mergeStage(st.stage);
+    if (STAGE_EXCLUDE.indexOf(name.toLowerCase()) >= 0) continue;
+    detailMerged.set(name, (detailMerged.get(name) || 0) + (Number(st.count) || 0));
+  }
+  const detail = [...detailMerged.entries()]
+    .map(([stage, count]) => ({ stage, count }))
     .sort((a, b) => stageRank(a.stage) - stageRank(b.stage) || String(a.stage).localeCompare(String(b.stage)));
   const maxDetail = Math.max(1, ...detail.map(st => Number(st.count) || 0));
   const companyChurn = Number(p.churnVoluntary) || 0;
