@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-09-29T03:22:23.067Z",
+  "generatedUtc": "2026-09-29T07:08:42.236Z",
   "periodLabel": "Sep 2026",
   "priorLabel": "Aug 2026",
   "people": {
@@ -156,8 +156,107 @@
       "Adelaide",
       "London",
       "NAT-DIG"
+    ],
+    "months": [
+      {
+        "key": "2024-10",
+        "label": "Oct 2024"
+      },
+      {
+        "key": "2024-11",
+        "label": "Nov 2024"
+      },
+      {
+        "key": "2024-12",
+        "label": "Dec 2024"
+      },
+      {
+        "key": "2025-01",
+        "label": "Jan 2025"
+      },
+      {
+        "key": "2025-02",
+        "label": "Feb 2025"
+      },
+      {
+        "key": "2025-03",
+        "label": "Mar 2025"
+      },
+      {
+        "key": "2025-04",
+        "label": "Apr 2025"
+      },
+      {
+        "key": "2025-05",
+        "label": "May 2025"
+      },
+      {
+        "key": "2025-06",
+        "label": "Jun 2025"
+      },
+      {
+        "key": "2025-07",
+        "label": "Jul 2025"
+      },
+      {
+        "key": "2025-08",
+        "label": "Aug 2025"
+      },
+      {
+        "key": "2025-09",
+        "label": "Sep 2025"
+      },
+      {
+        "key": "2025-10",
+        "label": "Oct 2025"
+      },
+      {
+        "key": "2025-11",
+        "label": "Nov 2025"
+      },
+      {
+        "key": "2025-12",
+        "label": "Dec 2025"
+      },
+      {
+        "key": "2026-01",
+        "label": "Jan 2026"
+      },
+      {
+        "key": "2026-02",
+        "label": "Feb 2026"
+      },
+      {
+        "key": "2026-03",
+        "label": "Mar 2026"
+      },
+      {
+        "key": "2026-04",
+        "label": "Apr 2026"
+      },
+      {
+        "key": "2026-05",
+        "label": "May 2026"
+      },
+      {
+        "key": "2026-06",
+        "label": "Jun 2026"
+      },
+      {
+        "key": "2026-07",
+        "label": "Jul 2026"
+      },
+      {
+        "key": "2026-08",
+        "label": "Aug 2026"
+      },
+      {
+        "key": "2026-09",
+        "label": "Sep 2026"
+      }
     ]
   },
+  "includesNames": false,
   "slices": [
     {
       "location": "Melbourne",
@@ -329,6 +428,248 @@
         {
           "month": "Sep",
           "headcount": 85
+        }
+      ],
+      "months": [
+        {
+          "key": "2024-10",
+          "label": "Oct 2024",
+          "headcountEnd": 76,
+          "hires": 2,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-11",
+          "label": "Nov 2024",
+          "headcountEnd": 76,
+          "hires": 2,
+          "leavers": 2,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-12",
+          "label": "Dec 2024",
+          "headcountEnd": 74,
+          "hires": 0,
+          "leavers": 2,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-01",
+          "label": "Jan 2025",
+          "headcountEnd": 76,
+          "hires": 3,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-02",
+          "label": "Feb 2025",
+          "headcountEnd": 80,
+          "hires": 7,
+          "leavers": 3,
+          "leaversVoluntary": 2,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-03",
+          "label": "Mar 2025",
+          "headcountEnd": 85,
+          "hires": 7,
+          "leavers": 2,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-04",
+          "label": "Apr 2025",
+          "headcountEnd": 87,
+          "hires": 3,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-05",
+          "label": "May 2025",
+          "headcountEnd": 91,
+          "hires": 5,
+          "leavers": 1,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-06",
+          "label": "Jun 2025",
+          "headcountEnd": 86,
+          "hires": 1,
+          "leavers": 6,
+          "leaversVoluntary": 2,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-07",
+          "label": "Jul 2025",
+          "headcountEnd": 86,
+          "hires": 2,
+          "leavers": 2,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-08",
+          "label": "Aug 2025",
+          "headcountEnd": 88,
+          "hires": 3,
+          "leavers": 1,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-09",
+          "label": "Sep 2025",
+          "headcountEnd": 92,
+          "hires": 6,
+          "leavers": 2,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-10",
+          "label": "Oct 2025",
+          "headcountEnd": 94,
+          "hires": 3,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-11",
+          "label": "Nov 2025",
+          "headcountEnd": 98,
+          "hires": 5,
+          "leavers": 1,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-12",
+          "label": "Dec 2025",
+          "headcountEnd": 95,
+          "hires": 0,
+          "leavers": 3,
+          "leaversVoluntary": 2,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-01",
+          "label": "Jan 2026",
+          "headcountEnd": 94,
+          "hires": 1,
+          "leavers": 2,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-02",
+          "label": "Feb 2026",
+          "headcountEnd": 94,
+          "hires": 6,
+          "leavers": 6,
+          "leaversVoluntary": 3,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-03",
+          "label": "Mar 2026",
+          "headcountEnd": 91,
+          "hires": 2,
+          "leavers": 5,
+          "leaversVoluntary": 4,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-04",
+          "label": "Apr 2026",
+          "headcountEnd": 91,
+          "hires": 2,
+          "leavers": 2,
+          "leaversVoluntary": 2,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-05",
+          "label": "May 2026",
+          "headcountEnd": 90,
+          "hires": 4,
+          "leavers": 5,
+          "leaversVoluntary": 5,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-06",
+          "label": "Jun 2026",
+          "headcountEnd": 95,
+          "hires": 7,
+          "leavers": 2,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-07",
+          "label": "Jul 2026",
+          "headcountEnd": 90,
+          "hires": 0,
+          "leavers": 5,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-08",
+          "label": "Aug 2026",
+          "headcountEnd": 90,
+          "hires": 2,
+          "leavers": 2,
+          "leaversVoluntary": 2,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-09",
+          "label": "Sep 2026",
+          "headcountEnd": 85,
+          "hires": 0,
+          "leavers": 5,
+          "leaversVoluntary": 4,
+          "hireNames": [],
+          "leaverNames": []
         }
       ]
     },
@@ -503,6 +844,248 @@
           "month": "Sep",
           "headcount": 16
         }
+      ],
+      "months": [
+        {
+          "key": "2024-10",
+          "label": "Oct 2024",
+          "headcountEnd": 10,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-11",
+          "label": "Nov 2024",
+          "headcountEnd": 10,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-12",
+          "label": "Dec 2024",
+          "headcountEnd": 10,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-01",
+          "label": "Jan 2025",
+          "headcountEnd": 10,
+          "hires": 1,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-02",
+          "label": "Feb 2025",
+          "headcountEnd": 10,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-03",
+          "label": "Mar 2025",
+          "headcountEnd": 11,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-04",
+          "label": "Apr 2025",
+          "headcountEnd": 11,
+          "hires": 1,
+          "leavers": 1,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-05",
+          "label": "May 2025",
+          "headcountEnd": 12,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-06",
+          "label": "Jun 2025",
+          "headcountEnd": 12,
+          "hires": 1,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-07",
+          "label": "Jul 2025",
+          "headcountEnd": 12,
+          "hires": 1,
+          "leavers": 1,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-08",
+          "label": "Aug 2025",
+          "headcountEnd": 13,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-09",
+          "label": "Sep 2025",
+          "headcountEnd": 13,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-10",
+          "label": "Oct 2025",
+          "headcountEnd": 13,
+          "hires": 2,
+          "leavers": 2,
+          "leaversVoluntary": 2,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-11",
+          "label": "Nov 2025",
+          "headcountEnd": 13,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-12",
+          "label": "Dec 2025",
+          "headcountEnd": 12,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-01",
+          "label": "Jan 2026",
+          "headcountEnd": 12,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-02",
+          "label": "Feb 2026",
+          "headcountEnd": 14,
+          "hires": 2,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-03",
+          "label": "Mar 2026",
+          "headcountEnd": 14,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-04",
+          "label": "Apr 2026",
+          "headcountEnd": 14,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-05",
+          "label": "May 2026",
+          "headcountEnd": 14,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-06",
+          "label": "Jun 2026",
+          "headcountEnd": 16,
+          "hires": 2,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-07",
+          "label": "Jul 2026",
+          "headcountEnd": 16,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-08",
+          "label": "Aug 2026",
+          "headcountEnd": 16,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-09",
+          "label": "Sep 2026",
+          "headcountEnd": 16,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        }
       ]
     },
     {
@@ -675,6 +1258,248 @@
         {
           "month": "Sep",
           "headcount": 23
+        }
+      ],
+      "months": [
+        {
+          "key": "2024-10",
+          "label": "Oct 2024",
+          "headcountEnd": 21,
+          "hires": 1,
+          "leavers": 2,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-11",
+          "label": "Nov 2024",
+          "headcountEnd": 19,
+          "hires": 0,
+          "leavers": 2,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-12",
+          "label": "Dec 2024",
+          "headcountEnd": 19,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-01",
+          "label": "Jan 2025",
+          "headcountEnd": 20,
+          "hires": 2,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-02",
+          "label": "Feb 2025",
+          "headcountEnd": 21,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-03",
+          "label": "Mar 2025",
+          "headcountEnd": 21,
+          "hires": 1,
+          "leavers": 1,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-04",
+          "label": "Apr 2025",
+          "headcountEnd": 18,
+          "hires": 0,
+          "leavers": 3,
+          "leaversVoluntary": 2,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-05",
+          "label": "May 2025",
+          "headcountEnd": 19,
+          "hires": 2,
+          "leavers": 1,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-06",
+          "label": "Jun 2025",
+          "headcountEnd": 21,
+          "hires": 3,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-07",
+          "label": "Jul 2025",
+          "headcountEnd": 22,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-08",
+          "label": "Aug 2025",
+          "headcountEnd": 22,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-09",
+          "label": "Sep 2025",
+          "headcountEnd": 22,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-10",
+          "label": "Oct 2025",
+          "headcountEnd": 22,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-11",
+          "label": "Nov 2025",
+          "headcountEnd": 23,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-12",
+          "label": "Dec 2025",
+          "headcountEnd": 23,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-01",
+          "label": "Jan 2026",
+          "headcountEnd": 23,
+          "hires": 1,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-02",
+          "label": "Feb 2026",
+          "headcountEnd": 23,
+          "hires": 1,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-03",
+          "label": "Mar 2026",
+          "headcountEnd": 23,
+          "hires": 1,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-04",
+          "label": "Apr 2026",
+          "headcountEnd": 23,
+          "hires": 1,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-05",
+          "label": "May 2026",
+          "headcountEnd": 23,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-06",
+          "label": "Jun 2026",
+          "headcountEnd": 24,
+          "hires": 2,
+          "leavers": 1,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-07",
+          "label": "Jul 2026",
+          "headcountEnd": 23,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-08",
+          "label": "Aug 2026",
+          "headcountEnd": 23,
+          "hires": 1,
+          "leavers": 1,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-09",
+          "label": "Sep 2026",
+          "headcountEnd": 23,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
         }
       ]
     },
@@ -849,6 +1674,248 @@
           "month": "Sep",
           "headcount": 13
         }
+      ],
+      "months": [
+        {
+          "key": "2024-10",
+          "label": "Oct 2024",
+          "headcountEnd": 16,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-11",
+          "label": "Nov 2024",
+          "headcountEnd": 14,
+          "hires": 0,
+          "leavers": 2,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-12",
+          "label": "Dec 2024",
+          "headcountEnd": 14,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-01",
+          "label": "Jan 2025",
+          "headcountEnd": 14,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-02",
+          "label": "Feb 2025",
+          "headcountEnd": 14,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-03",
+          "label": "Mar 2025",
+          "headcountEnd": 15,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-04",
+          "label": "Apr 2025",
+          "headcountEnd": 15,
+          "hires": 2,
+          "leavers": 2,
+          "leaversVoluntary": 2,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-05",
+          "label": "May 2025",
+          "headcountEnd": 16,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-06",
+          "label": "Jun 2025",
+          "headcountEnd": 17,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-07",
+          "label": "Jul 2025",
+          "headcountEnd": 18,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-08",
+          "label": "Aug 2025",
+          "headcountEnd": 18,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-09",
+          "label": "Sep 2025",
+          "headcountEnd": 18,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-10",
+          "label": "Oct 2025",
+          "headcountEnd": 18,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-11",
+          "label": "Nov 2025",
+          "headcountEnd": 14,
+          "hires": 0,
+          "leavers": 4,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-12",
+          "label": "Dec 2025",
+          "headcountEnd": 14,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-01",
+          "label": "Jan 2026",
+          "headcountEnd": 14,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-02",
+          "label": "Feb 2026",
+          "headcountEnd": 13,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-03",
+          "label": "Mar 2026",
+          "headcountEnd": 13,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-04",
+          "label": "Apr 2026",
+          "headcountEnd": 13,
+          "hires": 1,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-05",
+          "label": "May 2026",
+          "headcountEnd": 14,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-06",
+          "label": "Jun 2026",
+          "headcountEnd": 14,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-07",
+          "label": "Jul 2026",
+          "headcountEnd": 13,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-08",
+          "label": "Aug 2026",
+          "headcountEnd": 13,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-09",
+          "label": "Sep 2026",
+          "headcountEnd": 13,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        }
       ]
     },
     {
@@ -1021,6 +2088,248 @@
         {
           "month": "Sep",
           "headcount": 5
+        }
+      ],
+      "months": [
+        {
+          "key": "2024-10",
+          "label": "Oct 2024",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-11",
+          "label": "Nov 2024",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-12",
+          "label": "Dec 2024",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-01",
+          "label": "Jan 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-02",
+          "label": "Feb 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-03",
+          "label": "Mar 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-04",
+          "label": "Apr 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-05",
+          "label": "May 2025",
+          "headcountEnd": 2,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-06",
+          "label": "Jun 2025",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-07",
+          "label": "Jul 2025",
+          "headcountEnd": 4,
+          "hires": 2,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-08",
+          "label": "Aug 2025",
+          "headcountEnd": 4,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-09",
+          "label": "Sep 2025",
+          "headcountEnd": 4,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-10",
+          "label": "Oct 2025",
+          "headcountEnd": 4,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-11",
+          "label": "Nov 2025",
+          "headcountEnd": 4,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-12",
+          "label": "Dec 2025",
+          "headcountEnd": 4,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-01",
+          "label": "Jan 2026",
+          "headcountEnd": 5,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-02",
+          "label": "Feb 2026",
+          "headcountEnd": 5,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-03",
+          "label": "Mar 2026",
+          "headcountEnd": 5,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-04",
+          "label": "Apr 2026",
+          "headcountEnd": 5,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-05",
+          "label": "May 2026",
+          "headcountEnd": 5,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-06",
+          "label": "Jun 2026",
+          "headcountEnd": 5,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-07",
+          "label": "Jul 2026",
+          "headcountEnd": 5,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-08",
+          "label": "Aug 2026",
+          "headcountEnd": 5,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-09",
+          "label": "Sep 2026",
+          "headcountEnd": 5,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
         }
       ]
     },
@@ -1195,6 +2504,248 @@
           "month": "Sep",
           "headcount": 2
         }
+      ],
+      "months": [
+        {
+          "key": "2024-10",
+          "label": "Oct 2024",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-11",
+          "label": "Nov 2024",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-12",
+          "label": "Dec 2024",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-01",
+          "label": "Jan 2025",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-02",
+          "label": "Feb 2025",
+          "headcountEnd": 1,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-03",
+          "label": "Mar 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-04",
+          "label": "Apr 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-05",
+          "label": "May 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-06",
+          "label": "Jun 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-07",
+          "label": "Jul 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-08",
+          "label": "Aug 2025",
+          "headcountEnd": 2,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-09",
+          "label": "Sep 2025",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-10",
+          "label": "Oct 2025",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-11",
+          "label": "Nov 2025",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-12",
+          "label": "Dec 2025",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-01",
+          "label": "Jan 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-02",
+          "label": "Feb 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-03",
+          "label": "Mar 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-04",
+          "label": "Apr 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-05",
+          "label": "May 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-06",
+          "label": "Jun 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-07",
+          "label": "Jul 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-08",
+          "label": "Aug 2026",
+          "headcountEnd": 3,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-09",
+          "label": "Sep 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        }
       ]
     },
     {
@@ -1367,6 +2918,248 @@
         {
           "month": "Sep",
           "headcount": 61
+        }
+      ],
+      "months": [
+        {
+          "key": "2024-10",
+          "label": "Oct 2024",
+          "headcountEnd": 71,
+          "hires": 1,
+          "leavers": 2,
+          "leaversVoluntary": 2,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-11",
+          "label": "Nov 2024",
+          "headcountEnd": 71,
+          "hires": 4,
+          "leavers": 4,
+          "leaversVoluntary": 2,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-12",
+          "label": "Dec 2024",
+          "headcountEnd": 70,
+          "hires": 1,
+          "leavers": 2,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-01",
+          "label": "Jan 2025",
+          "headcountEnd": 73,
+          "hires": 4,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-02",
+          "label": "Feb 2025",
+          "headcountEnd": 80,
+          "hires": 7,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-03",
+          "label": "Mar 2025",
+          "headcountEnd": 78,
+          "hires": 0,
+          "leavers": 2,
+          "leaversVoluntary": 2,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-04",
+          "label": "Apr 2025",
+          "headcountEnd": 79,
+          "hires": 2,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-05",
+          "label": "May 2025",
+          "headcountEnd": 80,
+          "hires": 5,
+          "leavers": 4,
+          "leaversVoluntary": 4,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-06",
+          "label": "Jun 2025",
+          "headcountEnd": 79,
+          "hires": 3,
+          "leavers": 4,
+          "leaversVoluntary": 4,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-07",
+          "label": "Jul 2025",
+          "headcountEnd": 77,
+          "hires": 2,
+          "leavers": 4,
+          "leaversVoluntary": 3,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-08",
+          "label": "Aug 2025",
+          "headcountEnd": 76,
+          "hires": 1,
+          "leavers": 2,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-09",
+          "label": "Sep 2025",
+          "headcountEnd": 75,
+          "hires": 3,
+          "leavers": 4,
+          "leaversVoluntary": 3,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-10",
+          "label": "Oct 2025",
+          "headcountEnd": 74,
+          "hires": 1,
+          "leavers": 2,
+          "leaversVoluntary": 2,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-11",
+          "label": "Nov 2025",
+          "headcountEnd": 77,
+          "hires": 4,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-12",
+          "label": "Dec 2025",
+          "headcountEnd": 75,
+          "hires": 0,
+          "leavers": 2,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-01",
+          "label": "Jan 2026",
+          "headcountEnd": 71,
+          "hires": 1,
+          "leavers": 5,
+          "leaversVoluntary": 4,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-02",
+          "label": "Feb 2026",
+          "headcountEnd": 72,
+          "hires": 4,
+          "leavers": 3,
+          "leaversVoluntary": 3,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-03",
+          "label": "Mar 2026",
+          "headcountEnd": 72,
+          "hires": 2,
+          "leavers": 2,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-04",
+          "label": "Apr 2026",
+          "headcountEnd": 70,
+          "hires": 0,
+          "leavers": 2,
+          "leaversVoluntary": 2,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-05",
+          "label": "May 2026",
+          "headcountEnd": 71,
+          "hires": 3,
+          "leavers": 2,
+          "leaversVoluntary": 2,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-06",
+          "label": "Jun 2026",
+          "headcountEnd": 71,
+          "hires": 4,
+          "leavers": 3,
+          "leaversVoluntary": 3,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-07",
+          "label": "Jul 2026",
+          "headcountEnd": 65,
+          "hires": 0,
+          "leavers": 6,
+          "leaversVoluntary": 3,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-08",
+          "label": "Aug 2026",
+          "headcountEnd": 62,
+          "hires": 1,
+          "leavers": 4,
+          "leaversVoluntary": 3,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-09",
+          "label": "Sep 2026",
+          "headcountEnd": 61,
+          "hires": 0,
+          "leavers": 2,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
         }
       ]
     },
@@ -1541,6 +3334,248 @@
           "month": "Sep",
           "headcount": 13
         }
+      ],
+      "months": [
+        {
+          "key": "2024-10",
+          "label": "Oct 2024",
+          "headcountEnd": 12,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-11",
+          "label": "Nov 2024",
+          "headcountEnd": 12,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-12",
+          "label": "Dec 2024",
+          "headcountEnd": 12,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-01",
+          "label": "Jan 2025",
+          "headcountEnd": 12,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-02",
+          "label": "Feb 2025",
+          "headcountEnd": 12,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-03",
+          "label": "Mar 2025",
+          "headcountEnd": 12,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-04",
+          "label": "Apr 2025",
+          "headcountEnd": 12,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-05",
+          "label": "May 2025",
+          "headcountEnd": 12,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-06",
+          "label": "Jun 2025",
+          "headcountEnd": 12,
+          "hires": 1,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-07",
+          "label": "Jul 2025",
+          "headcountEnd": 11,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-08",
+          "label": "Aug 2025",
+          "headcountEnd": 13,
+          "hires": 2,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-09",
+          "label": "Sep 2025",
+          "headcountEnd": 12,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-10",
+          "label": "Oct 2025",
+          "headcountEnd": 14,
+          "hires": 2,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-11",
+          "label": "Nov 2025",
+          "headcountEnd": 14,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-12",
+          "label": "Dec 2025",
+          "headcountEnd": 14,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-01",
+          "label": "Jan 2026",
+          "headcountEnd": 14,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-02",
+          "label": "Feb 2026",
+          "headcountEnd": 14,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-03",
+          "label": "Mar 2026",
+          "headcountEnd": 15,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-04",
+          "label": "Apr 2026",
+          "headcountEnd": 14,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-05",
+          "label": "May 2026",
+          "headcountEnd": 14,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-06",
+          "label": "Jun 2026",
+          "headcountEnd": 14,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-07",
+          "label": "Jul 2026",
+          "headcountEnd": 14,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-08",
+          "label": "Aug 2026",
+          "headcountEnd": 14,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-09",
+          "label": "Sep 2026",
+          "headcountEnd": 13,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        }
       ]
     },
     {
@@ -1713,6 +3748,248 @@
         {
           "month": "Sep",
           "headcount": 3
+        }
+      ],
+      "months": [
+        {
+          "key": "2024-10",
+          "label": "Oct 2024",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-11",
+          "label": "Nov 2024",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-12",
+          "label": "Dec 2024",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-01",
+          "label": "Jan 2025",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-02",
+          "label": "Feb 2025",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-03",
+          "label": "Mar 2025",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-04",
+          "label": "Apr 2025",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-05",
+          "label": "May 2025",
+          "headcountEnd": 3,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-06",
+          "label": "Jun 2025",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-07",
+          "label": "Jul 2025",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-08",
+          "label": "Aug 2025",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-09",
+          "label": "Sep 2025",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-10",
+          "label": "Oct 2025",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-11",
+          "label": "Nov 2025",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-12",
+          "label": "Dec 2025",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-01",
+          "label": "Jan 2026",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-02",
+          "label": "Feb 2026",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-03",
+          "label": "Mar 2026",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-04",
+          "label": "Apr 2026",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-05",
+          "label": "May 2026",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-06",
+          "label": "Jun 2026",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-07",
+          "label": "Jul 2026",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-08",
+          "label": "Aug 2026",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-09",
+          "label": "Sep 2026",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
         }
       ]
     },
@@ -1887,6 +4164,248 @@
           "month": "Sep",
           "headcount": 5
         }
+      ],
+      "months": [
+        {
+          "key": "2024-10",
+          "label": "Oct 2024",
+          "headcountEnd": 7,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-11",
+          "label": "Nov 2024",
+          "headcountEnd": 7,
+          "hires": 1,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-12",
+          "label": "Dec 2024",
+          "headcountEnd": 7,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-01",
+          "label": "Jan 2025",
+          "headcountEnd": 7,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-02",
+          "label": "Feb 2025",
+          "headcountEnd": 5,
+          "hires": 0,
+          "leavers": 2,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-03",
+          "label": "Mar 2025",
+          "headcountEnd": 6,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-04",
+          "label": "Apr 2025",
+          "headcountEnd": 6,
+          "hires": 1,
+          "leavers": 1,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-05",
+          "label": "May 2025",
+          "headcountEnd": 7,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-06",
+          "label": "Jun 2025",
+          "headcountEnd": 8,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-07",
+          "label": "Jul 2025",
+          "headcountEnd": 8,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-08",
+          "label": "Aug 2025",
+          "headcountEnd": 8,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-09",
+          "label": "Sep 2025",
+          "headcountEnd": 8,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-10",
+          "label": "Oct 2025",
+          "headcountEnd": 8,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-11",
+          "label": "Nov 2025",
+          "headcountEnd": 8,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-12",
+          "label": "Dec 2025",
+          "headcountEnd": 8,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-01",
+          "label": "Jan 2026",
+          "headcountEnd": 8,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-02",
+          "label": "Feb 2026",
+          "headcountEnd": 8,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-03",
+          "label": "Mar 2026",
+          "headcountEnd": 8,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-04",
+          "label": "Apr 2026",
+          "headcountEnd": 7,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-05",
+          "label": "May 2026",
+          "headcountEnd": 7,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-06",
+          "label": "Jun 2026",
+          "headcountEnd": 6,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-07",
+          "label": "Jul 2026",
+          "headcountEnd": 5,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-08",
+          "label": "Aug 2026",
+          "headcountEnd": 6,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-09",
+          "label": "Sep 2026",
+          "headcountEnd": 5,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        }
       ]
     },
     {
@@ -2059,6 +4578,248 @@
         {
           "month": "Sep",
           "headcount": 10
+        }
+      ],
+      "months": [
+        {
+          "key": "2024-10",
+          "label": "Oct 2024",
+          "headcountEnd": 10,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-11",
+          "label": "Nov 2024",
+          "headcountEnd": 10,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-12",
+          "label": "Dec 2024",
+          "headcountEnd": 10,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-01",
+          "label": "Jan 2025",
+          "headcountEnd": 11,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-02",
+          "label": "Feb 2025",
+          "headcountEnd": 11,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-03",
+          "label": "Mar 2025",
+          "headcountEnd": 11,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-04",
+          "label": "Apr 2025",
+          "headcountEnd": 11,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-05",
+          "label": "May 2025",
+          "headcountEnd": 9,
+          "hires": 0,
+          "leavers": 2,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-06",
+          "label": "Jun 2025",
+          "headcountEnd": 11,
+          "hires": 2,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-07",
+          "label": "Jul 2025",
+          "headcountEnd": 11,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-08",
+          "label": "Aug 2025",
+          "headcountEnd": 11,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-09",
+          "label": "Sep 2025",
+          "headcountEnd": 11,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-10",
+          "label": "Oct 2025",
+          "headcountEnd": 11,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-11",
+          "label": "Nov 2025",
+          "headcountEnd": 12,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-12",
+          "label": "Dec 2025",
+          "headcountEnd": 11,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-01",
+          "label": "Jan 2026",
+          "headcountEnd": 11,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-02",
+          "label": "Feb 2026",
+          "headcountEnd": 14,
+          "hires": 3,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-03",
+          "label": "Mar 2026",
+          "headcountEnd": 14,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-04",
+          "label": "Apr 2026",
+          "headcountEnd": 14,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-05",
+          "label": "May 2026",
+          "headcountEnd": 12,
+          "hires": 0,
+          "leavers": 2,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-06",
+          "label": "Jun 2026",
+          "headcountEnd": 12,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-07",
+          "label": "Jul 2026",
+          "headcountEnd": 12,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-08",
+          "label": "Aug 2026",
+          "headcountEnd": 10,
+          "hires": 0,
+          "leavers": 2,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-09",
+          "label": "Sep 2026",
+          "headcountEnd": 10,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
         }
       ]
     },
@@ -2233,6 +4994,248 @@
           "month": "Sep",
           "headcount": 31
         }
+      ],
+      "months": [
+        {
+          "key": "2024-10",
+          "label": "Oct 2024",
+          "headcountEnd": 25,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-11",
+          "label": "Nov 2024",
+          "headcountEnd": 25,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-12",
+          "label": "Dec 2024",
+          "headcountEnd": 25,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-01",
+          "label": "Jan 2025",
+          "headcountEnd": 24,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-02",
+          "label": "Feb 2025",
+          "headcountEnd": 27,
+          "hires": 3,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-03",
+          "label": "Mar 2025",
+          "headcountEnd": 28,
+          "hires": 2,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-04",
+          "label": "Apr 2025",
+          "headcountEnd": 28,
+          "hires": 1,
+          "leavers": 1,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-05",
+          "label": "May 2025",
+          "headcountEnd": 27,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-06",
+          "label": "Jun 2025",
+          "headcountEnd": 28,
+          "hires": 3,
+          "leavers": 2,
+          "leaversVoluntary": 2,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-07",
+          "label": "Jul 2025",
+          "headcountEnd": 31,
+          "hires": 3,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-08",
+          "label": "Aug 2025",
+          "headcountEnd": 29,
+          "hires": 1,
+          "leavers": 3,
+          "leaversVoluntary": 3,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-09",
+          "label": "Sep 2025",
+          "headcountEnd": 33,
+          "hires": 6,
+          "leavers": 2,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-10",
+          "label": "Oct 2025",
+          "headcountEnd": 33,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-11",
+          "label": "Nov 2025",
+          "headcountEnd": 33,
+          "hires": 2,
+          "leavers": 2,
+          "leaversVoluntary": 2,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-12",
+          "label": "Dec 2025",
+          "headcountEnd": 33,
+          "hires": 1,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-01",
+          "label": "Jan 2026",
+          "headcountEnd": 33,
+          "hires": 1,
+          "leavers": 1,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-02",
+          "label": "Feb 2026",
+          "headcountEnd": 31,
+          "hires": 0,
+          "leavers": 2,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-03",
+          "label": "Mar 2026",
+          "headcountEnd": 31,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-04",
+          "label": "Apr 2026",
+          "headcountEnd": 30,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-05",
+          "label": "May 2026",
+          "headcountEnd": 31,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-06",
+          "label": "Jun 2026",
+          "headcountEnd": 33,
+          "hires": 2,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-07",
+          "label": "Jul 2026",
+          "headcountEnd": 32,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-08",
+          "label": "Aug 2026",
+          "headcountEnd": 31,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-09",
+          "label": "Sep 2026",
+          "headcountEnd": 31,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        }
       ]
     },
     {
@@ -2405,6 +5408,248 @@
         {
           "month": "Sep",
           "headcount": 2
+        }
+      ],
+      "months": [
+        {
+          "key": "2024-10",
+          "label": "Oct 2024",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-11",
+          "label": "Nov 2024",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-12",
+          "label": "Dec 2024",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-01",
+          "label": "Jan 2025",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-02",
+          "label": "Feb 2025",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-03",
+          "label": "Mar 2025",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-04",
+          "label": "Apr 2025",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-05",
+          "label": "May 2025",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-06",
+          "label": "Jun 2025",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-07",
+          "label": "Jul 2025",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-08",
+          "label": "Aug 2025",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-09",
+          "label": "Sep 2025",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-10",
+          "label": "Oct 2025",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-11",
+          "label": "Nov 2025",
+          "headcountEnd": 3,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-12",
+          "label": "Dec 2025",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-01",
+          "label": "Jan 2026",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-02",
+          "label": "Feb 2026",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-03",
+          "label": "Mar 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-04",
+          "label": "Apr 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-05",
+          "label": "May 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-06",
+          "label": "Jun 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-07",
+          "label": "Jul 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-08",
+          "label": "Aug 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-09",
+          "label": "Sep 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
         }
       ]
     },
@@ -2579,6 +5824,248 @@
           "month": "Sep",
           "headcount": 3
         }
+      ],
+      "months": [
+        {
+          "key": "2024-10",
+          "label": "Oct 2024",
+          "headcountEnd": 6,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-11",
+          "label": "Nov 2024",
+          "headcountEnd": 6,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-12",
+          "label": "Dec 2024",
+          "headcountEnd": 6,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-01",
+          "label": "Jan 2025",
+          "headcountEnd": 6,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-02",
+          "label": "Feb 2025",
+          "headcountEnd": 6,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-03",
+          "label": "Mar 2025",
+          "headcountEnd": 6,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-04",
+          "label": "Apr 2025",
+          "headcountEnd": 6,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-05",
+          "label": "May 2025",
+          "headcountEnd": 6,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-06",
+          "label": "Jun 2025",
+          "headcountEnd": 6,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-07",
+          "label": "Jul 2025",
+          "headcountEnd": 6,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-08",
+          "label": "Aug 2025",
+          "headcountEnd": 6,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-09",
+          "label": "Sep 2025",
+          "headcountEnd": 6,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-10",
+          "label": "Oct 2025",
+          "headcountEnd": 6,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-11",
+          "label": "Nov 2025",
+          "headcountEnd": 6,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-12",
+          "label": "Dec 2025",
+          "headcountEnd": 6,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-01",
+          "label": "Jan 2026",
+          "headcountEnd": 5,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-02",
+          "label": "Feb 2026",
+          "headcountEnd": 5,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-03",
+          "label": "Mar 2026",
+          "headcountEnd": 5,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-04",
+          "label": "Apr 2026",
+          "headcountEnd": 5,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-05",
+          "label": "May 2026",
+          "headcountEnd": 5,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-06",
+          "label": "Jun 2026",
+          "headcountEnd": 5,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-07",
+          "label": "Jul 2026",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 2,
+          "leaversVoluntary": 2,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-08",
+          "label": "Aug 2026",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-09",
+          "label": "Sep 2026",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        }
       ]
     },
     {
@@ -2751,6 +6238,248 @@
         {
           "month": "Sep",
           "headcount": 2
+        }
+      ],
+      "months": [
+        {
+          "key": "2024-10",
+          "label": "Oct 2024",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-11",
+          "label": "Nov 2024",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-12",
+          "label": "Dec 2024",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-01",
+          "label": "Jan 2025",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-02",
+          "label": "Feb 2025",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-03",
+          "label": "Mar 2025",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-04",
+          "label": "Apr 2025",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-05",
+          "label": "May 2025",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-06",
+          "label": "Jun 2025",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-07",
+          "label": "Jul 2025",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-08",
+          "label": "Aug 2025",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-09",
+          "label": "Sep 2025",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-10",
+          "label": "Oct 2025",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-11",
+          "label": "Nov 2025",
+          "headcountEnd": 2,
+          "hires": 2,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-12",
+          "label": "Dec 2025",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-01",
+          "label": "Jan 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-02",
+          "label": "Feb 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-03",
+          "label": "Mar 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-04",
+          "label": "Apr 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-05",
+          "label": "May 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-06",
+          "label": "Jun 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-07",
+          "label": "Jul 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-08",
+          "label": "Aug 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-09",
+          "label": "Sep 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
         }
       ]
     },
@@ -2925,6 +6654,248 @@
           "month": "Sep",
           "headcount": 17
         }
+      ],
+      "months": [
+        {
+          "key": "2024-10",
+          "label": "Oct 2024",
+          "headcountEnd": 6,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-11",
+          "label": "Nov 2024",
+          "headcountEnd": 6,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-12",
+          "label": "Dec 2024",
+          "headcountEnd": 6,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-01",
+          "label": "Jan 2025",
+          "headcountEnd": 7,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-02",
+          "label": "Feb 2025",
+          "headcountEnd": 8,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-03",
+          "label": "Mar 2025",
+          "headcountEnd": 9,
+          "hires": 2,
+          "leavers": 1,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-04",
+          "label": "Apr 2025",
+          "headcountEnd": 10,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-05",
+          "label": "May 2025",
+          "headcountEnd": 10,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-06",
+          "label": "Jun 2025",
+          "headcountEnd": 11,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-07",
+          "label": "Jul 2025",
+          "headcountEnd": 11,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-08",
+          "label": "Aug 2025",
+          "headcountEnd": 12,
+          "hires": 2,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-09",
+          "label": "Sep 2025",
+          "headcountEnd": 15,
+          "hires": 3,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-10",
+          "label": "Oct 2025",
+          "headcountEnd": 16,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-11",
+          "label": "Nov 2025",
+          "headcountEnd": 15,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-12",
+          "label": "Dec 2025",
+          "headcountEnd": 15,
+          "hires": 1,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-01",
+          "label": "Jan 2026",
+          "headcountEnd": 16,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-02",
+          "label": "Feb 2026",
+          "headcountEnd": 17,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-03",
+          "label": "Mar 2026",
+          "headcountEnd": 17,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-04",
+          "label": "Apr 2026",
+          "headcountEnd": 17,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-05",
+          "label": "May 2026",
+          "headcountEnd": 17,
+          "hires": 1,
+          "leavers": 1,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-06",
+          "label": "Jun 2026",
+          "headcountEnd": 17,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-07",
+          "label": "Jul 2026",
+          "headcountEnd": 17,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-08",
+          "label": "Aug 2026",
+          "headcountEnd": 17,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-09",
+          "label": "Sep 2026",
+          "headcountEnd": 17,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        }
       ]
     },
     {
@@ -3097,6 +7068,248 @@
         {
           "month": "Sep",
           "headcount": 15
+        }
+      ],
+      "months": [
+        {
+          "key": "2024-10",
+          "label": "Oct 2024",
+          "headcountEnd": 7,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-11",
+          "label": "Nov 2024",
+          "headcountEnd": 8,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-12",
+          "label": "Dec 2024",
+          "headcountEnd": 8,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-01",
+          "label": "Jan 2025",
+          "headcountEnd": 9,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-02",
+          "label": "Feb 2025",
+          "headcountEnd": 9,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-03",
+          "label": "Mar 2025",
+          "headcountEnd": 10,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-04",
+          "label": "Apr 2025",
+          "headcountEnd": 10,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-05",
+          "label": "May 2025",
+          "headcountEnd": 10,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-06",
+          "label": "Jun 2025",
+          "headcountEnd": 10,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-07",
+          "label": "Jul 2025",
+          "headcountEnd": 12,
+          "hires": 2,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-08",
+          "label": "Aug 2025",
+          "headcountEnd": 13,
+          "hires": 2,
+          "leavers": 1,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-09",
+          "label": "Sep 2025",
+          "headcountEnd": 13,
+          "hires": 1,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-10",
+          "label": "Oct 2025",
+          "headcountEnd": 11,
+          "hires": 0,
+          "leavers": 2,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-11",
+          "label": "Nov 2025",
+          "headcountEnd": 13,
+          "hires": 2,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-12",
+          "label": "Dec 2025",
+          "headcountEnd": 14,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-01",
+          "label": "Jan 2026",
+          "headcountEnd": 13,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-02",
+          "label": "Feb 2026",
+          "headcountEnd": 13,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-03",
+          "label": "Mar 2026",
+          "headcountEnd": 13,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-04",
+          "label": "Apr 2026",
+          "headcountEnd": 14,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-05",
+          "label": "May 2026",
+          "headcountEnd": 14,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-06",
+          "label": "Jun 2026",
+          "headcountEnd": 15,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-07",
+          "label": "Jul 2026",
+          "headcountEnd": 14,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-08",
+          "label": "Aug 2026",
+          "headcountEnd": 14,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-09",
+          "label": "Sep 2026",
+          "headcountEnd": 15,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
         }
       ]
     },
@@ -3271,6 +7484,248 @@
           "month": "Sep",
           "headcount": 0
         }
+      ],
+      "months": [
+        {
+          "key": "2024-10",
+          "label": "Oct 2024",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-11",
+          "label": "Nov 2024",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-12",
+          "label": "Dec 2024",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-01",
+          "label": "Jan 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-02",
+          "label": "Feb 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-03",
+          "label": "Mar 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-04",
+          "label": "Apr 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-05",
+          "label": "May 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-06",
+          "label": "Jun 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-07",
+          "label": "Jul 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-08",
+          "label": "Aug 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-09",
+          "label": "Sep 2025",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-10",
+          "label": "Oct 2025",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-11",
+          "label": "Nov 2025",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-12",
+          "label": "Dec 2025",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-01",
+          "label": "Jan 2026",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-02",
+          "label": "Feb 2026",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-03",
+          "label": "Mar 2026",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-04",
+          "label": "Apr 2026",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-05",
+          "label": "May 2026",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-06",
+          "label": "Jun 2026",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-07",
+          "label": "Jul 2026",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-08",
+          "label": "Aug 2026",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-09",
+          "label": "Sep 2026",
+          "headcountEnd": 0,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        }
       ]
     },
     {
@@ -3444,6 +7899,248 @@
           "month": "Sep",
           "headcount": 2
         }
+      ],
+      "months": [
+        {
+          "key": "2024-10",
+          "label": "Oct 2024",
+          "headcountEnd": 8,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-11",
+          "label": "Nov 2024",
+          "headcountEnd": 8,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-12",
+          "label": "Dec 2024",
+          "headcountEnd": 8,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-01",
+          "label": "Jan 2025",
+          "headcountEnd": 7,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-02",
+          "label": "Feb 2025",
+          "headcountEnd": 7,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-03",
+          "label": "Mar 2025",
+          "headcountEnd": 7,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-04",
+          "label": "Apr 2025",
+          "headcountEnd": 6,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-05",
+          "label": "May 2025",
+          "headcountEnd": 6,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-06",
+          "label": "Jun 2025",
+          "headcountEnd": 6,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-07",
+          "label": "Jul 2025",
+          "headcountEnd": 6,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-08",
+          "label": "Aug 2025",
+          "headcountEnd": 5,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-09",
+          "label": "Sep 2025",
+          "headcountEnd": 4,
+          "hires": 1,
+          "leavers": 2,
+          "leaversVoluntary": 2,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-10",
+          "label": "Oct 2025",
+          "headcountEnd": 4,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-11",
+          "label": "Nov 2025",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-12",
+          "label": "Dec 2025",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-01",
+          "label": "Jan 2026",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-02",
+          "label": "Feb 2026",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-03",
+          "label": "Mar 2026",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-04",
+          "label": "Apr 2026",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-05",
+          "label": "May 2026",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-06",
+          "label": "Jun 2026",
+          "headcountEnd": 3,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-07",
+          "label": "Jul 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 1,
+          "leaversVoluntary": 1,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-08",
+          "label": "Aug 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-09",
+          "label": "Sep 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        }
       ]
     },
     {
@@ -3616,6 +8313,248 @@
         {
           "month": "Sep",
           "headcount": 2
+        }
+      ],
+      "months": [
+        {
+          "key": "2024-10",
+          "label": "Oct 2024",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-11",
+          "label": "Nov 2024",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2024-12",
+          "label": "Dec 2024",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-01",
+          "label": "Jan 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-02",
+          "label": "Feb 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-03",
+          "label": "Mar 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-04",
+          "label": "Apr 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-05",
+          "label": "May 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-06",
+          "label": "Jun 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-07",
+          "label": "Jul 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-08",
+          "label": "Aug 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-09",
+          "label": "Sep 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-10",
+          "label": "Oct 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-11",
+          "label": "Nov 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-12",
+          "label": "Dec 2025",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-01",
+          "label": "Jan 2026",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-02",
+          "label": "Feb 2026",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-03",
+          "label": "Mar 2026",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-04",
+          "label": "Apr 2026",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-05",
+          "label": "May 2026",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-06",
+          "label": "Jun 2026",
+          "headcountEnd": 1,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-07",
+          "label": "Jul 2026",
+          "headcountEnd": 2,
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-08",
+          "label": "Aug 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-09",
+          "label": "Sep 2026",
+          "headcountEnd": 2,
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
         }
       ]
     }
