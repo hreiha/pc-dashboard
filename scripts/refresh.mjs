@@ -40,7 +40,8 @@ const FIELDS = {
   terminationReason: ["termination_summary", "termination_reason"],
   level4:            ["teams", "division", "business_unit"],
   costCentre:        ["primary_cost_centre", "cost_centre", "teams"],
-  rehire:            ["rehire_this_personnel", "rehire", "eligible_for_rehire", "re_hire"]
+  rehire:            ["rehire_this_personnel", "rehire", "eligible_for_rehire", "re_hire"],
+  name:              ["full_name", "known_as", "first_name"]
 };
 
 function required(name) {
@@ -139,6 +140,7 @@ async function fetchAllEmployees(accessToken, orgId, entity) {
 function normalise({ raw, entity }) {
   return {
     id: String(raw.id ?? raw.employee_id ?? ""),
+    name: String(pick(raw, FIELDS.name)),
     gender: String(pick(raw, FIELDS.gender)),
     location: String(pick(raw, FIELDS.location)),
     employmentType: String(pick(raw, FIELDS.employmentType)),
@@ -271,7 +273,14 @@ async function main() {
     console.warn("  " + unmappedFields.join(", "));
   }
 
-  const metrics = computeMetrics(employees, new Date().toISOString());
+  // Names are only written into data.json when the repository variable says so, because
+  // data.json is served to anyone who can open the dashboard.
+  const includeNames = String(process.env.INCLUDE_NAMES || "").trim().toLowerCase() === "true";
+  if (includeNames) {
+    console.log("INCLUDE_NAMES is on: starter and leaver names will be written to data.json.");
+  }
+
+  const metrics = computeMetrics(employees, new Date().toISOString(), { includeNames });
   const recruitment = loadRecruitment();
 
   // Pay is not on the employees endpoint, so the gap is calculated locally from the CSV
@@ -299,6 +308,7 @@ async function main() {
     people: metrics.people,
     turnoverPeriods: metrics.turnoverPeriods,
     filterOptions: metrics.filterOptions,
+    includesNames: metrics.includesNames,
     slices: metrics.slices,
     entities: metrics.entities,
     recruitment: recruitment?.recruitment ?? {

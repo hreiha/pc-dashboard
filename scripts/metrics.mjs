@@ -264,7 +264,10 @@ function isMale(e) {
 
 // ---------------------------------------------------------------- main
 
-export function computeMetrics(employees, asOfIso) {
+export function computeMetrics(employees, asOfIso, options) {
+  // Names are personal data. Off unless explicitly switched on, and only ever useful
+  // behind the dashboard password.
+  const includeNames = !!(options && options.includeNames);
 
   const raw = employees;
   const asOf = parseDate(asOfIso) || new Date();
@@ -329,6 +332,7 @@ export function computeMetrics(employees, asOfIso) {
 
     scoped.push({
       id: e.id,
+      name: e.name,
       gender: e.gender,
       location: loc,
       employmentType: e.employmentType,
@@ -632,6 +636,59 @@ export function computeMetrics(employees, asOfIso) {
   // produce is worked out here. Same functions as the headline figures, so a filtered
   // view can never disagree with the unfiltered one.
 
+  const SERIES_MONTHS = 24;
+
+  const seriesEnds = [];
+  for (let i = SERIES_MONTHS - 1; i >= 0; i--) {
+    seriesEnds.push(monthEnd(asOf.getUTCFullYear(), asOf.getUTCMonth() - i));
+  }
+
+  function monthKey(d) {
+    return d.getUTCFullYear() + "-" + String(d.getUTCMonth() + 1).padStart(2, "0");
+  }
+
+  function monthLabel(d) {
+    return monthNames[d.getUTCMonth()] + " " + d.getUTCFullYear();
+  }
+
+  function personLabel(e) {
+    if (!includeNames) return "";
+    return String(e.name || "").trim() || "(no name recorded)";
+  }
+
+  /** Per month: closing headcount, who started, who left. Sums to any window. */
+  function monthlySeries(pool) {
+    return seriesEnds.map((end, i) => {
+      const from = i === 0
+        ? monthEnd(end.getUTCFullYear(), end.getUTCMonth() - 1)
+        : seriesEnds[i - 1];
+      const starters = startersBetween(from, end, pool);
+      const leavers = leaversBetween(from, end, pool);
+      const vol = leavers.filter(e => isVoluntary(e.terminationReason));
+
+      return {
+        key: monthKey(end),
+        label: monthLabel(end),
+        headcountEnd: pool.filter(e => activeAt(e, end)).length,
+        hires: starters.length,
+        leavers: leavers.length,
+        leaversVoluntary: vol.length,
+        hireNames: includeNames
+          ? starters.map(e => ({ name: personLabel(e), date: e.startDate, costCentre: e.costCentre }))
+          : [],
+        leaverNames: includeNames
+          ? leavers.map(e => ({
+              name: personLabel(e),
+              date: e.terminationDate,
+              costCentre: e.costCentre,
+              type: e.terminationReason || "",
+              voluntary: isVoluntary(e.terminationReason)
+            }))
+          : []
+      };
+    });
+  }
+
   function sliceFor(pool) {
     const now = pool.filter(e => activeAt(e, thisMonthEnd));
     const prior = pool.filter(e => activeAt(e, priorMonthEnd));
@@ -661,7 +718,8 @@ export function computeMetrics(employees, asOfIso) {
       headcountTrend: monthEnds.map((d, i) => ({
         month: monthNames[d.getUTCMonth()],
         headcount: monthly[i]
-      }))
+      })),
+      months: monthlySeries(pool)
     };
   }
 
@@ -720,7 +778,12 @@ export function computeMetrics(employees, asOfIso) {
     },
     entities: entities,
     turnoverPeriods: periods,
-    filterOptions: { locations: sliceLocations, costCentres: sliceCentres },
+    filterOptions: {
+      locations: sliceLocations,
+      costCentres: sliceCentres,
+      months: seriesEnds.map(d => ({ key: monthKey(d), label: monthLabel(d) }))
+    },
+    includesNames: includeNames,
     slices: slices,
     costCentres: costCentres,
     locations: locations,

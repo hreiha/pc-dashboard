@@ -375,6 +375,49 @@
 
   .options input { accent-color: var(--blue); margin: 0; }
 
+  .filter select {
+    font: inherit;
+    font-size: 13.5px;
+    padding: 7px 10px;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    color: var(--ink);
+    cursor: pointer;
+  }
+
+  .filter select:focus { outline: 2px solid var(--blue); outline-offset: -1px; }
+
+  .metric.drillable { cursor: pointer; }
+  .metric.drillable:hover { background: var(--wash); }
+
+  .metric.drillable .label::after {
+    content: " \2193";
+    color: var(--blue);
+    font-weight: 600;
+  }
+
+  .metric.drillable.open { outline: 2px solid var(--blue); outline-offset: -1px; }
+
+  .drill {
+    border: 1px solid var(--rule);
+    border-top: none;
+    background: var(--paper);
+    padding: 14px 18px 16px;
+  }
+
+  .drill h3 {
+    margin: 0 0 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+  }
+
+  .drill table { width: 100%; }
+  .drill th { background: var(--wash); color: var(--ink); }
+  .drill td, .drill th { padding: 6px 10px; font-size: 13px; }
+
+  .drill .empty { font-size: 13px; color: var(--muted); }
+
   .filter-clear {
     font: inherit;
     font-size: 12.5px;
@@ -471,6 +514,14 @@
         <div class="options" id="opt-costcentre"></div>
       </details>
     </div>
+    <div class="filter">
+      <span>From</span>
+      <select id="filter-from"></select>
+    </div>
+    <div class="filter">
+      <span>To</span>
+      <select id="filter-to"></select>
+    </div>
     <button type="button" class="filter-clear" id="filter-clear" hidden>Clear</button>
   </div>
   <div id="root"></div>
@@ -495,11 +546,55 @@ function delta(now, prior, suffix, higherIsBetter) {
   return '<span class="delta ' + cls + '">' + arrow + " " + Math.abs(d) + (suffix || "") + "</span>";
 }
 
-function tile(label, value, prior, unit, higherIsBetter) {
+function tile(label, value, prior, unit, higherIsBetter, drillKey) {
   const shown = value === null || value === undefined || value === "" ? "0" : value;
-  return '<div class="metric"><div class="label">' + label + "</div>" +
+  const drill = drillKey
+    ? ' data-drill="' + drillKey + '" class="metric drillable' + (DRILL === drillKey ? " open" : "") + '"'
+    : ' class="metric"';
+  return "<div" + drill + '><div class="label">' + label + "</div>" +
     '<div class="value">' + shown + (unit || "") +
     delta(value, prior, unit === "%" ? "pp" : "", higherIsBetter) + "</div></div>";
+}
+
+/** Rows behind a drillable tile, for whichever months and slices are selected. */
+function drillRows(d, key) {
+  const months = hasRange()
+    ? monthsInRange(d)
+    : selectedSlices(d).map(sl => (sl.months || [])[(sl.months || []).length - 1]).filter(Boolean);
+
+  const rows = [];
+  for (const m of months) {
+    if (key === "hires") {
+      for (const x of m.hireNames || []) rows.push({ name: x.name, date: x.date, costCentre: x.costCentre, type: "" });
+    } else {
+      for (const x of m.leaverNames || []) {
+        if (key === "leavers-voluntary" && !x.voluntary) continue;
+        rows.push({ name: x.name, date: x.date, costCentre: x.costCentre, type: x.type });
+      }
+    }
+  }
+  return rows;
+}
+
+function drillPanel(d, key, heading) {
+  if (DRILL !== key) return "";
+  const rows = drillRows(d, key);
+
+  if (!(d.includesNames)) {
+    return '<div class="drill"><h3>' + heading + '</h3><p class="empty">' +
+      "Names are not published to this dashboard. Set the INCLUDE_NAMES repository variable " +
+      "to true and put the dashboard password back on before switching it on.</p></div>";
+  }
+  if (!rows.length) {
+    return '<div class="drill"><h3>' + heading + '</h3><p class="empty">Nobody in this selection.</p></div>';
+  }
+
+  return '<div class="drill"><h3>' + heading + " (" + rows.length + ")</h3>" +
+    "<table><thead><tr><th>Name</th><th>Cost centre</th><th>Date</th>" +
+    (key === "hires" ? "" : "<th>Reason</th>") + "</tr></thead><tbody>" +
+    rows.map(r => "<tr><td>" + r.name + "</td><td>" + (r.costCentre || "") + "</td><td>" +
+      (r.date || "") + "</td>" + (key === "hires" ? "" : "<td>" + (r.type || "") + "</td>") + "</tr>").join("") +
+    "</tbody></table></div>";
 }
 
 // The Stage choice list in its own order, so the chart reads as a process rather than
@@ -573,10 +668,66 @@ function sparkline(points) {
 let DATA = null;
 
 // Empty means no restriction, which is how "All" is expressed.
-const FILTER = { locations: [], costCentres: [] };
+const FILTER = { locations: [], costCentres: [], from: "", to: "" };
+let DRILL = null;   // which tile's list is open
+
+function hasRange() {
+  return !!(FILTER.from && FILTER.to && FILTER.from <= FILTER.to);
+}
 
 function isFiltered() {
-  return FILTER.locations.length > 0 || FILTER.costCentres.length > 0;
+  return FILTER.locations.length > 0 || FILTER.costCentres.length > 0 || hasRange();
+}
+
+/** The slices matching the location and section ticks. */
+function selectedSlices(d) {
+  return (d.slices || []).filter(sl =>
+    (FILTER.locations.length === 0 || FILTER.locations.indexOf(sl.location) >= 0) &&
+    (FILTER.costCentres.length === 0 || FILTER.costCentres.indexOf(sl.costCentre) >= 0)
+  );
+}
+
+/** Month entries inside the chosen range, across the chosen slices. */
+function monthsInRange(d) {
+  if (!hasRange()) return [];
+  const out = [];
+  for (const sl of selectedSlices(d)) {
+    for (const m of sl.months || []) {
+      if (m.key >= FILTER.from && m.key <= FILTER.to) out.push(m);
+    }
+  }
+  return out;
+}
+
+/**
+ * Turnover over the chosen range. Leavers are summed, and the denominator is the mean of
+ * every month-end headcount inside it, which is the same method used everywhere else.
+ */
+function rangePeriod(d) {
+  const months = monthsInRange(d);
+  if (!months.length) return null;
+
+  const keys = [...new Set(months.map(m => m.key))].sort();
+  const leavers = months.reduce((a, m) => a + (Number(m.leavers) || 0), 0);
+  const vol = months.reduce((a, m) => a + (Number(m.leaversVoluntary) || 0), 0);
+  const avgHead = months.reduce((a, m) => a + (Number(m.headcountEnd) || 0), 0) / keys.length;
+  const total = pct(leavers, avgHead);
+  const voluntary = pct(vol, avgHead);
+  const fromLabel = (months.find(m => m.key === keys[0]) || {}).label || keys[0];
+  const toLabel = (months.find(m => m.key === keys[keys.length - 1]) || {}).label || keys[keys.length - 1];
+
+  return {
+    key: "range",
+    label: keys.length === 1 ? fromLabel : fromLabel + " to " + toLabel,
+    months: keys.length,
+    avgHeadcount: (Math.round(avgHead * 10) / 10).toFixed(1),
+    leavers: leavers,
+    leaversVoluntary: vol,
+    total: total,
+    voluntary: voluntary,
+    totalAnnualised: (Math.round(Number(total) * (12 / keys.length) * 10) / 10).toFixed(1),
+    voluntaryAnnualised: (Math.round(Number(voluntary) * (12 / keys.length) * 10) / 10).toFixed(1)
+  };
 }
 
 function pct(part, whole) {
@@ -590,10 +741,7 @@ function pct(part, whole) {
  * same arithmetic the server does for the company figures.
  */
 function aggregate(d) {
-  const slices = (d.slices || []).filter(sl =>
-    (FILTER.locations.length === 0 || FILTER.locations.indexOf(sl.location) >= 0) &&
-    (FILTER.costCentres.length === 0 || FILTER.costCentres.indexOf(sl.costCentre) >= 0)
-  );
+  const slices = selectedSlices(d);
 
   if (!slices.length) {
     return { headcount: 0, headcountPrior: 0, femalePct: "0.0", femalePctPrior: "0.0",
@@ -635,8 +783,20 @@ function aggregate(d) {
   }));
 
   const ltm = periods[0] || { total: "0.0", voluntary: "0.0", avgHeadcount: "0.0" };
+  const range = rangePeriod(d);
+  if (range) periods.unshift(range);
 
-  return {
+  const rangeMonths = monthsInRange(d);
+  const rangeTotals = rangeMonths.length ? {
+    hiresMonth: rangeMonths.reduce((a, m) => a + (Number(m.hires) || 0), 0),
+    leaversMonth: rangeMonths.reduce((a, m) => a + (Number(m.leavers) || 0), 0),
+    leaversVoluntaryMonth: rangeMonths.reduce((a, m) => a + (Number(m.leaversVoluntary) || 0), 0),
+    hiresMonthPrior: null,
+    leaversMonthPrior: null,
+    leaversVoluntaryMonthPrior: null
+  } : null;
+
+  return Object.assign({
     headcount: headcount,
     headcountPrior: headcountPrior,
     femalePct: pct(sum("female"), headcount),
@@ -652,7 +812,7 @@ function aggregate(d) {
     churnVoluntary: ltm.voluntary,
     turnoverPeriods: periods,
     headcountTrend: trend
-  };
+  }, rangeTotals || {});
 }
 
 function summarise(values, singular, plural) {
@@ -666,6 +826,11 @@ function scopeLabel() {
   const parts = [];
   if (FILTER.locations.length) parts.push(summarise(FILTER.locations, "location", "locations"));
   if (FILTER.costCentres.length) parts.push(summarise(FILTER.costCentres, "section", "sections"));
+  if (hasRange()) {
+    const all = (DATA && DATA.filterOptions && DATA.filterOptions.months) || [];
+    const lbl = (k) => (all.find(m => m.key === k) || {}).label || k;
+    parts.push(FILTER.from === FILTER.to ? lbl(FILTER.from) : lbl(FILTER.from) + " to " + lbl(FILTER.to));
+  }
   return '<span class="scope">' + parts.join(" \u00B7 ") + "</span>";
 }
 
@@ -735,13 +900,16 @@ function render() {
     </div>
 
     <section>
-      <h2>This month${scopeLabel()}</h2>
+      <h2>${hasRange() ? "Selected period" : "This month"}${scopeLabel()}</h2>
       <div class="metrics">
-        ${tile("New hires", p.hiresMonth, p.hiresMonthPrior, "", true)}
-        ${tile("Leavers (voluntary)", p.leaversVoluntaryMonth, p.leaversVoluntaryMonthPrior, "", false)}
-        ${tile("Leavers (total)", p.leaversMonth, p.leaversMonthPrior, "", false)}
+        ${tile("New hires", p.hiresMonth, p.hiresMonthPrior, "", true, "hires")}
+        ${tile("Leavers (voluntary)", p.leaversVoluntaryMonth, p.leaversVoluntaryMonthPrior, "", false, "leavers-voluntary")}
+        ${tile("Leavers (total)", p.leaversMonth, p.leaversMonthPrior, "", false, "leavers")}
         ${tile("Female representation", p.femalePct, p.femalePctPrior, "%", true)}
       </div>
+      ${drillPanel(d, "hires", "New starters")}
+      ${drillPanel(d, "leavers-voluntary", "Voluntary leavers")}
+      ${drillPanel(d, "leavers", "Leavers")}
     </section>
 
     <section>
@@ -904,6 +1072,7 @@ function render() {
 `;
 
   bindPeriods(periods);
+  bindDrill();
 }
 
 /** Periods from the data, or a single rolling twelve month entry built from the headline
@@ -950,6 +1119,15 @@ function renderTurnover(periods, index) {
 }
 
 /** Wired after each render, since the buttons are rebuilt with the markup. */
+function bindDrill() {
+  document.querySelectorAll("[data-drill]").forEach(el => {
+    el.addEventListener("click", () => {
+      DRILL = DRILL === el.dataset.drill ? null : el.dataset.drill;
+      render();
+    });
+  });
+}
+
 function bindPeriods(periods) {
   document.querySelectorAll(".period").forEach(btn => {
     btn.addEventListener("click", () => renderTurnover(periods, Number(btn.dataset.i)));
@@ -995,9 +1173,41 @@ function buildFilters(d) {
   const resetLoc = picker("opt-location", "sum-location", locations, FILTER.locations, "location", "locations");
   const resetCc = picker("opt-costcentre", "sum-costcentre", centres, FILTER.costCentres, "section", "sections");
 
+  const months = opts.months || [];
+  const fromEl = $("filter-from");
+  const toEl = $("filter-to");
+
+  const monthOptions = (blank) =>
+    '<option value="">' + blank + "</option>" +
+    months.map(m => '<option value="' + m.key + '">' + m.label + "</option>").join("");
+
+  fromEl.innerHTML = monthOptions("Any");
+  toEl.innerHTML = monthOptions("Any");
+
+  const onRange = () => {
+    FILTER.from = fromEl.value;
+    FILTER.to = toEl.value;
+    // A backwards range is a typo, not a selection
+    if (FILTER.from && FILTER.to && FILTER.from > FILTER.to) {
+      FILTER.to = FILTER.from;
+      toEl.value = FILTER.from;
+    }
+    DRILL = null;
+    $("filter-clear").hidden = !isFiltered();
+    render();
+  };
+
+  fromEl.addEventListener("change", onRange);
+  toEl.addEventListener("change", onRange);
+
   $("filter-clear").addEventListener("click", () => {
     resetLoc();
     resetCc();
+    FILTER.from = "";
+    FILTER.to = "";
+    fromEl.value = "";
+    toEl.value = "";
+    DRILL = null;
     $("filter-clear").hidden = true;
     render();
   });
