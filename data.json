@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-09-30T06:03:55.385Z",
+  "generatedUtc": "2026-09-30T06:33:14.263Z",
   "periodLabel": "Sep 2026",
   "priorLabel": "Aug 2026",
   "people": {
@@ -12047,9 +12047,9 @@
     "excludedContractors": 0,
     "excludedIncomplete": 0,
     "excludedNoCostCentre": 361,
-    "notYetStarted": 7,
+    "notYetStarted": 8,
     "excludedNoSalary": 309,
-    "casualsConverted": 57,
+    "casualsConverted": 58,
     "partTimeConverted": 42
   }
 }
