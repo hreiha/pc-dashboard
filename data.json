@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-09-30T06:33:14.263Z",
+  "generatedUtc": "2026-09-30T19:00:59.253Z",
   "periodLabel": "Sep 2026",
   "priorLabel": "Aug 2026",
   "people": {
@@ -11723,7 +11723,7 @@
     }
   ],
   "recruitment": {
-    "openRoles": 39,
+    "openRoles": 36,
     "filledMonth": 0,
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
@@ -11731,11 +11731,11 @@
   "pipeline": [
     {
       "stage": "2. Search & Prepare",
-      "count": 27
+      "count": 25
     },
     {
       "stage": "1. Search & Secure",
-      "count": 7
+      "count": 6
     },
     {
       "stage": "4. Role On Hold",
@@ -11773,11 +11773,11 @@
     },
     {
       "stage": "New",
-      "count": 9
+      "count": 5
     },
     {
       "stage": "Sourcing",
-      "count": 13
+      "count": 14
     },
     {
       "stage": "Present to HM",
@@ -11843,7 +11843,7 @@
       "churnVoluntary": "23.1",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "34.7",
-      "openRoles": 7
+      "openRoles": 6
     },
     {
       "code": "NAT-CORP",
@@ -11885,7 +11885,7 @@
       "churnVoluntary": "12.1",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "16.5",
-      "openRoles": 4
+      "openRoles": 3
     },
     {
       "code": "London",
@@ -11939,7 +11939,7 @@
       "churnTotal": "42.7",
       "churnVoluntary": "33.3",
       "avgHeadcountLtm": "96.1",
-      "activeRoles": 13
+      "activeRoles": 14
     },
     {
       "name": "Brisbane",
