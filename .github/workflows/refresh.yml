@@ -43,6 +43,7 @@ jobs:
           EH_REFRESH_TOKEN: ${{ secrets.EH_REFRESH_TOKEN }}
           EH_ORG_ID_AU: ${{ secrets.EH_ORG_ID_AU }}
           EH_ORG_ID_UK: ${{ secrets.EH_ORG_ID_UK }}
+          INCLUDE_NAMES: ${{ vars.INCLUDE_NAMES }}
         run: node scripts/refresh.mjs
 
       - name: Commit if the figures changed
