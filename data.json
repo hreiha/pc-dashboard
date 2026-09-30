@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-09-30T05:32:52.736Z",
+  "generatedUtc": "2026-09-30T05:38:45.253Z",
   "periodLabel": "Sep 2026",
   "priorLabel": "Aug 2026",
   "people": {
@@ -256,7 +256,7 @@
       }
     ]
   },
-  "includesNames": false,
+  "includesNames": true,
   "slices": [
     {
       "location": "Melbourne",
@@ -438,8 +438,27 @@
           "hires": 2,
           "leavers": 1,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Nur Liyana Ahmad",
+              "date": "2024-10-07T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Angelo Agisilaou",
+              "date": "2024-10-28T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Richard Nicholls",
+              "date": "2024-10-31T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Richard Nicholls was offboarded on 31/10/2024 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2024-11",
@@ -448,8 +467,34 @@
           "hires": 2,
           "leavers": 2,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Benjamin Male",
+              "date": "2024-11-18T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Shaun Lombardo",
+              "date": "2024-11-13T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Hossein Reja",
+              "date": "2024-11-13T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Hossein Reja was offboarded on 13/11/2024 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Huy Tong",
+              "date": "2024-11-01T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Huy Tong was offboarded on 01/11/2024 by Hayley Reiha with the reason of: Dismissal - Terminated during probation",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2024-12",
@@ -459,7 +504,22 @@
           "leavers": 2,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Stephen Boyes",
+              "date": "2024-12-06T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Stephen Boyes was offboarded on 06/12/2024 by Hayley Reiha with the reason of: Voluntary cessation - ",
+              "voluntary": true
+            },
+            {
+              "name": "Prasad Koduru",
+              "date": "2024-12-02T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Prasad Koduru was offboarded on 02/12/2024 by Hayley Reiha with the reason of: Dismissal - Dismissed during probation due performance",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2025-01",
@@ -468,8 +528,32 @@
           "hires": 3,
           "leavers": 1,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Jaymes Day",
+              "date": "2025-01-13T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Flynn Stimpson",
+              "date": "2025-01-20T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Asanka Ilankoon",
+              "date": "2025-01-20T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Wu Hong Lim",
+              "date": "2025-01-15T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Wu Hong Lim was offboarded on 15/01/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-02",
@@ -478,8 +562,66 @@
           "hires": 7,
           "leavers": 3,
           "leaversVoluntary": 2,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Samuel Evans",
+              "date": "2025-02-03T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Neehar Saraswat",
+              "date": "2025-02-10T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Zhuo Ran Li",
+              "date": "2025-02-03T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Alexander Klancic",
+              "date": "2025-02-03T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Gagan Singh",
+              "date": "2025-02-24T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Hari Rajasekaran",
+              "date": "2025-02-10T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Anand Sunil",
+              "date": "2025-02-17T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Pavana Vadapalli",
+              "date": "2025-02-26T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Pavana Vadapalli was offboarded on 26/02/2025 by Hayley Reiha with the reason of: Contract cessation - Casual employee - not enough hours given",
+              "voluntary": false
+            },
+            {
+              "name": "Angelo Agisilaou",
+              "date": "2025-02-14T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Angelo Agisilaou was offboarded on 14/02/2025 by Hayley Reiha with the reason of: Voluntary cessation - Resigned during probation",
+              "voluntary": true
+            },
+            {
+              "name": "Shaun Lombardo",
+              "date": "2025-02-06T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Shaun Lombardo was offboarded on 06/02/2025 by Hayley Reiha with the reason of: Voluntary cessation - Resigned during probation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-03",
@@ -488,8 +630,59 @@
           "hires": 7,
           "leavers": 2,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Karina Hernandez",
+              "date": "2025-03-03T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Tim Ramaekers",
+              "date": "2025-03-03T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Ashley Bamford",
+              "date": "2025-03-24T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Bilal Babadagi",
+              "date": "2025-03-11T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Junaid Syed",
+              "date": "2025-03-26T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Ruby Clark",
+              "date": "2025-03-19T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Juan Diaz",
+              "date": "2025-03-26T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Luke Shadmand",
+              "date": "2025-03-21T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Luke Shadmand was offboarded on 21/03/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Benjamin Male",
+              "date": "2025-03-07T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Benjamin Male was offboarded on 07/03/2025 by Hayley Reiha with the reason of: Contract cessation",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2025-04",
@@ -498,8 +691,32 @@
           "hires": 3,
           "leavers": 1,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Joyal Joseph",
+              "date": "2025-04-07T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Shima Kordi",
+              "date": "2025-04-14T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Alex Beza",
+              "date": "2025-04-28T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Thimios Mitropoulos",
+              "date": "2025-04-21T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Thimios Mitropoulos was offboarded on 21/04/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-05",
@@ -508,8 +725,42 @@
           "hires": 5,
           "leavers": 1,
           "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Sherif Elgendy",
+              "date": "2025-05-26T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Jemma Rayment",
+              "date": "2025-05-13T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Floyd Matthew",
+              "date": "2025-05-19T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Ozkan Tugra",
+              "date": "2025-05-26T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Pablo Perez Valdivia",
+              "date": "2025-05-26T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Ace Aguilar",
+              "date": "2025-05-30T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Ace Aguilar was offboarded on 30/05/2025 by Hayley Reiha with the reason of: Dismissal",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2025-06",
@@ -518,8 +769,57 @@
           "hires": 1,
           "leavers": 6,
           "leaversVoluntary": 2,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Saeid Sardari",
+              "date": "2025-06-30T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Koon Yan Boo",
+              "date": "2025-06-10T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Koon Yan Boo was offboarded on 10/06/2025 by Neelima Peram with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Afshin Niayesh",
+              "date": "2025-06-03T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Afshin Niayesh was offboarded on 03/06/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Kate Maxwell",
+              "date": "2025-06-30T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Kate Maxwell was offboarded on 30/06/2025 by Hayley Reiha with the reason of: Contract cessation",
+              "voluntary": false
+            },
+            {
+              "name": "Vicky Serdaris",
+              "date": "2025-06-30T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Vicky Serdaris was offboarded on 30/06/2025 by Hayley Reiha with the reason of: Redundancy",
+              "voluntary": false
+            },
+            {
+              "name": "Christopher Mahon",
+              "date": "2025-06-30T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Christopher Mahon was offboarded on 30/06/2025 by Hayley Reiha with the reason of: Redundancy",
+              "voluntary": false
+            },
+            {
+              "name": "William Maiwald",
+              "date": "2025-06-20T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "William Maiwald was offboarded on 20/06/2025 by Hayley Reiha with the reason of: Dismissal",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2025-07",
@@ -528,8 +828,34 @@
           "hires": 2,
           "leavers": 2,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Travis Beer",
+              "date": "2025-07-28T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Thomas Afford",
+              "date": "2025-07-30T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Jaymes Day",
+              "date": "2025-07-10T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Jaymes Day was offboarded on 10/07/2025 by Hayley Reiha with the reason of: Dismissal - Dismissed during probation",
+              "voluntary": false
+            },
+            {
+              "name": "Bilal Babadagi",
+              "date": "2025-07-25T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Bilal Babadagi was offboarded on 25/07/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-08",
@@ -538,8 +864,32 @@
           "hires": 3,
           "leavers": 1,
           "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Samuel Pollock",
+              "date": "2025-08-04T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Robert Danko",
+              "date": "2025-08-04T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Alexander Rodwell",
+              "date": "2025-08-11T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Thomas Afford",
+              "date": "2025-08-08T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Thomas Afford was offboarded on 08/08/2025 by Hayley Reiha with the reason of: Contract cessation",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2025-09",
@@ -548,8 +898,54 @@
           "hires": 6,
           "leavers": 2,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Vipul Shrivastava",
+              "date": "2025-09-01T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Tom O'Brien",
+              "date": "2025-09-11T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Dante De-Fazio",
+              "date": "2025-09-22T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Andre Luiz Diegues Marcelino dos Santos",
+              "date": "2025-09-29T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Jason Baigent",
+              "date": "2025-09-22T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Tessa Guastavino",
+              "date": "2025-09-29T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Floyd Matthew",
+              "date": "2025-09-26T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Floyd Matthew was offboarded on 26/09/2025 by Hayley Reiha with the reason of: Dismissal - Dismissed during probation",
+              "voluntary": false
+            },
+            {
+              "name": "Saeid Sardari",
+              "date": "2025-09-12T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Saeid Sardari was offboarded on 12/09/2025 by Hayley Reiha with the reason of: Voluntary cessation - Resigned during probation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-10",
@@ -558,8 +954,32 @@
           "hires": 3,
           "leavers": 1,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Avinash Srijaya",
+              "date": "2025-10-06T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Ahmed Mamdouh",
+              "date": "2025-10-27T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Lachlan Ramsey",
+              "date": "2025-10-07T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Marcus Kuan",
+              "date": "2025-10-28T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Marcus Kuan was offboarded on 28/10/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-11",
@@ -568,8 +988,42 @@
           "hires": 5,
           "leavers": 1,
           "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Marina Burneska",
+              "date": "2025-11-05T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Ethan Chan",
+              "date": "2025-11-03T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Trent Cockerell",
+              "date": "2025-11-17T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Eloise Mee",
+              "date": "2025-11-03T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Alexander West",
+              "date": "2025-11-10T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Flynn Stimpson",
+              "date": "2025-11-05T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Flynn Stimpson was offboarded on 05/11/2025 by Hayley Reiha with the reason of: Contract cessation",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2025-12",
@@ -579,7 +1033,29 @@
           "leavers": 3,
           "leaversVoluntary": 2,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Matthew Payne",
+              "date": "2025-12-19T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Matthew Payne was offboarded on 19/12/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Brenton King",
+              "date": "2025-12-12T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Brenton King was offboarded on 12/12/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Benjamin Krongold",
+              "date": "2025-12-12T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Benjamin Krongold was offboarded on 12/12/2025 by Hayley Reiha with the reason of: Contract cessation",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2026-01",
@@ -588,8 +1064,29 @@
           "hires": 1,
           "leavers": 2,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Inoke Kauyaca",
+              "date": "2026-01-14T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Myoung sun Lee",
+              "date": "2026-01-02T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Myoung sun Lee was offboarded on 02/01/2026 by Samantha Singh with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Travis Beer",
+              "date": "2026-01-16T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Travis Beer was offboarded on 16/01/2026 by Hayley Reiha with the reason of: Dismissal - Dismissed during Probation",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2026-02",
@@ -598,8 +1095,82 @@
           "hires": 6,
           "leavers": 6,
           "leaversVoluntary": 3,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Joshua Vilar",
+              "date": "2026-02-02T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "William Pitt",
+              "date": "2026-02-02T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Lanishka Varatharajan",
+              "date": "2026-02-16T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Ishan Gupta",
+              "date": "2026-02-02T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Benjamin Black",
+              "date": "2026-02-09T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Mathew Saunders",
+              "date": "2026-02-25T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Neehar Saraswat",
+              "date": "2026-02-26T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Neehar Saraswat was offboarded on 26/02/2026 by Hayley Reiha with the reason of: Redundancy",
+              "voluntary": false
+            },
+            {
+              "name": "Joseph Princi",
+              "date": "2026-02-11T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Joseph Princi was offboarded on 11/02/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Gordon Yang",
+              "date": "2026-02-05T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Gordon Yang was offboarded on 05/02/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Joyal Joseph",
+              "date": "2026-02-11T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Joyal Joseph was offboarded on 11/02/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Ozkan Tugra",
+              "date": "2026-02-23T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Ozkan Tugra was offboarded on 23/02/2026 by Hayley Reiha with the reason of: Redundancy",
+              "voluntary": false
+            },
+            {
+              "name": "Trent Cockerell",
+              "date": "2026-02-27T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Trent Cockerell was offboarded on 27/02/2026 by Hayley Reiha with the reason of: Contract cessation",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2026-03",
@@ -608,8 +1179,55 @@
           "hires": 2,
           "leavers": 5,
           "leaversVoluntary": 4,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Usman Shakeel",
+              "date": "2026-03-23T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Farzad Sadeghi",
+              "date": "2026-03-30T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Abdul Manzur",
+              "date": "2026-03-20T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Abdul Manzur was offboarded on 20/03/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Nur Liyana Ahmad",
+              "date": "2026-03-20T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Nur Liyana Ahmad was offboarded on 20/03/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Anand Sunil",
+              "date": "2026-03-20T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Anand Sunil was offboarded on 20/03/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Andre Luiz Diegues Marcelino dos Santos",
+              "date": "2026-03-13T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Andre Luiz Diegues Marcelino dos Santos was offboarded on 13/03/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Benjamin Black",
+              "date": "2026-03-06T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Benjamin Black was offboarded on 06/03/2026 by Samantha Singh with the reason of: Contract cessation",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2026-04",
@@ -618,8 +1236,34 @@
           "hires": 2,
           "leavers": 2,
           "leaversVoluntary": 2,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Will Northwood",
+              "date": "2026-04-14T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Jayden Li",
+              "date": "2026-04-20T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Aslam Mohammed",
+              "date": "2026-04-22T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Aslam Mohammed was offboarded on 22/04/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Junaid Syed",
+              "date": "2026-04-13T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Junaid Syed was offboarded on 13/04/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-05",
@@ -628,8 +1272,65 @@
           "hires": 4,
           "leavers": 5,
           "leaversVoluntary": 5,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Matthew Lonnen",
+              "date": "2026-05-20T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Nomen Oseghale",
+              "date": "2026-05-04T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Amro Hussein",
+              "date": "2026-05-11T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Amy Dawson",
+              "date": "2026-05-25T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Samuel Morgan",
+              "date": "2026-05-01T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Samuel Morgan was offboarded on 01/05/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Vincent Azzopardi",
+              "date": "2026-05-07T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Vincent Azzopardi was offboarded on 07/05/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Edwin Shu",
+              "date": "2026-05-08T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Edwin Shu was offboarded on 08/05/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Zhuo Ran Li",
+              "date": "2026-05-05T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Zhuo Ran Li was offboarded on 05/05/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Gagan Singh",
+              "date": "2026-05-08T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Gagan Singh was offboarded on 08/05/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-06",
@@ -638,8 +1339,59 @@
           "hires": 7,
           "leavers": 2,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Adam Bell",
+              "date": "2026-06-15T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Mohammad Ayman Nematullah Rezapour",
+              "date": "2026-06-09T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Rajneet Singh",
+              "date": "2026-06-15T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Manuel Gutierrez",
+              "date": "2026-06-10T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Shichuan Liu",
+              "date": "2026-06-29T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Mohammad Rabbani Farhoudi",
+              "date": "2026-06-01T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Donna Parkes",
+              "date": "2026-06-01T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Troy Derbyshire",
+              "date": "2026-06-26T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Troy Derbyshire was offboarded on 26/06/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Tessa Guastavino",
+              "date": "2026-06-29T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Tessa Guastavino was offboarded on 29/06/2026 by Rose Nguyen with the reason of: Dismissal",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2026-07",
@@ -649,7 +1401,43 @@
           "leavers": 5,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Jazeel Ajireen",
+              "date": "2026-07-14T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Jazeel Ajireen was offboarded on 14/07/2026 by Hayley Reiha with the reason of: Dismissal",
+              "voluntary": false
+            },
+            {
+              "name": "Pablo Perez Valdivia",
+              "date": "2026-07-03T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Pablo Perez Valdivia was offboarded on 03/07/2026 by Rose Nguyen with the reason of: Redundancy",
+              "voluntary": false
+            },
+            {
+              "name": "Lanishka Varatharajan",
+              "date": "2026-07-06T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Lanishka Varatharajan was offboarded on 06/07/2026 by Rose Nguyen with the reason of: Dismissal",
+              "voluntary": false
+            },
+            {
+              "name": "Amy Dawson",
+              "date": "2026-07-15T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Amy Dawson was offboarded on 15/07/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Donna Parkes",
+              "date": "2026-07-17T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Donna Parkes was offboarded on 17/07/2026 by Hayley Reiha with the reason of: Contract cessation",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2026-08",
@@ -658,8 +1446,34 @@
           "hires": 2,
           "leavers": 2,
           "leaversVoluntary": 2,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Celia Kerr",
+              "date": "2026-08-19T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            },
+            {
+              "name": "Peng Chen",
+              "date": "2026-08-12T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Basheer Ahamed Syed",
+              "date": "2026-08-28T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Basheer Ahamed Syed was offboarded on 28/08/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Jason Baigent",
+              "date": "2026-08-07T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Jason Baigent was offboarded on 07/08/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-09",
@@ -669,7 +1483,43 @@
           "leavers": 5,
           "leaversVoluntary": 4,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Campbell Robinson",
+              "date": "2026-09-16T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Campbell Robinson was offboarded on 16/09/2026 by Rose Nguyen with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Rebecca Patterson",
+              "date": "2026-09-18T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Rebecca Patterson was offboarded on 18/09/2026 by Rose Nguyen with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Shiva Motamedi",
+              "date": "2026-09-18T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Shiva Motamedi was offboarded on 18/09/2026 by Rose Nguyen with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Hari Rajasekaran",
+              "date": "2026-09-22T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Hari Rajasekaran was offboarded on 22/09/2026 by Rose Nguyen with the reason of: Dismissal",
+              "voluntary": false
+            },
+            {
+              "name": "Sherif Elgendy",
+              "date": "2026-09-09T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Sherif Elgendy was offboarded on 09/09/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         }
       ]
     },
@@ -854,7 +1704,15 @@
           "leavers": 1,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Shao Wen (Shao) Lim",
+              "date": "2024-10-29T00:00:00+00:00",
+              "costCentre": "NAT-SPL",
+              "type": "Shao Wen (Shao) Lim was offboarded on 29/10/2024 by Hayley Reiha with the reason of: Voluntary cessation - Resigned during probation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2024-11",
@@ -883,8 +1741,22 @@
           "hires": 1,
           "leavers": 1,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Julia Knight",
+              "date": "2025-01-13T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Rabih Bou-Mehdi",
+              "date": "2025-01-09T00:00:00+00:00",
+              "costCentre": "NAT-SPL",
+              "type": "Rabih Bou-Mehdi was offboarded on 09/01/2025 by Hayley Reiha with the reason of: Voluntary cessation - ",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-02",
@@ -903,7 +1775,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Aaron Drew",
+              "date": "2025-03-03T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -913,8 +1791,22 @@
           "hires": 1,
           "leavers": 1,
           "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Mir Mansoor Ali",
+              "date": "2025-04-01T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Mir Mansoor Ali",
+              "date": "2025-04-04T00:00:00+00:00",
+              "costCentre": "NAT-SPL",
+              "type": "Mir Mansoor Ali was offboarded on 04/04/2025 by Hayley Reiha with the reason of: Contract cessation",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2025-05",
@@ -923,7 +1815,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Zuhair Nadeem",
+              "date": "2025-05-12T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -933,8 +1831,22 @@
           "hires": 1,
           "leavers": 1,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Viktor Penano",
+              "date": "2025-06-02T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Zuhair Nadeem",
+              "date": "2025-06-05T00:00:00+00:00",
+              "costCentre": "NAT-SPL",
+              "type": "Zuhair Nadeem was offboarded on 05/06/2025 by Hayley Reiha with the reason of: Voluntary cessation - Resigned during probation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-07",
@@ -943,8 +1855,22 @@
           "hires": 1,
           "leavers": 1,
           "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Rhea Shami",
+              "date": "2025-07-21T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Lily Harkom",
+              "date": "2025-07-16T00:00:00+00:00",
+              "costCentre": "NAT-SPL",
+              "type": "Lily Harkom was offboarded on 16/07/2025 by Hayley Reiha with the reason of: Redundancy",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2025-08",
@@ -953,7 +1879,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Andrei Lazouski",
+              "date": "2025-08-18T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -973,8 +1905,34 @@
           "hires": 2,
           "leavers": 2,
           "leaversVoluntary": 2,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Lucy Krimmer",
+              "date": "2025-10-21T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            },
+            {
+              "name": "Miro De Leucio",
+              "date": "2025-10-27T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Manoj Kandel",
+              "date": "2025-10-30T00:00:00+00:00",
+              "costCentre": "NAT-SPL",
+              "type": "Manoj Kandel was offboarded on 30/10/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Nicholas Liang",
+              "date": "2025-10-01T00:00:00+00:00",
+              "costCentre": "NAT-SPL",
+              "type": "Nicholas Liang was offboarded on 01/10/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-11",
@@ -994,7 +1952,15 @@
           "leavers": 1,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Rhea Shami",
+              "date": "2025-12-09T00:00:00+00:00",
+              "costCentre": "NAT-SPL",
+              "type": "Rhea Shami was offboarded on 09/12/2025 by Samantha Singh with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-01",
@@ -1013,7 +1979,18 @@
           "hires": 2,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Anna To",
+              "date": "2026-02-02T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            },
+            {
+              "name": "Kade Francis",
+              "date": "2026-02-02T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -1053,7 +2030,18 @@
           "hires": 2,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Eric Lapiz",
+              "date": "2026-06-22T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            },
+            {
+              "name": "Luis Teh",
+              "date": "2026-06-15T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -1268,8 +2256,29 @@
           "hires": 1,
           "leavers": 2,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Liz Templeton",
+              "date": "2024-10-14T00:00:00+00:00",
+              "costCentre": "NAT-CORP"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Jody van Lawick",
+              "date": "2024-10-29T00:00:00+00:00",
+              "costCentre": "NAT-CORP",
+              "type": "Jody van Lawick was offboarded on 29/10/2024 by Hayley Reiha with the reason of: Redundancy",
+              "voluntary": false
+            },
+            {
+              "name": "Semira Vandayar",
+              "date": "2024-10-30T00:00:00+00:00",
+              "costCentre": "NAT-CORP",
+              "type": "Semira Vandayar was offboarded on 30/10/2024 by Hayley Reiha with the reason of: Voluntary cessation - Resigned during probation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2024-11",
@@ -1279,7 +2288,22 @@
           "leavers": 2,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Bryce Levett",
+              "date": "2024-11-27T00:00:00+00:00",
+              "costCentre": "NAT-CORP",
+              "type": "Bryce Levett was offboarded on 27/11/2024 by Hayley Reiha with the reason of: Voluntary cessation - ",
+              "voluntary": true
+            },
+            {
+              "name": "Kanwal Hafeez",
+              "date": "2024-11-12T00:00:00+00:00",
+              "costCentre": "NAT-CORP",
+              "type": "Kanwal Hafeez was offboarded on 12/11/2024 by Hayley Reiha with the reason of: Dismissal - Dismissed during probation",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2024-12",
@@ -1298,8 +2322,27 @@
           "hires": 2,
           "leavers": 1,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Ajay Duhan",
+              "date": "2025-01-13T00:00:00+00:00",
+              "costCentre": "NAT-CORP"
+            },
+            {
+              "name": "Grant Halcomb-Smith",
+              "date": "2025-01-15T00:00:00+00:00",
+              "costCentre": "NAT-CORP"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Sally Virgo",
+              "date": "2025-01-16T00:00:00+00:00",
+              "costCentre": "NAT-CORP",
+              "type": "Sally Virgo was offboarded on 16/01/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-02",
@@ -1308,7 +2351,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Maria Jurcakova",
+              "date": "2025-02-10T00:00:00+00:00",
+              "costCentre": "NAT-CORP"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -1318,8 +2367,22 @@
           "hires": 1,
           "leavers": 1,
           "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Tom Skevington",
+              "date": "2025-03-31T00:00:00+00:00",
+              "costCentre": "NAT-CORP"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Maria Jurcakova",
+              "date": "2025-03-07T00:00:00+00:00",
+              "costCentre": "NAT-CORP",
+              "type": "Maria Jurcakova was offboarded on 07/03/2025 by Hayley Reiha with the reason of: Contract cessation",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2025-04",
@@ -1329,7 +2392,29 @@
           "leavers": 3,
           "leaversVoluntary": 2,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Anita Singh Madan",
+              "date": "2025-04-02T00:00:00+00:00",
+              "costCentre": "NAT-CORP",
+              "type": "Anita Singh Madan was offboarded on 02/04/2025 by Hayley Reiha with the reason of: Redundancy",
+              "voluntary": false
+            },
+            {
+              "name": "Grant Halcomb-Smith",
+              "date": "2025-04-04T00:00:00+00:00",
+              "costCentre": "NAT-CORP",
+              "type": "Grant Halcomb-Smith was offboarded on 04/04/2025 by Hayley Reiha with the reason of: Voluntary cessation - ",
+              "voluntary": true
+            },
+            {
+              "name": "Tom Skevington",
+              "date": "2025-04-02T00:00:00+00:00",
+              "costCentre": "NAT-CORP",
+              "type": "Tom Skevington was offboarded on 02/04/2025 by Get Started with the reason of: Voluntary cessation - Import from Keypay",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-05",
@@ -1338,8 +2423,27 @@
           "hires": 2,
           "leavers": 1,
           "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Jana Dukic",
+              "date": "2025-05-12T00:00:00+00:00",
+              "costCentre": "NAT-CORP"
+            },
+            {
+              "name": "Mary Tsobanopoulos",
+              "date": "2025-05-12T00:00:00+00:00",
+              "costCentre": "NAT-CORP"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Belinda Coates",
+              "date": "2025-05-15T00:00:00+00:00",
+              "costCentre": "NAT-CORP",
+              "type": "Belinda Coates was offboarded on 15/05/2025 by Hayley Reiha with the reason of: Redundancy",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2025-06",
@@ -1348,8 +2452,32 @@
           "hires": 3,
           "leavers": 1,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Jonty O'Hara",
+              "date": "2025-06-10T00:00:00+00:00",
+              "costCentre": "NAT-CORP"
+            },
+            {
+              "name": "Drizzle Lim",
+              "date": "2025-06-10T00:00:00+00:00",
+              "costCentre": "NAT-CORP"
+            },
+            {
+              "name": "Max Siwes",
+              "date": "2025-06-30T00:00:00+00:00",
+              "costCentre": "NAT-CORP"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Ruby Buxton",
+              "date": "2025-06-04T00:00:00+00:00",
+              "costCentre": "NAT-CORP",
+              "type": "Ruby Buxton was offboarded on 04/06/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-07",
@@ -1358,7 +2486,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Adam Tilling",
+              "date": "2025-07-01T00:00:00+00:00",
+              "costCentre": "NAT-CORP"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -1398,7 +2532,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Jose Ignacio Escudero Rodriguez",
+              "date": "2025-11-17T00:00:00+00:00",
+              "costCentre": "NAT-CORP"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -1418,8 +2558,22 @@
           "hires": 1,
           "leavers": 1,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Svetlana Spencer",
+              "date": "2026-01-14T00:00:00+00:00",
+              "costCentre": "NAT-CORP"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Jana Dukic",
+              "date": "2026-01-06T00:00:00+00:00",
+              "costCentre": "NAT-CORP",
+              "type": "Jana Dukic was offboarded on 06/01/2026 by Neelima Peram with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-02",
@@ -1428,8 +2582,22 @@
           "hires": 1,
           "leavers": 1,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "William Mcausland",
+              "date": "2026-02-16T00:00:00+00:00",
+              "costCentre": "NAT-CORP"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "William Mcausland",
+              "date": "2026-02-16T00:00:00+00:00",
+              "costCentre": "NAT-CORP",
+              "type": "William Mcausland was offboarded on 16/02/2026 by Hayley Reiha with the reason of: Voluntary cessation - Resigned after 1 day",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-03",
@@ -1438,8 +2606,22 @@
           "hires": 1,
           "leavers": 1,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "William (Wai Lam) Lui",
+              "date": "2026-03-16T00:00:00+00:00",
+              "costCentre": "NAT-CORP"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Kirsten Fisers",
+              "date": "2026-03-18T00:00:00+00:00",
+              "costCentre": "NAT-CORP",
+              "type": "Kirsten Fisers was offboarded on 18/03/2026 by Neelima Peram with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-04",
@@ -1448,8 +2630,22 @@
           "hires": 1,
           "leavers": 1,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Sajawal Khalid",
+              "date": "2026-04-20T00:00:00+00:00",
+              "costCentre": "NAT-CORP"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Neelima Peram",
+              "date": "2026-04-15T00:00:00+00:00",
+              "costCentre": "NAT-CORP",
+              "type": "Neelima Peram was offboarded on 15/04/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-05",
@@ -1468,8 +2664,27 @@
           "hires": 2,
           "leavers": 1,
           "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Jhania Kahui",
+              "date": "2026-06-16T00:00:00+00:00",
+              "costCentre": "NAT-CORP"
+            },
+            {
+              "name": "Shamal Ichharam",
+              "date": "2026-06-15T00:00:00+00:00",
+              "costCentre": "NAT-CORP"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Svetlana Spencer",
+              "date": "2026-06-05T00:00:00+00:00",
+              "costCentre": "NAT-CORP",
+              "type": "Svetlana Spencer was offboarded on 05/06/2026 by Lauren Miller with the reason of: Dismissal - Termination in Probation ",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2026-07",
@@ -1488,8 +2703,22 @@
           "hires": 1,
           "leavers": 1,
           "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Ayushi Rastogi",
+              "date": "2026-08-10T00:00:00+00:00",
+              "costCentre": "NAT-CORP"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Jhania Kahui",
+              "date": "2026-08-25T00:00:00+00:00",
+              "costCentre": "NAT-CORP",
+              "type": "Jhania Kahui was offboarded on 25/08/2026 by Sajawal Khalid with the reason of: Dismissal",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2026-09",
@@ -1694,7 +2923,22 @@
           "leavers": 2,
           "leaversVoluntary": 0,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Bhargavi Balamurali Mysore",
+              "date": "2024-11-11T00:00:00+00:00",
+              "costCentre": "NAT-ESD",
+              "type": "Bhargavi Balamurali Mysore was offboarded on 11/11/2024 by Hayley Reiha with the reason of: Redundancy",
+              "voluntary": false
+            },
+            {
+              "name": "Navin Kumar Sridhar",
+              "date": "2024-11-11T00:00:00+00:00",
+              "costCentre": "NAT-ESD",
+              "type": "Navin Kumar Sridhar was offboarded on 11/11/2024 by Hayley Reiha with the reason of: Redundancy",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2024-12",
@@ -1733,7 +2977,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Rohan Panjwani",
+              "date": "2025-03-24T00:00:00+00:00",
+              "costCentre": "NAT-ESD"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -1743,8 +2993,34 @@
           "hires": 2,
           "leavers": 2,
           "leaversVoluntary": 2,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Ajjanthan Kathirgamanathan",
+              "date": "2025-04-28T00:00:00+00:00",
+              "costCentre": "NAT-ESD"
+            },
+            {
+              "name": "Ahmed Hassan",
+              "date": "2025-04-07T00:00:00+00:00",
+              "costCentre": "NAT-ESD"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Anusha Krishnan",
+              "date": "2025-04-25T00:00:00+00:00",
+              "costCentre": "NAT-ESD",
+              "type": "Anusha Krishnan was offboarded on 25/04/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Max Anderson",
+              "date": "2025-04-11T00:00:00+00:00",
+              "costCentre": "NAT-ESD",
+              "type": "Max Anderson was offboarded on 11/04/2025 by Samantha Singh with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-05",
@@ -1753,7 +3029,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Shivani Desai",
+              "date": "2025-05-20T00:00:00+00:00",
+              "costCentre": "NAT-ESD"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -1763,7 +3045,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Abigail Montolalu",
+              "date": "2025-06-04T00:00:00+00:00",
+              "costCentre": "NAT-ESD"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -1773,7 +3061,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Kajal Anand",
+              "date": "2025-07-01T00:00:00+00:00",
+              "costCentre": "NAT-ESD"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -1814,7 +3108,36 @@
           "leavers": 4,
           "leaversVoluntary": 0,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Veronika Pirozek",
+              "date": "2025-11-25T00:00:00+00:00",
+              "costCentre": "NAT-ESD",
+              "type": "Veronika Pirozek was offboarded on 25/11/2025 by Hayley Reiha with the reason of: Contract cessation",
+              "voluntary": false
+            },
+            {
+              "name": "Rohan Panjwani",
+              "date": "2025-11-25T00:00:00+00:00",
+              "costCentre": "NAT-ESD",
+              "type": "Rohan Panjwani was offboarded on 25/11/2025 by Hayley Reiha with the reason of: Contract cessation",
+              "voluntary": false
+            },
+            {
+              "name": "Abigail Montolalu",
+              "date": "2025-11-11T00:00:00+00:00",
+              "costCentre": "NAT-ESD",
+              "type": "Abigail Montolalu was offboarded on 11/11/2025 by Hayley Reiha with the reason of: Dismissal - Dismissed during probation",
+              "voluntary": false
+            },
+            {
+              "name": "Shivani Desai",
+              "date": "2025-11-10T00:00:00+00:00",
+              "costCentre": "NAT-ESD",
+              "type": "Shivani Desai was offboarded on 10/11/2025 by Hayley Reiha with the reason of: Contract cessation",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2025-12",
@@ -1844,7 +3167,15 @@
           "leavers": 1,
           "leaversVoluntary": 0,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Wishnavany Gunaratnam",
+              "date": "2026-02-04T00:00:00+00:00",
+              "costCentre": "NAT-ESD",
+              "type": "Wishnavany Gunaratnam was offboarded on 04/02/2026 by Hayley Reiha with the reason of: Redundancy",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2026-03",
@@ -1863,8 +3194,22 @@
           "hires": 1,
           "leavers": 1,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Edward Joel",
+              "date": "2026-04-13T00:00:00+00:00",
+              "costCentre": "NAT-ESD"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "David Woodman",
+              "date": "2026-04-02T00:00:00+00:00",
+              "costCentre": "NAT-ESD",
+              "type": "David Woodman was offboarded on 02/04/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-05",
@@ -1873,7 +3218,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Marcus Zylstra",
+              "date": "2026-05-04T00:00:00+00:00",
+              "costCentre": "NAT-ESD"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -1894,7 +3245,15 @@
           "leavers": 1,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Charles Pentney",
+              "date": "2026-07-24T00:00:00+00:00",
+              "costCentre": "NAT-ESD",
+              "type": "Charles Pentney was offboarded on 24/07/2026 by Rose Nguyen with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-08",
@@ -2168,7 +3527,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Raj Gandhi",
+              "date": "2025-05-08T00:00:00+00:00",
+              "costCentre": "NAT-DIG"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -2188,7 +3553,18 @@
           "hires": 2,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Ashik D'Souza",
+              "date": "2025-07-18T00:00:00+00:00",
+              "costCentre": "NAT-DIG"
+            },
+            {
+              "name": "Shayan Azari Pour",
+              "date": "2025-07-28T00:00:00+00:00",
+              "costCentre": "NAT-DIG"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -2248,7 +3624,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Arya Vasa",
+              "date": "2026-01-14T00:00:00+00:00",
+              "costCentre": "NAT-DIG"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -2553,7 +3935,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Rhys Baynham",
+              "date": "2025-02-03T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -2613,7 +4001,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Simon Bold",
+              "date": "2025-08-18T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -2733,7 +4127,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Akash Bhavsar",
+              "date": "2026-08-24T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -2744,7 +4144,15 @@
           "leavers": 1,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Simon Bold",
+              "date": "2026-09-18T00:00:00+00:00",
+              "costCentre": "Melbourne",
+              "type": "Simon Bold was offboarded on 18/09/2026 by Rose Nguyen with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         }
       ]
     },
@@ -2928,8 +4336,29 @@
           "hires": 1,
           "leavers": 2,
           "leaversVoluntary": 2,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Shiv Patel",
+              "date": "2024-10-28T00:00:00+00:00",
+              "costCentre": "Sydney"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Jialiang Lao",
+              "date": "2024-10-11T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Jialiang Lao was offboarded on 11/10/2024 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Sheila Karimi",
+              "date": "2024-10-21T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Sheila Karimi was offboarded on 21/10/2024 by Hayley Reiha with the reason of: Voluntary cessation - Resignation during probation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2024-11",
@@ -2938,8 +4367,58 @@
           "hires": 4,
           "leavers": 4,
           "leaversVoluntary": 2,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "James White",
+              "date": "2024-11-11T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Robert Daly",
+              "date": "2024-11-04T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Nguyen Pham",
+              "date": "2024-11-20T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Archie Douglas",
+              "date": "2024-11-25T00:00:00+00:00",
+              "costCentre": "Sydney"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Dylan Guo",
+              "date": "2024-11-05T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Dylan Guo was offboarded on 05/11/2024 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Jonathan Teoh",
+              "date": "2024-11-01T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Jonathan Teoh was offboarded on 01/11/2024 by Hayley Reiha with the reason of: Dismissal - Terminated due performance",
+              "voluntary": false
+            },
+            {
+              "name": "Paul De Las Alas",
+              "date": "2024-11-11T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Paul De Las Alas was offboarded on 11/11/2024 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Huynh Truc Pham",
+              "date": "2024-11-18T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Huynh Truc Pham was offboarded on 18/11/2024 by Hayley Reiha with the reason of: Dismissal",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2024-12",
@@ -2948,8 +4427,29 @@
           "hires": 1,
           "leavers": 2,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Tahereh Doroudgar",
+              "date": "2024-12-04T00:00:00+00:00",
+              "costCentre": "Sydney"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Samantha Mesia",
+              "date": "2024-12-20T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Samantha Mesia was offboarded on 20/12/2024 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Rapula Regoeng",
+              "date": "2024-12-06T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Rapula Regoeng was offboarded on 06/12/2024 by Hayley Reiha with the reason of: Dismissal - Dismissed during Probation",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2025-01",
@@ -2958,8 +4458,37 @@
           "hires": 4,
           "leavers": 1,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Snezana Pavic",
+              "date": "2025-01-13T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Min Thein Kyaw",
+              "date": "2025-01-13T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Shaun Goettler",
+              "date": "2025-01-20T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Christian Killeen",
+              "date": "2025-01-14T00:00:00+00:00",
+              "costCentre": "Sydney"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Nguyen Pham",
+              "date": "2025-01-31T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Nguyen Pham was offboarded on 31/01/2025 by Hayley Reiha with the reason of: Voluntary cessation - Resignation during probation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-02",
@@ -2968,7 +4497,43 @@
           "hires": 7,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Adam Yang",
+              "date": "2025-02-10T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Liam Carroll",
+              "date": "2025-02-03T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Yiyang Li",
+              "date": "2025-02-03T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Vincent Chan",
+              "date": "2025-02-03T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Riley Stanton",
+              "date": "2025-02-26T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Goran Muratbegovic",
+              "date": "2025-02-12T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Harrison Lanigan",
+              "date": "2025-02-19T00:00:00+00:00",
+              "costCentre": "Sydney"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -2979,7 +4544,22 @@
           "leavers": 2,
           "leaversVoluntary": 2,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Haydon Illingworth",
+              "date": "2025-03-28T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Haydon Illingworth was offboarded on 28/03/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Harold Ip",
+              "date": "2025-03-14T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Harold Ip was offboarded on 14/03/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-04",
@@ -2988,8 +4568,27 @@
           "hires": 2,
           "leavers": 1,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Faisal David",
+              "date": "2025-04-07T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Rhys Morgan",
+              "date": "2025-04-15T00:00:00+00:00",
+              "costCentre": "Sydney"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Christopher Lee",
+              "date": "2025-04-25T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Christopher Lee was offboarded on 25/04/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-05",
@@ -2998,8 +4597,63 @@
           "hires": 5,
           "leavers": 4,
           "leaversVoluntary": 4,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Daniel Poppleton",
+              "date": "2025-05-05T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Jason Gravanis",
+              "date": "2025-05-26T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Tyson Brown",
+              "date": "2025-05-08T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Haris Husic",
+              "date": "2025-05-12T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Hein Htet",
+              "date": "2025-05-19T00:00:00+00:00",
+              "costCentre": "Sydney"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Luu Quang Thai Nguyen",
+              "date": "2025-05-30T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Luu Quang Thai Nguyen was offboarded on 30/05/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Sahar Sohani",
+              "date": "2025-05-09T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Sahar Sohani was offboarded on 09/05/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "David Touma",
+              "date": "2025-05-13T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "David Touma was offboarded on 13/05/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Tahereh Doroudgar",
+              "date": "2025-05-09T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Tahereh Doroudgar was offboarded on 09/05/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-06",
@@ -3008,8 +4662,53 @@
           "hires": 3,
           "leavers": 4,
           "leaversVoluntary": 4,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Thomas Tibbs",
+              "date": "2025-06-16T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Anthony Faram",
+              "date": "2025-06-10T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Oliver Fairchild",
+              "date": "2025-06-24T00:00:00+00:00",
+              "costCentre": "Sydney"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "How Tong Chen",
+              "date": "2025-06-27T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "How Tong Chen was offboarded on 27/06/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Damian Duong",
+              "date": "2025-06-27T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Damian Duong was offboarded on 27/06/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Simon Daly",
+              "date": "2025-06-24T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Simon Daly was offboarded on 24/06/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Tyson Brown",
+              "date": "2025-06-27T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Tyson Brown was offboarded on 27/06/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-07",
@@ -3018,8 +4717,48 @@
           "hires": 2,
           "leavers": 4,
           "leaversVoluntary": 3,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Youssef Refaat",
+              "date": "2025-07-30T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Jakob Singer",
+              "date": "2025-07-28T00:00:00+00:00",
+              "costCentre": "Sydney"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Simon Bell",
+              "date": "2025-07-04T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Simon Bell was offboarded on 04/07/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Nicholas Schultz",
+              "date": "2025-07-08T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Nicholas Schultz was offboarded on 08/07/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Antonios Lafkas",
+              "date": "2025-07-11T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Antonios Lafkas was offboarded on 11/07/2025 by Hayley Reiha with the reason of: Voluntary cessation - Resigned as has to serve in Greece",
+              "voluntary": true
+            },
+            {
+              "name": "Snezana Pavic",
+              "date": "2025-07-15T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Snezana Pavic was offboarded on 15/07/2025 by Hayley Reiha with the reason of: Dismissal - Dismissed during probation",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2025-08",
@@ -3028,8 +4767,29 @@
           "hires": 1,
           "leavers": 2,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Harry Finestone",
+              "date": "2025-08-25T00:00:00+00:00",
+              "costCentre": "Sydney"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Nick Masters",
+              "date": "2025-08-15T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Nick Masters was offboarded on 15/08/2025 by Neelima Peram with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Faisal David",
+              "date": "2025-08-01T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Faisal David was offboarded on 01/08/2025 by Hayley Reiha with the reason of: Dismissal",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2025-09",
@@ -3038,8 +4798,53 @@
           "hires": 3,
           "leavers": 4,
           "leaversVoluntary": 3,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Steven Sam",
+              "date": "2025-09-08T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Justin Mallouk",
+              "date": "2025-09-29T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Nima Yazdani",
+              "date": "2025-09-15T00:00:00+00:00",
+              "costCentre": "Sydney"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "David Petitjean",
+              "date": "2025-09-12T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "David Petitjean was offboarded on 12/09/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Sean Williamson",
+              "date": "2025-09-01T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Sean Williamson was offboarded on 01/09/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "James Lagoutaris",
+              "date": "2025-09-10T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "James Lagoutaris was offboarded on 10/09/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Geraldine Dunne",
+              "date": "2025-09-30T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Geraldine Dunne was offboarded on 30/09/2025 by Hayley Reiha with the reason of: Dismissal",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2025-10",
@@ -3048,8 +4853,29 @@
           "hires": 1,
           "leavers": 2,
           "leaversVoluntary": 2,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Jason Sung",
+              "date": "2025-10-20T00:00:00+00:00",
+              "costCentre": "Sydney"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Nilesh Patel",
+              "date": "2025-10-17T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Nilesh Patel was offboarded on 17/10/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "James Behagg",
+              "date": "2025-10-10T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "James Behagg was offboarded on 10/10/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-11",
@@ -3058,8 +4884,37 @@
           "hires": 4,
           "leavers": 1,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Mahdi Aminoleslami",
+              "date": "2025-11-03T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Ethan Giles",
+              "date": "2025-11-03T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Benson Ou",
+              "date": "2025-11-24T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Ashwin Subedi",
+              "date": "2025-11-10T00:00:00+00:00",
+              "costCentre": "Sydney"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Michael Calcutt",
+              "date": "2025-11-21T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Michael Calcutt was offboarded on 21/11/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-12",
@@ -3069,7 +4924,22 @@
           "leavers": 2,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Payam Javani",
+              "date": "2025-12-26T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Payam Javani was offboarded on 26/12/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Thomas Tibbs",
+              "date": "2025-12-19T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Thomas Tibbs was offboarded on 19/12/2025 by Hayley Reiha with the reason of: Contract cessation",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2026-01",
@@ -3078,8 +4948,50 @@
           "hires": 1,
           "leavers": 5,
           "leaversVoluntary": 4,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Robert Erasquin",
+              "date": "2026-01-14T00:00:00+00:00",
+              "costCentre": "Sydney"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Simon Jeffs",
+              "date": "2026-01-27T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Simon Jeffs was offboarded on 27/01/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Scott Sharma",
+              "date": "2026-01-09T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Scott Sharma was offboarded on 09/01/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Shaun Goettler",
+              "date": "2026-01-28T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Shaun Goettler was offboarded on 28/01/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Christian Killeen",
+              "date": "2026-01-02T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Christian Killeen was offboarded on 02/01/2026 by Samantha Singh with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Steven Sam",
+              "date": "2026-01-20T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Steven Sam was offboarded on 20/01/2026 by Hayley Reiha with the reason of: Dismissal - Dismissed during probation",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2026-02",
@@ -3088,8 +5000,51 @@
           "hires": 4,
           "leavers": 3,
           "leaversVoluntary": 3,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Hayden Clancy",
+              "date": "2026-02-02T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Lily Chen",
+              "date": "2026-02-02T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Hamish Whyte",
+              "date": "2026-02-02T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Saige Rosmarin",
+              "date": "2026-02-18T00:00:00+00:00",
+              "costCentre": "Sydney"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Marley Elleray",
+              "date": "2026-02-06T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Marley Elleray was offboarded on 06/02/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Goran Muratbegovic",
+              "date": "2026-02-27T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Goran Muratbegovic was offboarded on 27/02/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Mahdi Aminoleslami",
+              "date": "2026-02-27T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Mahdi Aminoleslami was offboarded on 27/02/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-03",
@@ -3098,8 +5053,34 @@
           "hires": 2,
           "leavers": 2,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Andrew Chan",
+              "date": "2026-03-02T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Madison Livingstone",
+              "date": "2026-03-04T00:00:00+00:00",
+              "costCentre": "Sydney"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Haris Husic",
+              "date": "2026-03-17T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Haris Husic was offboarded on 17/03/2026 by Hayley Reiha with the reason of: Dismissal",
+              "voluntary": false
+            },
+            {
+              "name": "Robert Erasquin",
+              "date": "2026-03-20T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Robert Erasquin was offboarded on 20/03/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-04",
@@ -3109,7 +5090,22 @@
           "leavers": 2,
           "leaversVoluntary": 2,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Yiyang Li",
+              "date": "2026-04-08T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Yiyang Li was offboarded on 08/04/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Riley Stanton",
+              "date": "2026-04-27T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Riley Stanton was offboarded on 27/04/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-05",
@@ -3118,8 +5114,39 @@
           "hires": 3,
           "leavers": 2,
           "leaversVoluntary": 2,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Siamak KHAKSAR HAGHANI DEHKORDI",
+              "date": "2026-05-25T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Ashwin Prakash",
+              "date": "2026-05-11T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Carl Cassia",
+              "date": "2026-05-18T00:00:00+00:00",
+              "costCentre": "Sydney"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Samuel Youssef",
+              "date": "2026-05-15T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Samuel Youssef was offboarded on 15/05/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Ruadhan Fanning",
+              "date": "2026-05-01T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Ruadhan Fanning was offboarded on 01/05/2026 by Samantha Singh with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-06",
@@ -3128,8 +5155,51 @@
           "hires": 4,
           "leavers": 3,
           "leaversVoluntary": 3,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Daren Easton",
+              "date": "2026-06-22T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Stuart Pearson",
+              "date": "2026-06-01T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Juan Valentin Munoz Chaffo",
+              "date": "2026-06-22T00:00:00+00:00",
+              "costCentre": "Sydney"
+            },
+            {
+              "name": "Greg Napper",
+              "date": "2026-06-03T00:00:00+00:00",
+              "costCentre": "Sydney"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Joemar De Jesus",
+              "date": "2026-06-05T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Joemar De Jesus was offboarded on 05/06/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Amber Ye",
+              "date": "2026-06-05T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Amber Ye was offboarded on 05/06/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Vincent Chan",
+              "date": "2026-06-05T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Vincent Chan was offboarded on 05/06/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-07",
@@ -3139,7 +5209,50 @@
           "leavers": 6,
           "leaversVoluntary": 3,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Steve Drane",
+              "date": "2026-07-02T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Steve Drane was offboarded on 02/07/2026 by Rose Nguyen with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Sogol Karimian",
+              "date": "2026-07-29T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Sogol Karimian was offboarded on 29/07/2026 by Hayley Reiha with the reason of: Redundancy",
+              "voluntary": false
+            },
+            {
+              "name": "Leanne Heriot",
+              "date": "2026-07-21T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Leanne Heriot was offboarded on 21/07/2026 by Hayley Reiha with the reason of: Redundancy",
+              "voluntary": false
+            },
+            {
+              "name": "Yujia Jin",
+              "date": "2026-07-10T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Yujia Jin was offboarded on 10/07/2026 by Samantha Singh with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Liam Carroll",
+              "date": "2026-07-17T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Liam Carroll was offboarded on 17/07/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Rhys Morgan",
+              "date": "2026-07-24T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Rhys Morgan was offboarded on 24/07/2026 by Samantha Singh with the reason of: Contract cessation",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2026-08",
@@ -3148,8 +5261,43 @@
           "hires": 1,
           "leavers": 4,
           "leaversVoluntary": 3,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Ashley Monteiro",
+              "date": "2026-08-03T00:00:00+00:00",
+              "costCentre": "Sydney"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Heba Mustafa",
+              "date": "2026-08-07T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Heba Mustafa was offboarded on 07/08/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Jason Gravanis",
+              "date": "2026-08-07T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Jason Gravanis was offboarded on 07/08/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Ashwin Subedi",
+              "date": "2026-08-14T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Ashwin Subedi was offboarded on 14/08/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Greg Napper",
+              "date": "2026-08-28T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Greg Napper was offboarded on 28/08/2026 by Samantha Singh with the reason of: Dismissal",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2026-09",
@@ -3159,7 +5307,22 @@
           "leavers": 2,
           "leaversVoluntary": 2,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Min Thein Kyaw",
+              "date": "2026-09-29T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Min Thein Kyaw was offboarded on 29/09/2026 by Rose Nguyen with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Youssef Refaat",
+              "date": "2026-09-15T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Youssef Refaat was offboarded on 15/09/2026 by Samantha Singh with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         }
       ]
     },
@@ -3423,8 +5586,22 @@
           "hires": 1,
           "leavers": 1,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Winston Liang",
+              "date": "2025-06-10T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Zheng Lin",
+              "date": "2025-06-13T00:00:00+00:00",
+              "costCentre": "NAT-SPL",
+              "type": "Zheng Lin was offboarded on 13/06/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-07",
@@ -3434,7 +5611,15 @@
           "leavers": 1,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Nataniel Lobel",
+              "date": "2025-07-09T00:00:00+00:00",
+              "costCentre": "NAT-SPL",
+              "type": "Nataniel Lobel was offboarded on 09/07/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-08",
@@ -3443,7 +5628,18 @@
           "hires": 2,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Wilson Che",
+              "date": "2025-08-04T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            },
+            {
+              "name": "Marzieh Khezerloo",
+              "date": "2025-08-04T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -3454,7 +5650,15 @@
           "leavers": 1,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Michael Curtale",
+              "date": "2025-09-25T00:00:00+00:00",
+              "costCentre": "NAT-SPL",
+              "type": "Michael Curtale was offboarded on 25/09/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-10",
@@ -3463,7 +5667,18 @@
           "hires": 2,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Massimiliano Migliore",
+              "date": "2025-10-20T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            },
+            {
+              "name": "Galappaththige Jinadasa",
+              "date": "2025-10-21T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -3513,7 +5728,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Loona Maani",
+              "date": "2026-03-30T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -3524,7 +5745,15 @@
           "leavers": 1,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Marzieh Khezerloo",
+              "date": "2026-04-17T00:00:00+00:00",
+              "costCentre": "NAT-SPL",
+              "type": "Marzieh Khezerloo was offboarded on 17/04/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-05",
@@ -3574,7 +5803,15 @@
           "leavers": 1,
           "leaversVoluntary": 0,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Massimiliano Migliore",
+              "date": "2026-09-01T00:00:00+00:00",
+              "costCentre": "NAT-SPL",
+              "type": "Massimiliano Migliore was offboarded on 01/09/2026 by Rose Nguyen with the reason of: Redundancy",
+              "voluntary": false
+            }
+          ]
         }
       ]
     },
@@ -3828,7 +6065,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Prashilta Amilthan",
+              "date": "2025-05-20T00:00:00+00:00",
+              "costCentre": "NAT-CORP"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -4183,8 +6426,22 @@
           "hires": 1,
           "leavers": 1,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Arthur Gerakas",
+              "date": "2024-11-18T00:00:00+00:00",
+              "costCentre": "NAT-ESD"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Priya Joshi",
+              "date": "2024-11-08T00:00:00+00:00",
+              "costCentre": "NAT-ESD",
+              "type": "Priya Joshi was offboarded on 08/11/2024 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2024-12",
@@ -4214,7 +6471,22 @@
           "leavers": 2,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Rayahn Raschke",
+              "date": "2025-02-07T00:00:00+00:00",
+              "costCentre": "NAT-ESD",
+              "type": "Rayahn Raschke was offboarded on 07/02/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Arthur Gerakas",
+              "date": "2025-02-13T00:00:00+00:00",
+              "costCentre": "NAT-ESD",
+              "type": "Arthur Gerakas was offboarded on 13/02/2025 by Hayley Reiha with the reason of: Contract cessation - 12 week internship concluded",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2025-03",
@@ -4223,7 +6495,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Naqsh Nagpal",
+              "date": "2025-03-25T00:00:00+00:00",
+              "costCentre": "NAT-ESD"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -4233,8 +6511,22 @@
           "hires": 1,
           "leavers": 1,
           "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Paramasivam Tenkasi Nagarajan",
+              "date": "2025-04-28T00:00:00+00:00",
+              "costCentre": "NAT-ESD"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Jee Wei Tay",
+              "date": "2025-04-04T00:00:00+00:00",
+              "costCentre": "NAT-ESD",
+              "type": "Jee Wei Tay was offboarded on 04/04/2025 by Hayley Reiha with the reason of: Contract cessation",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2025-05",
@@ -4243,7 +6535,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Laura Pachon",
+              "date": "2025-05-05T00:00:00+00:00",
+              "costCentre": "NAT-ESD"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -4253,7 +6551,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Anushka Sharma",
+              "date": "2025-06-16T00:00:00+00:00",
+              "costCentre": "NAT-ESD"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -4354,7 +6658,15 @@
           "leavers": 1,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Khyati Saxena",
+              "date": "2026-04-10T00:00:00+00:00",
+              "costCentre": "NAT-ESD",
+              "type": "Khyati Saxena was offboarded on 10/04/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-05",
@@ -4374,7 +6686,15 @@
           "leavers": 1,
           "leaversVoluntary": 0,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Paramasivam Tenkasi Nagarajan",
+              "date": "2026-06-24T00:00:00+00:00",
+              "costCentre": "NAT-ESD",
+              "type": "Paramasivam Tenkasi Nagarajan was offboarded on 24/06/2026 by Lauren Miller with the reason of: Dismissal",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2026-07",
@@ -4384,7 +6704,15 @@
           "leavers": 1,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Max Campbell",
+              "date": "2026-07-21T00:00:00+00:00",
+              "costCentre": "NAT-ESD",
+              "type": "Max Campbell was offboarded on 21/07/2026 by Rose Nguyen with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-08",
@@ -4393,7 +6721,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Luke Schwarz",
+              "date": "2026-08-31T00:00:00+00:00",
+              "costCentre": "NAT-ESD"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -4404,7 +6738,15 @@
           "leavers": 1,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Jacob Delailoa",
+              "date": "2026-09-11T00:00:00+00:00",
+              "costCentre": "NAT-ESD",
+              "type": "Jacob Delailoa was offboarded on 11/09/2026 by Rose Nguyen with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         }
       ]
     },
@@ -4618,7 +6960,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Richard Hulston",
+              "date": "2025-01-14T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -4659,7 +7007,22 @@
           "leavers": 2,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Robert Holman",
+              "date": "2025-05-02T00:00:00+00:00",
+              "costCentre": "NAT-SPL",
+              "type": "Robert Holman was offboarded on 02/05/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Richard Hulston",
+              "date": "2025-05-14T00:00:00+00:00",
+              "costCentre": "NAT-SPL",
+              "type": "Richard Hulston was offboarded on 14/05/2025 by Hayley Reiha with the reason of: Dismissal - Dismissed during probation",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2025-06",
@@ -4668,7 +7031,18 @@
           "hires": 2,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Balqis Nursofinia",
+              "date": "2025-06-02T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            },
+            {
+              "name": "Chloe Cheng",
+              "date": "2025-06-30T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -4718,7 +7092,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Jasmine Cowan",
+              "date": "2025-11-10T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -4729,7 +7109,15 @@
           "leavers": 1,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Dabin Paek",
+              "date": "2025-12-05T00:00:00+00:00",
+              "costCentre": "NAT-SPL",
+              "type": "Dabin Paek was offboarded on 05/12/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-01",
@@ -4748,7 +7136,23 @@
           "hires": 3,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Neil Barigye",
+              "date": "2026-02-02T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            },
+            {
+              "name": "Ameya Nagarkar",
+              "date": "2026-02-02T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            },
+            {
+              "name": "Carter Reid",
+              "date": "2026-02-02T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -4779,7 +7183,22 @@
           "leavers": 2,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Zhiruoyu Wang",
+              "date": "2026-05-11T00:00:00+00:00",
+              "costCentre": "NAT-SPL",
+              "type": "Zhiruoyu Wang was offboarded on 11/05/2026 by Hayley Reiha with the reason of: Contract cessation",
+              "voluntary": false
+            },
+            {
+              "name": "Balqis Nursofinia",
+              "date": "2026-05-01T00:00:00+00:00",
+              "costCentre": "NAT-SPL",
+              "type": "Balqis Nursofinia was offboarded on 01/05/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-06",
@@ -4809,7 +7228,22 @@
           "leavers": 2,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Bingxin Liang",
+              "date": "2026-08-07T00:00:00+00:00",
+              "costCentre": "NAT-SPL",
+              "type": "Bingxin Liang was offboarded on 07/08/2026 by Hayley Reiha with the reason of: Dismissal",
+              "voluntary": false
+            },
+            {
+              "name": "Chloe Cheng",
+              "date": "2026-08-19T00:00:00+00:00",
+              "costCentre": "NAT-SPL",
+              "type": "Chloe Cheng was offboarded on 19/08/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-09",
@@ -5004,7 +7438,15 @@
           "leavers": 1,
           "leaversVoluntary": 0,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Ali Hassan",
+              "date": "2024-10-22T00:00:00+00:00",
+              "costCentre": "Brisbane",
+              "type": "Ali Hassan was offboarded on 22/10/2024 by Hayley Reiha with the reason of: Contract cessation - Dismissed while on Casual contract",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2024-11",
@@ -5034,7 +7476,15 @@
           "leavers": 1,
           "leaversVoluntary": 0,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Edward Horan",
+              "date": "2025-01-23T00:00:00+00:00",
+              "costCentre": "Brisbane",
+              "type": "Edward Horan was offboarded on 23/01/2025 by Hayley Reiha with the reason of: Dismissal - Visa Expired - Termination",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2025-02",
@@ -5043,7 +7493,23 @@
           "hires": 3,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Sebastian Hoyland",
+              "date": "2025-02-03T00:00:00+00:00",
+              "costCentre": "Brisbane"
+            },
+            {
+              "name": "Chun Yuen Ho",
+              "date": "2025-02-03T00:00:00+00:00",
+              "costCentre": "Brisbane"
+            },
+            {
+              "name": "Johannes Frederick Cillie",
+              "date": "2025-02-03T00:00:00+00:00",
+              "costCentre": "Brisbane"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -5053,8 +7519,27 @@
           "hires": 2,
           "leavers": 1,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Jayden Smith",
+              "date": "2025-03-03T00:00:00+00:00",
+              "costCentre": "Brisbane"
+            },
+            {
+              "name": "Ron Milson",
+              "date": "2025-03-13T00:00:00+00:00",
+              "costCentre": "Brisbane"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Maria Corazon Matutinao",
+              "date": "2025-03-14T00:00:00+00:00",
+              "costCentre": "Brisbane",
+              "type": "Maria Corazon Matutinao was offboarded on 14/03/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-04",
@@ -5063,8 +7548,22 @@
           "hires": 1,
           "leavers": 1,
           "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Xin Cheng",
+              "date": "2025-04-22T00:00:00+00:00",
+              "costCentre": "Brisbane"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Tom Dawes",
+              "date": "2025-04-23T00:00:00+00:00",
+              "costCentre": "Brisbane",
+              "type": "Tom Dawes was offboarded on 23/04/2025 by Hayley Reiha with the reason of: Dismissal",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2025-05",
@@ -5074,7 +7573,15 @@
           "leavers": 1,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Henry Hanh",
+              "date": "2025-05-09T00:00:00+00:00",
+              "costCentre": "Brisbane",
+              "type": "Henry Hanh was offboarded on 09/05/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-06",
@@ -5083,8 +7590,39 @@
           "hires": 3,
           "leavers": 2,
           "leaversVoluntary": 2,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Tarek Alshoufi",
+              "date": "2025-06-09T00:00:00+00:00",
+              "costCentre": "Brisbane"
+            },
+            {
+              "name": "Hansika Morin",
+              "date": "2025-06-09T00:00:00+00:00",
+              "costCentre": "Brisbane"
+            },
+            {
+              "name": "Amelia Keene",
+              "date": "2025-06-30T00:00:00+00:00",
+              "costCentre": "Brisbane"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Bruce Skipp",
+              "date": "2025-06-17T00:00:00+00:00",
+              "costCentre": "Brisbane",
+              "type": "Bruce Skipp was offboarded on 17/06/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Mieke Hazlewood",
+              "date": "2025-06-24T00:00:00+00:00",
+              "costCentre": "Brisbane",
+              "type": "Mieke Hazlewood was offboarded on 24/06/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-07",
@@ -5093,7 +7631,23 @@
           "hires": 3,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "James Johnston",
+              "date": "2025-07-07T00:00:00+00:00",
+              "costCentre": "Brisbane"
+            },
+            {
+              "name": "Li Feng",
+              "date": "2025-07-07T00:00:00+00:00",
+              "costCentre": "Brisbane"
+            },
+            {
+              "name": "Abdulaziz Aljubair",
+              "date": "2025-07-16T00:00:00+00:00",
+              "costCentre": "Brisbane"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -5103,8 +7657,36 @@
           "hires": 1,
           "leavers": 3,
           "leaversVoluntary": 3,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Andrew Stubbings",
+              "date": "2025-08-25T00:00:00+00:00",
+              "costCentre": "Brisbane"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Michael Bourke",
+              "date": "2025-08-08T00:00:00+00:00",
+              "costCentre": "Brisbane",
+              "type": "Michael Bourke was offboarded on 08/08/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "James Mackenzie",
+              "date": "2025-08-07T00:00:00+00:00",
+              "costCentre": "Brisbane",
+              "type": "James Mackenzie was offboarded on 07/08/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Chun Yuen Ho",
+              "date": "2025-08-01T00:00:00+00:00",
+              "costCentre": "Brisbane",
+              "type": "Chun Yuen Ho was offboarded on 01/08/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-09",
@@ -5113,8 +7695,54 @@
           "hires": 6,
           "leavers": 2,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Fabiano Gondim",
+              "date": "2025-09-08T00:00:00+00:00",
+              "costCentre": "Brisbane"
+            },
+            {
+              "name": "Naomi Holland",
+              "date": "2025-09-01T00:00:00+00:00",
+              "costCentre": "Brisbane"
+            },
+            {
+              "name": "Hana Salati",
+              "date": "2025-09-01T00:00:00+00:00",
+              "costCentre": "Brisbane"
+            },
+            {
+              "name": "Robert Kidd",
+              "date": "2025-09-15T00:00:00+00:00",
+              "costCentre": "Brisbane"
+            },
+            {
+              "name": "Sarah Coleman",
+              "date": "2025-09-15T00:00:00+00:00",
+              "costCentre": "Brisbane"
+            },
+            {
+              "name": "Kiri-Ana Robinson",
+              "date": "2025-09-15T00:00:00+00:00",
+              "costCentre": "Brisbane"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Ron Milson",
+              "date": "2025-09-12T00:00:00+00:00",
+              "costCentre": "Brisbane",
+              "type": "Ron Milson was offboarded on 12/09/2025 by Hayley Reiha with the reason of: Dismissal - Dismissed during probation",
+              "voluntary": false
+            },
+            {
+              "name": "Amelia Keene",
+              "date": "2025-09-12T00:00:00+00:00",
+              "costCentre": "Brisbane",
+              "type": "Amelia Keene was offboarded on 12/09/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-10",
@@ -5133,8 +7761,34 @@
           "hires": 2,
           "leavers": 2,
           "leaversVoluntary": 2,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Keith Algar",
+              "date": "2025-11-10T00:00:00+00:00",
+              "costCentre": "Brisbane"
+            },
+            {
+              "name": "Thi To Uyen Nguyen",
+              "date": "2025-11-03T00:00:00+00:00",
+              "costCentre": "Brisbane"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Luame Snell",
+              "date": "2025-11-13T00:00:00+00:00",
+              "costCentre": "Brisbane",
+              "type": "Luame Snell was offboarded on 13/11/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Richard Walker",
+              "date": "2025-11-13T00:00:00+00:00",
+              "costCentre": "Brisbane",
+              "type": "Richard Walker was offboarded on 13/11/2025 by Hayley Reiha with the reason of: Voluntary cessation - Retiring",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-12",
@@ -5143,8 +7797,22 @@
           "hires": 1,
           "leavers": 1,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Damian Sheppard",
+              "date": "2025-12-08T00:00:00+00:00",
+              "costCentre": "Brisbane"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Sebastian Hoyland",
+              "date": "2025-12-12T00:00:00+00:00",
+              "costCentre": "Brisbane",
+              "type": "Sebastian Hoyland was offboarded on 12/12/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-01",
@@ -5153,8 +7821,22 @@
           "hires": 1,
           "leavers": 1,
           "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Thomas (Davern) Fraser",
+              "date": "2026-01-14T00:00:00+00:00",
+              "costCentre": "Brisbane"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Antony Kinuthia",
+              "date": "2026-01-20T00:00:00+00:00",
+              "costCentre": "Brisbane",
+              "type": "Antony Kinuthia was offboarded on 20/01/2026 by Hayley Reiha with the reason of: Dismissal",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2026-02",
@@ -5164,7 +7846,22 @@
           "leavers": 2,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Abdulaziz Aljubair",
+              "date": "2026-02-09T00:00:00+00:00",
+              "costCentre": "Brisbane",
+              "type": "Abdulaziz Aljubair was offboarded on 09/02/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Andrew Stubbings",
+              "date": "2026-02-20T00:00:00+00:00",
+              "costCentre": "Brisbane",
+              "type": "Andrew Stubbings was offboarded on 20/02/2026 by Hayley Reiha with the reason of: Dismissal - Dismissed during probation",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2026-03",
@@ -5184,7 +7881,15 @@
           "leavers": 1,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Hansika Morin",
+              "date": "2026-04-10T00:00:00+00:00",
+              "costCentre": "Brisbane",
+              "type": "Hansika Morin was offboarded on 10/04/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-05",
@@ -5193,7 +7898,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Mark Blackman",
+              "date": "2026-05-18T00:00:00+00:00",
+              "costCentre": "Brisbane"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -5203,7 +7914,18 @@
           "hires": 2,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Rasha Alshoufi",
+              "date": "2026-06-01T00:00:00+00:00",
+              "costCentre": "Brisbane"
+            },
+            {
+              "name": "Mir Azhar Ali Razvi",
+              "date": "2026-06-08T00:00:00+00:00",
+              "costCentre": "Brisbane"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -5214,7 +7936,15 @@
           "leavers": 1,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Amin Zadeh",
+              "date": "2026-07-10T00:00:00+00:00",
+              "costCentre": "Brisbane",
+              "type": "Amin Zadeh was offboarded on 10/07/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-08",
@@ -5224,7 +7954,15 @@
           "leavers": 1,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Xin Cheng",
+              "date": "2026-08-14T00:00:00+00:00",
+              "costCentre": "Brisbane",
+              "type": "Xin Cheng was offboarded on 14/08/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-09",
@@ -5548,7 +8286,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Annie Sen",
+              "date": "2025-11-17T00:00:00+00:00",
+              "costCentre": "NAT-CORP"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -5589,7 +8333,15 @@
           "leavers": 1,
           "leaversVoluntary": 0,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Annie Sen",
+              "date": "2026-03-31T00:00:00+00:00",
+              "costCentre": "NAT-CORP",
+              "type": "Annie Sen was offboarded on 31/03/2026 by Hayley Reiha with the reason of: Dismissal",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2026-04",
@@ -5984,7 +8736,15 @@
           "leavers": 1,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Gaia Anjali RC",
+              "date": "2026-01-07T00:00:00+00:00",
+              "costCentre": "NAT-ESD",
+              "type": "Gaia Anjali RC was offboarded on 07/01/2026 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-02",
@@ -6044,7 +8804,22 @@
           "leavers": 2,
           "leaversVoluntary": 2,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Jojy Koshy",
+              "date": "2026-07-17T00:00:00+00:00",
+              "costCentre": "NAT-ESD",
+              "type": "Jojy Koshy was offboarded on 17/07/2026 by Sajawal Khalid with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Tim Elgood",
+              "date": "2026-07-29T00:00:00+00:00",
+              "costCentre": "NAT-ESD",
+              "type": "Tim Elgood was offboarded on 29/07/2026 by Lauren Miller with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-08",
@@ -6378,7 +9153,18 @@
           "hires": 2,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Chris Sewell",
+              "date": "2025-11-03T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            },
+            {
+              "name": "Byron Day",
+              "date": "2025-11-10T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -6664,7 +9450,15 @@
           "leavers": 1,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Stacey Hennig",
+              "date": "2024-10-16T00:00:00+00:00",
+              "costCentre": "Adelaide",
+              "type": "Stacey Hennig was offboarded on 16/10/2024 by Hayley Reiha with the reason of: Voluntary cessation - Resigned during probation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2024-11",
@@ -6693,7 +9487,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Saachi Rama",
+              "date": "2025-01-20T00:00:00+00:00",
+              "costCentre": "Adelaide"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -6703,7 +9503,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Chris Van Aardt",
+              "date": "2025-02-04T00:00:00+00:00",
+              "costCentre": "Adelaide"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -6713,8 +9519,27 @@
           "hires": 2,
           "leavers": 1,
           "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Yamini Vaidya",
+              "date": "2025-03-03T00:00:00+00:00",
+              "costCentre": "Adelaide"
+            },
+            {
+              "name": "Will Fawcett",
+              "date": "2025-03-24T00:00:00+00:00",
+              "costCentre": "Adelaide"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Stuart Livingstone",
+              "date": "2025-03-11T00:00:00+00:00",
+              "costCentre": "Adelaide",
+              "type": "Stuart Livingstone was offboarded on 11/03/2025 by Hayley Reiha with the reason of: Deceased",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2025-04",
@@ -6723,7 +9548,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Sandor Schubert",
+              "date": "2025-04-14T00:00:00+00:00",
+              "costCentre": "Adelaide"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -6743,7 +9574,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Sonja Jansen",
+              "date": "2025-06-02T00:00:00+00:00",
+              "costCentre": "Adelaide"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -6763,8 +9600,27 @@
           "hires": 2,
           "leavers": 1,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Omar Khudair",
+              "date": "2025-08-11T00:00:00+00:00",
+              "costCentre": "Adelaide"
+            },
+            {
+              "name": "Muhammad Tahir Khan",
+              "date": "2025-08-25T00:00:00+00:00",
+              "costCentre": "Adelaide"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Sandor Schubert",
+              "date": "2025-08-11T00:00:00+00:00",
+              "costCentre": "Adelaide",
+              "type": "Sandor Schubert was offboarded on 11/08/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-09",
@@ -6773,7 +9629,23 @@
           "hires": 3,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Ahmed Amish",
+              "date": "2025-09-22T00:00:00+00:00",
+              "costCentre": "Adelaide"
+            },
+            {
+              "name": "Sadaf Shabanian",
+              "date": "2025-09-01T00:00:00+00:00",
+              "costCentre": "Adelaide"
+            },
+            {
+              "name": "Spiros Mavrangelos",
+              "date": "2025-09-09T00:00:00+00:00",
+              "costCentre": "Adelaide"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -6783,7 +9655,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Ursula Motta de Oliveira",
+              "date": "2025-10-27T00:00:00+00:00",
+              "costCentre": "Adelaide"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -6794,7 +9672,15 @@
           "leavers": 1,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Omar Khudair",
+              "date": "2025-11-13T00:00:00+00:00",
+              "costCentre": "Adelaide",
+              "type": "Omar Khudair was offboarded on 13/11/2025 by Hayley Reiha with the reason of: Voluntary cessation - Resigned during probation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-12",
@@ -6803,8 +9689,22 @@
           "hires": 1,
           "leavers": 1,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Peter Filiangouras",
+              "date": "2025-12-15T00:00:00+00:00",
+              "costCentre": "Adelaide"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Saachi Rama",
+              "date": "2025-12-17T00:00:00+00:00",
+              "costCentre": "Adelaide",
+              "type": "Saachi Rama was offboarded on 17/12/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-01",
@@ -6813,7 +9713,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Kavisinghe Arachchige Sudam Pasan Kavisinghe",
+              "date": "2026-01-14T00:00:00+00:00",
+              "costCentre": "Adelaide"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -6823,7 +9729,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Zachary Hoyle",
+              "date": "2026-02-02T00:00:00+00:00",
+              "costCentre": "Adelaide"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -6853,8 +9765,22 @@
           "hires": 1,
           "leavers": 1,
           "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Fida Hussain",
+              "date": "2026-05-04T00:00:00+00:00",
+              "costCentre": "Adelaide"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Peter Filiangouras",
+              "date": "2026-05-26T00:00:00+00:00",
+              "costCentre": "Adelaide",
+              "type": "Peter Filiangouras was offboarded on 26/05/2026 by Hayley Reiha with the reason of: Dismissal - Dismissed during probation",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2026-06",
@@ -7079,7 +10005,15 @@
           "leavers": 1,
           "leaversVoluntary": 0,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Valentina Jaupi",
+              "date": "2024-10-16T00:00:00+00:00",
+              "costCentre": "London",
+              "type": "Valentina Jaupi was offboarded on 16/10/2024 by Hayley Reiha with the reason of: Termination - Incomplete_probation - Terminated during probations",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2024-11",
@@ -7088,7 +10022,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Floraine Belardo",
+              "date": "2024-11-04T00:00:00+00:00",
+              "costCentre": "London"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -7108,7 +10048,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Theo Finn",
+              "date": "2025-01-27T00:00:00+00:00",
+              "costCentre": "London"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -7128,7 +10074,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Panesh Parekh",
+              "date": "2025-03-31T00:00:00+00:00",
+              "costCentre": "London"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -7168,7 +10120,18 @@
           "hires": 2,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Abdirahman Mohamoud",
+              "date": "2025-07-21T00:00:00+00:00",
+              "costCentre": "London"
+            },
+            {
+              "name": "Akintunde Davids Akinlade",
+              "date": "2025-07-28T00:00:00+00:00",
+              "costCentre": "London"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -7178,8 +10141,27 @@
           "hires": 2,
           "leavers": 1,
           "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Philip Davis",
+              "date": "2025-08-26T00:00:00+00:00",
+              "costCentre": "London"
+            },
+            {
+              "name": "Melani King",
+              "date": "2025-08-18T00:00:00+00:00",
+              "costCentre": "London"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Theo Finn",
+              "date": "2025-08-18T00:00:00+00:00",
+              "costCentre": "London",
+              "type": "Theo Finn was offboarded on 18/08/2025 by Hayley Reiha with the reason of: Termination - Incomplete_probation - Dismissed during probation",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2025-09",
@@ -7188,8 +10170,22 @@
           "hires": 1,
           "leavers": 1,
           "leaversVoluntary": 1,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Jewel Mathew John",
+              "date": "2025-09-02T00:00:00+00:00",
+              "costCentre": "London"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Akintunde Davids Akinlade",
+              "date": "2025-09-01T00:00:00+00:00",
+              "costCentre": "London",
+              "type": "Akintunde Davids Akinlade was offboarded on 01/09/2025 by Hayley Reiha with the reason of: Resignation - Other - See documents regarding resignation.",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-10",
@@ -7199,7 +10195,22 @@
           "leavers": 2,
           "leaversVoluntary": 0,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Lauren Williams",
+              "date": "2025-10-09T00:00:00+00:00",
+              "costCentre": "London",
+              "type": "Lauren Williams was offboarded on 09/10/2025 by Hayley Reiha with the reason of: Other - Dismissed",
+              "voluntary": false
+            },
+            {
+              "name": "Jewel Mathew John",
+              "date": "2025-10-23T00:00:00+00:00",
+              "costCentre": "London",
+              "type": "Jewel Mathew John was offboarded on 23/10/2025 by Hayley Reiha with the reason of: Termination - Incomplete_probation - Dismissed",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2025-11",
@@ -7208,7 +10219,18 @@
           "hires": 2,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Peter O'Mahony",
+              "date": "2025-11-17T00:00:00+00:00",
+              "costCentre": "London"
+            },
+            {
+              "name": "Chris Vallis",
+              "date": "2025-11-17T00:00:00+00:00",
+              "costCentre": "London"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -7218,7 +10240,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Benjamin Tsang",
+              "date": "2025-12-08T00:00:00+00:00",
+              "costCentre": "London"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -7229,7 +10257,15 @@
           "leavers": 1,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Panesh Parekh",
+              "date": "2026-01-30T00:00:00+00:00",
+              "costCentre": "London",
+              "type": "Panesh Parekh was offboarded on 30/01/2026 by Hayley Reiha with the reason of: Resignation - Career_change",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-02",
@@ -7258,7 +10294,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Gary Hanley",
+              "date": "2026-04-21T00:00:00+00:00",
+              "costCentre": "London"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -7278,7 +10320,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "David Harkin",
+              "date": "2026-06-15T00:00:00+00:00",
+              "costCentre": "London"
+            }
+          ],
           "leaverNames": []
         },
         {
@@ -7289,7 +10337,15 @@
           "leavers": 1,
           "leaversVoluntary": 0,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Chris Vallis",
+              "date": "2026-07-06T00:00:00+00:00",
+              "costCentre": "London",
+              "type": "Chris Vallis was offboarded on 06/07/2026 by Rose Nguyen with the reason of: Termination - Incomplete_probation",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2026-08",
@@ -7308,7 +10364,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Dale Perini",
+              "date": "2026-09-14T00:00:00+00:00",
+              "costCentre": "London"
+            }
+          ],
           "leaverNames": []
         }
       ]
@@ -7604,7 +10666,15 @@
           "leavers": 1,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Dave Buchanan",
+              "date": "2025-09-12T00:00:00+00:00",
+              "costCentre": "NAT-SPL",
+              "type": "Dave Buchanan was offboarded on 12/09/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-10",
@@ -7939,7 +11009,15 @@
           "leavers": 1,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Alex Hardcastle",
+              "date": "2025-01-31T00:00:00+00:00",
+              "costCentre": "Brisbane",
+              "type": "Alex Hardcastle was offboarded on 31/01/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-02",
@@ -7969,7 +11047,15 @@
           "leavers": 1,
           "leaversVoluntary": 0,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Shelloish Malaque",
+              "date": "2025-04-28T00:00:00+00:00",
+              "costCentre": "Brisbane",
+              "type": "Shelloish Malaque was offboarded on 28/04/2025 by Hayley Reiha with the reason of: Dismissal - No Visa",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2025-05",
@@ -8009,7 +11095,15 @@
           "leavers": 1,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Reyan Buniel",
+              "date": "2025-08-01T00:00:00+00:00",
+              "costCentre": "Brisbane",
+              "type": "Reyan Buniel was offboarded on 01/08/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-09",
@@ -8018,8 +11112,29 @@
           "hires": 1,
           "leavers": 2,
           "leaversVoluntary": 2,
-          "hireNames": [],
-          "leaverNames": []
+          "hireNames": [
+            {
+              "name": "Hakim Singh",
+              "date": "2025-09-22T00:00:00+00:00",
+              "costCentre": "Brisbane"
+            }
+          ],
+          "leaverNames": [
+            {
+              "name": "Jayden Lane",
+              "date": "2025-09-05T00:00:00+00:00",
+              "costCentre": "Brisbane",
+              "type": "Jayden Lane was offboarded on 05/09/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            },
+            {
+              "name": "Naomi Spokes",
+              "date": "2025-09-18T00:00:00+00:00",
+              "costCentre": "Brisbane",
+              "type": "Naomi Spokes was offboarded on 18/09/2025 by Hayley Reiha with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2025-10",
@@ -8039,7 +11154,15 @@
           "leavers": 1,
           "leaversVoluntary": 0,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Hakim Singh",
+              "date": "2025-11-04T00:00:00+00:00",
+              "costCentre": "Brisbane",
+              "type": "Hakim Singh was offboarded on 04/11/2025 by Hayley Reiha with the reason of: Dismissal - Dismissed during probation",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2025-12",
@@ -8119,7 +11242,15 @@
           "leavers": 1,
           "leaversVoluntary": 1,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Henry David Koonamplakkal",
+              "date": "2026-07-24T00:00:00+00:00",
+              "costCentre": "Brisbane",
+              "type": "Henry David Koonamplakkal was offboarded on 24/07/2026 by Rose Nguyen with the reason of: Voluntary cessation",
+              "voluntary": true
+            }
+          ]
         },
         {
           "key": "2026-08",
@@ -8533,7 +11664,13 @@
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Alex Flatley",
+              "date": "2026-07-06T00:00:00+00:00",
+              "costCentre": "NAT-ESD"
+            }
+          ],
           "leaverNames": []
         },
         {
