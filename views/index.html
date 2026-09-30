@@ -515,10 +515,14 @@
       </details>
     </div>
     <div class="filter">
+      <span>Period</span>
+      <select id="filter-period"></select>
+    </div>
+    <div class="filter" id="range-from" hidden>
       <span>From</span>
       <select id="filter-from"></select>
     </div>
-    <div class="filter">
+    <div class="filter" id="range-to" hidden>
       <span>To</span>
       <select id="filter-to"></select>
     </div>
@@ -1191,6 +1195,40 @@ function buildFilters(d) {
   const months = opts.months || [];
   const fromEl = $("filter-from");
   const toEl = $("filter-to");
+  const periodEl = $("filter-period");
+
+  const keys = months.map(m => m.key);
+  const latest = keys[keys.length - 1] || "";
+
+  /** Presets in months back from the current one, plus the two to-date windows. */
+  const backFrom = (n) => keys[Math.max(0, keys.length - n)] || keys[0] || "";
+
+  const yearStart = () => {
+    const year = latest.slice(0, 4);
+    const jan = year + "-01";
+    return keys.indexOf(jan) >= 0 ? jan : keys[0] || "";
+  };
+
+  const fyStart = () => {
+    const year = Number(latest.slice(0, 4));
+    const month = Number(latest.slice(5, 7));
+    const july = (month >= 7 ? year : year - 1) + "-07";
+    return keys.indexOf(july) >= 0 ? july : keys[0] || "";
+  };
+
+  const PRESETS = [
+    { id: "", label: "All time", from: "", to: "" },
+    { id: "m3", label: "Last 3 months", from: () => backFrom(3), to: () => latest },
+    { id: "m6", label: "Last 6 months", from: () => backFrom(6), to: () => latest },
+    { id: "m12", label: "Last 12 months", from: () => backFrom(12), to: () => latest },
+    { id: "fy", label: "This financial year", from: fyStart, to: () => latest },
+    { id: "cy", label: "This calendar year", from: yearStart, to: () => latest },
+    { id: "custom", label: "Custom range", from: null, to: null }
+  ];
+
+  periodEl.innerHTML = PRESETS
+    .map(pr => '<option value="' + pr.id + '">' + pr.label + "</option>")
+    .join("");
 
   const monthOptions = (blank) =>
     '<option value="">' + blank + "</option>" +
@@ -1215,6 +1253,25 @@ function buildFilters(d) {
   fromEl.addEventListener("change", onRange);
   toEl.addEventListener("change", onRange);
 
+  periodEl.addEventListener("change", () => {
+    const chosen = PRESETS.find(pr => pr.id === periodEl.value) || PRESETS[0];
+    const custom = chosen.id === "custom";
+
+    $("range-from").hidden = !custom;
+    $("range-to").hidden = !custom;
+
+    if (!custom) {
+      FILTER.from = typeof chosen.from === "function" ? chosen.from() : chosen.from;
+      FILTER.to = typeof chosen.to === "function" ? chosen.to() : chosen.to;
+      fromEl.value = FILTER.from;
+      toEl.value = FILTER.to;
+    }
+
+    DRILL = null;
+    $("filter-clear").hidden = !isFiltered();
+    render();
+  });
+
   $("filter-clear").addEventListener("click", () => {
     resetLoc();
     resetCc();
@@ -1222,6 +1279,9 @@ function buildFilters(d) {
     FILTER.to = "";
     fromEl.value = "";
     toEl.value = "";
+    periodEl.value = "";
+    $("range-from").hidden = true;
+    $("range-to").hidden = true;
     DRILL = null;
     $("filter-clear").hidden = true;
     render();
