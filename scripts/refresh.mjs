@@ -75,6 +75,17 @@ function toTriState(value) {
   return null;
 }
 
+/**
+ * Employment Hero returns a sentence like "X was offboarded on 16/09/2026 by Y with the
+ * reason of: Voluntary cessation". Only the reason is wanted.
+ */
+function cleanReason(value) {
+  const v = String(value ?? "").trim();
+  if (!v) return "";
+  const m = v.match(/reason of:\s*(.+?)\.?\s*$/i);
+  return (m ? m[1] : v).trim();
+}
+
 function toNumber(value) {
   const n = Number(String(value).replace(/[^0-9.\-]/g, ""));
   return isFinite(n) ? n : 0;
@@ -149,7 +160,7 @@ function normalise({ raw, entity }) {
     hourlyRate: toNumber(pick(raw, FIELDS.hourlyRate)),
     startDate: String(pick(raw, FIELDS.startDate)),
     terminationDate: String(pick(raw, FIELDS.terminationDate)),
-    terminationReason: String(pick(raw, FIELDS.terminationReason)),
+    terminationReason: cleanReason(pick(raw, FIELDS.terminationReason)),
     level4: String(pick(raw, FIELDS.level4)),
     costCentre: String(pick(raw, FIELDS.costCentre)),
     // Employment Hero carries an explicit flag, which beats matching employment type text

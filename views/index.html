@@ -557,6 +557,21 @@ function tile(label, value, prior, unit, higherIsBetter, drillKey) {
 }
 
 /** Rows behind a drillable tile, for whichever months and slices are selected. */
+/** Dates arrive as ISO from the API or dd/mm/yyyy from an export. Show them plainly. */
+function shortDate(value) {
+  const v = String(value || "").trim();
+  if (!v) return "";
+  const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+  const dmy = v.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  if (dmy) return Number(dmy[1]) + " " + months[Number(dmy[2]) - 1] + " " + dmy[3];
+
+  const iso = v.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (iso) return Number(iso[3]) + " " + months[Number(iso[2]) - 1] + " " + iso[1];
+
+  return v;
+}
+
 function drillRows(d, key) {
   const months = hasRange()
     ? monthsInRange(d)
@@ -593,7 +608,7 @@ function drillPanel(d, key, heading) {
     "<table><thead><tr><th>Name</th><th>Cost centre</th><th>Date</th>" +
     (key === "hires" ? "" : "<th>Reason</th>") + "</tr></thead><tbody>" +
     rows.map(r => "<tr><td>" + r.name + "</td><td>" + (r.costCentre || "") + "</td><td>" +
-      (r.date || "") + "</td>" + (key === "hires" ? "" : "<td>" + (r.type || "") + "</td>") + "</tr>").join("") +
+      shortDate(r.date) + "</td>" + (key === "hires" ? "" : "<td>" + (r.type || "") + "</td>") + "</tr>").join("") +
     "</tbody></table></div>";
 }
 
