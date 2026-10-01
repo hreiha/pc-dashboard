@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-01T06:01:01.093Z",
+  "generatedUtc": "2026-10-01T08:00:54.196Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -11783,7 +11783,7 @@
     }
   ],
   "recruitment": {
-    "openRoles": 41,
+    "openRoles": 37,
     "filledMonth": 0,
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
@@ -11791,11 +11791,11 @@
   "pipeline": [
     {
       "stage": "2. Search & Prepare",
-      "count": 26
+      "count": 25
     },
     {
       "stage": "1. Search & Secure",
-      "count": 10
+      "count": 7
     },
     {
       "stage": "4. Role On Hold",
@@ -11809,7 +11809,7 @@
   "stageDetail": [
     {
       "stage": "Phone Screen",
-      "count": 2
+      "count": 3
     },
     {
       "stage": "1st Interview",
@@ -11821,7 +11821,7 @@
     },
     {
       "stage": "2nd Interview",
-      "count": 4
+      "count": 2
     },
     {
       "stage": "Declined",
@@ -11833,14 +11833,14 @@
     },
     {
       "stage": "New",
-      "count": 10
+      "count": 6
     },
     {
       "stage": "Sourcing",
-      "count": 13
+      "count": 14
     },
     {
-      "stage": "Present to HM",
+      "stage": "Referee Detail Request Sent",
       "count": 1
     },
     {
@@ -11861,7 +11861,7 @@
       "churnVoluntary": "27.8",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "93.6",
-      "openRoles": 9
+      "openRoles": 8
     },
     {
       "code": "Sydney",
@@ -11903,7 +11903,7 @@
       "churnVoluntary": "23.3",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "34.3",
-      "openRoles": 7
+      "openRoles": 6
     },
     {
       "code": "NAT-CORP",
@@ -11931,7 +11931,7 @@
       "churnVoluntary": "30.8",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "26.0",
-      "openRoles": 2
+      "openRoles": 1
     },
     {
       "code": "Adelaide",
@@ -11945,7 +11945,7 @@
       "churnVoluntary": "12.1",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "16.6",
-      "openRoles": 4
+      "openRoles": 3
     },
     {
       "code": "London",
