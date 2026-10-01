@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-01T00:46:37.985Z",
+  "generatedUtc": "2026-10-01T00:52:51.044Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -7,12 +7,12 @@
     "headcountPrior": 309,
     "femalePct": "26.2",
     "femalePctPrior": "26.2",
-    "leaversMonth": 0,
-    "leaversMonthPrior": 10,
-    "leaversVoluntaryMonth": 0,
-    "leaversVoluntaryMonthPrior": 8,
-    "hiresMonth": 0,
-    "hiresMonthPrior": 1,
+    "leaversMonth": 9,
+    "leaversMonthPrior": 11,
+    "leaversVoluntaryMonth": 8,
+    "leaversVoluntaryMonthPrior": 7,
+    "hiresMonth": 1,
+    "hiresMonthPrior": 6,
     "churnTotal": "35.3",
     "churnTotalPrior": "37.2",
     "churnVoluntary": "24.0",
@@ -268,11 +268,11 @@
       "femalePct": "18.8",
       "femalePctPrior": "18.8",
       "hiresMonth": 0,
-      "hiresMonthPrior": 0,
-      "leaversMonth": 0,
-      "leaversMonthPrior": 5,
-      "leaversVoluntaryMonth": 0,
-      "leaversVoluntaryMonthPrior": 4,
+      "hiresMonthPrior": 2,
+      "leaversMonth": 5,
+      "leaversMonthPrior": 2,
+      "leaversVoluntaryMonth": 4,
+      "leaversVoluntaryMonthPrior": 2,
       "avgHeadcountLtm": "91.5",
       "churnTotal": "41.5",
       "churnVoluntary": "27.3",
@@ -1502,7 +1502,47 @@
           "hireNames": [],
           "leaverNames": []
         }
-      ]
+      ],
+      "last30": {
+        "hireNames": [],
+        "leaverNames": [
+          {
+            "name": "Campbell Robinson",
+            "date": "2026-09-16T00:00:00+00:00",
+            "costCentre": "Melbourne",
+            "type": "Voluntary cessation",
+            "voluntary": true
+          },
+          {
+            "name": "Rebecca Patterson",
+            "date": "2026-09-18T00:00:00+00:00",
+            "costCentre": "Melbourne",
+            "type": "Voluntary cessation",
+            "voluntary": true
+          },
+          {
+            "name": "Shiva Motamedi",
+            "date": "2026-09-18T00:00:00+00:00",
+            "costCentre": "Melbourne",
+            "type": "Voluntary cessation",
+            "voluntary": true
+          },
+          {
+            "name": "Hari Rajasekaran",
+            "date": "2026-09-22T00:00:00+00:00",
+            "costCentre": "Melbourne",
+            "type": "Dismissal",
+            "voluntary": false
+          },
+          {
+            "name": "Sherif Elgendy",
+            "date": "2026-09-09T00:00:00+00:00",
+            "costCentre": "Melbourne",
+            "type": "Voluntary cessation",
+            "voluntary": true
+          }
+        ]
+      }
     },
     {
       "location": "Melbourne",
@@ -2047,7 +2087,11 @@
           "hireNames": [],
           "leaverNames": []
         }
-      ]
+      ],
+      "last30": {
+        "hireNames": [],
+        "leaverNames": []
+      }
     },
     {
       "location": "Melbourne",
@@ -2059,9 +2103,9 @@
       "femalePct": "43.5",
       "femalePctPrior": "43.5",
       "hiresMonth": 0,
-      "hiresMonthPrior": 0,
+      "hiresMonthPrior": 1,
       "leaversMonth": 0,
-      "leaversMonthPrior": 0,
+      "leaversMonthPrior": 1,
       "leaversVoluntaryMonth": 0,
       "leaversVoluntaryMonthPrior": 0,
       "avgHeadcountLtm": "23.1",
@@ -2682,7 +2726,11 @@
           "hireNames": [],
           "leaverNames": []
         }
-      ]
+      ],
+      "last30": {
+        "hireNames": [],
+        "leaverNames": []
+      }
     },
     {
       "location": "Melbourne",
@@ -3227,7 +3275,11 @@
           "hireNames": [],
           "leaverNames": []
         }
-      ]
+      ],
+      "last30": {
+        "hireNames": [],
+        "leaverNames": []
+      }
     },
     {
       "location": "Melbourne",
@@ -3665,7 +3717,11 @@
           "hireNames": [],
           "leaverNames": []
         }
-      ]
+      ],
+      "last30": {
+        "hireNames": [],
+        "leaverNames": []
+      }
     },
     {
       "location": "Sydney",
@@ -3677,11 +3733,11 @@
       "femalePct": "0.0",
       "femalePctPrior": "0.0",
       "hiresMonth": 0,
-      "hiresMonthPrior": 0,
-      "leaversMonth": 0,
-      "leaversMonthPrior": 1,
-      "leaversVoluntaryMonth": 0,
-      "leaversVoluntaryMonthPrior": 1,
+      "hiresMonthPrior": 1,
+      "leaversMonth": 1,
+      "leaversMonthPrior": 0,
+      "leaversVoluntaryMonth": 1,
+      "leaversVoluntaryMonthPrior": 0,
       "avgHeadcountLtm": "2.1",
       "churnTotal": "48.0",
       "churnVoluntary": "48.0",
@@ -4106,7 +4162,19 @@
           "hireNames": [],
           "leaverNames": []
         }
-      ]
+      ],
+      "last30": {
+        "hireNames": [],
+        "leaverNames": [
+          {
+            "name": "Simon Bold",
+            "date": "2026-09-18T00:00:00+00:00",
+            "costCentre": "Melbourne",
+            "type": "Voluntary cessation",
+            "voluntary": true
+          }
+        ]
+      }
     },
     {
       "location": "Sydney",
@@ -4118,11 +4186,11 @@
       "femalePct": "21.7",
       "femalePctPrior": "21.7",
       "hiresMonth": 0,
-      "hiresMonthPrior": 0,
-      "leaversMonth": 0,
-      "leaversMonthPrior": 2,
-      "leaversVoluntaryMonth": 0,
-      "leaversVoluntaryMonthPrior": 2,
+      "hiresMonthPrior": 1,
+      "leaversMonth": 2,
+      "leaversMonthPrior": 4,
+      "leaversVoluntaryMonth": 2,
+      "leaversVoluntaryMonthPrior": 3,
       "avgHeadcountLtm": "68.8",
       "churnTotal": "46.5",
       "churnVoluntary": "36.3",
@@ -5255,7 +5323,26 @@
           "hireNames": [],
           "leaverNames": []
         }
-      ]
+      ],
+      "last30": {
+        "hireNames": [],
+        "leaverNames": [
+          {
+            "name": "Min Thein Kyaw",
+            "date": "2026-09-29T00:00:00+00:00",
+            "costCentre": "Sydney",
+            "type": "Voluntary cessation",
+            "voluntary": true
+          },
+          {
+            "name": "Youssef Refaat",
+            "date": "2026-09-15T00:00:00+00:00",
+            "costCentre": "Sydney",
+            "type": "Voluntary cessation",
+            "voluntary": true
+          }
+        ]
+      }
     },
     {
       "location": "Sydney",
@@ -5744,7 +5831,11 @@
           "hireNames": [],
           "leaverNames": []
         }
-      ]
+      ],
+      "last30": {
+        "hireNames": [],
+        "leaverNames": []
+      }
     },
     {
       "location": "Sydney",
@@ -6165,7 +6256,11 @@
           "hireNames": [],
           "leaverNames": []
         }
-      ]
+      ],
+      "last30": {
+        "hireNames": [],
+        "leaverNames": []
+      }
     },
     {
       "location": "Sydney",
@@ -6177,11 +6272,11 @@
       "femalePct": "40.0",
       "femalePctPrior": "40.0",
       "hiresMonth": 0,
-      "hiresMonthPrior": 0,
-      "leaversMonth": 0,
-      "leaversMonthPrior": 1,
-      "leaversVoluntaryMonth": 0,
-      "leaversVoluntaryMonthPrior": 1,
+      "hiresMonthPrior": 1,
+      "leaversMonth": 1,
+      "leaversMonthPrior": 0,
+      "leaversVoluntaryMonth": 1,
+      "leaversVoluntaryMonthPrior": 0,
       "avgHeadcountLtm": "6.8",
       "churnTotal": "59.3",
       "churnVoluntary": "44.4",
@@ -6679,7 +6774,19 @@
           "hireNames": [],
           "leaverNames": []
         }
-      ]
+      ],
+      "last30": {
+        "hireNames": [],
+        "leaverNames": [
+          {
+            "name": "Jacob Delailoa",
+            "date": "2026-09-11T00:00:00+00:00",
+            "costCentre": "NAT-ESD",
+            "type": "Voluntary cessation",
+            "voluntary": true
+          }
+        ]
+      }
     },
     {
       "location": "Brisbane",
@@ -6693,9 +6800,9 @@
       "hiresMonth": 0,
       "hiresMonthPrior": 0,
       "leaversMonth": 0,
-      "leaversMonthPrior": 0,
+      "leaversMonthPrior": 2,
       "leaversVoluntaryMonth": 0,
-      "leaversVoluntaryMonthPrior": 0,
+      "leaversVoluntaryMonthPrior": 1,
       "avgHeadcountLtm": "11.8",
       "churnTotal": "42.3",
       "churnVoluntary": "25.4",
@@ -7186,7 +7293,11 @@
           "hireNames": [],
           "leaverNames": []
         }
-      ]
+      ],
+      "last30": {
+        "hireNames": [],
+        "leaverNames": []
+      }
     },
     {
       "location": "Brisbane",
@@ -7200,9 +7311,9 @@
       "hiresMonth": 0,
       "hiresMonthPrior": 0,
       "leaversMonth": 0,
-      "leaversMonthPrior": 0,
+      "leaversMonthPrior": 1,
       "leaversVoluntaryMonth": 0,
-      "leaversVoluntaryMonthPrior": 0,
+      "leaversVoluntaryMonthPrior": 1,
       "avgHeadcountLtm": "31.7",
       "churnTotal": "28.4",
       "churnVoluntary": "22.1",
@@ -7897,7 +8008,11 @@
           "hireNames": [],
           "leaverNames": []
         }
-      ]
+      ],
+      "last30": {
+        "hireNames": [],
+        "leaverNames": []
+      }
     },
     {
       "location": "Brisbane",
@@ -8326,7 +8441,11 @@
           "hireNames": [],
           "leaverNames": []
         }
-      ]
+      ],
+      "last30": {
+        "hireNames": [],
+        "leaverNames": []
+      }
     },
     {
       "location": "Brisbane",
@@ -8764,7 +8883,11 @@
           "hireNames": [],
           "leaverNames": []
         }
-      ]
+      ],
+      "last30": {
+        "hireNames": [],
+        "leaverNames": []
+      }
     },
     {
       "location": "Adelaide",
@@ -9190,7 +9313,11 @@
           "hireNames": [],
           "leaverNames": []
         }
-      ]
+      ],
+      "last30": {
+        "hireNames": [],
+        "leaverNames": []
+      }
     },
     {
       "location": "Adelaide",
@@ -9737,7 +9864,11 @@
           "hireNames": [],
           "leaverNames": []
         }
-      ]
+      ],
+      "last30": {
+        "hireNames": [],
+        "leaverNames": []
+      }
     },
     {
       "location": "London",
@@ -9748,8 +9879,8 @@
       "femalePrior": 4,
       "femalePct": "26.7",
       "femalePctPrior": "26.7",
-      "hiresMonth": 0,
-      "hiresMonthPrior": 1,
+      "hiresMonth": 1,
+      "hiresMonthPrior": 0,
       "leaversMonth": 0,
       "leaversMonthPrior": 0,
       "leaversVoluntaryMonth": 0,
@@ -10280,7 +10411,17 @@
           "hireNames": [],
           "leaverNames": []
         }
-      ]
+      ],
+      "last30": {
+        "hireNames": [
+          {
+            "name": "Dale Perini",
+            "date": "2026-09-14T00:00:00+00:00",
+            "costCentre": "London"
+          }
+        ],
+        "leaverNames": []
+      }
     },
     {
       "location": "Gold Coast",
@@ -10703,7 +10844,11 @@
           "hireNames": [],
           "leaverNames": []
         }
-      ]
+      ],
+      "last30": {
+        "hireNames": [],
+        "leaverNames": []
+      }
     },
     {
       "location": "Gold Coast",
@@ -11179,7 +11324,11 @@
           "hireNames": [],
           "leaverNames": []
         }
-      ]
+      ],
+      "last30": {
+        "hireNames": [],
+        "leaverNames": []
+      }
     },
     {
       "location": "Gold Coast",
@@ -11600,7 +11749,11 @@
           "hireNames": [],
           "leaverNames": []
         }
-      ]
+      ],
+      "last30": {
+        "hireNames": [],
+        "leaverNames": []
+      }
     }
   ],
   "entities": [
@@ -11611,7 +11764,7 @@
       "headcountPrior": 294,
       "female": 77,
       "femalePct": "26.2",
-      "leaversMonth": 0,
+      "leaversMonth": 9,
       "hiresMonth": 0,
       "gpgMean": "0.0",
       "gpgMedian": "0.0"
@@ -11624,7 +11777,7 @@
       "female": 4,
       "femalePct": "26.7",
       "leaversMonth": 0,
-      "hiresMonth": 0,
+      "hiresMonth": 1,
       "gpgMean": "0.0",
       "gpgMedian": "0.0"
     }
