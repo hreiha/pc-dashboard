@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-01T08:00:54.196Z",
+  "generatedUtc": "2026-10-01T23:00:56.455Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -11820,8 +11820,8 @@
       "count": 1
     },
     {
-      "stage": "2nd Interview",
-      "count": 2
+      "stage": "Referee Detail Request Sent",
+      "count": 1
     },
     {
       "stage": "Declined",
@@ -11829,6 +11829,10 @@
     },
     {
       "stage": "Needs approval",
+      "count": 1
+    },
+    {
+      "stage": "2nd Interview",
       "count": 1
     },
     {
@@ -11840,7 +11844,7 @@
       "count": 14
     },
     {
-      "stage": "Referee Detail Request Sent",
+      "stage": "SC Approved",
       "count": 1
     },
     {
@@ -11987,7 +11991,7 @@
       "churnTotal": "35.3",
       "churnVoluntary": "21.7",
       "avgHeadcountLtm": "147.3",
-      "activeRoles": 17
+      "activeRoles": 18
     },
     {
       "name": "Sydney",
@@ -11999,7 +12003,7 @@
       "churnTotal": "41.2",
       "churnVoluntary": "31.7",
       "avgHeadcountLtm": "94.6",
-      "activeRoles": 14
+      "activeRoles": 13
     },
     {
       "name": "Brisbane",
@@ -12107,7 +12111,7 @@
     "excludedContractors": 0,
     "excludedIncomplete": 0,
     "excludedNoCostCentre": 361,
-    "notYetStarted": 8,
+    "notYetStarted": 7,
     "excludedNoSalary": 309,
     "casualsConverted": 58,
     "partTimeConverted": 42
