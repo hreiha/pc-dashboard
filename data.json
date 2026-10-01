@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-01T00:17:52.589Z",
+  "generatedUtc": "2026-10-01T00:26:23.201Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -11720,7 +11720,7 @@
     }
   ],
   "recruitment": {
-    "openRoles": 36,
+    "openRoles": 40,
     "filledMonth": 0,
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
@@ -11728,11 +11728,11 @@
   "pipeline": [
     {
       "stage": "2. Search & Prepare",
-      "count": 25
+      "count": 26
     },
     {
       "stage": "1. Search & Secure",
-      "count": 6
+      "count": 9
     },
     {
       "stage": "4. Role On Hold",
@@ -11770,7 +11770,7 @@
     },
     {
       "stage": "New",
-      "count": 5
+      "count": 9
     },
     {
       "stage": "Sourcing",
@@ -11798,7 +11798,7 @@
       "churnVoluntary": "27.8",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "93.7",
-      "openRoles": 8
+      "openRoles": 9
     },
     {
       "code": "Sydney",
@@ -11868,7 +11868,7 @@
       "churnVoluntary": "30.8",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "26.0",
-      "openRoles": 1
+      "openRoles": 2
     },
     {
       "code": "Adelaide",
@@ -11882,7 +11882,7 @@
       "churnVoluntary": "12.1",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "16.6",
-      "openRoles": 3
+      "openRoles": 4
     },
     {
       "code": "London",
