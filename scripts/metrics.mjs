@@ -272,7 +272,15 @@ export function computeMetrics(employees, asOfIso, options) {
   const raw = employees;
   const asOf = parseDate(asOfIso) || new Date();
 
-  const thisMonthEnd = monthEnd(asOf.getUTCFullYear(), asOf.getUTCMonth());
+  /**
+   * The current month is only complete up to today, so every "now" snapshot stops there.
+   * Without this, anyone starting later this month is counted in today's headcount.
+   */
+  function capAt(d) {
+    return d > asOf ? asOf : d;
+  }
+
+  const thisMonthEnd = capAt(monthEnd(asOf.getUTCFullYear(), asOf.getUTCMonth()));
   const priorMonthEnd = monthEnd(asOf.getUTCFullYear(), asOf.getUTCMonth() - 1);
 
   // ---- scope: drop blank and unmapped locations, assign entity by location
@@ -371,7 +379,7 @@ export function computeMetrics(employees, asOfIso, options) {
 
   const monthEnds = [];
   for (let i = 11; i >= 0; i--) {
-    monthEnds.push(monthEnd(asOf.getUTCFullYear(), asOf.getUTCMonth() - i));
+    monthEnds.push(capAt(monthEnd(asOf.getUTCFullYear(), asOf.getUTCMonth() - i)));
   }
   const monthlyHeadcount = monthEnds.map(d => scoped.filter(e => activeAt(e, d)).length);
   const avgHeadcountLtm = mean(monthlyHeadcount);
@@ -393,10 +401,16 @@ export function computeMetrics(employees, asOfIso, options) {
     });
   }
 
+  /**
+   * Someone counts as a new hire once their start date has passed, never before. A
+   * forward-looking range would otherwise report people who have not started, and may
+   * not have signed, as hires.
+   */
   function startersBetween(from, to, pool) {
+    const cap = to > asOf ? asOf : to;
     return pool.filter(e => {
       const st = parseDate(e.startDate);
-      return st !== null && st > from && st <= to;
+      return st !== null && st > from && st <= cap;
     });
   }
 
@@ -640,7 +654,7 @@ export function computeMetrics(employees, asOfIso, options) {
 
   const seriesEnds = [];
   for (let i = SERIES_MONTHS - 1; i >= 0; i--) {
-    seriesEnds.push(monthEnd(asOf.getUTCFullYear(), asOf.getUTCMonth() - i));
+    seriesEnds.push(capAt(monthEnd(asOf.getUTCFullYear(), asOf.getUTCMonth() - i)));
   }
 
   function monthKey(d) {
