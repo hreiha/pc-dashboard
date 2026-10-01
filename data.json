@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-01T03:01:09.266Z",
+  "generatedUtc": "2026-10-01T06:01:01.093Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -11809,11 +11809,11 @@
   "stageDetail": [
     {
       "stage": "Phone Screen",
-      "count": 3
+      "count": 2
     },
     {
       "stage": "1st Interview",
-      "count": 4
+      "count": 5
     },
     {
       "stage": "SC Declined",
