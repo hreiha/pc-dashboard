@@ -579,7 +579,7 @@ function shortDate(value) {
 function drillRows(d, key) {
   const months = hasRange()
     ? monthsInRange(d)
-    : selectedSlices(d).map(sl => (sl.months || [])[(sl.months || []).length - 1]).filter(Boolean);
+    : selectedSlices(d).map(sl => sl.last30).filter(Boolean);
 
   const rows = [];
   for (const m of months) {
@@ -919,7 +919,7 @@ function render() {
     </div>
 
     <section>
-      <h2>${hasRange() ? "Selected period" : "This month"}${scopeLabel()}</h2>
+      <h2>${hasRange() ? "Selected period" : "Last 30 days"}${scopeLabel()}</h2>
       <div class="metrics">
         ${tile("New hires", p.hiresMonth, p.hiresMonthPrior, "", true, "hires")}
         ${tile("Leavers (voluntary)", p.leaversVoluntaryMonth, p.leaversVoluntaryMonthPrior, "", false, "leavers-voluntary")}

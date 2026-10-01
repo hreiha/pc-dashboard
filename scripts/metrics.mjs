@@ -420,16 +420,19 @@ export function computeMetrics(employees, asOfIso, options) {
   const leaversLtm = leaversBetween(ltmStart, thisMonthEnd, scoped);
   const leaversLtmPrior = leaversBetween(ltmStartPrior, priorMonthEnd, scoped);
 
+  // A rolling 30 days rather than the calendar month, so the figures do not collapse to
+  // zero on the first of the month.
+  const DAY = 24 * 60 * 60 * 1000;
+  const last30Start = new Date(asOf.getTime() - 30 * DAY);
+  const prior30Start = new Date(asOf.getTime() - 60 * DAY);
+  const prior30End = last30Start;
+
   const monthStart = new Date(Date.UTC(asOf.getUTCFullYear(), asOf.getUTCMonth(), 0, 23, 59, 59));
   const priorMonthStart = new Date(Date.UTC(asOf.getUTCFullYear(), asOf.getUTCMonth() - 1, 0, 23, 59, 59));
-  const hiresMonth = startersBetween(monthStart, thisMonthEnd, scoped);
-  const hiresMonthPrior = startersBetween(priorMonthStart, priorMonthEnd, scoped);
-  const leaversMonth = leaversBetween(monthStart, thisMonthEnd, scoped);
-  const leaversMonthPrior = leaversBetween(
-    new Date(Date.UTC(asOf.getUTCFullYear(), asOf.getUTCMonth() - 1, 0, 23, 59, 59)),
-    priorMonthEnd,
-    scoped
-  );
+  const hiresMonth = startersBetween(last30Start, thisMonthEnd, scoped);
+  const hiresMonthPrior = startersBetween(prior30Start, prior30End, scoped);
+  const leaversMonth = leaversBetween(last30Start, thisMonthEnd, scoped);
+  const leaversMonthPrior = leaversBetween(prior30Start, prior30End, scoped);
 
   // ---- turnover, one engine for every period
   //
@@ -709,8 +712,9 @@ export function computeMetrics(employees, asOfIso, options) {
     const fem = now.filter(isFemale);
     const femPrior = prior.filter(isFemale);
     const monthly = monthEnds.map(d => pool.filter(e => activeAt(e, d)).length);
-    const lm = leaversBetween(monthStart, thisMonthEnd, pool);
-    const lmPrior = leaversBetween(priorMonthStart, priorMonthEnd, pool);
+    const lm = leaversBetween(last30Start, thisMonthEnd, pool);
+    const lmPrior = leaversBetween(prior30Start, prior30End, pool);
+    const hires30 = startersBetween(last30Start, thisMonthEnd, pool);
 
     return {
       headcount: now.length,
@@ -719,8 +723,8 @@ export function computeMetrics(employees, asOfIso, options) {
       femalePrior: femPrior.length,
       femalePct: now.length ? round1((fem.length / now.length) * 100) : "0.0",
       femalePctPrior: prior.length ? round1((femPrior.length / prior.length) * 100) : "0.0",
-      hiresMonth: startersBetween(monthStart, thisMonthEnd, pool).length,
-      hiresMonthPrior: startersBetween(priorMonthStart, priorMonthEnd, pool).length,
+      hiresMonth: hires30.length,
+      hiresMonthPrior: startersBetween(prior30Start, prior30End, pool).length,
       leaversMonth: lm.length,
       leaversMonthPrior: lmPrior.length,
       leaversVoluntaryMonth: lm.filter(e => isVoluntary(e.terminationReason)).length,
@@ -733,7 +737,21 @@ export function computeMetrics(employees, asOfIso, options) {
         month: monthNames[d.getUTCMonth()],
         headcount: monthly[i]
       })),
-      months: monthlySeries(pool)
+      months: monthlySeries(pool),
+      last30: {
+        hireNames: includeNames
+          ? hires30.map(e => ({ name: personLabel(e), date: e.startDate, costCentre: e.costCentre }))
+          : [],
+        leaverNames: includeNames
+          ? lm.map(e => ({
+              name: personLabel(e),
+              date: e.terminationDate,
+              costCentre: e.costCentre,
+              type: e.terminationReason || "",
+              voluntary: isVoluntary(e.terminationReason)
+            }))
+          : []
+      }
     };
   }
 
