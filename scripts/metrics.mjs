@@ -721,6 +721,8 @@ export function computeMetrics(employees, asOfIso, options) {
       headcountPrior: prior.length,
       female: fem.length,
       femalePrior: femPrior.length,
+      male: now.filter(isMale).length,
+      genderNotRecorded: now.filter(e => !isFemale(e) && !isMale(e)).length,
       femalePct: now.length ? round1((fem.length / now.length) * 100) : "0.0",
       femalePctPrior: prior.length ? round1((femPrior.length / prior.length) * 100) : "0.0",
       hiresMonth: hires30.length,
@@ -777,6 +779,9 @@ export function computeMetrics(employees, asOfIso, options) {
     people: {
       headcount: activeNow.length,
       headcountPrior: activePrior.length,
+      female: femaleNow.length,
+      male: activeNow.filter(isMale).length,
+      genderNotRecorded: activeNow.filter(e => !isFemale(e) && !isMale(e)).length,
       femalePct: activeNow.length ? round1((femaleNow.length / activeNow.length) * 100) : "0.0",
       femalePctPrior: activePrior.length ? round1((femalePrior.length / activePrior.length) * 100) : "0.0",
       leaversMonth: leaversMonth.length,

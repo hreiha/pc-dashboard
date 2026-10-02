@@ -111,6 +111,8 @@
 
   .spark { width: 100%; height: 96px; display: block; }
 
+  .spark-hit { cursor: pointer; }
+
   .spark-caption {
     font-size: 11px;
     color: var(--muted);
@@ -677,7 +679,15 @@ function sparkline(points) {
   const y = (v) => h - pad - ((v - min) / span) * (h - pad * 2);
   const line = vals.map((v, i) => (i ? "L" : "M") + x(i).toFixed(1) + " " + y(v).toFixed(1)).join(" ");
   const area = line + " L" + x(vals.length - 1).toFixed(1) + " " + h + " L" + x(0).toFixed(1) + " " + h + " Z";
-  const dots = vals.map((v, i) => '<circle cx="' + x(i).toFixed(1) + '" cy="' + y(v).toFixed(1) + '" r="3" fill="#0000D0"/>').join("");
+  const dots = vals.map((v, i) => {
+    const cx = x(i).toFixed(1);
+    const cy = y(v).toFixed(1);
+    const label = (points[i].month || "") + ": " + v;
+    // The wide transparent circle is the hit area; the small one is what you see
+    return '<circle class="spark-hit" cx="' + cx + '" cy="' + cy + '" r="14" fill="transparent" ' +
+      'data-label="' + label + '"><title>' + label + "</title></circle>" +
+      '<circle cx="' + cx + '" cy="' + cy + '" r="3" fill="#0000D0" pointer-events="none"/>';
+  }).join("");
   return '<svg class="spark" viewBox="0 0 ' + w + " " + h + '" preserveAspectRatio="none" role="img" aria-label="Headcount over the last twelve months">' +
     '<path d="' + area + '" fill="#0000D0" opacity="0.07"/>' +
     '<path d="' + line + '" fill="none" stroke="#0000D0" stroke-width="2.5" vector-effect="non-scaling-stroke"/>' +
@@ -818,6 +828,9 @@ function aggregate(d) {
   return Object.assign({
     headcount: headcount,
     headcountPrior: headcountPrior,
+    female: sum("female"),
+    male: sum("male"),
+    genderNotRecorded: sum("genderNotRecorded"),
     femalePct: pct(sum("female"), headcount),
     femalePctPrior: pct(sum("femalePrior"), headcountPrior),
     hiresMonth: sum("hiresMonth"),
@@ -914,7 +927,7 @@ function render() {
       <div>
         ${sparkline(trend)}
         <div class="spark-labels">${trend.map(t => "<span>" + t.month + "</span>").join("")}</div>
-        <div class="spark-caption">Last twelve months</div>
+        <div class="spark-caption" id="spark-caption">Last twelve months</div>
       </div>
     </div>
 
@@ -925,7 +938,13 @@ function render() {
         ${tile("Leavers (voluntary)", p.leaversVoluntaryMonth, p.leaversVoluntaryMonthPrior, "", false, "leavers-voluntary")}
         ${tile("Leavers (total)", p.leaversMonth, p.leaversMonthPrior, "", false, "leavers")}
         ${tile("Female representation", p.femalePct, p.femalePctPrior, "%", true)}
+        ${tile("Female headcount", p.female, null, "", null)}
+        ${tile("Male headcount", p.male, null, "", null)}
       </div>
+      ${Number(p.genderNotRecorded) > 0
+        ? '<div class="note">' + n(p.genderNotRecorded) +
+          " active employees have no gender recorded, so they appear in headcount but in neither figure above.</div>"
+        : ""}
       ${drillPanel(d, "hires", "New starters")}
       ${drillPanel(d, "leavers-voluntary", "Voluntary leavers")}
       ${drillPanel(d, "leavers", "Leavers")}
@@ -1092,6 +1111,7 @@ function render() {
 
   bindPeriods(periods);
   bindDrill();
+  bindSpark();
 }
 
 /** Periods from the data, or a single rolling twelve month entry built from the headline
@@ -1138,6 +1158,18 @@ function renderTurnover(periods, index) {
 }
 
 /** Wired after each render, since the buttons are rebuilt with the markup. */
+function bindSpark() {
+  const caption = $("spark-caption");
+  if (!caption) return;
+  const base = "Last twelve months";
+
+  document.querySelectorAll(".spark-hit").forEach(el => {
+    el.addEventListener("mouseenter", () => { caption.textContent = el.dataset.label; });
+    el.addEventListener("mouseleave", () => { caption.textContent = base; });
+    el.addEventListener("click", () => { caption.textContent = el.dataset.label; });
+  });
+}
+
 function bindDrill() {
   document.querySelectorAll("[data-drill]").forEach(el => {
     el.addEventListener("click", () => {
