@@ -1248,8 +1248,13 @@ function buildFilters(d) {
     return keys.indexOf(july) >= 0 ? july : keys[0] || "";
   };
 
+  // The month before the current one, which is the last complete month
+  const lastFullMonth = () => keys[keys.length - 2] || keys[keys.length - 1] || "";
+
   const PRESETS = [
     { id: "", label: "All time", from: "", to: "" },
+    { id: "lastmonth", label: "Last full month", from: lastFullMonth, to: lastFullMonth },
+    { id: "thismonth", label: "This month so far", from: () => latest, to: () => latest },
     { id: "m3", label: "Last 3 months", from: () => backFrom(3), to: () => latest },
     { id: "m6", label: "Last 6 months", from: () => backFrom(6), to: () => latest },
     { id: "m12", label: "Last 12 months", from: () => backFrom(12), to: () => latest },
