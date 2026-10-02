@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-02T00:44:09.261Z",
+  "generatedUtc": "2026-10-02T02:01:15.483Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -11863,8 +11863,8 @@
       "count": 1
     },
     {
-      "stage": "Referee Detail Request Sent",
-      "count": 1
+      "stage": "Offer Pending",
+      "count": 4
     },
     {
       "stage": "Declined",
@@ -11889,10 +11889,6 @@
     {
       "stage": "SC Approved",
       "count": 1
-    },
-    {
-      "stage": "Offer Pending",
-      "count": 3
     }
   ],
   "costCentres": [
@@ -12154,7 +12150,7 @@
     "excludedContractors": 0,
     "excludedIncomplete": 0,
     "excludedNoCostCentre": 361,
-    "notYetStarted": 7,
+    "notYetStarted": 8,
     "excludedNoSalary": 309,
     "casualsConverted": 58,
     "partTimeConverted": 42
