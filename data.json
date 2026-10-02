@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-02T02:01:15.483Z",
+  "generatedUtc": "2026-10-02T03:00:55.823Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -11852,7 +11852,7 @@
   "stageDetail": [
     {
       "stage": "Phone Screen",
-      "count": 3
+      "count": 4
     },
     {
       "stage": "1st Interview",
@@ -11884,7 +11884,7 @@
     },
     {
       "stage": "Sourcing",
-      "count": 14
+      "count": 13
     },
     {
       "stage": "SC Approved",
