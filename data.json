@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-07T00:00:59.821Z",
+  "generatedUtc": "2026-10-07T02:00:49.708Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -11871,11 +11871,11 @@
   "pipeline": [
     {
       "stage": "2. Search & Prepare",
-      "count": 25
+      "count": 26
     },
     {
       "stage": "1. Search & Secure",
-      "count": 7
+      "count": 6
     },
     {
       "stage": "4. Role On Hold",
