@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-07T05:00:56.350Z",
+  "generatedUtc": "2026-10-08T00:00:57.339Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -10,23 +10,23 @@
     "genderNotRecorded": 0,
     "femalePct": "26.5",
     "femalePctPrior": "26.2",
-    "leaversMonth": 10,
+    "leaversMonth": 11,
     "leaversMonthPrior": 7,
     "leaversVoluntaryMonth": 9,
     "leaversVoluntaryMonthPrior": 4,
     "hiresMonth": 3,
     "hiresMonthPrior": 5,
-    "churnTotal": "35.6",
+    "churnTotal": "35.9",
     "churnTotalPrior": "37.2",
     "churnVoluntary": "24.3",
     "churnVoluntaryPrior": "25.4",
-    "ytdTotal": "12.3",
+    "ytdTotal": "12.6",
     "ytdVoluntary": "8.2",
     "regrettableLtm": "0.0",
     "regrettableCountLtm": 0,
     "regrettableShareOfLeavers": "0.0",
-    "rehireFlagMissing": 117,
-    "ytdAnnualisedTotal": "37.1",
+    "rehireFlagMissing": 118,
+    "ytdAnnualisedTotal": "38.1",
     "ytdAnnualisedTotalPrior": "48.2",
     "ytdAnnualisedVoluntary": "24.7",
     "ytdAnnualisedVoluntaryPrior": "31.7",
@@ -43,16 +43,16 @@
       "months": 11,
       "avgHeadcount": "330.5",
       "avgHeadcountValue": 330.45454545454544,
-      "leavers": 117,
+      "leavers": 118,
       "leaversVoluntary": 80,
       "leaversRegrettable": 0,
-      "total": "35.4",
+      "total": "35.7",
       "voluntary": "24.2",
       "regrettable": "0.0",
-      "totalAnnualised": "38.6",
+      "totalAnnualised": "38.9",
       "voluntaryAnnualised": "26.4",
       "regrettableShareOfLeavers": "0.0",
-      "rehireFlagMissing": 117
+      "rehireFlagMissing": 118
     },
     {
       "key": "ytd",
@@ -60,16 +60,16 @@
       "months": 9,
       "avgHeadcount": "328.1",
       "avgHeadcountValue": 328.1111111111111,
-      "leavers": 98,
+      "leavers": 99,
       "leaversVoluntary": 69,
       "leaversRegrettable": 0,
-      "total": "29.9",
+      "total": "30.2",
       "voluntary": "21.0",
       "regrettable": "0.0",
-      "totalAnnualised": "39.9",
+      "totalAnnualised": "40.3",
       "voluntaryAnnualised": "28.0",
       "regrettableShareOfLeavers": "0.0",
-      "rehireFlagMissing": 98
+      "rehireFlagMissing": 99
     },
     {
       "key": "fytd",
@@ -77,16 +77,16 @@
       "months": 3,
       "avgHeadcount": "316.3",
       "avgHeadcountValue": 316.3333333333333,
-      "leavers": 39,
+      "leavers": 40,
       "leaversVoluntary": 26,
       "leaversRegrettable": 0,
-      "total": "12.3",
+      "total": "12.6",
       "voluntary": "8.2",
       "regrettable": "0.0",
-      "totalAnnualised": "49.2",
+      "totalAnnualised": "50.4",
       "voluntaryAnnualised": "32.8",
       "regrettableShareOfLeavers": "0.0",
-      "rehireFlagMissing": 39
+      "rehireFlagMissing": 40
     },
     {
       "key": "last6",
@@ -94,16 +94,16 @@
       "months": 5,
       "avgHeadcount": "323.8",
       "avgHeadcountValue": 323.8,
-      "leavers": 56,
+      "leavers": 57,
       "leaversVoluntary": 38,
       "leaversRegrettable": 0,
-      "total": "17.3",
+      "total": "17.6",
       "voluntary": "11.7",
       "regrettable": "0.0",
-      "totalAnnualised": "41.5",
+      "totalAnnualised": "42.2",
       "voluntaryAnnualised": "28.1",
       "regrettableShareOfLeavers": "0.0",
-      "rehireFlagMissing": 56
+      "rehireFlagMissing": 57
     },
     {
       "key": "last3",
@@ -111,16 +111,16 @@
       "months": 2,
       "avgHeadcount": "313.5",
       "avgHeadcountValue": 313.5,
-      "leavers": 21,
+      "leavers": 22,
       "leaversVoluntary": 16,
       "leaversRegrettable": 0,
-      "total": "6.7",
+      "total": "7.0",
       "voluntary": "5.1",
       "regrettable": "0.0",
-      "totalAnnualised": "40.2",
+      "totalAnnualised": "42.0",
       "voluntaryAnnualised": "30.6",
       "regrettableShareOfLeavers": "0.0",
-      "rehireFlagMissing": 21
+      "rehireFlagMissing": 22
     },
     {
       "key": "lastcy",
@@ -5389,12 +5389,12 @@
       "femalePctPrior": "23.1",
       "hiresMonth": 0,
       "hiresMonthPrior": 0,
-      "leaversMonth": 0,
+      "leaversMonth": 1,
       "leaversMonthPrior": 1,
       "leaversVoluntaryMonth": 0,
       "leaversVoluntaryMonthPrior": 0,
       "avgHeadcountLtm": "13.9",
-      "churnTotal": "14.4",
+      "churnTotal": "21.6",
       "churnVoluntary": "7.2",
       "turnoverPeriods": [
         {
@@ -5403,16 +5403,16 @@
           "months": 11,
           "avgHeadcount": "14.0",
           "avgHeadcountValue": 14,
-          "leavers": 2,
+          "leavers": 3,
           "leaversVoluntary": 1,
           "leaversRegrettable": 0,
-          "total": "14.3",
+          "total": "21.4",
           "voluntary": "7.1",
           "regrettable": "0.0",
-          "totalAnnualised": "15.6",
+          "totalAnnualised": "23.3",
           "voluntaryAnnualised": "7.7",
           "regrettableShareOfLeavers": "0.0",
-          "rehireFlagMissing": 2
+          "rehireFlagMissing": 3
         },
         {
           "key": "ytd",
@@ -5420,16 +5420,16 @@
           "months": 9,
           "avgHeadcount": "14.0",
           "avgHeadcountValue": 14,
-          "leavers": 2,
+          "leavers": 3,
           "leaversVoluntary": 1,
           "leaversRegrettable": 0,
-          "total": "14.3",
+          "total": "21.4",
           "voluntary": "7.1",
           "regrettable": "0.0",
-          "totalAnnualised": "19.1",
+          "totalAnnualised": "28.5",
           "voluntaryAnnualised": "9.5",
           "regrettableShareOfLeavers": "0.0",
-          "rehireFlagMissing": 2
+          "rehireFlagMissing": 3
         },
         {
           "key": "fytd",
@@ -5437,16 +5437,16 @@
           "months": 3,
           "avgHeadcount": "13.7",
           "avgHeadcountValue": 13.666666666666666,
-          "leavers": 1,
+          "leavers": 2,
           "leaversVoluntary": 0,
           "leaversRegrettable": 0,
-          "total": "7.3",
+          "total": "14.6",
           "voluntary": "0.0",
           "regrettable": "0.0",
-          "totalAnnualised": "29.2",
+          "totalAnnualised": "58.4",
           "voluntaryAnnualised": "0.0",
           "regrettableShareOfLeavers": "0.0",
-          "rehireFlagMissing": 1
+          "rehireFlagMissing": 2
         },
         {
           "key": "last6",
@@ -5454,16 +5454,16 @@
           "months": 5,
           "avgHeadcount": "13.8",
           "avgHeadcountValue": 13.8,
-          "leavers": 1,
+          "leavers": 2,
           "leaversVoluntary": 0,
           "leaversRegrettable": 0,
-          "total": "7.2",
+          "total": "14.5",
           "voluntary": "0.0",
           "regrettable": "0.0",
-          "totalAnnualised": "17.3",
+          "totalAnnualised": "34.8",
           "voluntaryAnnualised": "0.0",
           "regrettableShareOfLeavers": "0.0",
-          "rehireFlagMissing": 1
+          "rehireFlagMissing": 2
         },
         {
           "key": "last3",
@@ -5471,16 +5471,16 @@
           "months": 2,
           "avgHeadcount": "13.5",
           "avgHeadcountValue": 13.5,
-          "leavers": 1,
+          "leavers": 2,
           "leaversVoluntary": 0,
           "leaversRegrettable": 0,
-          "total": "7.4",
+          "total": "14.8",
           "voluntary": "0.0",
           "regrettable": "0.0",
-          "totalAnnualised": "44.4",
+          "totalAnnualised": "88.8",
           "voluntaryAnnualised": "0.0",
           "regrettableShareOfLeavers": "0.0",
-          "rehireFlagMissing": 1
+          "rehireFlagMissing": 2
         },
         {
           "key": "lastcy",
@@ -5860,15 +5860,31 @@
           "label": "Oct 2026",
           "headcountEnd": 13,
           "hires": 0,
-          "leavers": 0,
+          "leavers": 1,
           "leaversVoluntary": 0,
           "hireNames": [],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Ali Eslahi",
+              "date": "2026-10-08T00:00:00+00:00",
+              "costCentre": "NAT-SPL",
+              "type": "",
+              "voluntary": false
+            }
+          ]
         }
       ],
       "last30": {
         "hireNames": [],
-        "leaverNames": []
+        "leaverNames": [
+          {
+            "name": "Ali Eslahi",
+            "date": "2026-10-08T00:00:00+00:00",
+            "costCentre": "NAT-SPL",
+            "type": "",
+            "voluntary": false
+          }
+        ]
       }
     },
     {
@@ -11844,7 +11860,7 @@
       "headcountPrior": 294,
       "female": 78,
       "femalePct": "26.4",
-      "leaversMonth": 10,
+      "leaversMonth": 11,
       "hiresMonth": 2,
       "gpgMean": "0.0",
       "gpgMedian": "0.0"
@@ -11889,11 +11905,11 @@
   "stageDetail": [
     {
       "stage": "Phone Screen",
-      "count": 3
+      "count": 5
     },
     {
       "stage": "1st Interview",
-      "count": 5
+      "count": 4
     },
     {
       "stage": "SC Declined",
@@ -11901,7 +11917,7 @@
     },
     {
       "stage": "Present to HM",
-      "count": 2
+      "count": 1
     },
     {
       "stage": "Declined",
@@ -11962,10 +11978,10 @@
       "headcount": 41,
       "female": 10,
       "femalePct": "24.4",
-      "leaversLtm": 8,
+      "leaversLtm": 9,
       "leaversVoluntary": 5,
       "leaversRegrettable": 0,
-      "churnTotal": "19.0",
+      "churnTotal": "21.3",
       "churnVoluntary": "11.9",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "42.2",
@@ -12074,9 +12090,9 @@
       "headcount": 83,
       "female": 21,
       "femalePct": "25.3",
-      "leaversLtm": 39,
+      "leaversLtm": 40,
       "leaversVoluntary": 30,
-      "churnTotal": "41.2",
+      "churnTotal": "42.3",
       "churnVoluntary": "31.7",
       "avgHeadcountLtm": "94.6",
       "activeRoles": 13
