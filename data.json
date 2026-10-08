@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-08T00:03:20.999Z",
+  "generatedUtc": "2026-10-08T05:00:52.198Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -11909,14 +11909,10 @@
     },
     {
       "stage": "1st Interview",
-      "count": 4
+      "count": 5
     },
     {
       "stage": "SC Declined",
-      "count": 1
-    },
-    {
-      "stage": "Present to HM",
       "count": 1
     },
     {
@@ -12206,6 +12202,6 @@
     "notYetStarted": 6,
     "excludedNoSalary": 310,
     "casualsConverted": 60,
-    "partTimeConverted": 43
+    "partTimeConverted": 44
   }
 }
