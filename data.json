@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-10T23:19:40.934Z",
+  "generatedUtc": "2026-10-11T23:30:08.269Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -10,12 +10,12 @@
     "genderNotRecorded": 0,
     "femalePct": "26.6",
     "femalePctPrior": "26.2",
-    "leaversMonth": 11,
-    "leaversMonthPrior": 8,
-    "leaversVoluntaryMonth": 10,
-    "leaversVoluntaryMonthPrior": 5,
+    "leaversMonth": 10,
+    "leaversMonthPrior": 9,
+    "leaversVoluntaryMonth": 9,
+    "leaversVoluntaryMonthPrior": 6,
     "hiresMonth": 3,
-    "hiresMonthPrior": 4,
+    "hiresMonthPrior": 3,
     "churnTotal": "36.2",
     "churnTotalPrior": "37.2",
     "churnVoluntary": "25.0",
@@ -273,7 +273,7 @@
       "femalePct": "17.9",
       "femalePctPrior": "18.8",
       "hiresMonth": 0,
-      "hiresMonthPrior": 2,
+      "hiresMonthPrior": 1,
       "leaversMonth": 5,
       "leaversMonthPrior": 2,
       "leaversVoluntaryMonth": 4,
@@ -6335,10 +6335,10 @@
       "femalePctPrior": "40.0",
       "hiresMonth": 0,
       "hiresMonthPrior": 1,
-      "leaversMonth": 1,
-      "leaversMonthPrior": 0,
-      "leaversVoluntaryMonth": 1,
-      "leaversVoluntaryMonthPrior": 0,
+      "leaversMonth": 0,
+      "leaversMonthPrior": 1,
+      "leaversVoluntaryMonth": 0,
+      "leaversVoluntaryMonthPrior": 1,
       "avgHeadcountLtm": "6.8",
       "churnTotal": "59.3",
       "churnVoluntary": "44.4",
@@ -6839,15 +6839,7 @@
       ],
       "last30": {
         "hireNames": [],
-        "leaverNames": [
-          {
-            "name": "Jacob Delailoa",
-            "date": "2026-09-11T00:00:00+00:00",
-            "costCentre": "NAT-ESD",
-            "type": "Voluntary cessation",
-            "voluntary": true
-          }
-        ]
+        "leaverNames": []
       }
     },
     {
@@ -11868,7 +11860,7 @@
       "headcountPrior": 294,
       "female": 78,
       "femalePct": "26.6",
-      "leaversMonth": 11,
+      "leaversMonth": 10,
       "hiresMonth": 2,
       "gpgMean": "0.0",
       "gpgMedian": "0.0"
