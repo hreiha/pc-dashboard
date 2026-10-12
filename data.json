@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-12T02:00:59.803Z",
+  "generatedUtc": "2026-10-12T03:00:58.059Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -11943,7 +11943,7 @@
   "stageDetail": [
     {
       "stage": "Phone Screen",
-      "count": 4
+      "count": 3
     },
     {
       "stage": "1st Interview",
@@ -11955,7 +11955,7 @@
     },
     {
       "stage": "Present to HM",
-      "count": 4
+      "count": 7
     },
     {
       "stage": "Declined",
@@ -11975,7 +11975,7 @@
     },
     {
       "stage": "Sourcing",
-      "count": 10
+      "count": 8
     },
     {
       "stage": "Offer Pending",
