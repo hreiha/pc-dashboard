@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-12T23:01:02.233Z",
+  "generatedUtc": "2026-10-13T01:00:58.547Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -11,9 +11,9 @@
     "femalePct": "26.2",
     "femalePctPrior": "26.2",
     "leaversMonth": 11,
-    "leaversMonthPrior": 9,
+    "leaversMonthPrior": 7,
     "leaversVoluntaryMonth": 10,
-    "leaversVoluntaryMonthPrior": 6,
+    "leaversVoluntaryMonthPrior": 4,
     "hiresMonth": 5,
     "hiresMonthPrior": 3,
     "churnTotal": "36.5",
@@ -4241,9 +4241,9 @@
       "hiresMonth": 0,
       "hiresMonthPrior": 0,
       "leaversMonth": 3,
-      "leaversMonthPrior": 2,
+      "leaversMonthPrior": 1,
       "leaversVoluntaryMonth": 3,
-      "leaversVoluntaryMonthPrior": 1,
+      "leaversVoluntaryMonthPrior": 0,
       "avgHeadcountLtm": "68.8",
       "churnTotal": "48.0",
       "churnVoluntary": "37.8",
@@ -7397,9 +7397,9 @@
       "hiresMonth": 3,
       "hiresMonthPrior": 0,
       "leaversMonth": 0,
-      "leaversMonthPrior": 1,
+      "leaversMonthPrior": 0,
       "leaversVoluntaryMonth": 0,
-      "leaversVoluntaryMonthPrior": 1,
+      "leaversVoluntaryMonthPrior": 0,
       "avgHeadcountLtm": "31.9",
       "churnTotal": "28.2",
       "churnVoluntary": "21.9",
@@ -11943,7 +11943,7 @@
   "stageDetail": [
     {
       "stage": "Phone Screen",
-      "count": 5
+      "count": 7
     },
     {
       "stage": "1st Interview",
@@ -11971,7 +11971,7 @@
     },
     {
       "stage": "Present to HM",
-      "count": 10
+      "count": 8
     },
     {
       "stage": "Sourcing",
