@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-14T04:01:01.546Z",
+  "generatedUtc": "2026-10-14T07:00:51.656Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -26,9 +26,9 @@
     "regrettableCountLtm": 0,
     "regrettableShareOfLeavers": "0.0",
     "rehireFlagMissing": 120,
-    "ytdAnnualisedTotal": "40.1",
+    "ytdAnnualisedTotal": "40.0",
     "ytdAnnualisedTotalPrior": "48.3",
-    "ytdAnnualisedVoluntary": "27.7",
+    "ytdAnnualisedVoluntary": "27.6",
     "ytdAnnualisedVoluntaryPrior": "31.8",
     "gpgMean": "0.0",
     "gpgMeanPrior": "0.0",
@@ -11911,7 +11911,7 @@
     }
   ],
   "recruitment": {
-    "openRoles": 36,
+    "openRoles": 37,
     "filledMonth": 0,
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
@@ -11923,7 +11923,7 @@
     },
     {
       "stage": "1. Search & Secure",
-      "count": 6
+      "count": 7
     },
     {
       "stage": "4. Role On Hold",
@@ -11965,7 +11965,7 @@
     },
     {
       "stage": "New",
-      "count": 6
+      "count": 7
     },
     {
       "stage": "Sourcing",
@@ -12031,7 +12031,7 @@
       "churnVoluntary": "23.1",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "34.6",
-      "openRoles": 5
+      "openRoles": 6
     },
     {
       "code": "NAT-CORP",
@@ -12235,9 +12235,9 @@
     "excludedContractors": 0,
     "excludedIncomplete": 0,
     "excludedNoCostCentre": 353,
-    "notYetStarted": 4,
+    "notYetStarted": 5,
     "excludedNoSalary": 309,
-    "casualsConverted": 60,
+    "casualsConverted": 61,
     "partTimeConverted": 45
   }
 }
