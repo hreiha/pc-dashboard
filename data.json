@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-14T03:00:54.251Z",
+  "generatedUtc": "2026-10-14T04:01:01.546Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -11937,7 +11937,7 @@
   "stageDetail": [
     {
       "stage": "Phone Screen",
-      "count": 6
+      "count": 5
     },
     {
       "stage": "1st Interview",
@@ -11952,6 +11952,10 @@
       "count": 3
     },
     {
+      "stage": "Present to HM",
+      "count": 12
+    },
+    {
       "stage": "Declined",
       "count": 1
     },
@@ -11962,10 +11966,6 @@
     {
       "stage": "New",
       "count": 6
-    },
-    {
-      "stage": "Present to HM",
-      "count": 11
     },
     {
       "stage": "Sourcing",
