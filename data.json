@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-17T22:00:30.627Z",
+  "generatedUtc": "2026-10-18T22:17:07.340Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -10,12 +10,12 @@
     "genderNotRecorded": 0,
     "femalePct": "26.2",
     "femalePctPrior": "26.2",
-    "leaversMonth": 16,
-    "leaversMonthPrior": 9,
-    "leaversVoluntaryMonth": 15,
-    "leaversVoluntaryMonthPrior": 6,
+    "leaversMonth": 13,
+    "leaversMonthPrior": 11,
+    "leaversVoluntaryMonth": 12,
+    "leaversVoluntaryMonthPrior": 8,
     "hiresMonth": 4,
-    "hiresMonthPrior": 4,
+    "hiresMonthPrior": 3,
     "churnTotal": "38.7",
     "churnTotalPrior": "37.2",
     "churnVoluntary": "27.4",
@@ -273,11 +273,11 @@
       "femalePct": "17.1",
       "femalePctPrior": "18.8",
       "hiresMonth": 1,
-      "hiresMonthPrior": 1,
-      "leaversMonth": 7,
-      "leaversMonthPrior": 3,
-      "leaversVoluntaryMonth": 6,
-      "leaversVoluntaryMonthPrior": 3,
+      "hiresMonthPrior": 0,
+      "leaversMonth": 5,
+      "leaversMonthPrior": 5,
+      "leaversVoluntaryMonth": 4,
+      "leaversVoluntaryMonthPrior": 5,
       "avgHeadcountLtm": "91.3",
       "churnTotal": "46.0",
       "churnVoluntary": "31.8",
@@ -1552,20 +1552,6 @@
           }
         ],
         "leaverNames": [
-          {
-            "name": "Rebecca Patterson",
-            "date": "2026-09-18T00:00:00+00:00",
-            "costCentre": "Melbourne",
-            "type": "Voluntary cessation",
-            "voluntary": true
-          },
-          {
-            "name": "Shiva Motamedi",
-            "date": "2026-09-18T00:00:00+00:00",
-            "costCentre": "Melbourne",
-            "type": "Voluntary cessation",
-            "voluntary": true
-          },
           {
             "name": "Beichen Wang",
             "date": "2026-10-06T00:00:00+00:00",
@@ -3820,10 +3806,10 @@
       "femalePctPrior": "0.0",
       "hiresMonth": 0,
       "hiresMonthPrior": 1,
-      "leaversMonth": 1,
-      "leaversMonthPrior": 0,
-      "leaversVoluntaryMonth": 1,
-      "leaversVoluntaryMonthPrior": 0,
+      "leaversMonth": 0,
+      "leaversMonthPrior": 1,
+      "leaversVoluntaryMonth": 0,
+      "leaversVoluntaryMonthPrior": 1,
       "avgHeadcountLtm": "2.1",
       "churnTotal": "48.0",
       "churnVoluntary": "48.0",
@@ -4251,15 +4237,7 @@
       ],
       "last30": {
         "hireNames": [],
-        "leaverNames": [
-          {
-            "name": "Simon Bold",
-            "date": "2026-09-18T00:00:00+00:00",
-            "costCentre": "Melbourne",
-            "type": "Voluntary cessation",
-            "voluntary": true
-          }
-        ]
+        "leaverNames": []
       }
     },
     {
@@ -6926,9 +6904,9 @@
       "hiresMonth": 0,
       "hiresMonthPrior": 0,
       "leaversMonth": 0,
-      "leaversMonthPrior": 1,
+      "leaversMonthPrior": 0,
       "leaversVoluntaryMonth": 0,
-      "leaversVoluntaryMonthPrior": 1,
+      "leaversVoluntaryMonthPrior": 0,
       "avgHeadcountLtm": "11.8",
       "churnTotal": "42.3",
       "churnVoluntary": "25.4",
@@ -11982,7 +11960,7 @@
       "headcountPrior": 294,
       "female": 75,
       "femalePct": "26.0",
-      "leaversMonth": 15,
+      "leaversMonth": 12,
       "hiresMonth": 4,
       "gpgMean": "0.0",
       "gpgMedian": "0.0"
