@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-19T04:01:26.853Z",
+  "generatedUtc": "2026-10-19T06:01:14.261Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -11979,7 +11979,7 @@
     }
   ],
   "recruitment": {
-    "openRoles": 43,
+    "openRoles": 44,
     "filledMonth": 0,
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
@@ -11991,7 +11991,7 @@
     },
     {
       "stage": "1. Search & Secure",
-      "count": 13
+      "count": 14
     },
     {
       "stage": "4. Role On Hold",
@@ -12033,7 +12033,7 @@
     },
     {
       "stage": "New",
-      "count": 11
+      "count": 12
     },
     {
       "stage": "Present to HM",
