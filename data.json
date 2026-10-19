@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-19T01:00:56.661Z",
+  "generatedUtc": "2026-10-19T03:01:20.147Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -2144,38 +2144,38 @@
     {
       "location": "Melbourne",
       "costCentre": "NAT-CORP",
-      "headcount": 22,
-      "headcountPrior": 23,
-      "female": 9,
-      "femalePrior": 10,
+      "headcount": 21,
+      "headcountPrior": 22,
+      "female": 8,
+      "femalePrior": 9,
       "male": 13,
       "genderNotRecorded": 0,
-      "femalePct": "40.9",
-      "femalePctPrior": "43.5",
+      "femalePct": "38.1",
+      "femalePctPrior": "40.9",
       "hiresMonth": 0,
       "hiresMonthPrior": 0,
       "leaversMonth": 1,
       "leaversMonthPrior": 1,
       "leaversVoluntaryMonth": 1,
       "leaversVoluntaryMonthPrior": 0,
-      "avgHeadcountLtm": "23.0",
-      "churnTotal": "30.4",
-      "churnVoluntary": "21.7",
+      "avgHeadcountLtm": "22.0",
+      "churnTotal": "31.8",
+      "churnVoluntary": "22.7",
       "turnoverPeriods": [
         {
           "key": "ltm",
           "label": "Rolling 12 months",
           "months": 11,
-          "avgHeadcount": "23.1",
-          "avgHeadcountValue": 23.09090909090909,
+          "avgHeadcount": "22.1",
+          "avgHeadcountValue": 22.09090909090909,
           "leavers": 7,
           "leaversVoluntary": 5,
           "leaversRegrettable": 0,
-          "total": "30.3",
-          "voluntary": "21.7",
+          "total": "31.7",
+          "voluntary": "22.6",
           "regrettable": "0.0",
-          "totalAnnualised": "33.1",
-          "voluntaryAnnualised": "23.7",
+          "totalAnnualised": "34.6",
+          "voluntaryAnnualised": "24.7",
           "regrettableShareOfLeavers": "0.0",
           "rehireFlagMissing": 7
         },
@@ -2183,16 +2183,16 @@
           "key": "ytd",
           "label": "Year to date",
           "months": 9,
-          "avgHeadcount": "23.1",
-          "avgHeadcountValue": 23.11111111111111,
+          "avgHeadcount": "22.1",
+          "avgHeadcountValue": 22.11111111111111,
           "leavers": 7,
           "leaversVoluntary": 5,
           "leaversRegrettable": 0,
-          "total": "30.3",
-          "voluntary": "21.6",
+          "total": "31.7",
+          "voluntary": "22.6",
           "regrettable": "0.0",
-          "totalAnnualised": "40.4",
-          "voluntaryAnnualised": "28.8",
+          "totalAnnualised": "42.3",
+          "voluntaryAnnualised": "30.1",
           "regrettableShareOfLeavers": "0.0",
           "rehireFlagMissing": 7
         },
@@ -2200,16 +2200,16 @@
           "key": "fytd",
           "label": "FYTD",
           "months": 3,
-          "avgHeadcount": "23.0",
-          "avgHeadcountValue": 23,
+          "avgHeadcount": "22.0",
+          "avgHeadcountValue": 22,
           "leavers": 2,
           "leaversVoluntary": 1,
           "leaversRegrettable": 0,
-          "total": "8.7",
-          "voluntary": "4.3",
+          "total": "9.1",
+          "voluntary": "4.5",
           "regrettable": "0.0",
-          "totalAnnualised": "34.8",
-          "voluntaryAnnualised": "17.2",
+          "totalAnnualised": "36.4",
+          "voluntaryAnnualised": "18.0",
           "regrettableShareOfLeavers": "0.0",
           "rehireFlagMissing": 2
         },
@@ -2217,16 +2217,16 @@
           "key": "last6",
           "label": "Last 6 months",
           "months": 5,
-          "avgHeadcount": "23.2",
-          "avgHeadcountValue": 23.2,
+          "avgHeadcount": "22.2",
+          "avgHeadcountValue": 22.2,
           "leavers": 3,
           "leaversVoluntary": 1,
           "leaversRegrettable": 0,
-          "total": "12.9",
-          "voluntary": "4.3",
+          "total": "13.5",
+          "voluntary": "4.5",
           "regrettable": "0.0",
-          "totalAnnualised": "31.0",
-          "voluntaryAnnualised": "10.3",
+          "totalAnnualised": "32.4",
+          "voluntaryAnnualised": "10.8",
           "regrettableShareOfLeavers": "0.0",
           "rehireFlagMissing": 3
         },
@@ -2234,16 +2234,16 @@
           "key": "last3",
           "label": "Last 3 months",
           "months": 2,
-          "avgHeadcount": "23.0",
-          "avgHeadcountValue": 23,
+          "avgHeadcount": "22.0",
+          "avgHeadcountValue": 22,
           "leavers": 2,
           "leaversVoluntary": 1,
           "leaversRegrettable": 0,
-          "total": "8.7",
-          "voluntary": "4.3",
+          "total": "9.1",
+          "voluntary": "4.5",
           "regrettable": "0.0",
-          "totalAnnualised": "52.2",
-          "voluntaryAnnualised": "25.8",
+          "totalAnnualised": "54.6",
+          "voluntaryAnnualised": "27.0",
           "regrettableShareOfLeavers": "0.0",
           "rehireFlagMissing": 2
         },
@@ -2251,16 +2251,16 @@
           "key": "lastcy",
           "label": "2025",
           "months": 12,
-          "avgHeadcount": "21.2",
-          "avgHeadcountValue": 21.166666666666668,
+          "avgHeadcount": "20.6",
+          "avgHeadcountValue": 20.583333333333332,
           "leavers": 7,
           "leaversVoluntary": 4,
           "leaversRegrettable": 0,
-          "total": "33.1",
-          "voluntary": "18.9",
+          "total": "34.0",
+          "voluntary": "19.4",
           "regrettable": "0.0",
-          "totalAnnualised": "33.1",
-          "voluntaryAnnualised": "18.9",
+          "totalAnnualised": "34.0",
+          "voluntaryAnnualised": "19.4",
           "regrettableShareOfLeavers": "0.0",
           "rehireFlagMissing": 7
         }
@@ -2268,51 +2268,51 @@
       "headcountTrend": [
         {
           "month": "Nov",
-          "headcount": 23
+          "headcount": 22
         },
         {
           "month": "Dec",
-          "headcount": 23
+          "headcount": 22
         },
         {
           "month": "Jan",
-          "headcount": 23
+          "headcount": 22
         },
         {
           "month": "Feb",
-          "headcount": 23
+          "headcount": 22
         },
         {
           "month": "Mar",
-          "headcount": 23
+          "headcount": 22
         },
         {
           "month": "Apr",
-          "headcount": 23
+          "headcount": 22
         },
         {
           "month": "May",
-          "headcount": 23
+          "headcount": 22
         },
         {
           "month": "Jun",
-          "headcount": 24
+          "headcount": 23
         },
         {
           "month": "Jul",
-          "headcount": 23
+          "headcount": 22
         },
         {
           "month": "Aug",
-          "headcount": 23
+          "headcount": 22
         },
         {
           "month": "Sep",
-          "headcount": 23
+          "headcount": 22
         },
         {
           "month": "Oct",
-          "headcount": 22
+          "headcount": 21
         }
       ],
       "months": [
@@ -2484,16 +2484,11 @@
         {
           "key": "2025-06",
           "label": "Jun 2025",
-          "headcountEnd": 21,
-          "hires": 3,
+          "headcountEnd": 20,
+          "hires": 2,
           "leavers": 1,
           "leaversVoluntary": 1,
           "hireNames": [
-            {
-              "name": "Jonty O'Hara",
-              "date": "2025-06-10T00:00:00+00:00",
-              "costCentre": "NAT-CORP"
-            },
             {
               "name": "Drizzle Lim",
               "date": "2025-06-10T00:00:00+00:00",
@@ -2518,7 +2513,7 @@
         {
           "key": "2025-07",
           "label": "Jul 2025",
-          "headcountEnd": 22,
+          "headcountEnd": 21,
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
@@ -2534,7 +2529,7 @@
         {
           "key": "2025-08",
           "label": "Aug 2025",
-          "headcountEnd": 22,
+          "headcountEnd": 21,
           "hires": 0,
           "leavers": 0,
           "leaversVoluntary": 0,
@@ -2544,7 +2539,7 @@
         {
           "key": "2025-09",
           "label": "Sep 2025",
-          "headcountEnd": 22,
+          "headcountEnd": 21,
           "hires": 0,
           "leavers": 0,
           "leaversVoluntary": 0,
@@ -2554,7 +2549,7 @@
         {
           "key": "2025-10",
           "label": "Oct 2025",
-          "headcountEnd": 22,
+          "headcountEnd": 21,
           "hires": 0,
           "leavers": 0,
           "leaversVoluntary": 0,
@@ -2564,7 +2559,7 @@
         {
           "key": "2025-11",
           "label": "Nov 2025",
-          "headcountEnd": 23,
+          "headcountEnd": 22,
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
@@ -2580,7 +2575,7 @@
         {
           "key": "2025-12",
           "label": "Dec 2025",
-          "headcountEnd": 23,
+          "headcountEnd": 22,
           "hires": 0,
           "leavers": 0,
           "leaversVoluntary": 0,
@@ -2590,7 +2585,7 @@
         {
           "key": "2026-01",
           "label": "Jan 2026",
-          "headcountEnd": 23,
+          "headcountEnd": 22,
           "hires": 1,
           "leavers": 1,
           "leaversVoluntary": 1,
@@ -2614,7 +2609,7 @@
         {
           "key": "2026-02",
           "label": "Feb 2026",
-          "headcountEnd": 23,
+          "headcountEnd": 22,
           "hires": 1,
           "leavers": 1,
           "leaversVoluntary": 1,
@@ -2638,7 +2633,7 @@
         {
           "key": "2026-03",
           "label": "Mar 2026",
-          "headcountEnd": 23,
+          "headcountEnd": 22,
           "hires": 1,
           "leavers": 1,
           "leaversVoluntary": 1,
@@ -2662,7 +2657,7 @@
         {
           "key": "2026-04",
           "label": "Apr 2026",
-          "headcountEnd": 23,
+          "headcountEnd": 22,
           "hires": 1,
           "leavers": 1,
           "leaversVoluntary": 1,
@@ -2686,7 +2681,7 @@
         {
           "key": "2026-05",
           "label": "May 2026",
-          "headcountEnd": 23,
+          "headcountEnd": 22,
           "hires": 0,
           "leavers": 0,
           "leaversVoluntary": 0,
@@ -2696,7 +2691,7 @@
         {
           "key": "2026-06",
           "label": "Jun 2026",
-          "headcountEnd": 24,
+          "headcountEnd": 23,
           "hires": 2,
           "leavers": 1,
           "leaversVoluntary": 0,
@@ -2725,7 +2720,7 @@
         {
           "key": "2026-07",
           "label": "Jul 2026",
-          "headcountEnd": 23,
+          "headcountEnd": 22,
           "hires": 0,
           "leavers": 0,
           "leaversVoluntary": 0,
@@ -2735,7 +2730,7 @@
         {
           "key": "2026-08",
           "label": "Aug 2026",
-          "headcountEnd": 23,
+          "headcountEnd": 22,
           "hires": 1,
           "leavers": 1,
           "leaversVoluntary": 0,
@@ -2759,7 +2754,7 @@
         {
           "key": "2026-09",
           "label": "Sep 2026",
-          "headcountEnd": 23,
+          "headcountEnd": 22,
           "hires": 0,
           "leavers": 0,
           "leaversVoluntary": 0,
@@ -2769,7 +2764,7 @@
         {
           "key": "2026-10",
           "label": "Oct 2026",
-          "headcountEnd": 22,
+          "headcountEnd": 21,
           "hires": 0,
           "leavers": 1,
           "leaversVoluntary": 1,
@@ -2801,38 +2796,38 @@
     {
       "location": "Melbourne",
       "costCentre": "NAT-ESD",
-      "headcount": 13,
-      "headcountPrior": 13,
-      "female": 6,
-      "femalePrior": 6,
+      "headcount": 14,
+      "headcountPrior": 14,
+      "female": 7,
+      "femalePrior": 7,
       "male": 7,
       "genderNotRecorded": 0,
-      "femalePct": "46.2",
-      "femalePctPrior": "46.2",
+      "femalePct": "50.0",
+      "femalePctPrior": "50.0",
       "hiresMonth": 0,
       "hiresMonthPrior": 0,
       "leaversMonth": 0,
       "leaversMonthPrior": 0,
       "leaversVoluntaryMonth": 0,
       "leaversVoluntaryMonthPrior": 0,
-      "avgHeadcountLtm": "13.4",
-      "churnTotal": "52.2",
-      "churnVoluntary": "14.9",
+      "avgHeadcountLtm": "14.4",
+      "churnTotal": "48.6",
+      "churnVoluntary": "13.9",
       "turnoverPeriods": [
         {
           "key": "ltm",
           "label": "Rolling 12 months",
           "months": 11,
-          "avgHeadcount": "13.5",
-          "avgHeadcountValue": 13.454545454545455,
+          "avgHeadcount": "14.5",
+          "avgHeadcountValue": 14.454545454545455,
           "leavers": 7,
           "leaversVoluntary": 2,
           "leaversRegrettable": 0,
-          "total": "52.0",
-          "voluntary": "14.9",
+          "total": "48.4",
+          "voluntary": "13.8",
           "regrettable": "0.0",
-          "totalAnnualised": "56.7",
-          "voluntaryAnnualised": "16.3",
+          "totalAnnualised": "52.8",
+          "voluntaryAnnualised": "15.1",
           "regrettableShareOfLeavers": "0.0",
           "rehireFlagMissing": 7
         },
@@ -2840,16 +2835,16 @@
           "key": "ytd",
           "label": "Year to date",
           "months": 9,
-          "avgHeadcount": "13.3",
-          "avgHeadcountValue": 13.333333333333334,
+          "avgHeadcount": "14.3",
+          "avgHeadcountValue": 14.333333333333334,
           "leavers": 3,
           "leaversVoluntary": 2,
           "leaversRegrettable": 0,
-          "total": "22.5",
-          "voluntary": "15.0",
+          "total": "20.9",
+          "voluntary": "14.0",
           "regrettable": "0.0",
-          "totalAnnualised": "30.0",
-          "voluntaryAnnualised": "20.0",
+          "totalAnnualised": "27.9",
+          "voluntaryAnnualised": "18.7",
           "regrettableShareOfLeavers": "0.0",
           "rehireFlagMissing": 3
         },
@@ -2857,16 +2852,16 @@
           "key": "fytd",
           "label": "FYTD",
           "months": 3,
-          "avgHeadcount": "13.0",
-          "avgHeadcountValue": 13,
+          "avgHeadcount": "14.0",
+          "avgHeadcountValue": 14,
           "leavers": 1,
           "leaversVoluntary": 1,
           "leaversRegrettable": 0,
-          "total": "7.7",
-          "voluntary": "7.7",
+          "total": "7.1",
+          "voluntary": "7.1",
           "regrettable": "0.0",
-          "totalAnnualised": "30.8",
-          "voluntaryAnnualised": "30.8",
+          "totalAnnualised": "28.4",
+          "voluntaryAnnualised": "28.4",
           "regrettableShareOfLeavers": "0.0",
           "rehireFlagMissing": 1
         },
@@ -2874,16 +2869,16 @@
           "key": "last6",
           "label": "Last 6 months",
           "months": 5,
-          "avgHeadcount": "13.4",
-          "avgHeadcountValue": 13.4,
+          "avgHeadcount": "14.4",
+          "avgHeadcountValue": 14.4,
           "leavers": 1,
           "leaversVoluntary": 1,
           "leaversRegrettable": 0,
-          "total": "7.5",
-          "voluntary": "7.5",
+          "total": "6.9",
+          "voluntary": "6.9",
           "regrettable": "0.0",
-          "totalAnnualised": "18.0",
-          "voluntaryAnnualised": "18.0",
+          "totalAnnualised": "16.6",
+          "voluntaryAnnualised": "16.6",
           "regrettableShareOfLeavers": "0.0",
           "rehireFlagMissing": 1
         },
@@ -2891,8 +2886,8 @@
           "key": "last3",
           "label": "Last 3 months",
           "months": 2,
-          "avgHeadcount": "13.0",
-          "avgHeadcountValue": 13,
+          "avgHeadcount": "14.0",
+          "avgHeadcountValue": 14,
           "leavers": 0,
           "leaversVoluntary": 0,
           "leaversRegrettable": 0,
@@ -2908,16 +2903,16 @@
           "key": "lastcy",
           "label": "2025",
           "months": 12,
-          "avgHeadcount": "15.9",
-          "avgHeadcountValue": 15.916666666666666,
+          "avgHeadcount": "16.5",
+          "avgHeadcountValue": 16.5,
           "leavers": 6,
           "leaversVoluntary": 2,
           "leaversRegrettable": 0,
-          "total": "37.7",
-          "voluntary": "12.6",
+          "total": "36.4",
+          "voluntary": "12.1",
           "regrettable": "0.0",
-          "totalAnnualised": "37.7",
-          "voluntaryAnnualised": "12.6",
+          "totalAnnualised": "36.4",
+          "voluntaryAnnualised": "12.1",
           "regrettableShareOfLeavers": "0.0",
           "rehireFlagMissing": 6
         }
@@ -2925,51 +2920,51 @@
       "headcountTrend": [
         {
           "month": "Nov",
-          "headcount": 14
+          "headcount": 15
         },
         {
           "month": "Dec",
-          "headcount": 14
+          "headcount": 15
         },
         {
           "month": "Jan",
-          "headcount": 14
+          "headcount": 15
         },
         {
           "month": "Feb",
-          "headcount": 13
+          "headcount": 14
         },
         {
           "month": "Mar",
-          "headcount": 13
+          "headcount": 14
         },
         {
           "month": "Apr",
-          "headcount": 13
+          "headcount": 14
         },
         {
           "month": "May",
-          "headcount": 14
+          "headcount": 15
         },
         {
           "month": "Jun",
-          "headcount": 14
+          "headcount": 15
         },
         {
           "month": "Jul",
-          "headcount": 13
+          "headcount": 14
         },
         {
           "month": "Aug",
-          "headcount": 13
+          "headcount": 14
         },
         {
           "month": "Sep",
-          "headcount": 13
+          "headcount": 14
         },
         {
           "month": "Oct",
-          "headcount": 13
+          "headcount": 14
         }
       ],
       "months": [
@@ -3099,14 +3094,19 @@
         {
           "key": "2025-06",
           "label": "Jun 2025",
-          "headcountEnd": 17,
-          "hires": 1,
+          "headcountEnd": 18,
+          "hires": 2,
           "leavers": 0,
           "leaversVoluntary": 0,
           "hireNames": [
             {
               "name": "Abigail Montolalu",
               "date": "2025-06-04T00:00:00+00:00",
+              "costCentre": "NAT-ESD"
+            },
+            {
+              "name": "Jonty O'Hara",
+              "date": "2025-06-10T00:00:00+00:00",
               "costCentre": "NAT-ESD"
             }
           ],
@@ -3115,7 +3115,7 @@
         {
           "key": "2025-07",
           "label": "Jul 2025",
-          "headcountEnd": 18,
+          "headcountEnd": 19,
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
@@ -3131,7 +3131,7 @@
         {
           "key": "2025-08",
           "label": "Aug 2025",
-          "headcountEnd": 18,
+          "headcountEnd": 19,
           "hires": 0,
           "leavers": 0,
           "leaversVoluntary": 0,
@@ -3141,7 +3141,7 @@
         {
           "key": "2025-09",
           "label": "Sep 2025",
-          "headcountEnd": 18,
+          "headcountEnd": 19,
           "hires": 0,
           "leavers": 0,
           "leaversVoluntary": 0,
@@ -3151,7 +3151,7 @@
         {
           "key": "2025-10",
           "label": "Oct 2025",
-          "headcountEnd": 18,
+          "headcountEnd": 19,
           "hires": 0,
           "leavers": 0,
           "leaversVoluntary": 0,
@@ -3161,7 +3161,7 @@
         {
           "key": "2025-11",
           "label": "Nov 2025",
-          "headcountEnd": 14,
+          "headcountEnd": 15,
           "hires": 0,
           "leavers": 4,
           "leaversVoluntary": 0,
@@ -3200,7 +3200,7 @@
         {
           "key": "2025-12",
           "label": "Dec 2025",
-          "headcountEnd": 14,
+          "headcountEnd": 15,
           "hires": 0,
           "leavers": 0,
           "leaversVoluntary": 0,
@@ -3210,7 +3210,7 @@
         {
           "key": "2026-01",
           "label": "Jan 2026",
-          "headcountEnd": 14,
+          "headcountEnd": 15,
           "hires": 0,
           "leavers": 0,
           "leaversVoluntary": 0,
@@ -3220,7 +3220,7 @@
         {
           "key": "2026-02",
           "label": "Feb 2026",
-          "headcountEnd": 13,
+          "headcountEnd": 14,
           "hires": 0,
           "leavers": 1,
           "leaversVoluntary": 0,
@@ -3238,7 +3238,7 @@
         {
           "key": "2026-03",
           "label": "Mar 2026",
-          "headcountEnd": 13,
+          "headcountEnd": 14,
           "hires": 0,
           "leavers": 0,
           "leaversVoluntary": 0,
@@ -3248,7 +3248,7 @@
         {
           "key": "2026-04",
           "label": "Apr 2026",
-          "headcountEnd": 13,
+          "headcountEnd": 14,
           "hires": 1,
           "leavers": 1,
           "leaversVoluntary": 1,
@@ -3272,7 +3272,7 @@
         {
           "key": "2026-05",
           "label": "May 2026",
-          "headcountEnd": 14,
+          "headcountEnd": 15,
           "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
@@ -3288,7 +3288,7 @@
         {
           "key": "2026-06",
           "label": "Jun 2026",
-          "headcountEnd": 14,
+          "headcountEnd": 15,
           "hires": 0,
           "leavers": 0,
           "leaversVoluntary": 0,
@@ -3298,7 +3298,7 @@
         {
           "key": "2026-07",
           "label": "Jul 2026",
-          "headcountEnd": 13,
+          "headcountEnd": 14,
           "hires": 0,
           "leavers": 1,
           "leaversVoluntary": 1,
@@ -3316,7 +3316,7 @@
         {
           "key": "2026-08",
           "label": "Aug 2026",
-          "headcountEnd": 13,
+          "headcountEnd": 14,
           "hires": 0,
           "leavers": 0,
           "leaversVoluntary": 0,
@@ -3326,7 +3326,7 @@
         {
           "key": "2026-09",
           "label": "Sep 2026",
-          "headcountEnd": 13,
+          "headcountEnd": 14,
           "hires": 0,
           "leavers": 0,
           "leaversVoluntary": 0,
@@ -3336,7 +3336,7 @@
         {
           "key": "2026-10",
           "label": "Oct 2026",
-          "headcountEnd": 13,
+          "headcountEnd": 14,
           "hires": 0,
           "leavers": 0,
           "leaversVoluntary": 0,
@@ -12009,7 +12009,7 @@
     },
     {
       "stage": "1st Interview",
-      "count": 3
+      "count": 4
     },
     {
       "stage": "2nd Interview",
@@ -12037,7 +12037,7 @@
     },
     {
       "stage": "Present to HM",
-      "count": 12
+      "count": 11
     },
     {
       "stage": "Sourcing",
@@ -12107,30 +12107,30 @@
     },
     {
       "code": "NAT-CORP",
-      "headcount": 27,
-      "female": 14,
-      "femalePct": "51.9",
+      "headcount": 26,
+      "female": 13,
+      "femalePct": "50.0",
       "leaversLtm": 8,
       "leaversVoluntary": 5,
       "leaversRegrettable": 0,
-      "churnTotal": "28.2",
-      "churnVoluntary": "17.6",
+      "churnTotal": "29.3",
+      "churnVoluntary": "18.3",
       "churnRegrettable": "0.0",
-      "avgHeadcountLtm": "28.3",
+      "avgHeadcountLtm": "27.3",
       "openRoles": 0
     },
     {
       "code": "NAT-ESD",
-      "headcount": 23,
-      "female": 10,
-      "femalePct": "43.5",
+      "headcount": 24,
+      "female": 11,
+      "femalePct": "45.8",
       "leaversLtm": 14,
       "leaversVoluntary": 8,
       "leaversRegrettable": 0,
-      "churnTotal": "53.8",
-      "churnVoluntary": "30.8",
+      "churnTotal": "51.9",
+      "churnVoluntary": "29.6",
       "churnRegrettable": "0.0",
-      "avgHeadcountLtm": "26.0",
+      "avgHeadcountLtm": "27.0",
       "openRoles": 2
     },
     {
