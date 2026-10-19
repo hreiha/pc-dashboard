@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-18T22:17:07.340Z",
+  "generatedUtc": "2026-10-19T00:01:05.279Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -11979,7 +11979,7 @@
     }
   ],
   "recruitment": {
-    "openRoles": 36,
+    "openRoles": 41,
     "filledMonth": 0,
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
@@ -11991,7 +11991,7 @@
     },
     {
       "stage": "1. Search & Secure",
-      "count": 6
+      "count": 11
     },
     {
       "stage": "4. Role On Hold",
@@ -12033,7 +12033,7 @@
     },
     {
       "stage": "New",
-      "count": 6
+      "count": 11
     },
     {
       "stage": "Present to HM",
@@ -12061,7 +12061,7 @@
       "churnVoluntary": "32.1",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "93.3",
-      "openRoles": 8
+      "openRoles": 11
     },
     {
       "code": "Sydney",
@@ -12075,7 +12075,7 @@
       "churnVoluntary": "39.3",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "68.7",
-      "openRoles": 5
+      "openRoles": 7
     },
     {
       "code": "NAT-SPL",
