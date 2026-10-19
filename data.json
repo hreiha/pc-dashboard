@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-19T00:01:05.279Z",
+  "generatedUtc": "2026-10-19T01:00:56.661Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -12199,7 +12199,7 @@
       "churnTotal": "44.5",
       "churnVoluntary": "35.0",
       "avgHeadcountLtm": "94.3",
-      "activeRoles": 12
+      "activeRoles": 13
     },
     {
       "name": "Brisbane",
