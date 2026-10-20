@@ -113,6 +113,46 @@
 
   .spark-hit { cursor: pointer; }
 
+  /* Turnover trend */
+  .trend-box {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 18px 20px 14px;
+  }
+
+  .trend { width: 100%; height: auto; display: block; }
+
+  .trend-hit { cursor: pointer; }
+
+  .trend-legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px;
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .trend-legend .swatch {
+    display: inline-block;
+    width: 22px;
+    height: 3px;
+    margin-right: 6px;
+    vertical-align: 3px;
+  }
+
+  .trend-legend .swatch.dash {
+    height: 0;
+    border-top: 3px dashed var(--muted);
+  }
+
+  .trend-caption { margin-left: auto; }
+
+  @media (max-width: 640px) {
+    .trend-caption { margin-left: 0; }
+  }
+
   .spark-caption {
     font-size: 11px;
     color: var(--muted);
@@ -694,6 +734,140 @@ function sparkline(points) {
     dots + "</svg>";
 }
 
+/**
+ * Rolling turnover for the ticked slices, one point per month.
+ *
+ * Counts are summed across slices and the denominator is the mean of the summed
+ * month-end headcounts, the same arithmetic used everywhere else, because rates
+ * cannot be added.
+ *
+ * The window is twelve months wherever twelve months of history exist. Earlier points
+ * use whatever is available and are annualised so they sit on the same scale; those are
+ * marked provisional and drawn dashed, since a three month window swings hard.
+ */
+function turnoverTrend(d) {
+  const slices = selectedSlices(d);
+  const template = (slices[0] && slices[0].turnoverSeries) || d.turnoverSeries || [];
+  if (template.length < 2) return [];
+
+  const merged = template.map((pt, i) => {
+    let h = 0, l = 0, v = 0;
+    if (slices.length) {
+      for (const sl of slices) {
+        const s = (sl.turnoverSeries || [])[i];
+        if (!s) continue;
+        h += Number(s.h) || 0;
+        l += Number(s.l) || 0;
+        v += Number(s.v) || 0;
+      }
+    } else {
+      h = Number(pt.h) || 0;
+      l = Number(pt.l) || 0;
+      v = Number(pt.v) || 0;
+    }
+    return { key: pt.k, label: pt.label, h: h, l: l, v: v };
+  });
+
+  const WINDOW = 12;
+  const points = merged.map((pt, i) => {
+    const win = merged.slice(Math.max(0, i - WINDOW + 1), i + 1);
+    const months = win.length;
+    const leavers = win.reduce((a, b) => a + b.l, 0);
+    const vol = win.reduce((a, b) => a + b.v, 0);
+    const avg = win.reduce((a, b) => a + b.h, 0) / months;
+    const scale = 12 / months;
+    return {
+      key: pt.key,
+      label: pt.label,
+      months: months,
+      full: months === WINDOW,
+      leavers: leavers,
+      vol: vol,
+      avg: avg,
+      total: avg > 0 ? (leavers / avg) * 100 * scale : 0,
+      voluntary: avg > 0 ? (vol / avg) * 100 * scale : 0
+    };
+  });
+
+  // A chosen date range trims what is shown, never how the windows are worked out,
+  // so every point keeps the twelve months of history behind it.
+  if (hasRange()) {
+    return points.filter(pt => pt.key >= FILTER.from && pt.key <= FILTER.to);
+  }
+  return points;
+}
+
+/** Two lines, total and voluntary, with a dashed run where the window is short. */
+function trendChart(points) {
+  if (points.length < 2) {
+    return '<div class="note">Not enough history to draw a trend for this selection.</div>';
+  }
+
+  const w = 1040, h = 300, padL = 56, padR = 18, padT = 18, padB = 48;
+  const peak = Math.max(...points.map(p => Math.max(p.total, p.voluntary)));
+  const top = Math.max(10, Math.ceil(peak / 10) * 10);
+  const x = (i) => padL + (i * (w - padL - padR)) / Math.max(points.length - 1, 1);
+  const y = (v) => h - padB - (v / top) * (h - padT - padB);
+
+  let grid = "";
+  for (let v = 0; v <= top; v += 10) {
+    grid += '<line x1="' + padL + '" y1="' + y(v).toFixed(1) + '" x2="' + (w - padR) +
+      '" y2="' + y(v).toFixed(1) + '" stroke="#E2E2EE" stroke-width="1"/>' +
+      '<text x="' + (padL - 10) + '" y="' + (y(v) + 5).toFixed(1) +
+      '" text-anchor="end" font-size="13" fill="#5A5A76">' + v + '%</text>';
+  }
+
+  const path = (key, from, to) => points.slice(from, to + 1)
+    .map((p, j) => (j ? "L" : "M") + x(from + j).toFixed(1) + " " + y(p[key]).toFixed(1)).join(" ");
+
+  // Where the window first reaches a full twelve months
+  let firstFull = points.findIndex(p => p.full);
+  if (firstFull < 0) firstFull = points.length - 1;
+
+  let lines = "";
+  const series = [{ key: "total", colour: "#FF3184" }, { key: "voluntary", colour: "#0000D0" }];
+  for (const s of series) {
+    if (firstFull > 0) {
+      lines += '<path d="' + path(s.key, 0, firstFull) + '" fill="none" stroke="' + s.colour +
+        '" stroke-width="2" stroke-dasharray="5 4" opacity="0.55" vector-effect="non-scaling-stroke"/>';
+    }
+    lines += '<path d="' + path(s.key, firstFull, points.length - 1) + '" fill="none" stroke="' +
+      s.colour + '" stroke-width="2.5" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>';
+  }
+
+  let marker = "";
+  if (firstFull > 0) {
+    marker = '<line x1="' + x(firstFull).toFixed(1) + '" y1="' + padT + '" x2="' + x(firstFull).toFixed(1) +
+      '" y2="' + (h - padB) + '" stroke="#5A5A76" stroke-width="1" stroke-dasharray="3 3" opacity="0.7"/>';
+  }
+
+  const hitR = Math.max(7, (w - padL - padR) / points.length / 2);
+  const dots = points.map((p, i) => {
+    const label = p.label + " · total " + p.total.toFixed(1) + "%, voluntary " +
+      p.voluntary.toFixed(1) + "% · " + p.leavers + " leavers over " + p.months +
+      " month" + (p.months === 1 ? "" : "s") + (p.full ? "" : ", short window");
+    const safe = label.replace(/"/g, "&quot;");
+    return '<circle class="trend-hit" cx="' + x(i).toFixed(1) + '" cy="' + ((padT + h - padB) / 2).toFixed(1) +
+      '" r="' + hitR.toFixed(1) + '" fill="transparent" data-label="' + safe + '"><title>' + label + "</title></circle>" +
+      '<circle cx="' + x(i).toFixed(1) + '" cy="' + y(p.total).toFixed(1) + '" r="' + (p.full ? 3 : 2.5) +
+      '" fill="#FF3184" opacity="' + (p.full ? 1 : 0.55) + '" pointer-events="none"/>' +
+      '<circle cx="' + x(i).toFixed(1) + '" cy="' + y(p.voluntary).toFixed(1) + '" r="' + (p.full ? 3 : 2.5) +
+      '" fill="#0000D0" opacity="' + (p.full ? 1 : 0.55) + '" pointer-events="none"/>';
+  }).join("");
+
+  // About eight labels, whatever the length of the series
+  const step = Math.max(1, Math.round(points.length / 8));
+  const xLabels = points.map((p, i) =>
+    (i % step === 0 || i === points.length - 1)
+      ? '<text x="' + x(i).toFixed(1) + '" y="' + (h - padB + 24) +
+        '" text-anchor="middle" font-size="13" fill="#5A5A76">' + p.label + "</text>"
+      : "").join("");
+
+  return '<svg class="trend" viewBox="0 0 ' + w + " " + h + '" role="img" ' +
+    'aria-label="Rolling twelve month total and voluntary turnover by month">' +
+    grid + marker + lines + dots + xLabels + "</svg>";
+}
+
 let DATA = null;
 
 // Empty means no restriction, which is how "All" is expressed.
@@ -894,6 +1068,7 @@ function render() {
     .sort((a, b) => stageRank(a.stage) - stageRank(b.stage) || String(a.stage).localeCompare(String(b.stage)));
   const maxDetail = Math.max(1, ...detail.map(st => Number(st.count) || 0));
   const companyChurn = Number(p.churnVoluntary) || 0;
+  const trendPoints = turnoverTrend(d);
   const maxChurn = Math.max(1, companyChurn,
     ...cc.map(c => Number(c.churnVoluntary) || 0),
     ...locs.map(l => Number(l.churnVoluntary) || 0));
@@ -957,6 +1132,34 @@ function render() {
       </div>
       <div class="metrics" id="turnover"></div>
       <div class="note" id="turnover-note"></div>
+    </section>
+
+    <section>
+      <h2>Turnover trend${scopeLabel()}</h2>
+      <div class="trend-box">
+        ${trendChart(trendPoints)}
+        <div class="trend-legend">
+          <span><i class="swatch" style="background:#FF3184"></i>Total turnover</span>
+          <span><i class="swatch" style="background:#0000D0"></i>Voluntary turnover</span>
+          ${trendPoints.length && !trendPoints[0].full
+            ? '<span><i class="swatch dash"></i>Shorter window, annualised</span>'
+            : ""}
+          <span class="trend-caption" id="trend-caption">Hover a month for its figures</span>
+        </div>
+      </div>
+      <div class="note">
+        Each point is the leavers over the twelve months ending that month, divided by the
+        average month-end headcount across the same twelve months. The line starts in January
+        2023 because Employment Hero was migrated into around late 2022 and every leaver record
+        from before that arrived without an employment type, cost centre or start date, so
+        earlier months would read as near zero turnover and then leap.
+        ${trendPoints.length && !trendPoints[0].full
+          ? "Points left of the dotted line have less than twelve months behind them and are annualised, so they swing harder. The first full twelve month window is " +
+            (trendPoints.find(pt => pt.full) || {}).label + "."
+          : ""}
+        The last point covers whole months only, so it will differ slightly from the headline
+        figure above, which runs to today.
+      </div>
     </section>
 
     <section${isFiltered() ? ' style="display:none"' : ""}>
@@ -1168,6 +1371,16 @@ function bindSpark() {
     el.addEventListener("mouseleave", () => { caption.textContent = base; });
     el.addEventListener("click", () => { caption.textContent = el.dataset.label; });
   });
+
+  const trendCaption = $("trend-caption");
+  if (trendCaption) {
+    const trendBase = "Hover a month for its figures";
+    document.querySelectorAll(".trend-hit").forEach(el => {
+      el.addEventListener("mouseenter", () => { trendCaption.textContent = el.dataset.label; });
+      el.addEventListener("mouseleave", () => { trendCaption.textContent = trendBase; });
+      el.addEventListener("click", () => { trendCaption.textContent = el.dataset.label; });
+    });
+  }
 }
 
 function bindDrill() {
