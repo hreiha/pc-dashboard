@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-19T23:25:48.531Z",
+  "generatedUtc": "2026-10-20T00:01:00.547Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -11979,7 +11979,7 @@
     }
   ],
   "recruitment": {
-    "openRoles": 44,
+    "openRoles": 39,
     "filledMonth": 0,
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
@@ -11991,7 +11991,7 @@
     },
     {
       "stage": "1. Search & Secure",
-      "count": 14
+      "count": 9
     },
     {
       "stage": "4. Role On Hold",
@@ -12009,7 +12009,7 @@
     },
     {
       "stage": "1st Interview",
-      "count": 6
+      "count": 5
     },
     {
       "stage": "2nd Interview",
@@ -12033,7 +12033,7 @@
     },
     {
       "stage": "New",
-      "count": 12
+      "count": 8
     },
     {
       "stage": "Present to HM",
@@ -12061,7 +12061,7 @@
       "churnVoluntary": "32.1",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "93.3",
-      "openRoles": 11
+      "openRoles": 8
     },
     {
       "code": "Sydney",
@@ -12075,7 +12075,7 @@
       "churnVoluntary": "39.3",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "68.7",
-      "openRoles": 7
+      "openRoles": 6
     },
     {
       "code": "NAT-SPL",
@@ -12103,7 +12103,7 @@
       "churnVoluntary": "26.1",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "34.5",
-      "openRoles": 7
+      "openRoles": 6
     },
     {
       "code": "NAT-CORP",
@@ -12211,7 +12211,7 @@
       "churnTotal": "37.6",
       "churnVoluntary": "27.7",
       "avgHeadcountLtm": "50.5",
-      "activeRoles": 12
+      "activeRoles": 13
     },
     {
       "name": "Adelaide",
