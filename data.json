@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-20T05:01:14.493Z",
+  "generatedUtc": "2026-10-20T06:00:55.417Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -11979,7 +11979,7 @@
     }
   ],
   "recruitment": {
-    "openRoles": 39,
+    "openRoles": 38,
     "filledMonth": 0,
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
@@ -11991,7 +11991,7 @@
     },
     {
       "stage": "1. Search & Secure",
-      "count": 9
+      "count": 8
     },
     {
       "stage": "4. Role On Hold",
@@ -12025,10 +12025,6 @@
     },
     {
       "stage": "Needs approval",
-      "count": 1
-    },
-    {
-      "stage": "Accepted",
       "count": 1
     },
     {
@@ -12089,7 +12085,7 @@
       "churnVoluntary": "14.3",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "42.1",
-      "openRoles": 7
+      "openRoles": 6
     },
     {
       "code": "Brisbane",
@@ -12211,7 +12207,7 @@
       "churnTotal": "37.6",
       "churnVoluntary": "27.7",
       "avgHeadcountLtm": "50.5",
-      "activeRoles": 14
+      "activeRoles": 13
     },
     {
       "name": "Adelaide",
