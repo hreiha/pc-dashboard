@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-20T00:01:00.547Z",
+  "generatedUtc": "2026-10-20T03:01:08.343Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -12103,7 +12103,7 @@
       "churnVoluntary": "26.1",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "34.5",
-      "openRoles": 6
+      "openRoles": 7
     },
     {
       "code": "NAT-CORP",
@@ -12211,7 +12211,7 @@
       "churnTotal": "37.6",
       "churnVoluntary": "27.7",
       "avgHeadcountLtm": "50.5",
-      "activeRoles": 13
+      "activeRoles": 14
     },
     {
       "name": "Adelaide",
@@ -12307,9 +12307,9 @@
     "excludedContractors": 0,
     "excludedIncomplete": 0,
     "excludedNoCostCentre": 353,
-    "notYetStarted": 5,
+    "notYetStarted": 6,
     "excludedNoSalary": 302,
-    "casualsConverted": 61,
+    "casualsConverted": 62,
     "partTimeConverted": 45
   }
 }
