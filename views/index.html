@@ -142,11 +142,6 @@
     vertical-align: 3px;
   }
 
-  .trend-legend .swatch.dash {
-    height: 0;
-    border-top: 3px dashed var(--muted);
-  }
-
   .trend-caption { margin-left: auto; }
 
   @media (max-width: 640px) {
@@ -741,9 +736,9 @@ function sparkline(points) {
  * month-end headcounts, the same arithmetic used everywhere else, because rates
  * cannot be added.
  *
- * The window is twelve months wherever twelve months of history exist. Earlier points
- * use whatever is available and are annualised so they sit on the same scale; those are
- * marked provisional and drawn dashed, since a three month window swings hard.
+ * Every point is a full twelve month window. Months with less history behind them are
+ * dropped rather than drawn on a short window, because annualising three months of data
+ * produces swings that look like real movement and are not.
  */
 function turnoverTrend(d) {
   const slices = selectedSlices(d);
@@ -770,24 +765,22 @@ function turnoverTrend(d) {
 
   const WINDOW = 12;
   const points = merged.map((pt, i) => {
-    const win = merged.slice(Math.max(0, i - WINDOW + 1), i + 1);
-    const months = win.length;
+    if (i < WINDOW - 1) return null;          // not yet a full year of history
+    const win = merged.slice(i - WINDOW + 1, i + 1);
     const leavers = win.reduce((a, b) => a + b.l, 0);
     const vol = win.reduce((a, b) => a + b.v, 0);
-    const avg = win.reduce((a, b) => a + b.h, 0) / months;
-    const scale = 12 / months;
+    const avg = win.reduce((a, b) => a + b.h, 0) / WINDOW;
     return {
       key: pt.key,
       label: pt.label,
-      months: months,
-      full: months === WINDOW,
+      months: WINDOW,
       leavers: leavers,
       vol: vol,
       avg: avg,
-      total: avg > 0 ? (leavers / avg) * 100 * scale : 0,
-      voluntary: avg > 0 ? (vol / avg) * 100 * scale : 0
+      total: avg > 0 ? (leavers / avg) * 100 : 0,
+      voluntary: avg > 0 ? (vol / avg) * 100 : 0
     };
-  });
+  }).filter(Boolean);
 
   // A chosen date range trims what is shown, never how the windows are worked out,
   // so every point keeps the twelve months of history behind it.
@@ -797,7 +790,7 @@ function turnoverTrend(d) {
   return points;
 }
 
-/** Two lines, total and voluntary, with a dashed run where the window is short. */
+/** Two lines, total and voluntary. */
 function trendChart(points) {
   if (points.length < 2) {
     return '<div class="note">Not enough history to draw a trend for this selection.</div>';
@@ -817,55 +810,45 @@ function trendChart(points) {
       '" text-anchor="end" font-size="13" fill="#5A5A76">' + v + '%</text>';
   }
 
-  const path = (key, from, to) => points.slice(from, to + 1)
-    .map((p, j) => (j ? "L" : "M") + x(from + j).toFixed(1) + " " + y(p[key]).toFixed(1)).join(" ");
-
-  // Where the window first reaches a full twelve months
-  let firstFull = points.findIndex(p => p.full);
-  if (firstFull < 0) firstFull = points.length - 1;
+  const path = (key) => points
+    .map((p, j) => (j ? "L" : "M") + x(j).toFixed(1) + " " + y(p[key]).toFixed(1)).join(" ");
 
   let lines = "";
   const series = [{ key: "total", colour: "#FF3184" }, { key: "voluntary", colour: "#0000D0" }];
   for (const s of series) {
-    if (firstFull > 0) {
-      lines += '<path d="' + path(s.key, 0, firstFull) + '" fill="none" stroke="' + s.colour +
-        '" stroke-width="2" stroke-dasharray="5 4" opacity="0.55" vector-effect="non-scaling-stroke"/>';
-    }
-    lines += '<path d="' + path(s.key, firstFull, points.length - 1) + '" fill="none" stroke="' +
-      s.colour + '" stroke-width="2.5" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>';
-  }
-
-  let marker = "";
-  if (firstFull > 0) {
-    marker = '<line x1="' + x(firstFull).toFixed(1) + '" y1="' + padT + '" x2="' + x(firstFull).toFixed(1) +
-      '" y2="' + (h - padB) + '" stroke="#5A5A76" stroke-width="1" stroke-dasharray="3 3" opacity="0.7"/>';
+    lines += '<path d="' + path(s.key) + '" fill="none" stroke="' + s.colour +
+      '" stroke-width="2.5" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>';
   }
 
   const hitR = Math.max(7, (w - padL - padR) / points.length / 2);
   const dots = points.map((p, i) => {
     const label = p.label + " · total " + p.total.toFixed(1) + "%, voluntary " +
-      p.voluntary.toFixed(1) + "% · " + p.leavers + " leavers over " + p.months +
-      " month" + (p.months === 1 ? "" : "s") + (p.full ? "" : ", short window");
+      p.voluntary.toFixed(1) + "% · " + p.leavers + " leavers, " + p.vol + " voluntary";
     const safe = label.replace(/"/g, "&quot;");
     return '<circle class="trend-hit" cx="' + x(i).toFixed(1) + '" cy="' + ((padT + h - padB) / 2).toFixed(1) +
       '" r="' + hitR.toFixed(1) + '" fill="transparent" data-label="' + safe + '"><title>' + label + "</title></circle>" +
-      '<circle cx="' + x(i).toFixed(1) + '" cy="' + y(p.total).toFixed(1) + '" r="' + (p.full ? 3 : 2.5) +
-      '" fill="#FF3184" opacity="' + (p.full ? 1 : 0.55) + '" pointer-events="none"/>' +
-      '<circle cx="' + x(i).toFixed(1) + '" cy="' + y(p.voluntary).toFixed(1) + '" r="' + (p.full ? 3 : 2.5) +
-      '" fill="#0000D0" opacity="' + (p.full ? 1 : 0.55) + '" pointer-events="none"/>';
+      '<circle cx="' + x(i).toFixed(1) + '" cy="' + y(p.total).toFixed(1) +
+      '" r="3" fill="#FF3184" pointer-events="none"/>' +
+      '<circle cx="' + x(i).toFixed(1) + '" cy="' + y(p.voluntary).toFixed(1) +
+      '" r="3" fill="#0000D0" pointer-events="none"/>';
   }).join("");
 
-  // About eight labels, whatever the length of the series
+  // About eight labels, always including the last. The one before it is dropped when it
+  // would sit too close, which is what made Jul and Sep collide at the right hand edge.
   const step = Math.max(1, Math.round(points.length / 8));
-  const xLabels = points.map((p, i) =>
-    (i % step === 0 || i === points.length - 1)
-      ? '<text x="' + x(i).toFixed(1) + '" y="' + (h - padB + 24) +
-        '" text-anchor="middle" font-size="13" fill="#5A5A76">' + p.label + "</text>"
-      : "").join("");
+  const last = points.length - 1;
+  const marks = [];
+  for (let i = 0; i < last; i += step) marks.push(i);
+  if (marks.length && last - marks[marks.length - 1] < step * 0.7) marks.pop();
+  marks.push(last);
+
+  const xLabels = marks.map(i =>
+    '<text x="' + x(i).toFixed(1) + '" y="' + (h - padB + 24) +
+    '" text-anchor="middle" font-size="13" fill="#5A5A76">' + points[i].label + "</text>").join("");
 
   return '<svg class="trend" viewBox="0 0 ' + w + " " + h + '" role="img" ' +
     'aria-label="Rolling twelve month total and voluntary turnover by month">' +
-    grid + marker + lines + dots + xLabels + "</svg>";
+    grid + lines + dots + xLabels + "</svg>";
 }
 
 let DATA = null;
@@ -1141,24 +1124,8 @@ function render() {
         <div class="trend-legend">
           <span><i class="swatch" style="background:#FF3184"></i>Total turnover</span>
           <span><i class="swatch" style="background:#0000D0"></i>Voluntary turnover</span>
-          ${trendPoints.length && !trendPoints[0].full
-            ? '<span><i class="swatch dash"></i>Shorter window, annualised</span>'
-            : ""}
           <span class="trend-caption" id="trend-caption">Hover a month for its figures</span>
         </div>
-      </div>
-      <div class="note">
-        Each point is the leavers over the twelve months ending that month, divided by the
-        average month-end headcount across the same twelve months. The line starts in January
-        2023 because Employment Hero was migrated into around late 2022 and every leaver record
-        from before that arrived without an employment type, cost centre or start date, so
-        earlier months would read as near zero turnover and then leap.
-        ${trendPoints.length && !trendPoints[0].full
-          ? "Points left of the dotted line have less than twelve months behind them and are annualised, so they swing harder. The first full twelve month window is " +
-            (trendPoints.find(pt => pt.full) || {}).label + "."
-          : ""}
-        The last point covers whole months only, so it will differ slightly from the headline
-        figure above, which runs to today.
       </div>
     </section>
 
