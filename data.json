@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-20T03:01:08.343Z",
+  "generatedUtc": "2026-10-20T05:01:14.493Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -2772,7 +2772,7 @@
           "leaverNames": [
             {
               "name": "Liz Templeton",
-              "date": "2026-10-12T00:00:00+00:00",
+              "date": "2026-10-15T00:00:00+00:00",
               "costCentre": "NAT-CORP",
               "type": "Voluntary cessation",
               "voluntary": true
@@ -2785,7 +2785,7 @@
         "leaverNames": [
           {
             "name": "Liz Templeton",
-            "date": "2026-10-12T00:00:00+00:00",
+            "date": "2026-10-15T00:00:00+00:00",
             "costCentre": "NAT-CORP",
             "type": "Voluntary cessation",
             "voluntary": true
@@ -12028,7 +12028,7 @@
       "count": 1
     },
     {
-      "stage": "SC Approval Pending",
+      "stage": "Accepted",
       "count": 1
     },
     {
