@@ -120,7 +120,19 @@
     padding: 18px 20px 14px;
   }
 
-  .trend { width: 100%; height: auto; display: block; }
+  /* The chart keeps a fixed width per month and scrolls rather than squeezing */
+  .trend-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+  }
+
+  .trend-scroll::-webkit-scrollbar { height: 10px; }
+  .trend-scroll::-webkit-scrollbar-track { background: var(--wash); }
+  .trend-scroll::-webkit-scrollbar-thumb { background: #C9C9DE; }
+  .trend-scroll::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+  .trend { display: block; }
 
   .trend-hit { cursor: pointer; }
 
@@ -796,7 +808,11 @@ function trendChart(points) {
     return '<div class="note">Not enough history to draw a trend for this selection.</div>';
   }
 
-  const w = 1040, h = 300, padL = 56, padR = 18, padT = 18, padB = 48;
+  // Each month gets a fixed slice of width, so the line keeps the same density however
+  // long the series runs and the box scrolls sideways once it outgrows the page.
+  const perPoint = 34;
+  const h = 300, padL = 56, padR = 24, padT = 18, padB = 48;
+  const w = Math.max(1000, padL + padR + (points.length - 1) * perPoint);
   const peak = Math.max(...points.map(p => Math.max(p.total, p.voluntary)));
   const top = Math.max(10, Math.ceil(peak / 10) * 10);
   const x = (i) => padL + (i * (w - padL - padR)) / Math.max(points.length - 1, 1);
@@ -846,9 +862,10 @@ function trendChart(points) {
     '<text x="' + x(i).toFixed(1) + '" y="' + (h - padB + 24) +
     '" text-anchor="middle" font-size="13" fill="#5A5A76">' + points[i].label + "</text>").join("");
 
-  return '<svg class="trend" viewBox="0 0 ' + w + " " + h + '" role="img" ' +
-    'aria-label="Rolling twelve month total and voluntary turnover by month">' +
-    grid + lines + dots + xLabels + "</svg>";
+  return '<div class="trend-scroll" id="trend-scroll">' +
+    '<svg class="trend" width="' + w + '" height="' + h + '" viewBox="0 0 ' + w + " " + h +
+    '" role="img" aria-label="Rolling twelve month total and voluntary turnover by month">' +
+    grid + lines + dots + xLabels + "</svg></div>";
 }
 
 let DATA = null;
@@ -1338,6 +1355,10 @@ function bindSpark() {
     el.addEventListener("mouseleave", () => { caption.textContent = base; });
     el.addEventListener("click", () => { caption.textContent = el.dataset.label; });
   });
+
+  // Open on the most recent months, which is what anyone looks at first
+  const scroller = $("trend-scroll");
+  if (scroller) scroller.scrollLeft = scroller.scrollWidth;
 
   const trendCaption = $("trend-caption");
   if (trendCaption) {
