@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-22T01:01:05.469Z",
+  "generatedUtc": "2026-10-22T05:34:26.665Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -18691,7 +18691,7 @@
     },
     {
       "stage": "2nd Interview",
-      "count": 3
+      "count": 2
     },
     {
       "stage": "SC Declined",
@@ -18715,6 +18715,10 @@
     },
     {
       "stage": "Sourcing",
+      "count": 1
+    },
+    {
+      "stage": "SC Approval Pending",
       "count": 1
     },
     {
