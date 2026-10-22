@@ -74,7 +74,7 @@ const MIN_HEADCOUNT_FOR_RATE = 3;
 // before that came across as a stub with no employment type, cost centre or start date.
 // Those stubs are dropped by the scoping above, so a line drawn through 2020 to 2022
 // would read as near zero turnover and then leap, which is an artefact and not history.
-const TREND_START_YEAR = 2023;
+const TREND_START_YEAR = 2012;
 const TREND_START_MONTH = 0;   // 0 = January
 
 // Cost centre values that mean "not set". Normalised to Unassigned.
