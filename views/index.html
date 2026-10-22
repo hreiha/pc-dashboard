@@ -120,8 +120,15 @@
     padding: 18px 20px 14px;
   }
 
-  /* The chart keeps a fixed width per month and scrolls rather than squeezing */
+  /* The chart keeps a fixed width per month and scrolls rather than squeezing.
+     The scale is a separate panel so it stays put while the plot moves. */
+  .trend-wrap { display: flex; align-items: flex-start; }
+
+  .trend-axis { flex: none; display: block; }
+
   .trend-scroll {
+    flex: 1;
+    min-width: 0;
     overflow-x: auto;
     overflow-y: hidden;
     scrollbar-width: thin;
@@ -753,6 +760,18 @@ function sparkline(points) {
  * produces swings that look like real movement and are not.
  */
 function turnoverTrend(d) {
+  const byPlace = FILTER.locations.length > 0 || FILTER.costCentres.length > 0;
+
+  // Unfiltered, use the long company history, which is built on start and termination
+  // dates alone and so survives the records migrated in without a cost centre. Filtering
+  // by location or section needs those fields, so it falls back to the shorter series.
+  if (!byPlace && (d.turnoverHistory || []).length > 1) {
+    return windowed(d.turnoverHistory.map(pt => ({
+      key: pt.k, label: pt.label,
+      h: Number(pt.h) || 0, l: Number(pt.l) || 0, v: Number(pt.v) || 0
+    })));
+  }
+
   const slices = selectedSlices(d);
   const template = (slices[0] && slices[0].turnoverSeries) || d.turnoverSeries || [];
   if (template.length < 2) return [];
@@ -775,9 +794,24 @@ function turnoverTrend(d) {
     return { key: pt.k, label: pt.label, h: h, l: l, v: v };
   });
 
+  return windowed(merged);
+}
+
+/**
+ * Rolling twelve month rates from a monthly series of counts.
+ *
+ * Months before anybody had left are dropped. A rate of zero there is not a finding, it
+ * is the absence of records, and a long flat run at the floor reads as though turnover
+ * was nil for years.
+ */
+function windowed(merged) {
   const WINDOW = 12;
+  const firstLeaver = merged.findIndex(pt => pt.l > 0);
+  if (firstLeaver < 0) return [];
+
   const points = merged.map((pt, i) => {
     if (i < WINDOW - 1) return null;          // not yet a full year of history
+    if (i < firstLeaver) return null;         // nothing recorded this far back
     const win = merged.slice(i - WINDOW + 1, i + 1);
     const leavers = win.reduce((a, b) => a + b.l, 0);
     const vol = win.reduce((a, b) => a + b.v, 0);
@@ -809,21 +843,25 @@ function trendChart(points) {
   }
 
   // Each month gets a fixed slice of width, so the line keeps the same density however
-  // long the series runs and the box scrolls sideways once it outgrows the page.
+  // long the series runs and the plot scrolls sideways once it outgrows the page.
   const perPoint = 34;
-  const h = 300, padL = 56, padR = 24, padT = 18, padB = 48;
-  const w = Math.max(1000, padL + padR + (points.length - 1) * perPoint);
+  const h = 300, padL = 14, padR = 24, padT = 18, padB = 48;
+  const axisW = 56;
+  const w = Math.max(960, padL + padR + (points.length - 1) * perPoint);
   const peak = Math.max(...points.map(p => Math.max(p.total, p.voluntary)));
   const top = Math.max(10, Math.ceil(peak / 10) * 10);
   const x = (i) => padL + (i * (w - padL - padR)) / Math.max(points.length - 1, 1);
   const y = (v) => h - padB - (v / top) * (h - padT - padB);
 
+  // The scale sits in its own fixed panel beside the scrolling plot. Inside the scroller
+  // it would slide out of sight the moment anyone scrolled, which is what used to happen.
+  let axis = "";
   let grid = "";
   for (let v = 0; v <= top; v += 10) {
-    grid += '<line x1="' + padL + '" y1="' + y(v).toFixed(1) + '" x2="' + (w - padR) +
-      '" y2="' + y(v).toFixed(1) + '" stroke="#E2E2EE" stroke-width="1"/>' +
-      '<text x="' + (padL - 10) + '" y="' + (y(v) + 5).toFixed(1) +
+    axis += '<text x="' + (axisW - 10) + '" y="' + (y(v) + 5).toFixed(1) +
       '" text-anchor="end" font-size="13" fill="#5A5A76">' + v + '%</text>';
+    grid += '<line x1="0" y1="' + y(v).toFixed(1) + '" x2="' + (w - padR + 8) +
+      '" y2="' + y(v).toFixed(1) + '" stroke="#E2E2EE" stroke-width="1"/>';
   }
 
   const path = (key) => points
@@ -849,9 +887,10 @@ function trendChart(points) {
       '" r="3" fill="#0000D0" pointer-events="none"/>';
   }).join("");
 
-  // About eight labels, always including the last. The one before it is dropped when it
-  // would sit too close, which is what made Jul and Sep collide at the right hand edge.
-  const step = Math.max(1, Math.round(points.length / 8));
+  // A label roughly every 100px, so the density follows the pixels rather than the number
+  // of months. The last month is always labelled, and the one before it is dropped when it
+  // would collide. A tick under each label ties it to its point.
+  const step = Math.max(1, Math.ceil(100 / perPoint));
   const last = points.length - 1;
   const marks = [];
   for (let i = 0; i < last; i += step) marks.push(i);
@@ -859,13 +898,18 @@ function trendChart(points) {
   marks.push(last);
 
   const xLabels = marks.map(i =>
+    '<line x1="' + x(i).toFixed(1) + '" y1="' + (h - padB) + '" x2="' + x(i).toFixed(1) +
+    '" y2="' + (h - padB + 6) + '" stroke="#C9C9DE" stroke-width="1"/>' +
     '<text x="' + x(i).toFixed(1) + '" y="' + (h - padB + 24) +
     '" text-anchor="middle" font-size="13" fill="#5A5A76">' + points[i].label + "</text>").join("");
 
-  return '<div class="trend-scroll" id="trend-scroll">' +
+  return '<div class="trend-wrap">' +
+    '<svg class="trend-axis" width="' + axisW + '" height="' + h + '" viewBox="0 0 ' + axisW + " " + h +
+    '" aria-hidden="true">' + axis + "</svg>" +
+    '<div class="trend-scroll" id="trend-scroll">' +
     '<svg class="trend" width="' + w + '" height="' + h + '" viewBox="0 0 ' + w + " " + h +
     '" role="img" aria-label="Rolling twelve month total and voluntary turnover by month">' +
-    grid + lines + dots + xLabels + "</svg></div>";
+    grid + lines + dots + xLabels + "</svg></div></div>";
 }
 
 let DATA = null;
