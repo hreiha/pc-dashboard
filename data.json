@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-23T01:02:00.586Z",
+  "generatedUtc": "2026-10-23T02:01:18.387Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -19903,7 +19903,7 @@
     }
   ],
   "recruitment": {
-    "openRoles": 41,
+    "openRoles": 38,
     "filledMonth": 0,
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
@@ -19915,7 +19915,7 @@
     },
     {
       "stage": "1. Search & Secure",
-      "count": 7
+      "count": 4
     },
     {
       "stage": "4. Role On Hold",
@@ -19953,7 +19953,7 @@
     },
     {
       "stage": "New",
-      "count": 10
+      "count": 7
     },
     {
       "stage": "Present to HM",
@@ -20013,7 +20013,7 @@
       "churnVoluntary": "14.3",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "42.1",
-      "openRoles": 9
+      "openRoles": 6
     },
     {
       "code": "Brisbane",
