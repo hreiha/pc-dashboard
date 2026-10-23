@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-22T23:03:04.392Z",
+  "generatedUtc": "2026-10-23T01:02:00.586Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -15,7 +15,7 @@
     "leaversVoluntaryMonth": 14,
     "leaversVoluntaryMonthPrior": 8,
     "hiresMonth": 4,
-    "hiresMonthPrior": 3,
+    "hiresMonthPrior": 2,
     "churnTotal": "39.3",
     "churnTotalPrior": "37.2",
     "churnVoluntary": "28.1",
@@ -5397,7 +5397,7 @@
       "femalePct": "0.0",
       "femalePctPrior": "0.0",
       "hiresMonth": 0,
-      "hiresMonthPrior": 1,
+      "hiresMonthPrior": 0,
       "leaversMonth": 0,
       "leaversMonthPrior": 1,
       "leaversVoluntaryMonth": 0,
@@ -19929,7 +19929,7 @@
   "stageDetail": [
     {
       "stage": "Phone Screen",
-      "count": 4
+      "count": 5
     },
     {
       "stage": "1st Interview",
@@ -19957,7 +19957,7 @@
     },
     {
       "stage": "Present to HM",
-      "count": 12
+      "count": 11
     },
     {
       "stage": "Sourcing",
