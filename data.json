@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-26T01:01:12.824Z",
+  "generatedUtc": "2026-10-26T01:29:20.819Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -19877,7 +19877,7 @@
     }
   ],
   "historyQuality": {
-    "recordsWithStartDate": 1079,
+    "recordsWithStartDate": 1080,
     "leaversWithoutStartDate": 18,
     "firstLeaverMonth": "2012-08"
   },
@@ -19934,7 +19934,7 @@
   "stageDetail": [
     {
       "stage": "Phone Screen",
-      "count": 6
+      "count": 5
     },
     {
       "stage": "1st Interview",
@@ -19966,7 +19966,7 @@
     },
     {
       "stage": "Sourcing",
-      "count": 1
+      "count": 2
     },
     {
       "stage": "SC Approved",
@@ -20236,7 +20236,7 @@
     "excludedContractors": 0,
     "excludedIncomplete": 0,
     "excludedNoCostCentre": 353,
-    "notYetStarted": 6,
+    "notYetStarted": 7,
     "excludedNoSalary": 302,
     "casualsConverted": 63,
     "partTimeConverted": 45
