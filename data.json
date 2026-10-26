@@ -1,24 +1,24 @@
 {
-  "generatedUtc": "2026-10-25T22:22:09.447Z",
+  "generatedUtc": "2026-10-26T00:07:18.574Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
-    "headcount": 300,
+    "headcount": 301,
     "headcountPrior": 309,
-    "female": 78,
+    "female": 79,
     "male": 222,
     "genderNotRecorded": 0,
-    "femalePct": "26.0",
+    "femalePct": "26.2",
     "femalePctPrior": "26.2",
     "leaversMonth": 14,
     "leaversMonthPrior": 11,
     "leaversVoluntaryMonth": 14,
     "leaversVoluntaryMonthPrior": 8,
-    "hiresMonth": 4,
+    "hiresMonth": 5,
     "hiresMonthPrior": 2,
     "churnTotal": "39.3",
     "churnTotalPrior": "37.2",
-    "churnVoluntary": "28.1",
+    "churnVoluntary": "28.0",
     "churnVoluntaryPrior": "25.4",
     "ytdTotal": "16.1",
     "ytdVoluntary": "12.0",
@@ -34,7 +34,7 @@
     "gpgMeanPrior": "0.0",
     "gpgMedian": "0.0",
     "gpgMedianPrior": "0.0",
-    "avgHeadcountLtm": "327.9"
+    "avgHeadcountLtm": "328.0"
   },
   "turnoverPeriods": [
     {
@@ -10084,23 +10084,23 @@
     {
       "location": "Brisbane",
       "costCentre": "NAT-SPL",
-      "headcount": 10,
+      "headcount": 11,
       "headcountPrior": 10,
-      "female": 2,
+      "female": 3,
       "femalePrior": 2,
       "male": 8,
       "genderNotRecorded": 0,
-      "femalePct": "20.0",
+      "femalePct": "27.3",
       "femalePctPrior": "20.0",
-      "hiresMonth": 0,
+      "hiresMonth": 1,
       "hiresMonthPrior": 0,
       "leaversMonth": 0,
       "leaversMonthPrior": 0,
       "leaversVoluntaryMonth": 0,
       "leaversVoluntaryMonthPrior": 0,
-      "avgHeadcountLtm": "11.8",
-      "churnTotal": "42.3",
-      "churnVoluntary": "25.4",
+      "avgHeadcountLtm": "11.9",
+      "churnTotal": "42.0",
+      "churnVoluntary": "25.2",
       "turnoverPeriods": [
         {
           "key": "ltm",
@@ -10252,7 +10252,7 @@
         },
         {
           "month": "Oct",
-          "headcount": 10
+          "headcount": 11
         }
       ],
       "months": [
@@ -10581,11 +10581,17 @@
         {
           "key": "2026-10",
           "label": "Oct 2026",
-          "headcountEnd": 10,
-          "hires": 0,
+          "headcountEnd": 11,
+          "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Shivani Deoji",
+              "date": "2026-10-26T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            }
+          ],
           "leaverNames": []
         }
       ],
@@ -10907,7 +10913,13 @@
         }
       ],
       "last30": {
-        "hireNames": [],
+        "hireNames": [
+          {
+            "name": "Shivani Deoji",
+            "date": "2026-10-26T00:00:00+00:00",
+            "costCentre": "NAT-SPL"
+          }
+        ],
         "leaverNames": []
       }
     },
@@ -19872,7 +19884,7 @@
     }
   ],
   "historyQuality": {
-    "recordsWithStartDate": 1078,
+    "recordsWithStartDate": 1079,
     "leaversWithoutStartDate": 18,
     "firstLeaverMonth": "2012-08"
   },
@@ -19880,12 +19892,12 @@
     {
       "code": "AU",
       "name": "ADP Australia",
-      "headcount": 286,
+      "headcount": 287,
       "headcountPrior": 294,
-      "female": 74,
-      "femalePct": "25.9",
+      "female": 75,
+      "femalePct": "26.1",
       "leaversMonth": 13,
-      "hiresMonth": 4,
+      "hiresMonth": 5,
       "gpgMean": "0.0",
       "gpgMedian": "0.0"
     },
@@ -19964,7 +19976,7 @@
       "count": 2
     },
     {
-      "stage": "SC Approval Pending",
+      "stage": "SC Approved",
       "count": 1
     },
     {
@@ -20003,16 +20015,16 @@
     },
     {
       "code": "NAT-SPL",
-      "headcount": 40,
-      "female": 10,
-      "femalePct": "25.0",
+      "headcount": 41,
+      "female": 11,
+      "femalePct": "26.8",
       "leaversLtm": 9,
       "leaversVoluntary": 6,
       "leaversRegrettable": 0,
-      "churnTotal": "21.4",
-      "churnVoluntary": "14.3",
+      "churnTotal": "21.3",
+      "churnVoluntary": "14.2",
       "churnRegrettable": "0.0",
-      "avgHeadcountLtm": "42.1",
+      "avgHeadcountLtm": "42.2",
       "openRoles": 6
     },
     {
@@ -20127,14 +20139,14 @@
     },
     {
       "name": "Brisbane",
-      "headcount": 48,
-      "female": 16,
-      "femalePct": "33.3",
+      "headcount": 49,
+      "female": 17,
+      "femalePct": "34.7",
       "leaversLtm": 19,
       "leaversVoluntary": 14,
       "churnTotal": "37.6",
       "churnVoluntary": "27.7",
-      "avgHeadcountLtm": "50.5",
+      "avgHeadcountLtm": "50.6",
       "activeRoles": 13
     },
     {
@@ -20221,7 +20233,7 @@
     },
     {
       "month": "Oct",
-      "headcount": 300
+      "headcount": 301
     }
   ],
   "dataQuality": {
@@ -20232,8 +20244,8 @@
     "excludedIncomplete": 0,
     "excludedNoCostCentre": 353,
     "notYetStarted": 6,
-    "excludedNoSalary": 300,
-    "casualsConverted": 62,
+    "excludedNoSalary": 301,
+    "casualsConverted": 63,
     "partTimeConverted": 45
   }
 }
