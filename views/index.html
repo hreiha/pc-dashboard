@@ -695,6 +695,17 @@ const STAGE_LABELS = { "waiting for approval": "Role Requested" };
 // Role statuses left off the recruitment chart
 const PIPELINE_EXCLUDE = ["waiting for approval", "role withdrawn", "offered"];
 
+// Bar order for the recruitment chart, so it reads in pipeline order and matches the
+// tiles above it instead of reordering itself whenever the counts change. A stage not
+// listed here sorts after these, largest first.
+const PIPELINE_ORDER = ["search & secure", "search & prepare", "role on hold"];
+
+function pipelineRank(stage) {
+  const key = String(stage || "").replace(/^\s*\d+[.)]\s*/, "").trim().toLowerCase();
+  const i = PIPELINE_ORDER.indexOf(key);
+  return i < 0 ? PIPELINE_ORDER.length : i;
+}
+
 // The three reference steps are one stage for reporting
 const STAGE_MERGE = {
   "referee detail request sent": "References",
@@ -1092,7 +1103,9 @@ function render() {
   const trend = slice.headcountTrend || d.headcountTrend || [];
   const cc = (d.costCentres || []).filter(c => !FILTER.costCentres.length || FILTER.costCentres.indexOf(c.code) >= 0);
   const pipe = (d.pipeline || []).filter(st =>
-    PIPELINE_EXCLUDE.indexOf(String(st.stage || "").replace(/^\s*\d+[.)]\s*/, "").trim().toLowerCase()) < 0);
+    PIPELINE_EXCLUDE.indexOf(String(st.stage || "").replace(/^\s*\d+[.)]\s*/, "").trim().toLowerCase()) < 0)
+    .sort((a, b) => pipelineRank(a.stage) - pipelineRank(b.stage)
+                 || (Number(b.count) || 0) - (Number(a.count) || 0));
   const ent = d.entities || [];
   const dq = d.dataQuality || {};
   const periods = (slice.turnoverPeriods || []).length
