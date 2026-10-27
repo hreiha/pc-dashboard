@@ -957,6 +957,98 @@ function monthsInRange(d) {
   return out;
 }
 
+// Matches MIN_HEADCOUNT_FOR_RATE in scripts/metrics.mjs. A rate off two or three people
+// swings so wildly it misleads, so it is suppressed rather than shown.
+var MIN_HEADCOUNT_FOR_RATE = 3;
+
+/**
+ * Location and cost centre rows for the chosen date range.
+ *
+ * Without a range these two tables show the last twelve months, which metrics.mjs
+ * precomputes, so that path is left exactly as it was. With a range they are rebuilt here
+ * from the per month figures on each slice, using the same method as rangePeriod: leavers
+ * summed across the range, and the denominator the mean of every month-end headcount in
+ * it. Headcount and female percentage are taken at the last month in the range, because
+ * both are a position at a point in time rather than something that accumulates.
+ *
+ * `key` is "location" or "costCentre", naming the field on a slice to group by.
+ * `roles` carries the open role counts forward, since recruitment is always current and
+ * has no history to filter.
+ */
+function rangeRows(d, key, roles, fallbackPct) {
+  const groups = {};
+
+  // femaleEnd only appears in data.json once the refresh has run with the matching
+  // metrics.mjs. Until then fall back to the precomputed percentage, rather than
+  // reporting every row as 0%.
+  const hasFemale = (d.slices || []).some(sl =>
+    (sl.months || []).some(m => m && typeof m.femaleEnd === "number"));
+
+  for (const sl of selectedSlices(d)) {
+    const name = sl[key];
+    if (!name) continue;
+    const g = groups[name] || (groups[name] = { name: name, months: {} });
+    for (const m of sl.months || []) {
+      if (m.key < FILTER.from || m.key > FILTER.to) continue;
+      const b = g.months[m.key] || (g.months[m.key] = { head: 0, female: 0, leavers: 0, vol: 0 });
+      b.head += Number(m.headcountEnd) || 0;
+      b.female += Number(m.femaleEnd) || 0;
+      b.leavers += Number(m.leavers) || 0;
+      b.vol += Number(m.leaversVoluntary) || 0;
+    }
+  }
+
+  const out = [];
+  for (const name of Object.keys(groups)) {
+    const keys = Object.keys(groups[name].months).sort();
+    if (!keys.length) continue;
+    const months = keys.map(k => groups[name].months[k]);
+    const last = months[months.length - 1];
+
+    const leavers = months.reduce((a, m) => a + m.leavers, 0);
+    const vol = months.reduce((a, m) => a + m.vol, 0);
+    const avgHead = months.reduce((a, m) => a + m.head, 0) / keys.length;
+    const rateable = avgHead >= MIN_HEADCOUNT_FOR_RATE;
+
+    // A row with nobody in it at the end of the range and nobody leaving during it is an
+    // empty combination, not a team, so it is left out the same way metrics.mjs does.
+    if (!last.head && !leavers) continue;
+
+    out.push({
+      name: name,
+      code: name,
+      headcount: last.head,
+      female: last.female,
+      femalePct: hasFemale
+        ? (last.head ? ((last.female / last.head) * 100).toFixed(1) : "0.0")
+        : ((fallbackPct || {})[name] || "0.0"),
+      leaversLtm: leavers,
+      leaversVoluntary: vol,
+      churnVoluntary: rateable ? ((vol / avgHead) * 100).toFixed(1) : null,
+      churnTotal: rateable ? ((leavers / avgHead) * 100).toFixed(1) : null,
+      avgHeadcountLtm: avgHead.toFixed(1),
+      activeRoles: roles[name] || 0,
+      openRoles: roles[name] || 0
+    });
+  }
+
+  return out.sort((a, b) => b.headcount - a.headcount || a.name.localeCompare(b.name));
+}
+
+/** Open role counts by name, carried over from the precomputed rows. */
+function roleCounts(rows, key, field) {
+  const out = {};
+  for (const r of rows || []) out[r[key]] = Number(r[field]) || 0;
+  return out;
+}
+
+/** Precomputed female percentages by name, used only as a fallback. */
+function femalePcts(rows, key) {
+  const out = {};
+  for (const r of rows || []) out[r[key]] = r.femalePct;
+  return out;
+}
+
 /**
  * Turnover over the chosen range. Leavers are summed, and the denominator is the mean of
  * every month-end headcount inside it, which is the same method used everywhere else.
@@ -1101,7 +1193,13 @@ function render() {
   const slice = aggregate(d);
   const p = slice;
   const trend = slice.headcountTrend || d.headcountTrend || [];
-  const cc = (d.costCentres || []).filter(c => !FILTER.costCentres.length || FILTER.costCentres.indexOf(c.code) >= 0);
+  // With a date range set, both tables are rebuilt from the slices so they cover the same
+  // period as everything else on the page. Without one they keep the precomputed last
+  // twelve months.
+  const ranged = hasRange() && (d.slices || []).length > 0;
+  const cc = ranged
+    ? rangeRows(d, "costCentre", roleCounts(d.costCentres, "code", "openRoles"), femalePcts(d.costCentres, "code"))
+    : (d.costCentres || []).filter(c => !FILTER.costCentres.length || FILTER.costCentres.indexOf(c.code) >= 0);
   const pipe = (d.pipeline || []).filter(st =>
     PIPELINE_EXCLUDE.indexOf(String(st.stage || "").replace(/^\s*\d+[.)]\s*/, "").trim().toLowerCase()) < 0)
     .sort((a, b) => pipelineRank(a.stage) - pipelineRank(b.stage)
@@ -1113,7 +1211,14 @@ function render() {
     : turnoverPeriods(d);
   const maxHead = Math.max(1, ...cc.map(c => Number(c.headcount) || 0));
   const maxStage = Math.max(1, ...pipe.map(s => Number(s.count) || 0));
-  const locs = (d.locations || []).filter(l => !FILTER.locations.length || FILTER.locations.indexOf(l.name) >= 0);
+  const locs = ranged
+    ? rangeRows(d, "location", roleCounts(d.locations, "name", "activeRoles"), femalePcts(d.locations, "name"))
+    : (d.locations || []).filter(l => !FILTER.locations.length || FILTER.locations.indexOf(l.name) >= 0);
+
+  // The bar marker has to sit on the same basis as the bars beside it, so the company rate
+  // follows the range too.
+  const rangeRate = ranged ? rangePeriod(d) : null;
+  const leaversHeading = ranged ? "Leavers" : "Leavers LTM";
   const detailMerged = new Map();
   for (const st of d.stageDetail || []) {
     const name = mergeStage(st.stage);
@@ -1124,7 +1229,9 @@ function render() {
     .map(([stage, count]) => ({ stage, count }))
     .sort((a, b) => stageRank(a.stage) - stageRank(b.stage) || String(a.stage).localeCompare(String(b.stage)));
   const maxDetail = Math.max(1, ...detail.map(st => Number(st.count) || 0));
-  const companyChurn = Number(p.churnVoluntary) || 0;
+  const companyChurn = rangeRate
+    ? (Number(rangeRate.voluntary) || 0)
+    : (Number(p.churnVoluntary) || 0);
   const trendPoints = turnoverTrend(d);
   const maxChurn = Math.max(1, companyChurn,
     ...cc.map(c => Number(c.churnVoluntary) || 0),
@@ -1267,11 +1374,11 @@ function render() {
             <th>Location</th>
             <th class="num">Headcount</th>
             <th class="num">Female %</th>
-            <th class="num">Leavers LTM</th>
+            <th class="num">${leaversHeading}</th>
             <th class="num">Vol turnover</th>
             <th class="num">Total turnover</th>
             <th class="num">Active roles</th>
-            <th class="bar-cell">Voluntary turnover against the company rate of ${p.churnVoluntary || "0"}%</th>
+            <th class="bar-cell">Voluntary turnover against the company rate of ${companyChurn || "0"}%</th>
           </tr>
         </thead>
         <tbody>
@@ -1311,11 +1418,11 @@ function render() {
             <th>Cost centre</th>
             <th class="num">Headcount</th>
             <th class="num">Female %</th>
-            <th class="num">Leavers LTM</th>
+            <th class="num">${leaversHeading}</th>
             <th class="num">Vol turnover</th>
             <th class="num">Total turnover</th>
             <th class="num">Active roles</th>
-            <th class="bar-cell">Voluntary turnover against the company rate of ${p.churnVoluntary || "0"}%</th>
+            <th class="bar-cell">Voluntary turnover against the company rate of ${companyChurn || "0"}%</th>
           </tr>
         </thead>
         <tbody>
