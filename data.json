@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-27T23:37:00.315Z",
+  "generatedUtc": "2026-10-28T01:01:07.508Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -20364,7 +20364,7 @@
     }
   ],
   "historyQuality": {
-    "recordsWithStartDate": 1080,
+    "recordsWithStartDate": 1081,
     "leaversWithoutStartDate": 18,
     "firstLeaverMonth": "2012-08",
     "impossibleTerminationDates": 0
@@ -20426,7 +20426,7 @@
     },
     {
       "stage": "1st Interview",
-      "count": 5
+      "count": 6
     },
     {
       "stage": "New",
@@ -20450,7 +20450,7 @@
     },
     {
       "stage": "Present to HM",
-      "count": 13
+      "count": 12
     },
     {
       "stage": "Offer Pending",
@@ -20716,7 +20716,7 @@
     "excludedContractors": 0,
     "excludedIncomplete": 0,
     "excludedNoCostCentre": 353,
-    "notYetStarted": 7,
+    "notYetStarted": 8,
     "excludedNoSalary": 301,
     "casualsConverted": 63,
     "partTimeConverted": 45
