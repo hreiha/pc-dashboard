@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-28T06:01:27.835Z",
+  "generatedUtc": "2026-10-28T23:00:56.666Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -20389,7 +20389,7 @@
     }
   ],
   "recruitment": {
-    "openRoles": 39,
+    "openRoles": 35,
     "filledMonth": 0,
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
@@ -20397,7 +20397,7 @@
   "pipeline": [
     {
       "stage": "2. Search & Prepare",
-      "count": 29
+      "count": 25
     },
     {
       "stage": "1. Search & Secure",
@@ -20443,7 +20443,7 @@
     },
     {
       "stage": "Present to HM",
-      "count": 13
+      "count": 9
     },
     {
       "stage": "Offer Pending",
@@ -20477,7 +20477,7 @@
       "churnVoluntary": "40.8",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "68.6",
-      "openRoles": 5
+      "openRoles": 4
     },
     {
       "code": "NAT-SPL",
@@ -20505,7 +20505,7 @@
       "churnVoluntary": "26.1",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "34.5",
-      "openRoles": 9
+      "openRoles": 7
     },
     {
       "code": "NAT-CORP",
@@ -20547,7 +20547,7 @@
       "churnVoluntary": "18.2",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "16.5",
-      "openRoles": 3
+      "openRoles": 2
     },
     {
       "code": "London",
@@ -20601,7 +20601,7 @@
       "churnTotal": "45.6",
       "churnVoluntary": "36.1",
       "avgHeadcountLtm": "94.3",
-      "activeRoles": 12
+      "activeRoles": 11
     },
     {
       "name": "Brisbane",
@@ -20613,7 +20613,7 @@
       "churnTotal": "37.6",
       "churnVoluntary": "27.7",
       "avgHeadcountLtm": "50.6",
-      "activeRoles": 15
+      "activeRoles": 13
     },
     {
       "name": "Adelaide",
@@ -20625,7 +20625,7 @@
       "churnTotal": "21.6",
       "churnVoluntary": "16.2",
       "avgHeadcountLtm": "18.5",
-      "activeRoles": 4
+      "activeRoles": 3
     },
     {
       "name": "London",
