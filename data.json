@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-29T05:01:18.038Z",
+  "generatedUtc": "2026-10-29T23:01:04.768Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -20411,12 +20411,8 @@
       "count": 7
     },
     {
-      "stage": "4. Role On Hold",
-      "count": 1
-    },
-    {
       "stage": "3. Waiting for Approval",
-      "count": 7
+      "count": 8
     }
   ],
   "stageDetail": [
@@ -20429,8 +20425,8 @@
       "count": 6
     },
     {
-      "stage": "SC Declined",
-      "count": 1
+      "stage": "KM to get SC Approval",
+      "count": 3
     },
     {
       "stage": "2nd Interview",
