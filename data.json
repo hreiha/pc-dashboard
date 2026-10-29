@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-29T00:00:56.397Z",
+  "generatedUtc": "2026-10-29T02:01:06.646Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -20396,7 +20396,7 @@
     }
   ],
   "recruitment": {
-    "openRoles": 35,
+    "openRoles": 40,
     "filledMonth": 0,
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
@@ -20408,7 +20408,7 @@
     },
     {
       "stage": "1. Search & Secure",
-      "count": 6
+      "count": 7
     },
     {
       "stage": "4. Role On Hold",
@@ -20416,7 +20416,7 @@
     },
     {
       "stage": "3. Waiting for Approval",
-      "count": 3
+      "count": 7
     }
   ],
   "stageDetail": [
@@ -20426,11 +20426,11 @@
     },
     {
       "stage": "1st Interview",
-      "count": 5
+      "count": 4
     },
     {
       "stage": "New",
-      "count": 7
+      "count": 8
     },
     {
       "stage": "SC Declined",
@@ -20450,7 +20450,11 @@
     },
     {
       "stage": "Present to HM",
-      "count": 9
+      "count": 10
+    },
+    {
+      "stage": "Unknown",
+      "count": 0
     },
     {
       "stage": "Offer Pending",
@@ -20484,7 +20488,7 @@
       "churnVoluntary": "40.8",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "68.6",
-      "openRoles": 4
+      "openRoles": 5
     },
     {
       "code": "NAT-SPL",
@@ -20608,7 +20612,7 @@
       "churnTotal": "45.6",
       "churnVoluntary": "36.1",
       "avgHeadcountLtm": "94.3",
-      "activeRoles": 11
+      "activeRoles": 13
     },
     {
       "name": "Brisbane",
@@ -20620,7 +20624,7 @@
       "churnTotal": "37.6",
       "churnVoluntary": "27.7",
       "avgHeadcountLtm": "50.6",
-      "activeRoles": 13
+      "activeRoles": 15
     },
     {
       "name": "Adelaide",
@@ -20632,7 +20636,7 @@
       "churnTotal": "27.1",
       "churnVoluntary": "21.7",
       "avgHeadcountLtm": "18.4",
-      "activeRoles": 3
+      "activeRoles": 4
     },
     {
       "name": "London",
