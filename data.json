@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-28T23:55:38.854Z",
+  "generatedUtc": "2026-10-29T00:00:56.397Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -10,10 +10,10 @@
     "genderNotRecorded": 0,
     "femalePct": "26.2",
     "femalePctPrior": "26.1",
-    "leaversMonth": 15,
-    "leaversMonthPrior": 8,
-    "leaversVoluntaryMonth": 15,
-    "leaversVoluntaryMonthPrior": 6,
+    "leaversMonth": 14,
+    "leaversMonthPrior": 9,
+    "leaversVoluntaryMonth": 14,
+    "leaversVoluntaryMonthPrior": 7,
     "hiresMonth": 5,
     "hiresMonthPrior": 2,
     "churnTotal": "39.3",
@@ -6299,10 +6299,10 @@
       "femalePctPrior": "21.7",
       "hiresMonth": 0,
       "hiresMonthPrior": 0,
-      "leaversMonth": 4,
-      "leaversMonthPrior": 1,
-      "leaversVoluntaryMonth": 4,
-      "leaversVoluntaryMonthPrior": 1,
+      "leaversMonth": 3,
+      "leaversMonthPrior": 2,
+      "leaversVoluntaryMonth": 3,
+      "leaversVoluntaryMonthPrior": 2,
       "avgHeadcountLtm": "68.6",
       "churnTotal": "51.0",
       "churnVoluntary": "40.8",
@@ -7812,13 +7812,6 @@
           {
             "name": "Tara Smith",
             "date": "2026-10-22T00:00:00+00:00",
-            "costCentre": "Sydney",
-            "type": "Voluntary cessation",
-            "voluntary": true
-          },
-          {
-            "name": "Min Thein Kyaw",
-            "date": "2026-09-29T00:00:00+00:00",
             "costCentre": "Sydney",
             "type": "Voluntary cessation",
             "voluntary": true
@@ -20384,7 +20377,7 @@
       "headcountPrior": 295,
       "female": 75,
       "femalePct": "26.1",
-      "leaversMonth": 14,
+      "leaversMonth": 13,
       "hiresMonth": 5,
       "gpgMean": "0.0",
       "gpgMedian": "0.0"
@@ -20433,7 +20426,7 @@
     },
     {
       "stage": "1st Interview",
-      "count": 6
+      "count": 5
     },
     {
       "stage": "New",
@@ -20445,7 +20438,7 @@
     },
     {
       "stage": "2nd Interview",
-      "count": 1
+      "count": 2
     },
     {
       "stage": "Declined",
