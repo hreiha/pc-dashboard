@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-30T00:00:58.622Z",
+  "generatedUtc": "2026-10-30T01:00:53.520Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -20413,11 +20413,11 @@
   "stageDetail": [
     {
       "stage": "Phone Screen",
-      "count": 7
+      "count": 6
     },
     {
       "stage": "1st Interview",
-      "count": 6
+      "count": 7
     },
     {
       "stage": "SC Approval Pending",
