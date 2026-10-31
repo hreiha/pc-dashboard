@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-30T23:30:56.517Z",
+  "generatedUtc": "2026-10-31T23:10:12.096Z",
   "periodLabel": "Oct 2026",
   "priorLabel": "Sep 2026",
   "people": {
@@ -11,7 +11,7 @@
     "femalePct": "26.3",
     "femalePctPrior": "26.2",
     "leaversMonth": 14,
-    "leaversMonthPrior": 9,
+    "leaversMonthPrior": 8,
     "leaversVoluntaryMonth": 14,
     "leaversVoluntaryMonthPrior": 7,
     "hiresMonth": 5,
@@ -7835,7 +7835,7 @@
       "hiresMonth": 0,
       "hiresMonthPrior": 0,
       "leaversMonth": 1,
-      "leaversMonthPrior": 1,
+      "leaversMonthPrior": 0,
       "leaversVoluntaryMonth": 1,
       "leaversVoluntaryMonthPrior": 0,
       "avgHeadcountLtm": "13.8",
