@@ -1,22 +1,22 @@
 {
-  "generatedUtc": "2026-11-01T23:25:05.718Z",
+  "generatedUtc": "2026-11-02T00:01:00.601Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
-    "headcount": 300,
+    "headcount": 304,
     "headcountPrior": 300,
     "female": 79,
-    "male": 221,
+    "male": 225,
     "genderNotRecorded": 0,
-    "femalePct": "26.3",
+    "femalePct": "26.0",
     "femalePctPrior": "26.3",
     "leaversMonth": 14,
     "leaversMonthPrior": 8,
     "leaversVoluntaryMonth": 14,
     "leaversVoluntaryMonthPrior": 7,
-    "hiresMonth": 5,
+    "hiresMonth": 9,
     "hiresMonthPrior": 1,
-    "churnTotal": "36.8",
+    "churnTotal": "36.7",
     "churnTotalPrior": "39.4",
     "churnVoluntary": "27.2",
     "churnVoluntaryPrior": "28.1",
@@ -34,7 +34,7 @@
     "gpgMeanPrior": "0.0",
     "gpgMedian": "0.0",
     "gpgMedianPrior": "0.0",
-    "avgHeadcountLtm": "323.5"
+    "avgHeadcountLtm": "323.8"
   },
   "turnoverPeriods": [
     {
@@ -264,22 +264,22 @@
     {
       "location": "Melbourne",
       "costCentre": "Melbourne",
-      "headcount": 81,
+      "headcount": 82,
       "headcountPrior": 81,
       "female": 14,
       "femalePrior": 14,
-      "male": 67,
+      "male": 68,
       "genderNotRecorded": 0,
-      "femalePct": "17.3",
+      "femalePct": "17.1",
       "femalePctPrior": "17.3",
-      "hiresMonth": 1,
+      "hiresMonth": 2,
       "hiresMonthPrior": 0,
       "leaversMonth": 5,
       "leaversMonthPrior": 4,
       "leaversVoluntaryMonth": 5,
       "leaversVoluntaryMonthPrior": 3,
-      "avgHeadcountLtm": "89.0",
-      "churnTotal": "46.1",
+      "avgHeadcountLtm": "89.1",
+      "churnTotal": "46.0",
       "churnVoluntary": "32.6",
       "turnoverPeriods": [
         {
@@ -432,7 +432,7 @@
         },
         {
           "month": "Nov",
-          "headcount": 81
+          "headcount": 82
         }
       ],
       "months": [
@@ -1527,12 +1527,18 @@
         {
           "key": "2026-11",
           "label": "Nov 2026",
-          "headcountEnd": 81,
+          "headcountEnd": 82,
           "femaleEnd": 14,
-          "hires": 0,
+          "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Sherif Elgendy",
+              "date": "2026-11-02T00:00:00+00:00",
+              "costCentre": "Melbourne"
+            }
+          ],
           "leaverNames": []
         }
       ],
@@ -1862,6 +1868,11 @@
       ],
       "last30": {
         "hireNames": [
+          {
+            "name": "Sherif Elgendy",
+            "date": "2026-11-02T00:00:00+00:00",
+            "costCentre": "Melbourne"
+          },
           {
             "name": "Mohammed Elnemr",
             "date": "2026-10-12T00:00:00+00:00",
@@ -6270,22 +6281,22 @@
     {
       "location": "Sydney",
       "costCentre": "Sydney",
-      "headcount": 57,
+      "headcount": 58,
       "headcountPrior": 57,
       "female": 11,
       "femalePrior": 11,
-      "male": 46,
+      "male": 47,
       "genderNotRecorded": 0,
-      "femalePct": "19.3",
+      "femalePct": "19.0",
       "femalePctPrior": "19.3",
-      "hiresMonth": 0,
+      "hiresMonth": 1,
       "hiresMonthPrior": 0,
       "leaversMonth": 3,
       "leaversMonthPrior": 2,
       "leaversVoluntaryMonth": 3,
       "leaversVoluntaryMonthPrior": 2,
-      "avgHeadcountLtm": "66.9",
-      "churnTotal": "50.8",
+      "avgHeadcountLtm": "67.0",
+      "churnTotal": "50.7",
       "churnVoluntary": "40.3",
       "turnoverPeriods": [
         {
@@ -6438,7 +6449,7 @@
         },
         {
           "month": "Nov",
-          "headcount": 57
+          "headcount": 58
         }
       ],
       "months": [
@@ -7404,12 +7415,18 @@
         {
           "key": "2026-11",
           "label": "Nov 2026",
-          "headcountEnd": 57,
+          "headcountEnd": 58,
           "femaleEnd": 11,
-          "hires": 0,
+          "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Jackie Wu",
+              "date": "2026-11-02T00:00:00+00:00",
+              "costCentre": "Sydney"
+            }
+          ],
           "leaverNames": []
         }
       ],
@@ -7738,7 +7755,13 @@
         }
       ],
       "last30": {
-        "hireNames": [],
+        "hireNames": [
+          {
+            "name": "Jackie Wu",
+            "date": "2026-11-02T00:00:00+00:00",
+            "costCentre": "Sydney"
+          }
+        ],
         "leaverNames": [
           {
             "name": "Meenit Charan",
@@ -10255,23 +10278,23 @@
     {
       "location": "Brisbane",
       "costCentre": "NAT-SPL",
-      "headcount": 11,
+      "headcount": 12,
       "headcountPrior": 11,
       "female": 3,
       "femalePrior": 3,
-      "male": 8,
+      "male": 9,
       "genderNotRecorded": 0,
-      "femalePct": "27.3",
+      "femalePct": "25.0",
       "femalePctPrior": "27.3",
-      "hiresMonth": 1,
+      "hiresMonth": 2,
       "hiresMonthPrior": 0,
       "leaversMonth": 0,
       "leaversMonthPrior": 0,
       "leaversVoluntaryMonth": 0,
       "leaversVoluntaryMonthPrior": 0,
-      "avgHeadcountLtm": "11.8",
-      "churnTotal": "42.3",
-      "churnVoluntary": "25.4",
+      "avgHeadcountLtm": "11.9",
+      "churnTotal": "42.0",
+      "churnVoluntary": "25.2",
       "turnoverPeriods": [
         {
           "key": "ltm",
@@ -10423,7 +10446,7 @@
         },
         {
           "month": "Nov",
-          "headcount": 11
+          "headcount": 12
         }
       ],
       "months": [
@@ -10781,12 +10804,18 @@
         {
           "key": "2026-11",
           "label": "Nov 2026",
-          "headcountEnd": 11,
+          "headcountEnd": 12,
           "femaleEnd": 3,
-          "hires": 0,
+          "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Jack Abzack",
+              "date": "2026-11-02T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            }
+          ],
           "leaverNames": []
         }
       ],
@@ -11119,6 +11148,11 @@
           {
             "name": "Shivani Deoji",
             "date": "2026-10-26T00:00:00+00:00",
+            "costCentre": "NAT-SPL"
+          },
+          {
+            "name": "Jack Abzack",
+            "date": "2026-11-02T00:00:00+00:00",
             "costCentre": "NAT-SPL"
           }
         ],
@@ -14596,23 +14630,23 @@
     {
       "location": "Adelaide",
       "costCentre": "Adelaide",
-      "headcount": 15,
+      "headcount": 16,
       "headcountPrior": 15,
       "female": 4,
       "femalePrior": 4,
-      "male": 11,
+      "male": 12,
       "genderNotRecorded": 0,
-      "femalePct": "26.7",
+      "femalePct": "25.0",
       "femalePctPrior": "26.7",
-      "hiresMonth": 0,
+      "hiresMonth": 1,
       "hiresMonthPrior": 0,
       "leaversMonth": 2,
       "leaversMonthPrior": 0,
       "leaversVoluntaryMonth": 2,
       "leaversVoluntaryMonthPrior": 0,
-      "avgHeadcountLtm": "16.4",
-      "churnTotal": "24.4",
-      "churnVoluntary": "18.3",
+      "avgHeadcountLtm": "16.5",
+      "churnTotal": "24.2",
+      "churnVoluntary": "18.2",
       "turnoverPeriods": [
         {
           "key": "ltm",
@@ -14764,7 +14798,7 @@
         },
         {
           "month": "Nov",
-          "headcount": 15
+          "headcount": 16
         }
       ],
       "months": [
@@ -15171,12 +15205,18 @@
         {
           "key": "2026-11",
           "label": "Nov 2026",
-          "headcountEnd": 15,
+          "headcountEnd": 16,
           "femaleEnd": 4,
-          "hires": 0,
+          "hires": 1,
           "leavers": 0,
           "leaversVoluntary": 0,
-          "hireNames": [],
+          "hireNames": [
+            {
+              "name": "Shaun Burgers",
+              "date": "2026-11-02T00:00:00+00:00",
+              "costCentre": "Adelaide"
+            }
+          ],
           "leaverNames": []
         }
       ],
@@ -15505,7 +15545,13 @@
         }
       ],
       "last30": {
-        "hireNames": [],
+        "hireNames": [
+          {
+            "name": "Shaun Burgers",
+            "date": "2026-11-02T00:00:00+00:00",
+            "costCentre": "Adelaide"
+          }
+        ],
         "leaverNames": [
           {
             "name": "Ahmed Amish",
@@ -20396,12 +20442,12 @@
     {
       "code": "AU",
       "name": "ADP Australia",
-      "headcount": 286,
+      "headcount": 290,
       "headcountPrior": 286,
       "female": 75,
-      "femalePct": "26.2",
+      "femalePct": "25.9",
       "leaversMonth": 13,
-      "hiresMonth": 5,
+      "hiresMonth": 9,
       "gpgMean": "0.0",
       "gpgMedian": "0.0"
     },
@@ -20441,11 +20487,11 @@
   "stageDetail": [
     {
       "stage": "Phone Screen",
-      "count": 6
+      "count": 7
     },
     {
       "stage": "1st Interview",
-      "count": 8
+      "count": 7
     },
     {
       "stage": "SC Approval Pending",
@@ -20483,44 +20529,44 @@
   "costCentres": [
     {
       "code": "Melbourne",
-      "headcount": 83,
+      "headcount": 84,
       "female": 14,
-      "femalePct": "16.9",
+      "femalePct": "16.7",
       "leaversLtm": 42,
       "leaversVoluntary": 30,
       "leaversRegrettable": 0,
       "churnTotal": "46.1",
       "churnVoluntary": "32.9",
       "churnRegrettable": "0.0",
-      "avgHeadcountLtm": "91.1",
+      "avgHeadcountLtm": "91.2",
       "openRoles": 8
     },
     {
       "code": "Sydney",
-      "headcount": 57,
+      "headcount": 58,
       "female": 11,
-      "femalePct": "19.3",
+      "femalePct": "19.0",
       "leaversLtm": 34,
       "leaversVoluntary": 27,
       "leaversRegrettable": 0,
-      "churnTotal": "50.8",
+      "churnTotal": "50.7",
       "churnVoluntary": "40.3",
       "churnRegrettable": "0.0",
-      "avgHeadcountLtm": "66.9",
+      "avgHeadcountLtm": "67.0",
       "openRoles": 5
     },
     {
       "code": "NAT-SPL",
-      "headcount": 41,
+      "headcount": 42,
       "female": 11,
-      "femalePct": "26.8",
+      "femalePct": "26.2",
       "leaversLtm": 9,
       "leaversVoluntary": 6,
       "leaversRegrettable": 0,
       "churnTotal": "21.3",
       "churnVoluntary": "14.2",
       "churnRegrettable": "0.0",
-      "avgHeadcountLtm": "42.2",
+      "avgHeadcountLtm": "42.3",
       "openRoles": 6
     },
     {
@@ -20567,16 +20613,16 @@
     },
     {
       "code": "Adelaide",
-      "headcount": 15,
+      "headcount": 16,
       "female": 4,
-      "femalePct": "26.7",
+      "femalePct": "25.0",
       "leaversLtm": 4,
       "leaversVoluntary": 3,
       "leaversRegrettable": 0,
-      "churnTotal": "24.4",
-      "churnVoluntary": "18.3",
+      "churnTotal": "24.2",
+      "churnVoluntary": "18.2",
       "churnRegrettable": "0.0",
-      "avgHeadcountLtm": "16.4",
+      "avgHeadcountLtm": "16.5",
       "openRoles": 2
     },
     {
@@ -20611,50 +20657,50 @@
   "locations": [
     {
       "name": "Melbourne",
-      "headcount": 137,
+      "headcount": 138,
       "female": 34,
-      "femalePct": "24.8",
+      "femalePct": "24.6",
       "leaversLtm": 52,
       "leaversVoluntary": 37,
       "churnTotal": "35.9",
       "churnVoluntary": "25.5",
-      "avgHeadcountLtm": "144.8",
+      "avgHeadcountLtm": "144.9",
       "activeRoles": 17
     },
     {
       "name": "Sydney",
-      "headcount": 79,
+      "headcount": 80,
       "female": 19,
-      "femalePct": "24.1",
+      "femalePct": "23.8",
       "leaversLtm": 42,
       "leaversVoluntary": 33,
-      "churnTotal": "45.6",
+      "churnTotal": "45.5",
       "churnVoluntary": "35.8",
-      "avgHeadcountLtm": "92.2",
+      "avgHeadcountLtm": "92.3",
       "activeRoles": 13
     },
     {
       "name": "Brisbane",
-      "headcount": 49,
+      "headcount": 50,
       "female": 17,
-      "femalePct": "34.7",
+      "femalePct": "34.0",
       "leaversLtm": 17,
       "leaversVoluntary": 12,
-      "churnTotal": "33.9",
+      "churnTotal": "33.8",
       "churnVoluntary": "23.9",
-      "avgHeadcountLtm": "50.2",
+      "avgHeadcountLtm": "50.3",
       "activeRoles": 15
     },
     {
       "name": "Adelaide",
-      "headcount": 17,
+      "headcount": 18,
       "female": 4,
-      "femalePct": "23.5",
+      "femalePct": "22.2",
       "leaversLtm": 4,
       "leaversVoluntary": 3,
-      "churnTotal": "21.7",
-      "churnVoluntary": "16.3",
-      "avgHeadcountLtm": "18.4",
+      "churnTotal": "21.6",
+      "churnVoluntary": "16.2",
+      "avgHeadcountLtm": "18.5",
       "activeRoles": 4
     },
     {
@@ -20729,7 +20775,7 @@
     },
     {
       "month": "Nov",
-      "headcount": 300
+      "headcount": 304
     }
   ],
   "dataQuality": {
@@ -20739,8 +20785,8 @@
     "excludedContractors": 0,
     "excludedIncomplete": 0,
     "excludedNoCostCentre": 350,
-    "notYetStarted": 9,
-    "excludedNoSalary": 300,
+    "notYetStarted": 5,
+    "excludedNoSalary": 304,
     "casualsConverted": 64,
     "partTimeConverted": 45
   }
