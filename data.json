@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-04T02:00:55.879Z",
+  "generatedUtc": "2026-11-04T06:01:12.664Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -103199,7 +103199,15 @@
     },
     {
       "stage": "Offer Pending",
-      "count": 4
+      "count": 1
+    },
+    {
+      "stage": "Contract Sent",
+      "count": 2
+    },
+    {
+      "stage": "Withdrawn",
+      "count": 1
     }
   ],
   "costCentres": [
