@@ -221,6 +221,18 @@ const ALIAS_TESTS = DISCIPLINES.map(entry => ({
 }));
 
 const INTERN = "Intern";
+const BIM = "BIM";
+
+/**
+ * BIM wins over whatever follows the separator.
+ *
+ * A BIM person is titled "<BIM grade> I <the team they draw for>", so reading the right
+ * side scattered them across other disciplines: of the 32 people recorded as BIM in
+ * Employment Hero, the right side put 8 in Electrical, 6 in Hydraulics and 5 in
+ * Mechanical, leaving only 5 on the BIM row. BIM is the discipline; the right side is the
+ * team they support.
+ */
+const BIM_RE = /(^|[^a-z0-9])(bim|digital engineering|model manager)([^a-z0-9]|$)/;
 
 function matchDiscipline(text) {
   const hay = String(text || "").toLowerCase();
@@ -252,6 +264,9 @@ export function discipline(jobTitle, costCentre) {
   // in, so this runs ahead of the usual right-then-left match. Without it, an
   // "Engineering Intern I Sustainability" would be counted as Sustainability.
   if (matchDiscipline(parts.left) === INTERN) return INTERN;
+
+  // BIM anywhere in the title means BIM, whatever team follows the separator.
+  if (BIM_RE.test(cleanTitle(jobTitle).toLowerCase())) return BIM;
 
   var d = matchDiscipline(parts.right);
   if (!d) d = matchDiscipline(parts.left);
