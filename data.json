@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-04T01:17:18.726Z",
+  "generatedUtc": "2026-11-04T02:00:55.879Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -103109,7 +103109,7 @@
     }
   ],
   "historyQuality": {
-    "recordsWithStartDate": 1081,
+    "recordsWithStartDate": 1082,
     "leaversWithoutStartDate": 18,
     "firstLeaverMonth": "2012-08",
     "impossibleTerminationDates": 0
@@ -103171,7 +103171,7 @@
     },
     {
       "stage": "SC Approval Pending",
-      "count": 2
+      "count": 1
     },
     {
       "stage": "2nd Interview",
@@ -103199,7 +103199,7 @@
     },
     {
       "stage": "Offer Pending",
-      "count": 3
+      "count": 4
     }
   ],
   "costCentres": [
@@ -103461,7 +103461,7 @@
     "excludedContractors": 0,
     "excludedIncomplete": 0,
     "excludedNoCostCentre": 350,
-    "notYetStarted": 5,
+    "notYetStarted": 6,
     "excludedNoSalary": 304,
     "casualsConverted": 64,
     "partTimeConverted": 45
