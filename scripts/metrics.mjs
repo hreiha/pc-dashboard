@@ -7,6 +7,11 @@
  * Edit the configuration block below to match your Employment Hero values.
  */
 
+// Discipline is derived from the job title, exactly as the ADP Dashboard does it, so the
+// two pages can never disagree about which team a person is in. classify.mjs is a
+// separate module because team-metrics.mjs already imports from here.
+import { discipline as disciplineOf } from "./classify.mjs";
+
 // ---------------------------------------------------------------- configuration
 
 const STANDARD_HOURS_PER_WEEK = 38;
@@ -757,6 +762,13 @@ export function computeMetrics(employees, asOfIso, options) {
         // Carried per month so the location and cost centre tables can show female
         // representation as it stood at the end of a chosen range, rather than today's.
         femaleEnd: liveAtEnd.filter(isFemale).length,
+        // The entity split per month, so the headline can show it for a chosen range.
+        // It cannot be worked out from the location: Melbourne holds people on both
+        // employing entities, and a London record is not necessarily on the UK one.
+        entityEnd: entityConfig.reduce((acc, cfg) => {
+          acc[cfg.code] = liveAtEnd.filter(e => e.entity === cfg.code).length;
+          return acc;
+        }, {}),
         hires: starters.length,
         leavers: leavers.length,
         leaversVoluntary: vol.length,
@@ -936,16 +948,39 @@ export function computeMetrics(employees, asOfIso, options) {
 
   const sliceLocations = locations.map(l => l.name);
   const sliceCentres = costCentres.map(c => c.code);
+
+  // Discipline is the third slice dimension, so the page can filter on any combination of
+  // the three. Every person falls in exactly one location, cost centre and discipline, so
+  // the slices still partition people once and the page can keep summing them.
+  const sliceDisciplines = [];
+  for (const e of scoped) {
+    const d = disciplineOf(e.jobTitle, e.costCentre);
+    if (sliceDisciplines.indexOf(d) < 0) sliceDisciplines.push(d);
+  }
+  sliceDisciplines.sort((a, b) => {
+    // Unknown last, so it never heads the picker
+    const rank = v => (v === "Unknown" ? 1 : 0);
+    return rank(a) - rank(b) || a.localeCompare(b);
+  });
+
   const slices = [];
 
-  for (const loc of sliceLocations) {
-    for (const cc of sliceCentres) {
-      const pool = scoped.filter(e =>
-        tidyLocation(e.location) === loc && (e.costCentre || "Unassigned") === cc
-      );
-      if (!pool.length) continue;   // nobody has ever been in this combination
-      slices.push(Object.assign({ location: loc, costCentre: cc }, sliceFor(pool)));
-    }
+  // Bucket once rather than re-filtering the whole population for every combination,
+  // which at three dimensions would be hundreds of passes over every employee.
+  const buckets = new Map();
+  for (const e of scoped) {
+    const key = tidyLocation(e.location) + "\u0000" + (e.costCentre || "Unassigned") +
+                "\u0000" + disciplineOf(e.jobTitle, e.costCentre);
+    const bucket = buckets.get(key);
+    if (bucket) bucket.push(e);
+    else buckets.set(key, [e]);
+  }
+
+  for (const [key, pool] of buckets) {
+    const [loc, cc, disc] = key.split("\u0000");
+    // A combination nobody has ever been in simply has no bucket
+    slices.push(Object.assign({ location: loc, costCentre: cc, discipline: disc },
+                              sliceFor(pool)));
   }
 
   // ---- assemble
@@ -995,6 +1030,7 @@ export function computeMetrics(employees, asOfIso, options) {
     filterOptions: {
       locations: sliceLocations,
       costCentres: sliceCentres,
+      disciplines: sliceDisciplines,
       months: seriesEnds.map(d => ({ key: monthKey(d), label: monthLabel(d) }))
     },
     includesNames: includeNames,

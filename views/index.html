@@ -571,6 +571,13 @@
       </details>
     </div>
     <div class="filter">
+      <span>Discipline</span>
+      <details class="picker" id="pick-discipline">
+        <summary id="sum-discipline">All disciplines</summary>
+        <div class="options" id="opt-discipline"></div>
+      </details>
+    </div>
+    <div class="filter">
       <span>Period</span>
       <select id="filter-period"></select>
     </div>
@@ -771,7 +778,8 @@ function sparkline(points) {
  * produces swings that look like real movement and are not.
  */
 function turnoverTrend(d) {
-  const byPlace = FILTER.locations.length > 0 || FILTER.costCentres.length > 0;
+  const byPlace = FILTER.locations.length > 0 || FILTER.costCentres.length > 0 ||
+                  FILTER.disciplines.length > 0;
 
   // Unfiltered, use the long company history, which is built on start and termination
   // dates alone and so survives the records migrated in without a cost centre. Filtering
@@ -926,7 +934,7 @@ function trendChart(points) {
 let DATA = null;
 
 // Empty means no restriction, which is how "All" is expressed.
-const FILTER = { locations: [], costCentres: [], from: "", to: "" };
+const FILTER = { locations: [], costCentres: [], disciplines: [], from: "", to: "" };
 let DRILL = null;   // which tile's list is open
 
 function hasRange() {
@@ -934,14 +942,16 @@ function hasRange() {
 }
 
 function isFiltered() {
-  return FILTER.locations.length > 0 || FILTER.costCentres.length > 0 || hasRange();
+  return FILTER.locations.length > 0 || FILTER.costCentres.length > 0 ||
+         FILTER.disciplines.length > 0 || hasRange();
 }
 
-/** The slices matching the location and section ticks. */
+/** The slices matching the location, section and discipline ticks. */
 function selectedSlices(d) {
   return (d.slices || []).filter(sl =>
     (FILTER.locations.length === 0 || FILTER.locations.indexOf(sl.location) >= 0) &&
-    (FILTER.costCentres.length === 0 || FILTER.costCentres.indexOf(sl.costCentre) >= 0)
+    (FILTER.costCentres.length === 0 || FILTER.costCentres.indexOf(sl.costCentre) >= 0) &&
+    (FILTER.disciplines.length === 0 || FILTER.disciplines.indexOf(sl.discipline) >= 0)
   );
 }
 
@@ -955,6 +965,18 @@ function monthsInRange(d) {
     }
   }
   return out;
+}
+
+/**
+ * The months the slice-built tables cover: the chosen range, or the last twelve months
+ * when there is no range. Returned as month keys so both ends are inclusive.
+ */
+function sliceWindow(d) {
+  if (hasRange()) return { from: FILTER.from, to: FILTER.to };
+  const months = (d.filterOptions && d.filterOptions.months) || [];
+  const keys = months.map(m => m.key).sort();
+  const last12 = keys.slice(-12);
+  return { from: last12[0] || "", to: last12[last12.length - 1] || "" };
 }
 
 // Matches MIN_HEADCOUNT_FOR_RATE in scripts/metrics.mjs. A rate off two or three people
@@ -978,6 +1000,11 @@ var MIN_HEADCOUNT_FOR_RATE = 3;
 function rangeRows(d, key, roles, fallbackPct) {
   const groups = {};
 
+  // With a date range, that range. Without one (a discipline filter alone), the last
+  // twelve months, which is what these tables show unfiltered.
+  const window = sliceWindow(d);
+  const inWindow = k => k >= window.from && k <= window.to;
+
   // femaleEnd only appears in data.json once the refresh has run with the matching
   // metrics.mjs. Until then fall back to the precomputed percentage, rather than
   // reporting every row as 0%.
@@ -989,7 +1016,7 @@ function rangeRows(d, key, roles, fallbackPct) {
     if (!name) continue;
     const g = groups[name] || (groups[name] = { name: name, months: {} });
     for (const m of sl.months || []) {
-      if (m.key < FILTER.from || m.key > FILTER.to) continue;
+      if (!inWindow(m.key)) continue;
       const b = g.months[m.key] || (g.months[m.key] = { head: 0, female: 0, leavers: 0, vol: 0 });
       b.head += Number(m.headcountEnd) || 0;
       b.female += Number(m.femaleEnd) || 0;
@@ -1033,6 +1060,62 @@ function rangeRows(d, key, roles, fallbackPct) {
   }
 
   return out.sort((a, b) => b.headcount - a.headcount || a.name.localeCompare(b.name));
+}
+
+/**
+ * The headline figures for the chosen range: headcount at the end of it, the entity split
+ * at the same moment, the comparison figure, and the months to draw in the sparkline.
+ *
+ * Headcount is a position rather than something that accumulates, so it is read at the
+ * last month in the range, not averaged. The comparison is the month immediately before
+ * the range starts, which makes the delta the net movement across the whole period. For a
+ * single month range that is the same thing as the month-on-month change.
+ *
+ * Returns null when there is no range, so the caller keeps the precomputed figures.
+ */
+function rangeHeadline(d) {
+  if (!hasRange()) return null;
+
+  const slices = selectedSlices(d);
+  if (!slices.length) return null;
+
+  // Month-end totals across the selected slices, keyed by month
+  const totals = {};
+  const labels = {};
+  for (const sl of slices) {
+    for (const m of sl.months || []) {
+      const t = totals[m.key] || (totals[m.key] = { head: 0, entity: {} });
+      t.head += Number(m.headcountEnd) || 0;
+      for (const code of Object.keys(m.entityEnd || {})) {
+        t.entity[code] = (t.entity[code] || 0) + (Number(m.entityEnd[code]) || 0);
+      }
+      labels[m.key] = m.label;
+    }
+  }
+
+  const all = Object.keys(totals).sort();
+  const inRange = all.filter(k => k >= FILTER.from && k <= FILTER.to);
+  if (!inRange.length) return null;
+
+  const endKey = inRange[inRange.length - 1];
+  // The month before the range began, where the series goes back that far
+  const beforeKey = all.filter(k => k < inRange[0]).pop() || null;
+
+  const end = totals[endKey];
+  const hasEntity = Object.keys(end.entity).length > 0;
+
+  return {
+    headcount: end.head,
+    headcountPrior: beforeKey ? totals[beforeKey].head : null,
+    priorLabel: beforeKey ? labels[beforeKey] : null,
+    endLabel: labels[endKey],
+    entity: hasEntity ? end.entity : null,
+    months: inRange.map(k => ({
+      month: String(labels[k] || k).split(" ")[0],
+      headcount: totals[k].head,
+      label: labels[k] || k
+    }))
+  };
 }
 
 /** Open role counts by name, carried over from the precomputed rows. */
@@ -1179,6 +1262,7 @@ function scopeLabel() {
   const parts = [];
   if (FILTER.locations.length) parts.push(summarise(FILTER.locations, "location", "locations"));
   if (FILTER.costCentres.length) parts.push(summarise(FILTER.costCentres, "section", "sections"));
+  if (FILTER.disciplines.length) parts.push(summarise(FILTER.disciplines, "discipline", "disciplines"));
   if (hasRange()) {
     const all = (DATA && DATA.filterOptions && DATA.filterOptions.months) || [];
     const lbl = (k) => (all.find(m => m.key === k) || {}).label || k;
@@ -1196,7 +1280,9 @@ function render() {
   // With a date range set, both tables are rebuilt from the slices so they cover the same
   // period as everything else on the page. Without one they keep the precomputed last
   // twelve months.
-  const ranged = hasRange() && (d.slices || []).length > 0;
+  // Slice-built whenever the precomputed rows cannot answer the question: a date range,
+  // or a discipline filter, which those rows know nothing about.
+  const ranged = (hasRange() || FILTER.disciplines.length > 0) && (d.slices || []).length > 0;
   const cc = ranged
     ? rangeRows(d, "costCentre", roleCounts(d.costCentres, "code", "openRoles"), femalePcts(d.costCentres, "code"))
     : (d.costCentres || []).filter(c => !FILTER.costCentres.length || FILTER.costCentres.indexOf(c.code) >= 0);
@@ -1204,7 +1290,32 @@ function render() {
     PIPELINE_EXCLUDE.indexOf(String(st.stage || "").replace(/^\s*\d+[.)]\s*/, "").trim().toLowerCase()) < 0)
     .sort((a, b) => pipelineRank(a.stage) - pipelineRank(b.stage)
                  || (Number(b.count) || 0) - (Number(a.count) || 0));
-  const ent = d.entities || [];
+  // Headline headcount, entity split and sparkline for the chosen range. Null without a
+  // range, in which case the precomputed current figures are used instead.
+  const head = ranged ? rangeHeadline(d) : null;
+
+  const ent = head && head.entity
+    ? (d.entities || []).map(e => Object.assign({}, e, {
+        headcount: head.entity[e.code] || 0,
+        headcountPrior: null
+      }))
+    : (d.entities || []);
+
+  // The hero reads the range figures when there is a range, the current ones otherwise.
+  const heroCount = head ? head.headcount : p.headcount;
+  const heroPrior = head ? head.headcountPrior : p.headcountPrior;
+  const heroAt = head ? " at " + head.endLabel : "";
+  const heroSince = head
+    ? (head.priorLabel ? " since " + head.priorLabel : "")
+    : " on last month";
+
+  // A one month range would draw a single point, which says nothing, so the twelve month
+  // trend is kept in that case and the caption says so.
+  const sparkTrend = head && head.months.length >= 2 ? head.months : trend;
+  const sparkBase = head && head.months.length >= 2
+    ? head.months[0].label + " to " + head.months[head.months.length - 1].label
+    : "Last twelve months";
+
   const dq = d.dataQuality || {};
   const periods = (slice.turnoverPeriods || []).length
     ? slice.turnoverPeriods
@@ -1218,7 +1329,8 @@ function render() {
   // The bar marker has to sit on the same basis as the bars beside it, so the company rate
   // follows the range too.
   const rangeRate = ranged ? rangePeriod(d) : null;
-  const leaversHeading = ranged ? "Leavers" : "Leavers LTM";
+  // Slice-built without a date range still covers the last twelve months
+  const leaversHeading = hasRange() ? "Leavers" : "Leavers LTM";
   const detailMerged = new Map();
   for (const st of d.stageDetail || []) {
     const name = mergeStage(st.stage);
@@ -1254,8 +1366,8 @@ function render() {
   $("root").innerHTML = `
     <div class="hero">
       <div>
-        <div class="figure">${n(p.headcount)}</div>
-        <div class="caption">Active headcount ${delta(p.headcount, p.headcountPrior, "", true)} on last month</div>
+        <div class="figure">${n(heroCount)}</div>
+        <div class="caption">Active headcount${heroAt} ${delta(heroCount, heroPrior, "", true)}${heroSince}</div>
         <div class="split">
           ${ent.map(e => `<span class="split-item">
             <span class="split-value">${n(e.headcount)}</span>
@@ -1264,9 +1376,9 @@ function render() {
         </div>
       </div>
       <div>
-        ${sparkline(trend)}
-        <div class="spark-labels">${trend.map(t => "<span>" + t.month + "</span>").join("")}</div>
-        <div class="spark-caption" id="spark-caption">Last twelve months</div>
+        ${sparkline(sparkTrend)}
+        <div class="spark-labels">${sparkTrend.map(t => "<span>" + t.month + "</span>").join("")}</div>
+        <div class="spark-caption" id="spark-caption" data-base="${sparkBase}">${sparkBase}</div>
       </div>
     </div>
 
@@ -1512,7 +1624,8 @@ function renderTurnover(periods, index) {
 function bindSpark() {
   const caption = $("spark-caption");
   if (!caption) return;
-  const base = "Last twelve months";
+  // Written by the render, since it names the chosen range when there is one
+  const base = caption.dataset.base || "Last twelve months";
 
   document.querySelectorAll(".spark-hit").forEach(el => {
     el.addEventListener("mouseenter", () => { caption.textContent = el.dataset.label; });
@@ -1555,6 +1668,7 @@ function buildFilters(d) {
   const opts = d.filterOptions || {};
   const locations = opts.locations || [];
   const centres = opts.costCentres || [];
+  const disciplines = opts.disciplines || [];
   if (!locations.length && !centres.length) return;
 
   const picker = (optId, sumId, values, selected, noun, plural) => {
@@ -1588,6 +1702,13 @@ function buildFilters(d) {
 
   const resetLoc = picker("opt-location", "sum-location", locations, FILTER.locations, "location", "locations");
   const resetCc = picker("opt-costcentre", "sum-costcentre", centres, FILTER.costCentres, "section", "sections");
+  // data.json from before discipline was added carries none: hide the picker rather than
+  // offering an empty one.
+  const discField = $("pick-discipline") && $("pick-discipline").parentElement;
+  if (discField) discField.hidden = disciplines.length === 0;
+  const resetDisc = disciplines.length
+    ? picker("opt-discipline", "sum-discipline", disciplines, FILTER.disciplines, "discipline", "disciplines")
+    : () => {};
 
   const months = opts.months || [];
   const fromEl = $("filter-from");
@@ -1677,6 +1798,7 @@ function buildFilters(d) {
   $("filter-clear").addEventListener("click", () => {
     resetLoc();
     resetCc();
+    resetDisc();
     FILTER.from = "";
     FILTER.to = "";
     fromEl.value = "";

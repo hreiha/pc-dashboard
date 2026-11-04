@@ -15,140 +15,20 @@
  */
 
 import { scopeEmployees, parseDate, monthEnd, activeAt, tidyLocation } from "./metrics.mjs";
+import { NOT_RECORDED, positionGrade, discipline } from "./classify.mjs";
+
+// Re-exported so anything already importing these from here keeps working.
+export { positionGrade, discipline };
 
 // ---------------------------------------------------------------- configuration
 
-/**
- * Employment Hero has no Position Grade field and no Discipline field. Both are read out
- * of the job title, which at ADP is written "Grade | Discipline", for example
- * "Senior Engineer | Mechanical" or "Associate Director | Fire Protection".
- *
- * Grade is matched against the list below rather than taken verbatim, so that
- * "Senior Engineer (Sydney)" and "Senior Engineer" land on the same row.
- *
- * Longest match wins, so "Associate Director" beats both "Associate" and "Director", and
- * "Graduate Engineer" beats "Engineer". Order in this list does not matter; length does.
- *
- * Add any grade that shows up in the "unmatched job titles" list the refresh prints.
- */
-const POSITION_GRADES = [
-  "Managing Director",
-  "Regional Director",
-  "Technical Director",
-  "Associate Director",
-  "Director",
-  "Senior Associate",
-  "Associate",
-  "Principal",
-  "Senior Consultant",
-  "Consultant",
-  "Graduate Engineer",
-  "Senior Engineer",
-  "Engineer",
-  "Graduate",
-  "Senior BIM Designer",
-  "BIM Designer",
-  "Senior Designer",
-  "Designer",
-  "Senior Technician",
-  "Technician",
-  "Senior Advisor",
-  "Senior Adviser",
-  "Advisor",
-  "Adviser",
-  "Senior Manager",
-  "Manager",
-  "Coordinator",
-  "Administrator",
-  "Analyst",
-  "Specialist",
-  "Officer",
-  "Support",
-  "Intern",
-  "Cadet",
-  "Student"
-];
 
-/**
- * Disciplines that are written more than one way. Matched after the pipe, lower case,
- * and the value on the right is what the dashboard shows.
- */
-const DISCIPLINE_ALIASES = {
-  "mech": "Mechanical",
-  "mechanical services": "Mechanical",
-  "elec": "Electrical",
-  "electrical services": "Electrical",
-  "hydraulic": "Hydraulics",
-  "fire": "Fire Safety",
-  "fire protection": "Fire Safety",
-  "ict": "ICT",
-  "it": "ICT",
-  "esd": "Sustainability",
-  "sustainability (carbon)": "Sustainability",
-  "vertical transport": "Vertical Transportation",
-  "vertical transportation": "Vertical Transportation",
-  "acoustic": "Acoustics",
-  "structural": "Structures",
-  "civil": "Civil",
-  "bids": "Bids",
-  "bid": "Bids"
-};
 
-const NOT_RECORDED = "Not recorded";
+// ---------------------------------------------------------------- small helpers
 
-// Below this many people a breakdown row is folded into "Other", so that a single person
-// is not identifiable by their grade and discipline on a page several teams can open.
+// Rows are anonymised, so there is no small-cell risk and nothing needs suppressing.
 const MIN_ROW_SIZE = 1;
 
-// ---------------------------------------------------------------- derivation
-
-/** Everything before the first pipe, with any trailing bracketed note removed. */
-function titleLeft(jobTitle) {
-  const t = String(jobTitle || "").trim();
-  if (!t) return "";
-  const left = t.split("|")[0];
-  return left.replace(/\s*\([^)]*\)\s*$/, "").trim();
-}
-
-/** Everything after the first pipe. Blank when the title has no pipe at all. */
-function titleRight(jobTitle) {
-  const t = String(jobTitle || "").trim();
-  const idx = t.indexOf("|");
-  if (idx < 0) return "";
-  return t.slice(idx + 1).replace(/\s*\([^)]*\)\s*$/, "").trim();
-}
-
-/**
- * Position grade. Longest keyword that appears in the part before the pipe.
- * Returns "Not recorded" when the title is blank, "Other" when it is present but
- * matches nothing, so that a missing title and an unrecognised one stay distinguishable.
- */
-export function positionGrade(jobTitle) {
-  const left = titleLeft(jobTitle);
-  if (!left) return NOT_RECORDED;
-
-  const haystack = left.toLowerCase();
-  let best = "";
-  for (const grade of POSITION_GRADES) {
-    const needle = grade.toLowerCase();
-    if (haystack.indexOf(needle) >= 0 && needle.length > best.length) best = grade;
-  }
-  return best || "Other";
-}
-
-/** Discipline, from the part after the pipe, with the alias list applied. */
-export function discipline(jobTitle) {
-  const right = titleRight(jobTitle);
-  if (!right) return NOT_RECORDED;
-
-  const key = right.toLowerCase();
-  if (DISCIPLINE_ALIASES[key]) return DISCIPLINE_ALIASES[key];
-
-  // Title case whatever is left, so "fire safety" and "Fire Safety" do not split a row
-  return right.replace(/\S+/g, w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase());
-}
-
-/** Male, Female, or Not recorded. Anything else is reported as recorded, not forced. */
 function genderLabel(value) {
   const g = String(value || "").trim();
   if (!g) return NOT_RECORDED;
@@ -186,8 +66,8 @@ export function computeTeamData(employees, asOfIso) {
     l: tidyLocation(e.location),        // office, state suffix removed
     c: e.costCentre || "Unassigned",    // already NAT-grouped and London-defaulted
     g: genderLabel(e.gender),
-    gr: positionGrade(e.jobTitle),
-    d: discipline(e.jobTitle),
+    gr: positionGrade(e.jobTitle, e.costCentre),
+    d: discipline(e.jobTitle, e.costCentre),
     s: dayOnly(e.startDate),
     t: dayOnly(e.terminationDate),
     b: birthYearMonth(e.birthDate),
@@ -241,15 +121,9 @@ export function computeTeamData(employees, asOfIso) {
     return ((activeNow.filter(predicate).length / activeNow.length) * 100).toFixed(1);
   }
 
-  // Job titles that produced neither a grade nor a discipline, so the lists above can
-  // be corrected rather than guessed at. Deduplicated and capped.
-  const unmatched = [];
-  for (const e of scoped) {
-    const t = String(e.jobTitle || "").trim();
-    if (!t) continue;
-    if (positionGrade(t) !== "Other") continue;
-    if (unmatched.indexOf(t) < 0 && unmatched.length < 60) unmatched.push(t);
-  }
+  // Records missing the recorded fields, so the gap is visible in the run log
+  const missingGrade = activeNow.filter(p => p.gr === NOT_RECORDED).length;
+  const missingDiscipline = activeNow.filter(p => p.d === NOT_RECORDED).length;
 
   return {
     generatedUtc: new Date().toISOString(),
@@ -272,7 +146,8 @@ export function computeTeamData(employees, asOfIso) {
       gender: coverage(p => p.g !== NOT_RECORDED),
       startDate: coverage(p => !!p.s)
     },
-    unmatchedJobTitles: unmatched,
+    missingGrade: missingGrade,
+    missingDiscipline: missingDiscipline,
     people: people,
     dataQuality: quality,
     minRowSize: MIN_ROW_SIZE
