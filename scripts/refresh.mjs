@@ -23,6 +23,42 @@ const API_BASE = "https://api.employmenthero.com/api/v1";
 const PAGE_SIZE = 100;
 
 /**
+ * Custom fields.
+ *
+ * Discipline is a custom field in Employment Hero, and custom fields are not part of the
+ * employee payload at all. They come from their own endpoints:
+ *
+ *   GET /organisations/:org/custom_fields                      the definitions
+ *   GET /organisations/:org/employees/:id/custom_fields        one employee's values
+ *
+ * The values endpoint is per employee, so this costs one request per person. That is why
+ * it runs through a small concurrency pool and why a failure here is a warning rather
+ * than a stop: a slow or rate limited custom field fetch should not take the whole
+ * dashboard down with it.
+ *
+ * Keys are the record field to fill; values are the custom field names to look for,
+ * matched case insensitively against the definition names.
+ */
+const CUSTOM_FIELDS = {
+  discipline: ["discipline", "sub discipline", "sub-discipline"],
+  positionGrade: ["position grade", "position level", "grade"]
+};
+
+const CUSTOM_FIELD_CONCURRENCY = 4;
+
+// Off. Position Grade and Discipline are custom fields, and two attempts at reading them
+// through the custom field endpoints came back empty for every record. Both are now
+// derived from the job title in scripts/team-metrics.mjs instead. The code below is kept
+// because it works against a correct response, so if the endpoint starts returning values
+// this only needs turning back on.
+const USE_CUSTOM_FIELDS = false;
+
+// Custom fields are only needed for people the dashboard can still show. The trend goes
+// back twenty four months, so anyone who left well before that is skipped. On the October
+// run that avoided roughly a third of the requests.
+const CUSTOM_FIELD_MONTHS_BACK = 30;
+
+/**
  * Employment Hero field names, per tenant. Each entry lists the keys to try, in order,
  * and the first one present on the record wins.
  *
@@ -48,8 +84,12 @@ const FIELDS = {
   // fallback for records where they are blank.
   jobTitle:          ["job_title", "role", "title"],
   birthDate:         ["date_of_birth", "dob", "birth_date"],
-  positionGrade:     ["position_grade", "positionGrade", "grade", "level"],
-  discipline:        ["discipline", "sub_discipline", "practice"]
+  // Both of these are CUSTOM fields in Employment Hero, filled in by applyCustomFields
+  // below rather than from the employee payload. Left empty on purpose: a loose guess
+  // like "grade" or "level" would match some unrelated standard field and put junk here
+  // on any record whose custom field request fails.
+  positionGrade:     [],
+  discipline:        []
 };
 
 function required(name) {
@@ -225,6 +265,13 @@ async function fetchAllEmployees(accessToken, orgId, entity, scope, orgAu, orgUk
   return collected;
 }
 
+/** How many records carry a non-empty value under any of these candidate keys. */
+function employeesPreview(rawEmployees, candidates) {
+  let n = 0;
+  for (const e of rawEmployees) if (String(pick(e.raw, candidates) || "").trim()) n++;
+  return n;
+}
+
 function normalise({ raw, entity }) {
   return {
     id: String(raw.id ?? raw.employee_id ?? ""),
@@ -332,6 +379,166 @@ function loadRecruitment() {
   return parsed;
 }
 
+/**
+ * Reads a custom field value whatever shape it arrives in.
+ *
+ * Employment Hero returns these as ARRAYS, even for a single select: the live response
+ * shows "value":[] for an empty one. An array is an object, so the earlier version read
+ * .name off it, got undefined, and silently discarded every value. Hence the recursion.
+ */
+function readCustomValue(v) {
+  if (v === null || v === undefined) return "";
+  if (Array.isArray(v)) {
+    return v.map(readCustomValue).filter(Boolean).join(", ");
+  }
+  if (typeof v === "object") {
+    return readCustomValue(v.name ?? v.value ?? v.label ?? v.title ?? "");
+  }
+  const s = String(v).trim();
+  return s === "-" ? "" : s;
+}
+
+/** One GET with a retry on 429 and 5xx, so a rate limit does not end the run. */
+async function getJson(accessToken, path, attempt = 0) {
+  const res = await fetch(`${API_BASE}${path}`, {
+    headers: { Authorization: `Bearer ${accessToken}` }
+  });
+
+  if (res.status === 429 || res.status >= 500) {
+    if (attempt < 6) {
+      // Honour Retry-After when the API sends it, otherwise back off exponentially
+      const header = Number(res.headers && res.headers.get && res.headers.get("retry-after"));
+      const wait = header > 0 ? header * 1000 : 500 * Math.pow(2, attempt);
+      await new Promise(r => setTimeout(r, Math.min(wait, 20000)));
+      return getJson(accessToken, path, attempt + 1);
+    }
+  }
+
+  if (!res.ok) return { ok: false, status: res.status };
+  return { ok: true, json: await res.json() };
+}
+
+function itemsOf(json) {
+  const data = (json && json.data) || json || {};
+  return data.items || [];
+}
+
+/** The organisation's custom field definitions, so we can match by name. */
+async function fetchCustomFieldDefs(accessToken, orgId, entity) {
+  const res = await getJson(accessToken, `/organisations/${orgId}/custom_fields`);
+  if (!res.ok) {
+    console.warn(`  ${entity}: custom field definitions returned ${res.status}. ` +
+      "Discipline will be blank. The token may be missing a custom field scope.");
+    return [];
+  }
+  const defs = itemsOf(res.json);
+  console.log(`  ${entity}: ${defs.length} custom field(s) defined: ` +
+    defs.map(d => d.name).filter(Boolean).join(", "));
+  return defs;
+}
+
+/**
+ * Fills positionGrade and discipline on each employee from their custom field values.
+ * Runs a fixed number of requests at a time rather than all at once, which keeps well
+ * inside the rate limit on an organisation of this size.
+ */
+async function applyCustomFields(accessToken, orgId, entity, employees) {
+  const defs = await fetchCustomFieldDefs(accessToken, orgId, entity);
+  if (!defs.length) return;
+
+  // Which definition corresponds to which record field. Both the id and the name are
+  // recorded, because the values endpoint may identify a field by either and this has
+  // not been seen against the live API yet.
+  const byId = new Map();
+  const byName = new Map();
+  for (const [field, names] of Object.entries(CUSTOM_FIELDS)) {
+    const def = defs.find(d =>
+      names.indexOf(String(d.name || "").trim().toLowerCase()) >= 0);
+    if (def) {
+      if (def.id !== undefined && def.id !== null) byId.set(String(def.id), field);
+      byName.set(String(def.name || "").trim().toLowerCase(), field);
+      console.log(`  ${entity}: "${def.name}" will fill ${field}`);
+    }
+  }
+
+  const wanted = byName;
+  if (!wanted.size) {
+    console.warn(`  ${entity}: none of the custom fields are named Discipline or ` +
+      "Position Grade. Add the right name to CUSTOM_FIELDS in scripts/refresh.mjs.");
+    return;
+  }
+
+  // Skip anyone who left long enough ago that no view can reach them
+  const cutoff = new Date();
+  cutoff.setMonth(cutoff.getMonth() - CUSTOM_FIELD_MONTHS_BACK);
+  const targets = employees.filter(e => {
+    if (!e.id) return false;
+    const t = e.terminationDate ? new Date(e.terminationDate) : null;
+    return !t || isNaN(t.getTime()) || t >= cutoff;
+  });
+  const skipped = employees.length - targets.length;
+
+  let filled = 0;
+  let failed = 0;
+  let index = 0;
+  let shapeLogged = false;
+  const failures = {};
+
+  async function worker() {
+    while (index < targets.length) {
+      const e = targets[index++];
+      const res = await getJson(accessToken, `/organisations/${orgId}/employees/${e.id}/custom_fields`);
+      if (!res.ok) {
+        failed++;
+        failures[res.status] = (failures[res.status] || 0) + 1;
+        continue;
+      }
+
+      const items = itemsOf(res.json);
+
+      let any = false;
+      for (const item of items) {
+        // Identify the field by id where the response carries one, by name otherwise
+        const field = byId.get(String(item.custom_field_id ?? item.field_id ?? item.id ?? "")) ||
+          byName.get(String(item.name ?? item.field_name ?? item.custom_field_name ?? "")
+            .trim().toLowerCase());
+        if (!field) continue;
+
+        // Printed once for a field we actually want, so the shape is visible if the
+        // value still does not land. The first item of any kind told us little.
+        if (!shapeLogged) {
+          shapeLogged = true;
+          console.log(`  ${entity}: ${field} arrives as ${JSON.stringify(item)}`);
+        }
+
+        const v = readCustomValue(
+          item.value ?? item.custom_field_value ?? item.field_value ?? item.text);
+        if (v) { e[field] = v; any = true; }
+      }
+      if (any) filled++;
+    }
+  }
+
+  const workers = [];
+  for (let i = 0; i < CUSTOM_FIELD_CONCURRENCY; i++) workers.push(worker());
+  await Promise.all(workers);
+
+  console.log(`  ${entity}: custom fields filled on ${filled} of ${targets.length} records` +
+    (skipped ? `, ${skipped} skipped as long departed` : "") +
+    (failed ? `, ${failed} failed` : ""));
+  if (failed) {
+    console.log("  failures by status: " +
+      Object.entries(failures).map(([k, v]) => `${k} x${v}`).join(", "));
+    if (failures["429"]) {
+      console.log("  429 means rate limited after six retries. Lower " +
+        "CUSTOM_FIELD_CONCURRENCY in scripts/refresh.mjs.");
+    }
+    if (failures["404"]) {
+      console.log("  404 is normal for a record with no custom fields set.");
+    }
+  }
+}
+
 async function main() {
   const clientId = required("EH_CLIENT_ID");
   const clientSecret = required("EH_CLIENT_SECRET");
@@ -352,10 +559,30 @@ async function main() {
   }
 
   // Printed so the field names can be mapped without guessing. Keys only, never values.
+  const allKeys = Object.keys(rawEmployees[0].raw).sort();
   console.log("Available fields on the first record:");
-  console.log("  " + Object.keys(rawEmployees[0].raw).sort().join(", "));
+  console.log("  " + allKeys.join(", "));
 
   const employees = rawEmployees.map(normalise);
+
+  // Discipline lives in a custom field, which the employee payload does not carry, so it
+  // is fetched separately. Non-fatal: if it fails the rest of the dashboard still builds.
+  if (USE_CUSTOM_FIELDS) {
+    console.log("");
+    console.log("Custom fields:");
+    try {
+      await applyCustomFields(accessToken, orgAu, "AU", employees.filter(e => e.entity === "AU"));
+      await applyCustomFields(accessToken, orgUk, "UK", employees.filter(e => e.entity === "UK"));
+    } catch (err) {
+      console.warn(`  Custom field fetch failed: ${err.message}.`);
+    }
+    console.log("");
+  } else {
+    console.log("");
+    console.log("Custom fields: skipped. Position grade and discipline are derived from " +
+      "the job title instead. See the note above USE_CUSTOM_FIELDS in this file.");
+    console.log("");
+  }
 
   const unmappedFields = Object.entries(FIELDS)
     .filter(([key]) => employees.every(e => e[key] === "" || e[key] === 0))
@@ -451,10 +678,12 @@ async function main() {
     `gender ${team.coverage.gender}%`);
   console.log(`  grades: ${team.filterOptions.grades.join(", ")}`);
   console.log(`  disciplines: ${team.filterOptions.disciplines.join(", ")}`);
-  if (team.unmatchedJobTitles.length) {
-    console.log(`  ${team.unmatchedJobTitles.length} job title(s) matched no position grade. ` +
-      "Add the missing grade to POSITION_GRADES in scripts/team-metrics.mjs:");
-    for (const t of team.unmatchedJobTitles) console.log(`    ${t}`);
+  if (team.missingGrade) {
+    console.log(`  ${team.missingGrade} active people have no position grade recorded.`);
+  }
+  if (team.missingDiscipline) {
+    console.log(`  ${team.missingDiscipline} active people have no discipline recorded. ` +
+      "Discipline is a custom field; check the names in CUSTOM_FIELDS above matched.");
   }
   if (Number(team.coverage.birthDate) < 50) {
     console.log("  Date of birth is sparse, so the average age is drawn from a minority " +

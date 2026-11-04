@@ -570,7 +570,7 @@
         <div class="options" id="opt-costcentre"></div>
       </details>
     </div>
-    <div class="filter">
+    <div class="filter" id="field-discipline">
       <span>Discipline</span>
       <details class="picker" id="pick-discipline">
         <summary id="sum-discipline">All disciplines</summary>
@@ -1703,9 +1703,10 @@ function buildFilters(d) {
   const resetLoc = picker("opt-location", "sum-location", locations, FILTER.locations, "location", "locations");
   const resetCc = picker("opt-costcentre", "sum-costcentre", centres, FILTER.costCentres, "section", "sections");
   // data.json from before discipline was added carries none: hide the picker rather than
-  // offering an empty one.
-  const discField = $("pick-discipline") && $("pick-discipline").parentElement;
-  if (discField) discField.hidden = disciplines.length === 0;
+  // offering an empty one. Note this sets display rather than the hidden attribute: the
+  // .filter rule sets display:block, which overrides what hidden would otherwise do.
+  const discField = $("field-discipline");
+  if (discField) discField.style.display = disciplines.length ? "" : "none";
   const resetDisc = disciplines.length
     ? picker("opt-discipline", "sum-discipline", disciplines, FILTER.disciplines, "discipline", "disciplines")
     : () => {};
