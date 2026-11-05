@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-05T04:01:00.008Z",
+  "generatedUtc": "2026-11-05T05:01:24.713Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -103122,7 +103122,7 @@
     }
   ],
   "recruitment": {
-    "openRoles": 39,
+    "openRoles": 38,
     "filledMonth": 0,
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
@@ -103130,7 +103130,7 @@
   "pipeline": [
     {
       "stage": "2. Search & Prepare",
-      "count": 25
+      "count": 24
     },
     {
       "stage": "1. Search & Secure",
@@ -103144,15 +103144,15 @@
   "stageDetail": [
     {
       "stage": "Phone Screen",
-      "count": 8
+      "count": 7
     },
     {
       "stage": "1st Interview",
-      "count": 8
+      "count": 9
     },
     {
-      "stage": "Offer Pending",
-      "count": 1
+      "stage": "Contract Sent",
+      "count": 3
     },
     {
       "stage": "Declined",
@@ -103168,15 +103168,11 @@
     },
     {
       "stage": "Present to HM",
-      "count": 7
+      "count": 6
     },
     {
       "stage": "Unknown",
       "count": 0
-    },
-    {
-      "stage": "Contract Sent",
-      "count": 2
     },
     {
       "stage": "Withdrawn",
@@ -103200,7 +103196,7 @@
       "churnVoluntary": "32.9",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "91.2",
-      "openRoles": 8
+      "openRoles": 7
     },
     {
       "code": "Sydney",
@@ -103326,7 +103322,7 @@
       "churnTotal": "35.9",
       "churnVoluntary": "25.5",
       "avgHeadcountLtm": "144.9",
-      "activeRoles": 17
+      "activeRoles": 16
     },
     {
       "name": "Sydney",
