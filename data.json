@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-04T22:00:59.788Z",
+  "generatedUtc": "2026-11-05T00:47:26.090Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -10,12 +10,12 @@
     "genderNotRecorded": 0,
     "femalePct": "26.0",
     "femalePctPrior": "26.3",
-    "leaversMonth": 14,
-    "leaversMonthPrior": 8,
-    "leaversVoluntaryMonth": 14,
-    "leaversVoluntaryMonthPrior": 7,
-    "hiresMonth": 9,
-    "hiresMonthPrior": 1,
+    "leaversMonth": 13,
+    "leaversMonthPrior": 9,
+    "leaversVoluntaryMonth": 13,
+    "leaversVoluntaryMonthPrior": 8,
+    "hiresMonth": 7,
+    "hiresMonthPrior": 3,
     "churnTotal": "36.7",
     "churnTotalPrior": "39.4",
     "churnVoluntary": "27.2",
@@ -22452,10 +22452,10 @@
       "femalePctPrior": "75.0",
       "hiresMonth": 0,
       "hiresMonthPrior": 0,
-      "leaversMonth": 2,
-      "leaversMonthPrior": 0,
-      "leaversVoluntaryMonth": 2,
-      "leaversVoluntaryMonthPrior": 0,
+      "leaversMonth": 1,
+      "leaversMonthPrior": 1,
+      "leaversVoluntaryMonth": 1,
+      "leaversVoluntaryMonthPrior": 1,
       "avgHeadcountLtm": "5.6",
       "churnTotal": "71.6",
       "churnVoluntary": "71.6",
@@ -23351,13 +23351,6 @@
       "last30": {
         "hireNames": [],
         "leaverNames": [
-          {
-            "name": "Beichen Wang",
-            "date": "2026-10-06T00:00:00+00:00",
-            "costCentre": "Melbourne",
-            "type": "Voluntary cessation",
-            "voluntary": true
-          },
           {
             "name": "Katie Holpen",
             "date": "2026-10-15T00:00:00+00:00",
@@ -39690,8 +39683,8 @@
       "genderNotRecorded": 0,
       "femalePct": "100.0",
       "femalePctPrior": "100.0",
-      "hiresMonth": 1,
-      "hiresMonthPrior": 0,
+      "hiresMonth": 0,
+      "hiresMonthPrior": 1,
       "leaversMonth": 0,
       "leaversMonthPrior": 0,
       "leaversVoluntaryMonth": 0,
@@ -40546,13 +40539,7 @@
         }
       ],
       "last30": {
-        "hireNames": [
-          {
-            "name": "Layan Elhabash",
-            "date": "2026-10-06T00:00:00+00:00",
-            "costCentre": "Brisbane"
-          }
-        ],
+        "hireNames": [],
         "leaverNames": []
       }
     },
@@ -86583,8 +86570,8 @@
       "genderNotRecorded": 0,
       "femalePct": "100.0",
       "femalePctPrior": "100.0",
-      "hiresMonth": 1,
-      "hiresMonthPrior": 0,
+      "hiresMonth": 0,
+      "hiresMonthPrior": 1,
       "leaversMonth": 0,
       "leaversMonthPrior": 0,
       "leaversVoluntaryMonth": 0,
@@ -87445,13 +87432,7 @@
         }
       ],
       "last30": {
-        "hireNames": [
-          {
-            "name": "Shelly Webster",
-            "date": "2026-10-06T00:00:00+00:00",
-            "costCentre": "Brisbane"
-          }
-        ],
+        "hireNames": [],
         "leaverNames": []
       }
     },
@@ -103109,7 +103090,7 @@
     }
   ],
   "historyQuality": {
-    "recordsWithStartDate": 1082,
+    "recordsWithStartDate": 1081,
     "leaversWithoutStartDate": 18,
     "firstLeaverMonth": "2012-08",
     "impossibleTerminationDates": 0
@@ -103122,8 +103103,8 @@
       "headcountPrior": 286,
       "female": 75,
       "femalePct": "25.9",
-      "leaversMonth": 13,
-      "hiresMonth": 9,
+      "leaversMonth": 12,
+      "hiresMonth": 7,
       "gpgMean": "0.0",
       "gpgMedian": "0.0"
     },
@@ -103469,7 +103450,7 @@
     "excludedContractors": 0,
     "excludedIncomplete": 0,
     "excludedNoCostCentre": 350,
-    "notYetStarted": 6,
+    "notYetStarted": 5,
     "excludedNoSalary": 304,
     "casualsConverted": 64,
     "partTimeConverted": 45
