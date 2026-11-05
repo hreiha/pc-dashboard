@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-05T05:01:24.713Z",
+  "generatedUtc": "2026-11-05T06:00:55.665Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -103148,7 +103148,7 @@
     },
     {
       "stage": "1st Interview",
-      "count": 9
+      "count": 8
     },
     {
       "stage": "Contract Sent",
@@ -103175,11 +103175,11 @@
       "count": 0
     },
     {
-      "stage": "Withdrawn",
-      "count": 1
+      "stage": "2nd Interview",
+      "count": 2
     },
     {
-      "stage": "2nd Interview",
+      "stage": "Withdrawn",
       "count": 1
     }
   ],
