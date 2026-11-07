@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-06T23:59:20.503Z",
+  "generatedUtc": "2026-11-07T23:30:05.660Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -10,10 +10,10 @@
     "genderNotRecorded": 0,
     "femalePct": "26.0",
     "femalePctPrior": "26.3",
-    "leaversMonth": 13,
-    "leaversMonthPrior": 9,
-    "leaversVoluntaryMonth": 13,
-    "leaversVoluntaryMonthPrior": 8,
+    "leaversMonth": 12,
+    "leaversMonthPrior": 10,
+    "leaversVoluntaryMonth": 12,
+    "leaversVoluntaryMonthPrior": 9,
     "hiresMonth": 7,
     "hiresMonthPrior": 3,
     "churnTotal": "36.7",
@@ -27095,10 +27095,10 @@
       "femalePctPrior": "0.0",
       "hiresMonth": 0,
       "hiresMonthPrior": 0,
-      "leaversMonth": 1,
-      "leaversMonthPrior": 0,
-      "leaversVoluntaryMonth": 1,
-      "leaversVoluntaryMonthPrior": 0,
+      "leaversMonth": 0,
+      "leaversMonthPrior": 1,
+      "leaversVoluntaryMonth": 0,
+      "leaversVoluntaryMonthPrior": 1,
       "avgHeadcountLtm": "2.6",
       "churnTotal": "77.4",
       "churnVoluntary": "38.7",
@@ -27982,15 +27982,7 @@
       ],
       "last30": {
         "hireNames": [],
-        "leaverNames": [
-          {
-            "name": "Ali Eslahi",
-            "date": "2026-10-08T00:00:00+00:00",
-            "costCentre": "NAT-SPL",
-            "type": "Voluntary cessation",
-            "voluntary": true
-          }
-        ]
+        "leaverNames": []
       }
     },
     {
@@ -103103,7 +103095,7 @@
       "headcountPrior": 286,
       "female": 75,
       "femalePct": "25.9",
-      "leaversMonth": 12,
+      "leaversMonth": 11,
       "hiresMonth": 7,
       "gpgMean": "0.0",
       "gpgMedian": "0.0"
