@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-07T23:30:05.660Z",
+  "generatedUtc": "2026-11-08T23:28:42.291Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -10,10 +10,10 @@
     "genderNotRecorded": 0,
     "femalePct": "26.0",
     "femalePctPrior": "26.3",
-    "leaversMonth": 12,
-    "leaversMonthPrior": 10,
-    "leaversVoluntaryMonth": 12,
-    "leaversVoluntaryMonthPrior": 9,
+    "leaversMonth": 11,
+    "leaversMonthPrior": 11,
+    "leaversVoluntaryMonth": 11,
+    "leaversVoluntaryMonthPrior": 10,
     "hiresMonth": 7,
     "hiresMonthPrior": 3,
     "churnTotal": "36.7",
@@ -32477,10 +32477,10 @@
       "femalePctPrior": "33.3",
       "hiresMonth": 0,
       "hiresMonthPrior": 0,
-      "leaversMonth": 2,
-      "leaversMonthPrior": 1,
-      "leaversVoluntaryMonth": 2,
-      "leaversVoluntaryMonthPrior": 1,
+      "leaversMonth": 1,
+      "leaversMonthPrior": 2,
+      "leaversVoluntaryMonth": 1,
+      "leaversVoluntaryMonthPrior": 2,
       "avgHeadcountLtm": "12.5",
       "churnTotal": "40.0",
       "churnVoluntary": "40.0",
@@ -33438,13 +33438,6 @@
       "last30": {
         "hireNames": [],
         "leaverNames": [
-          {
-            "name": "Meenit Charan",
-            "date": "2026-10-09T00:00:00+00:00",
-            "costCentre": "Sydney",
-            "type": "Voluntary cessation",
-            "voluntary": true
-          },
           {
             "name": "Lily Chen",
             "date": "2026-10-16T00:00:00+00:00",
@@ -103095,7 +103088,7 @@
       "headcountPrior": 286,
       "female": 75,
       "femalePct": "25.9",
-      "leaversMonth": 11,
+      "leaversMonth": 10,
       "hiresMonth": 7,
       "gpgMean": "0.0",
       "gpgMedian": "0.0"
