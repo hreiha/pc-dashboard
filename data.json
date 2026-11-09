@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-09T02:01:06.560Z",
+  "generatedUtc": "2026-11-09T04:00:57.213Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -103119,7 +103119,7 @@
     }
   ],
   "recruitment": {
-    "openRoles": 36,
+    "openRoles": 35,
     "filledMonth": 0,
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
@@ -103127,7 +103127,7 @@
   "pipeline": [
     {
       "stage": "2. Search & Prepare",
-      "count": 24
+      "count": 23
     },
     {
       "stage": "1. Search & Secure",
@@ -103145,7 +103145,7 @@
     },
     {
       "stage": "1st Interview",
-      "count": 8
+      "count": 7
     },
     {
       "stage": "Declined",
@@ -103277,7 +103277,7 @@
       "churnVoluntary": "18.2",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "16.5",
-      "openRoles": 2
+      "openRoles": 1
     },
     {
       "code": "London",
@@ -103355,7 +103355,7 @@
       "churnTotal": "21.6",
       "churnVoluntary": "16.2",
       "avgHeadcountLtm": "18.5",
-      "activeRoles": 4
+      "activeRoles": 3
     },
     {
       "name": "London",
