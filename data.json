@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-10T02:36:12.693Z",
+  "generatedUtc": "2026-11-10T06:01:06.264Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -103087,7 +103087,7 @@
     }
   ],
   "historyQuality": {
-    "recordsWithStartDate": 1081,
+    "recordsWithStartDate": 1082,
     "leaversWithoutStartDate": 18,
     "firstLeaverMonth": "2012-08",
     "impossibleTerminationDates": 0
@@ -103119,7 +103119,7 @@
     }
   ],
   "recruitment": {
-    "openRoles": 36,
+    "openRoles": 37,
     "filledMonth": 0,
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
@@ -103131,7 +103131,7 @@
     },
     {
       "stage": "1. Search & Secure",
-      "count": 7
+      "count": 8
     },
     {
       "stage": "3. Waiting for Approval",
@@ -103145,7 +103145,7 @@
     },
     {
       "stage": "1st Interview",
-      "count": 7
+      "count": 8
     },
     {
       "stage": "Declined",
@@ -103277,7 +103277,7 @@
       "churnVoluntary": "18.2",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "16.5",
-      "openRoles": 1
+      "openRoles": 2
     },
     {
       "code": "London",
@@ -103439,7 +103439,7 @@
     "excludedContractors": 0,
     "excludedIncomplete": 0,
     "excludedNoCostCentre": 350,
-    "notYetStarted": 4,
+    "notYetStarted": 5,
     "excludedNoSalary": 305,
     "casualsConverted": 64,
     "partTimeConverted": 45
