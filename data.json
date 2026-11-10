@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-09T04:00:57.213Z",
+  "generatedUtc": "2026-11-10T00:01:08.744Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -11,9 +11,9 @@
     "femalePct": "25.9",
     "femalePctPrior": "26.3",
     "leaversMonth": 11,
-    "leaversMonthPrior": 11,
+    "leaversMonthPrior": 10,
     "leaversVoluntaryMonth": 11,
-    "leaversVoluntaryMonthPrior": 10,
+    "leaversVoluntaryMonthPrior": 9,
     "hiresMonth": 8,
     "hiresMonthPrior": 3,
     "churnTotal": "36.7",
@@ -26,10 +26,10 @@
     "regrettableCountLtm": 0,
     "regrettableShareOfLeavers": "0.0",
     "rehireFlagMissing": 119,
-    "ytdAnnualisedTotal": "39.3",
+    "ytdAnnualisedTotal": "39.4",
     "ytdAnnualisedTotalPrior": "49.2",
     "ytdAnnualisedVoluntary": "29.3",
-    "ytdAnnualisedVoluntaryPrior": "36.6",
+    "ytdAnnualisedVoluntaryPrior": "36.7",
     "gpgMean": "0.0",
     "gpgMeanPrior": "0.0",
     "gpgMedian": "0.0",
@@ -8039,9 +8039,9 @@
       "hiresMonth": 0,
       "hiresMonthPrior": 0,
       "leaversMonth": 0,
-      "leaversMonthPrior": 1,
+      "leaversMonthPrior": 0,
       "leaversVoluntaryMonth": 0,
-      "leaversVoluntaryMonthPrior": 1,
+      "leaversVoluntaryMonthPrior": 0,
       "avgHeadcountLtm": "4.2",
       "churnTotal": "96.0",
       "churnVoluntary": "72.0",
@@ -103087,7 +103087,7 @@
     }
   ],
   "historyQuality": {
-    "recordsWithStartDate": 1082,
+    "recordsWithStartDate": 1081,
     "leaversWithoutStartDate": 18,
     "firstLeaverMonth": "2012-08",
     "impossibleTerminationDates": 0
@@ -103119,7 +103119,7 @@
     }
   ],
   "recruitment": {
-    "openRoles": 35,
+    "openRoles": 36,
     "filledMonth": 0,
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
@@ -103131,7 +103131,7 @@
     },
     {
       "stage": "1. Search & Secure",
-      "count": 6
+      "count": 7
     },
     {
       "stage": "3. Waiting for Approval",
@@ -103168,11 +103168,11 @@
       "count": 0
     },
     {
-      "stage": "Contract Sent",
-      "count": 1
+      "stage": "Withdrawn",
+      "count": 2
     },
     {
-      "stage": "Withdrawn",
+      "stage": "Contract Sent",
       "count": 1
     },
     {
@@ -103235,7 +103235,7 @@
       "churnVoluntary": "20.3",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "34.5",
-      "openRoles": 6
+      "openRoles": 7
     },
     {
       "code": "NAT-CORP",
@@ -103343,7 +103343,7 @@
       "churnTotal": "33.8",
       "churnVoluntary": "23.8",
       "avgHeadcountLtm": "50.3",
-      "activeRoles": 14
+      "activeRoles": 15
     },
     {
       "name": "Adelaide",
@@ -103439,7 +103439,7 @@
     "excludedContractors": 0,
     "excludedIncomplete": 0,
     "excludedNoCostCentre": 350,
-    "notYetStarted": 5,
+    "notYetStarted": 4,
     "excludedNoSalary": 305,
     "casualsConverted": 64,
     "partTimeConverted": 45
