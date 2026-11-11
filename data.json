@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-10T06:01:06.264Z",
+  "generatedUtc": "2026-11-11T00:28:34.477Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -14,8 +14,8 @@
     "leaversMonthPrior": 10,
     "leaversVoluntaryMonth": 11,
     "leaversVoluntaryMonthPrior": 9,
-    "hiresMonth": 8,
-    "hiresMonthPrior": 3,
+    "hiresMonth": 6,
+    "hiresMonthPrior": 5,
     "churnTotal": "36.7",
     "churnTotalPrior": "39.4",
     "churnVoluntary": "27.2",
@@ -3235,8 +3235,8 @@
       "genderNotRecorded": 0,
       "femalePct": "14.3",
       "femalePctPrior": "14.3",
-      "hiresMonth": 1,
-      "hiresMonthPrior": 0,
+      "hiresMonth": 0,
+      "hiresMonthPrior": 1,
       "leaversMonth": 0,
       "leaversMonthPrior": 0,
       "leaversVoluntaryMonth": 0,
@@ -4111,13 +4111,7 @@
         }
       ],
       "last30": {
-        "hireNames": [
-          {
-            "name": "Pramod Pillai",
-            "date": "2026-10-12T00:00:00+00:00",
-            "costCentre": "Brisbane"
-          }
-        ],
+        "hireNames": [],
         "leaverNames": []
       }
     },
@@ -87433,8 +87427,8 @@
       "genderNotRecorded": 0,
       "femalePct": "0.0",
       "femalePctPrior": "0.0",
-      "hiresMonth": 1,
-      "hiresMonthPrior": 0,
+      "hiresMonth": 0,
+      "hiresMonthPrior": 1,
       "leaversMonth": 0,
       "leaversMonthPrior": 0,
       "leaversVoluntaryMonth": 0,
@@ -88315,13 +88309,7 @@
         }
       ],
       "last30": {
-        "hireNames": [
-          {
-            "name": "Mohammed Elnemr",
-            "date": "2026-10-12T00:00:00+00:00",
-            "costCentre": "Melbourne"
-          }
-        ],
+        "hireNames": [],
         "leaverNames": []
       }
     },
@@ -103101,7 +103089,7 @@
       "female": 75,
       "femalePct": "25.8",
       "leaversMonth": 10,
-      "hiresMonth": 8,
+      "hiresMonth": 6,
       "gpgMean": "0.0",
       "gpgMedian": "0.0"
     },
