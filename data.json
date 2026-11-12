@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-11T04:00:56.753Z",
+  "generatedUtc": "2026-11-12T00:01:04.175Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -103107,7 +103107,7 @@
     }
   ],
   "recruitment": {
-    "openRoles": 37,
+    "openRoles": 35,
     "filledMonth": 0,
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
@@ -103115,15 +103115,15 @@
   "pipeline": [
     {
       "stage": "2. Search & Prepare",
-      "count": 23
-    },
-    {
-      "stage": "1. Search & Secure",
-      "count": 8
+      "count": 22
     },
     {
       "stage": "3. Waiting for Approval",
       "count": 6
+    },
+    {
+      "stage": "1. Search & Secure",
+      "count": 7
     }
   ],
   "stageDetail": [
@@ -103133,7 +103133,7 @@
     },
     {
       "stage": "1st Interview",
-      "count": 7
+      "count": 6
     },
     {
       "stage": "Declined",
@@ -103161,10 +103161,6 @@
     },
     {
       "stage": "Contract Sent",
-      "count": 1
-    },
-    {
-      "stage": "2nd Interview",
       "count": 1
     }
   ],
@@ -103223,7 +103219,7 @@
       "churnVoluntary": "20.3",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "34.5",
-      "openRoles": 7
+      "openRoles": 5
     },
     {
       "code": "NAT-CORP",
@@ -103331,7 +103327,7 @@
       "churnTotal": "33.8",
       "churnVoluntary": "23.8",
       "avgHeadcountLtm": "50.3",
-      "activeRoles": 15
+      "activeRoles": 13
     },
     {
       "name": "Adelaide",
