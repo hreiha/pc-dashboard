@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-12T01:50:28.333Z",
+  "generatedUtc": "2026-11-12T03:00:58.354Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -128,16 +128,16 @@
       "months": 12,
       "avgHeadcount": "318.4",
       "avgHeadcountValue": 318.4166666666667,
-      "leavers": 109,
+      "leavers": 110,
       "leaversVoluntary": 72,
       "leaversRegrettable": 0,
-      "total": "34.2",
+      "total": "34.5",
       "voluntary": "22.6",
       "regrettable": "0.0",
-      "totalAnnualised": "34.2",
+      "totalAnnualised": "34.5",
       "voluntaryAnnualised": "22.6",
       "regrettableShareOfLeavers": "0.0",
-      "rehireFlagMissing": 109
+      "rehireFlagMissing": 110
     }
   ],
   "filterOptions": {
@@ -32570,16 +32570,16 @@
           "months": 12,
           "avgHeadcount": "12.5",
           "avgHeadcountValue": 12.5,
-          "leavers": 4,
+          "leavers": 5,
           "leaversVoluntary": 4,
           "leaversRegrettable": 0,
-          "total": "32.0",
+          "total": "40.0",
           "voluntary": "32.0",
           "regrettable": "0.0",
-          "totalAnnualised": "32.0",
+          "totalAnnualised": "40.0",
           "voluntaryAnnualised": "32.0",
           "regrettableShareOfLeavers": "0.0",
-          "rehireFlagMissing": 4
+          "rehireFlagMissing": 5
         }
       ],
       "headcountTrend": [
@@ -32678,17 +32678,30 @@
             "AU": 13,
             "UK": 0
           },
-          "hires": 1,
-          "leavers": 0,
+          "hires": 2,
+          "leavers": 1,
           "leaversVoluntary": 0,
           "hireNames": [
             {
               "name": "Liam Carroll",
               "date": "2025-02-03T00:00:00+00:00",
               "costCentre": "Sydney"
+            },
+            {
+              "name": "Lucas Giovanni",
+              "date": "2025-02-03T00:00:00+00:00",
+              "costCentre": "Sydney"
             }
           ],
-          "leaverNames": []
+          "leaverNames": [
+            {
+              "name": "Lucas Giovanni",
+              "date": "2025-02-03T00:00:00+00:00",
+              "costCentre": "Sydney",
+              "type": "Contract cessation - Import from Keypay",
+              "voluntary": false
+            }
+          ]
         },
         {
           "key": "2025-03",
@@ -33285,7 +33298,7 @@
           "k": "2025-02",
           "label": "Feb 2025",
           "h": 13,
-          "l": 0,
+          "l": 1,
           "v": 0
         },
         {
@@ -101682,7 +101695,7 @@
       "k": "2025-02",
       "label": "Feb 2025",
       "h": 298,
-      "l": 5,
+      "l": 6,
       "v": 3
     },
     {
@@ -103075,7 +103088,7 @@
     }
   ],
   "historyQuality": {
-    "recordsWithStartDate": 1082,
+    "recordsWithStartDate": 1083,
     "leaversWithoutStartDate": 18,
     "firstLeaverMonth": "2012-08",
     "impossibleTerminationDates": 0
@@ -103107,7 +103120,7 @@
     }
   ],
   "recruitment": {
-    "openRoles": 35,
+    "openRoles": 34,
     "filledMonth": 0,
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
@@ -103119,7 +103132,7 @@
     },
     {
       "stage": "3. Waiting for Approval",
-      "count": 6
+      "count": 5
     },
     {
       "stage": "1. Search & Secure",
@@ -103158,10 +103171,6 @@
     {
       "stage": "Withdrawn",
       "count": 2
-    },
-    {
-      "stage": "Contract Sent",
-      "count": 1
     }
   ],
   "costCentres": [
@@ -103315,7 +103324,7 @@
       "churnTotal": "45.5",
       "churnVoluntary": "35.8",
       "avgHeadcountLtm": "92.3",
-      "activeRoles": 13
+      "activeRoles": 12
     },
     {
       "name": "Brisbane",
@@ -103417,13 +103426,13 @@
     }
   ],
   "dataQuality": {
-    "excludedBlankLocation": 17,
+    "excludedBlankLocation": 16,
     "excludedWrongLocationAu": 3,
     "excludedWrongLocationUk": 20,
     "excludedContractors": 0,
     "excludedIncomplete": 0,
     "excludedNoCostCentre": 350,
-    "notYetStarted": 5,
+    "notYetStarted": 6,
     "excludedNoSalary": 305,
     "casualsConverted": 64,
     "partTimeConverted": 45
