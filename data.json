@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-12T00:01:04.175Z",
+  "generatedUtc": "2026-11-12T01:00:58.348Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -103115,7 +103115,7 @@
   "pipeline": [
     {
       "stage": "2. Search & Prepare",
-      "count": 22
+      "count": 23
     },
     {
       "stage": "3. Waiting for Approval",
@@ -103123,7 +103123,7 @@
     },
     {
       "stage": "1. Search & Secure",
-      "count": 7
+      "count": 6
     }
   ],
   "stageDetail": [
