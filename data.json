@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-14T23:43:55.093Z",
+  "generatedUtc": "2026-11-15T23:50:43.467Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -10,10 +10,10 @@
     "genderNotRecorded": 0,
     "femalePct": "26.1",
     "femalePctPrior": "26.3",
-    "leaversMonth": 10,
-    "leaversMonthPrior": 12,
-    "leaversVoluntaryMonth": 10,
-    "leaversVoluntaryMonthPrior": 11,
+    "leaversMonth": 5,
+    "leaversMonthPrior": 16,
+    "leaversVoluntaryMonth": 5,
+    "leaversVoluntaryMonthPrior": 15,
     "hiresMonth": 6,
     "hiresMonthPrior": 4,
     "churnTotal": "37.4",
@@ -6009,10 +6009,10 @@
       "femalePctPrior": "10.0",
       "hiresMonth": 0,
       "hiresMonthPrior": 0,
-      "leaversMonth": 2,
-      "leaversMonthPrior": 1,
-      "leaversVoluntaryMonth": 2,
-      "leaversVoluntaryMonthPrior": 1,
+      "leaversMonth": 0,
+      "leaversMonthPrior": 3,
+      "leaversVoluntaryMonth": 0,
+      "leaversVoluntaryMonthPrior": 3,
       "avgHeadcountLtm": "12.4",
       "churnTotal": "48.3",
       "churnVoluntary": "48.3",
@@ -6981,22 +6981,7 @@
       ],
       "last30": {
         "hireNames": [],
-        "leaverNames": [
-          {
-            "name": "Darren Senn",
-            "date": "2026-10-16T00:00:00+00:00",
-            "costCentre": "Melbourne",
-            "type": "Voluntary cessation",
-            "voluntary": true
-          },
-          {
-            "name": "Juan Diaz",
-            "date": "2026-10-16T00:00:00+00:00",
-            "costCentre": "Melbourne",
-            "type": "Voluntary cessation",
-            "voluntary": true
-          }
-        ]
+        "leaverNames": []
       }
     },
     {
@@ -7014,9 +6999,9 @@
       "hiresMonth": 1,
       "hiresMonthPrior": 0,
       "leaversMonth": 0,
-      "leaversMonthPrior": 2,
+      "leaversMonthPrior": 1,
       "leaversVoluntaryMonth": 0,
-      "leaversVoluntaryMonthPrior": 2,
+      "leaversVoluntaryMonthPrior": 1,
       "avgHeadcountLtm": "13.0",
       "churnTotal": "69.2",
       "churnVoluntary": "53.8",
@@ -32479,10 +32464,10 @@
       "femalePctPrior": "33.3",
       "hiresMonth": 0,
       "hiresMonthPrior": 0,
-      "leaversMonth": 1,
-      "leaversMonthPrior": 2,
-      "leaversVoluntaryMonth": 1,
-      "leaversVoluntaryMonthPrior": 2,
+      "leaversMonth": 0,
+      "leaversMonthPrior": 3,
+      "leaversVoluntaryMonth": 0,
+      "leaversVoluntaryMonthPrior": 3,
       "avgHeadcountLtm": "12.5",
       "churnTotal": "40.0",
       "churnVoluntary": "40.0",
@@ -33452,15 +33437,7 @@
       ],
       "last30": {
         "hireNames": [],
-        "leaverNames": [
-          {
-            "name": "Lily Chen",
-            "date": "2026-10-16T00:00:00+00:00",
-            "costCentre": "Sydney",
-            "type": "Voluntary cessation",
-            "voluntary": true
-          }
-        ]
+        "leaverNames": []
       }
     },
     {
@@ -63515,10 +63492,10 @@
       "femalePctPrior": "50.0",
       "hiresMonth": 1,
       "hiresMonthPrior": 0,
-      "leaversMonth": 1,
-      "leaversMonthPrior": 0,
-      "leaversVoluntaryMonth": 1,
-      "leaversVoluntaryMonthPrior": 0,
+      "leaversMonth": 0,
+      "leaversMonthPrior": 1,
+      "leaversVoluntaryMonth": 0,
+      "leaversVoluntaryMonthPrior": 1,
       "avgHeadcountLtm": "4.8",
       "churnTotal": "21.1",
       "churnVoluntary": "21.1",
@@ -64429,15 +64406,7 @@
             "costCentre": "Adelaide"
           }
         ],
-        "leaverNames": [
-          {
-            "name": "Ahmed Amish",
-            "date": "2026-10-16T00:00:00+00:00",
-            "costCentre": "Adelaide",
-            "type": "Voluntary cessation",
-            "voluntary": true
-          }
-        ]
+        "leaverNames": []
       }
     },
     {
@@ -94466,10 +94435,10 @@
       "femalePctPrior": "0.0",
       "hiresMonth": 0,
       "hiresMonthPrior": 0,
-      "leaversMonth": 1,
-      "leaversMonthPrior": 0,
-      "leaversVoluntaryMonth": 1,
-      "leaversVoluntaryMonthPrior": 0,
+      "leaversMonth": 0,
+      "leaversMonthPrior": 1,
+      "leaversVoluntaryMonth": 0,
+      "leaversVoluntaryMonthPrior": 1,
       "avgHeadcountLtm": "1.1",
       "churnTotal": "92.3",
       "churnVoluntary": "92.3",
@@ -95329,15 +95298,7 @@
       ],
       "last30": {
         "hireNames": [],
-        "leaverNames": [
-          {
-            "name": "Daniel Johnson",
-            "date": "2026-10-16T00:00:00+00:00",
-            "costCentre": "London",
-            "type": "Resignation - Career_change",
-            "voluntary": true
-          }
-        ]
+        "leaverNames": []
       }
     },
     {
@@ -103109,7 +103070,7 @@
       "headcountPrior": 286,
       "female": 75,
       "femalePct": "26.0",
-      "leaversMonth": 9,
+      "leaversMonth": 5,
       "hiresMonth": 6,
       "gpgMean": "0.0",
       "gpgMedian": "0.0"
@@ -103121,7 +103082,7 @@
       "headcountPrior": 14,
       "female": 4,
       "femalePct": "28.6",
-      "leaversMonth": 1,
+      "leaversMonth": 0,
       "hiresMonth": 0,
       "gpgMean": "0.0",
       "gpgMedian": "0.0"
