@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-17T07:00:59.930Z",
+  "generatedUtc": "2026-11-17T23:01:05.659Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -103089,7 +103089,7 @@
     }
   ],
   "recruitment": {
-    "openRoles": 29,
+    "openRoles": 28,
     "filledMonth": 0,
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
@@ -103097,7 +103097,7 @@
   "pipeline": [
     {
       "stage": "2. Search & Prepare",
-      "count": 20
+      "count": 19
     },
     {
       "stage": "3. Waiting for Approval",
@@ -103131,7 +103131,7 @@
     },
     {
       "stage": "Present to HM",
-      "count": 4
+      "count": 3
     },
     {
       "stage": "Unknown",
@@ -103191,7 +103191,7 @@
       "churnVoluntary": "14.2",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "42.3",
-      "openRoles": 5
+      "openRoles": 4
     },
     {
       "code": "Brisbane",
@@ -103289,7 +103289,7 @@
       "churnTotal": "36.6",
       "churnVoluntary": "26.2",
       "avgHeadcountLtm": "144.8",
-      "activeRoles": 12
+      "activeRoles": 11
     },
     {
       "name": "Sydney",
@@ -103301,7 +103301,7 @@
       "churnTotal": "45.5",
       "churnVoluntary": "35.8",
       "avgHeadcountLtm": "92.3",
-      "activeRoles": 10
+      "activeRoles": 9
     },
     {
       "name": "Brisbane",
@@ -103313,7 +103313,7 @@
       "churnTotal": "35.8",
       "churnVoluntary": "25.9",
       "avgHeadcountLtm": "50.3",
-      "activeRoles": 11
+      "activeRoles": 10
     },
     {
       "name": "Adelaide",
@@ -103325,7 +103325,7 @@
       "churnTotal": "21.6",
       "churnVoluntary": "16.2",
       "avgHeadcountLtm": "18.5",
-      "activeRoles": 2
+      "activeRoles": 1
     },
     {
       "name": "London",
