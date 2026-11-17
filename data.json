@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-16T06:00:58.858Z",
+  "generatedUtc": "2026-11-17T01:00:50.373Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -11,9 +11,9 @@
     "femalePct": "26.1",
     "femalePctPrior": "26.3",
     "leaversMonth": 5,
-    "leaversMonthPrior": 16,
+    "leaversMonthPrior": 13,
     "leaversVoluntaryMonth": 5,
-    "leaversVoluntaryMonthPrior": 15,
+    "leaversVoluntaryMonthPrior": 12,
     "hiresMonth": 6,
     "hiresMonthPrior": 4,
     "churnTotal": "37.4",
@@ -6010,9 +6010,9 @@
       "hiresMonth": 0,
       "hiresMonthPrior": 0,
       "leaversMonth": 0,
-      "leaversMonthPrior": 3,
+      "leaversMonthPrior": 2,
       "leaversVoluntaryMonth": 0,
-      "leaversVoluntaryMonthPrior": 3,
+      "leaversVoluntaryMonthPrior": 2,
       "avgHeadcountLtm": "12.4",
       "churnTotal": "48.3",
       "churnVoluntary": "48.3",
@@ -6999,9 +6999,9 @@
       "hiresMonth": 1,
       "hiresMonthPrior": 0,
       "leaversMonth": 0,
-      "leaversMonthPrior": 1,
+      "leaversMonthPrior": 0,
       "leaversVoluntaryMonth": 0,
-      "leaversVoluntaryMonthPrior": 1,
+      "leaversVoluntaryMonthPrior": 0,
       "avgHeadcountLtm": "13.0",
       "churnTotal": "69.2",
       "churnVoluntary": "53.8",
@@ -84790,9 +84790,9 @@
       "hiresMonth": 0,
       "hiresMonthPrior": 0,
       "leaversMonth": 0,
-      "leaversMonthPrior": 1,
+      "leaversMonthPrior": 0,
       "leaversVoluntaryMonth": 0,
-      "leaversVoluntaryMonthPrior": 1,
+      "leaversVoluntaryMonthPrior": 0,
       "avgHeadcountLtm": "0.8",
       "churnTotal": "133.3",
       "churnVoluntary": "133.3",
@@ -103135,7 +103135,7 @@
     },
     {
       "stage": "Present to HM",
-      "count": 7
+      "count": 6
     },
     {
       "stage": "Unknown",
@@ -103143,7 +103143,7 @@
     },
     {
       "stage": "2nd Interview",
-      "count": 1
+      "count": 2
     },
     {
       "stage": "Withdrawn",
