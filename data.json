@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-17T03:01:05.338Z",
+  "generatedUtc": "2026-11-17T06:00:58.176Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -103057,7 +103057,7 @@
     }
   ],
   "historyQuality": {
-    "recordsWithStartDate": 1085,
+    "recordsWithStartDate": 1088,
     "leaversWithoutStartDate": 18,
     "firstLeaverMonth": "2012-08",
     "impossibleTerminationDates": 0
@@ -103089,7 +103089,7 @@
     }
   ],
   "recruitment": {
-    "openRoles": 33,
+    "openRoles": 30,
     "filledMonth": 0,
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
@@ -103097,19 +103097,15 @@
   "pipeline": [
     {
       "stage": "2. Search & Prepare",
-      "count": 22
-    },
-    {
-      "stage": "",
-      "count": 1
-    },
-    {
-      "stage": "3. Waiting for Approval",
-      "count": 4
+      "count": 20
     },
     {
       "stage": "1. Search & Secure",
-      "count": 6
+      "count": 8
+    },
+    {
+      "stage": "3. Waiting for Approval",
+      "count": 2
     }
   ],
   "stageDetail": [
@@ -103135,7 +103131,11 @@
     },
     {
       "stage": "Present to HM",
-      "count": 6
+      "count": 4
+    },
+    {
+      "stage": "SC Approved",
+      "count": 2
     },
     {
       "stage": "Unknown",
@@ -103177,7 +103177,7 @@
       "churnVoluntary": "40.3",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "67.0",
-      "openRoles": 5
+      "openRoles": 4
     },
     {
       "code": "NAT-SPL",
@@ -103205,7 +103205,7 @@
       "churnVoluntary": "23.2",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "34.4",
-      "openRoles": 5
+      "openRoles": 6
     },
     {
       "code": "NAT-CORP",
@@ -103289,7 +103289,7 @@
       "churnTotal": "36.6",
       "churnVoluntary": "26.2",
       "avgHeadcountLtm": "144.8",
-      "activeRoles": 14
+      "activeRoles": 12
     },
     {
       "name": "Sydney",
@@ -103301,7 +103301,7 @@
       "churnTotal": "45.5",
       "churnVoluntary": "35.8",
       "avgHeadcountLtm": "92.3",
-      "activeRoles": 12
+      "activeRoles": 11
     },
     {
       "name": "Brisbane",
@@ -103313,7 +103313,7 @@
       "churnTotal": "35.8",
       "churnVoluntary": "25.9",
       "avgHeadcountLtm": "50.3",
-      "activeRoles": 12
+      "activeRoles": 11
     },
     {
       "name": "Adelaide",
@@ -103325,7 +103325,7 @@
       "churnTotal": "21.6",
       "churnVoluntary": "16.2",
       "avgHeadcountLtm": "18.5",
-      "activeRoles": 3
+      "activeRoles": 2
     },
     {
       "name": "London",
@@ -103409,7 +103409,7 @@
     "excludedContractors": 0,
     "excludedIncomplete": 0,
     "excludedNoCostCentre": 350,
-    "notYetStarted": 8,
+    "notYetStarted": 11,
     "excludedNoSalary": 303,
     "casualsConverted": 64,
     "partTimeConverted": 45
