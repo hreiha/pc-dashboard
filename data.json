@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-17T06:00:58.176Z",
+  "generatedUtc": "2026-11-17T07:00:59.930Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -103057,7 +103057,7 @@
     }
   ],
   "historyQuality": {
-    "recordsWithStartDate": 1088,
+    "recordsWithStartDate": 1089,
     "leaversWithoutStartDate": 18,
     "firstLeaverMonth": "2012-08",
     "impossibleTerminationDates": 0
@@ -103089,7 +103089,7 @@
     }
   ],
   "recruitment": {
-    "openRoles": 30,
+    "openRoles": 29,
     "filledMonth": 0,
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
@@ -103100,12 +103100,12 @@
       "count": 20
     },
     {
-      "stage": "1. Search & Secure",
-      "count": 8
-    },
-    {
       "stage": "3. Waiting for Approval",
       "count": 2
+    },
+    {
+      "stage": "1. Search & Secure",
+      "count": 7
     }
   ],
   "stageDetail": [
@@ -103134,12 +103134,12 @@
       "count": 4
     },
     {
-      "stage": "SC Approved",
-      "count": 2
-    },
-    {
       "stage": "Unknown",
       "count": 0
+    },
+    {
+      "stage": "SC Approved",
+      "count": 1
     },
     {
       "stage": "2nd Interview",
@@ -103191,7 +103191,7 @@
       "churnVoluntary": "14.2",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "42.3",
-      "openRoles": 6
+      "openRoles": 5
     },
     {
       "code": "Brisbane",
@@ -103301,7 +103301,7 @@
       "churnTotal": "45.5",
       "churnVoluntary": "35.8",
       "avgHeadcountLtm": "92.3",
-      "activeRoles": 11
+      "activeRoles": 10
     },
     {
       "name": "Brisbane",
@@ -103409,7 +103409,7 @@
     "excludedContractors": 0,
     "excludedIncomplete": 0,
     "excludedNoCostCentre": 350,
-    "notYetStarted": 11,
+    "notYetStarted": 12,
     "excludedNoSalary": 303,
     "casualsConverted": 64,
     "partTimeConverted": 45
