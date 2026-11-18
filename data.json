@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-18T01:01:05.784Z",
+  "generatedUtc": "2026-11-18T02:01:36.589Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -103113,7 +103113,7 @@
   "pipeline": [
     {
       "stage": "2. Search & Prepare",
-      "count": 19
+      "count": 18
     },
     {
       "stage": "3. Waiting for Approval",
@@ -103121,7 +103121,7 @@
     },
     {
       "stage": "1. Search & Secure",
-      "count": 7
+      "count": 8
     }
   ],
   "stageDetail": [
@@ -103162,7 +103162,7 @@
       "count": 1
     },
     {
-      "stage": "References",
+      "stage": "KM to get SC Approval",
       "count": 1
     },
     {
