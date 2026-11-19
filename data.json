@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-19T01:46:41.009Z",
+  "generatedUtc": "2026-11-19T02:00:57.795Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -103105,7 +103105,7 @@
     }
   ],
   "recruitment": {
-    "openRoles": 28,
+    "openRoles": 27,
     "filledMonth": 0,
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
@@ -103113,7 +103113,7 @@
   "pipeline": [
     {
       "stage": "2. Search & Prepare",
-      "count": 18
+      "count": 17
     },
     {
       "stage": "3. Waiting for Approval",
@@ -103158,10 +103158,6 @@
       "count": 1
     },
     {
-      "stage": "2nd Interview",
-      "count": 1
-    },
-    {
       "stage": "SC Approval Pending",
       "count": 1
     },
@@ -103183,7 +103179,7 @@
       "churnVoluntary": "35.2",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "91.0",
-      "openRoles": 6
+      "openRoles": 5
     },
     {
       "code": "Sydney",
@@ -103309,7 +103305,7 @@
       "churnTotal": "37.3",
       "churnVoluntary": "26.9",
       "avgHeadcountLtm": "144.8",
-      "activeRoles": 11
+      "activeRoles": 10
     },
     {
       "name": "Sydney",
