@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-20T05:00:53.852Z",
+  "generatedUtc": "2026-11-20T06:00:54.267Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -27080,11 +27080,11 @@
       "location": "Sydney",
       "costCentre": "NAT-SPL",
       "discipline": "ICT/AV",
-      "headcount": 1,
-      "headcountPrior": 1,
+      "headcount": 2,
+      "headcountPrior": 2,
       "female": 0,
       "femalePrior": 0,
-      "male": 1,
+      "male": 2,
       "genderNotRecorded": 0,
       "femalePct": "0.0",
       "femalePctPrior": "0.0",
@@ -27094,24 +27094,24 @@
       "leaversMonthPrior": 1,
       "leaversVoluntaryMonth": 0,
       "leaversVoluntaryMonthPrior": 1,
-      "avgHeadcountLtm": "2.6",
-      "churnTotal": "77.4",
-      "churnVoluntary": "38.7",
+      "avgHeadcountLtm": "3.6",
+      "churnTotal": "55.8",
+      "churnVoluntary": "27.9",
       "turnoverPeriods": [
         {
           "key": "ltm",
           "label": "Rolling 12 months",
           "months": 11,
-          "avgHeadcount": "2.7",
-          "avgHeadcountValue": 2.727272727272727,
+          "avgHeadcount": "3.7",
+          "avgHeadcountValue": 3.727272727272727,
           "leavers": 2,
           "leaversVoluntary": 1,
           "leaversRegrettable": 0,
-          "total": "73.3",
-          "voluntary": "36.7",
+          "total": "53.7",
+          "voluntary": "26.8",
           "regrettable": "0.0",
-          "totalAnnualised": "80.0",
-          "voluntaryAnnualised": "40.0",
+          "totalAnnualised": "58.6",
+          "voluntaryAnnualised": "29.2",
           "regrettableShareOfLeavers": "0.0",
           "rehireFlagMissing": 2
         },
@@ -27119,16 +27119,16 @@
           "key": "ytd",
           "label": "Year to date",
           "months": 10,
-          "avgHeadcount": "2.7",
-          "avgHeadcountValue": 2.7,
+          "avgHeadcount": "3.7",
+          "avgHeadcountValue": 3.7,
           "leavers": 2,
           "leaversVoluntary": 1,
           "leaversRegrettable": 0,
-          "total": "74.1",
-          "voluntary": "37.0",
+          "total": "54.1",
+          "voluntary": "27.0",
           "regrettable": "0.0",
-          "totalAnnualised": "88.9",
-          "voluntaryAnnualised": "44.4",
+          "totalAnnualised": "64.9",
+          "voluntaryAnnualised": "32.4",
           "regrettableShareOfLeavers": "0.0",
           "rehireFlagMissing": 2
         },
@@ -27136,16 +27136,16 @@
           "key": "fytd",
           "label": "FYTD",
           "months": 4,
-          "avgHeadcount": "2.3",
-          "avgHeadcountValue": 2.25,
+          "avgHeadcount": "3.3",
+          "avgHeadcountValue": 3.25,
           "leavers": 2,
           "leaversVoluntary": 1,
           "leaversRegrettable": 0,
-          "total": "88.9",
-          "voluntary": "44.4",
+          "total": "61.5",
+          "voluntary": "30.8",
           "regrettable": "0.0",
-          "totalAnnualised": "266.7",
-          "voluntaryAnnualised": "133.2",
+          "totalAnnualised": "184.5",
+          "voluntaryAnnualised": "92.4",
           "regrettableShareOfLeavers": "0.0",
           "rehireFlagMissing": 2
         },
@@ -27153,16 +27153,16 @@
           "key": "last6",
           "label": "Last 6 months",
           "months": 5,
-          "avgHeadcount": "2.4",
-          "avgHeadcountValue": 2.4,
+          "avgHeadcount": "3.4",
+          "avgHeadcountValue": 3.4,
           "leavers": 2,
           "leaversVoluntary": 1,
           "leaversRegrettable": 0,
-          "total": "83.3",
-          "voluntary": "41.7",
+          "total": "58.8",
+          "voluntary": "29.4",
           "regrettable": "0.0",
-          "totalAnnualised": "199.9",
-          "voluntaryAnnualised": "100.1",
+          "totalAnnualised": "141.1",
+          "voluntaryAnnualised": "70.6",
           "regrettableShareOfLeavers": "0.0",
           "rehireFlagMissing": 2
         },
@@ -27170,16 +27170,16 @@
           "key": "last3",
           "label": "Last 3 months",
           "months": 2,
-          "avgHeadcount": "1.5",
-          "avgHeadcountValue": 1.5,
+          "avgHeadcount": "2.5",
+          "avgHeadcountValue": 2.5,
           "leavers": 2,
           "leaversVoluntary": 1,
           "leaversRegrettable": 0,
-          "total": "133.3",
-          "voluntary": "66.7",
+          "total": "80.0",
+          "voluntary": "40.0",
           "regrettable": "0.0",
-          "totalAnnualised": "799.8",
-          "voluntaryAnnualised": "400.2",
+          "totalAnnualised": "480.0",
+          "voluntaryAnnualised": "240.0",
           "regrettableShareOfLeavers": "0.0",
           "rehireFlagMissing": 2
         },
@@ -27187,16 +27187,16 @@
           "key": "lastcy",
           "label": "2025",
           "months": 12,
-          "avgHeadcount": "3.3",
-          "avgHeadcountValue": 3.3333333333333335,
+          "avgHeadcount": "4.3",
+          "avgHeadcountValue": 4.333333333333333,
           "leavers": 2,
           "leaversVoluntary": 2,
           "leaversRegrettable": 0,
-          "total": "60.0",
-          "voluntary": "60.0",
+          "total": "46.2",
+          "voluntary": "46.2",
           "regrettable": "0.0",
-          "totalAnnualised": "60.0",
-          "voluntaryAnnualised": "60.0",
+          "totalAnnualised": "46.2",
+          "voluntaryAnnualised": "46.2",
           "regrettableShareOfLeavers": "0.0",
           "rehireFlagMissing": 2
         }
@@ -27204,61 +27204,61 @@
       "headcountTrend": [
         {
           "month": "Dec",
-          "headcount": 3
+          "headcount": 4
         },
         {
           "month": "Jan",
-          "headcount": 3
+          "headcount": 4
         },
         {
           "month": "Feb",
-          "headcount": 3
+          "headcount": 4
         },
         {
           "month": "Mar",
-          "headcount": 3
+          "headcount": 4
         },
         {
           "month": "Apr",
-          "headcount": 3
+          "headcount": 4
         },
         {
           "month": "May",
-          "headcount": 3
+          "headcount": 4
         },
         {
           "month": "Jun",
-          "headcount": 3
+          "headcount": 4
         },
         {
           "month": "Jul",
-          "headcount": 3
+          "headcount": 4
         },
         {
           "month": "Aug",
-          "headcount": 3
+          "headcount": 4
         },
         {
           "month": "Sep",
-          "headcount": 2
+          "headcount": 3
         },
         {
           "month": "Oct",
-          "headcount": 1
+          "headcount": 2
         },
         {
           "month": "Nov",
-          "headcount": 1
+          "headcount": 2
         }
       ],
       "months": [
         {
           "key": "2024-12",
           "label": "Dec 2024",
-          "headcountEnd": 4,
+          "headcountEnd": 5,
           "femaleEnd": 0,
           "entityEnd": {
-            "AU": 4,
+            "AU": 5,
             "UK": 0
           },
           "hires": 0,
@@ -27270,10 +27270,10 @@
         {
           "key": "2025-01",
           "label": "Jan 2025",
-          "headcountEnd": 4,
+          "headcountEnd": 5,
           "femaleEnd": 0,
           "entityEnd": {
-            "AU": 4,
+            "AU": 5,
             "UK": 0
           },
           "hires": 0,
@@ -27285,10 +27285,10 @@
         {
           "key": "2025-02",
           "label": "Feb 2025",
-          "headcountEnd": 4,
+          "headcountEnd": 5,
           "femaleEnd": 0,
           "entityEnd": {
-            "AU": 4,
+            "AU": 5,
             "UK": 0
           },
           "hires": 0,
@@ -27300,10 +27300,10 @@
         {
           "key": "2025-03",
           "label": "Mar 2025",
-          "headcountEnd": 4,
+          "headcountEnd": 5,
           "femaleEnd": 0,
           "entityEnd": {
-            "AU": 4,
+            "AU": 5,
             "UK": 0
           },
           "hires": 0,
@@ -27315,10 +27315,10 @@
         {
           "key": "2025-04",
           "label": "Apr 2025",
-          "headcountEnd": 4,
+          "headcountEnd": 5,
           "femaleEnd": 0,
           "entityEnd": {
-            "AU": 4,
+            "AU": 5,
             "UK": 0
           },
           "hires": 0,
@@ -27330,10 +27330,10 @@
         {
           "key": "2025-05",
           "label": "May 2025",
-          "headcountEnd": 4,
+          "headcountEnd": 5,
           "femaleEnd": 0,
           "entityEnd": {
-            "AU": 4,
+            "AU": 5,
             "UK": 0
           },
           "hires": 0,
@@ -27345,10 +27345,10 @@
         {
           "key": "2025-06",
           "label": "Jun 2025",
-          "headcountEnd": 3,
+          "headcountEnd": 4,
           "femaleEnd": 0,
           "entityEnd": {
-            "AU": 3,
+            "AU": 4,
             "UK": 0
           },
           "hires": 0,
@@ -27368,10 +27368,10 @@
         {
           "key": "2025-07",
           "label": "Jul 2025",
-          "headcountEnd": 3,
+          "headcountEnd": 4,
           "femaleEnd": 0,
           "entityEnd": {
-            "AU": 3,
+            "AU": 4,
             "UK": 0
           },
           "hires": 0,
@@ -27383,10 +27383,10 @@
         {
           "key": "2025-08",
           "label": "Aug 2025",
-          "headcountEnd": 3,
+          "headcountEnd": 4,
           "femaleEnd": 0,
           "entityEnd": {
-            "AU": 3,
+            "AU": 4,
             "UK": 0
           },
           "hires": 0,
@@ -27398,10 +27398,10 @@
         {
           "key": "2025-09",
           "label": "Sep 2025",
-          "headcountEnd": 2,
+          "headcountEnd": 3,
           "femaleEnd": 0,
           "entityEnd": {
-            "AU": 2,
+            "AU": 3,
             "UK": 0
           },
           "hires": 0,
@@ -27421,10 +27421,10 @@
         {
           "key": "2025-10",
           "label": "Oct 2025",
-          "headcountEnd": 3,
+          "headcountEnd": 4,
           "femaleEnd": 0,
           "entityEnd": {
-            "AU": 3,
+            "AU": 4,
             "UK": 0
           },
           "hires": 1,
@@ -27442,10 +27442,10 @@
         {
           "key": "2025-11",
           "label": "Nov 2025",
-          "headcountEnd": 3,
+          "headcountEnd": 4,
           "femaleEnd": 0,
           "entityEnd": {
-            "AU": 3,
+            "AU": 4,
             "UK": 0
           },
           "hires": 0,
@@ -27457,10 +27457,10 @@
         {
           "key": "2025-12",
           "label": "Dec 2025",
-          "headcountEnd": 3,
+          "headcountEnd": 4,
           "femaleEnd": 0,
           "entityEnd": {
-            "AU": 3,
+            "AU": 4,
             "UK": 0
           },
           "hires": 0,
@@ -27472,10 +27472,10 @@
         {
           "key": "2026-01",
           "label": "Jan 2026",
-          "headcountEnd": 3,
+          "headcountEnd": 4,
           "femaleEnd": 0,
           "entityEnd": {
-            "AU": 3,
+            "AU": 4,
             "UK": 0
           },
           "hires": 0,
@@ -27487,10 +27487,10 @@
         {
           "key": "2026-02",
           "label": "Feb 2026",
-          "headcountEnd": 3,
+          "headcountEnd": 4,
           "femaleEnd": 0,
           "entityEnd": {
-            "AU": 3,
+            "AU": 4,
             "UK": 0
           },
           "hires": 0,
@@ -27502,10 +27502,10 @@
         {
           "key": "2026-03",
           "label": "Mar 2026",
-          "headcountEnd": 3,
+          "headcountEnd": 4,
           "femaleEnd": 0,
           "entityEnd": {
-            "AU": 3,
+            "AU": 4,
             "UK": 0
           },
           "hires": 0,
@@ -27517,10 +27517,10 @@
         {
           "key": "2026-04",
           "label": "Apr 2026",
-          "headcountEnd": 3,
+          "headcountEnd": 4,
           "femaleEnd": 0,
           "entityEnd": {
-            "AU": 3,
+            "AU": 4,
             "UK": 0
           },
           "hires": 0,
@@ -27532,10 +27532,10 @@
         {
           "key": "2026-05",
           "label": "May 2026",
-          "headcountEnd": 3,
+          "headcountEnd": 4,
           "femaleEnd": 0,
           "entityEnd": {
-            "AU": 3,
+            "AU": 4,
             "UK": 0
           },
           "hires": 0,
@@ -27547,10 +27547,10 @@
         {
           "key": "2026-06",
           "label": "Jun 2026",
-          "headcountEnd": 3,
+          "headcountEnd": 4,
           "femaleEnd": 0,
           "entityEnd": {
-            "AU": 3,
+            "AU": 4,
             "UK": 0
           },
           "hires": 0,
@@ -27562,10 +27562,10 @@
         {
           "key": "2026-07",
           "label": "Jul 2026",
-          "headcountEnd": 3,
+          "headcountEnd": 4,
           "femaleEnd": 0,
           "entityEnd": {
-            "AU": 3,
+            "AU": 4,
             "UK": 0
           },
           "hires": 0,
@@ -27577,10 +27577,10 @@
         {
           "key": "2026-08",
           "label": "Aug 2026",
-          "headcountEnd": 3,
+          "headcountEnd": 4,
           "femaleEnd": 0,
           "entityEnd": {
-            "AU": 3,
+            "AU": 4,
             "UK": 0
           },
           "hires": 0,
@@ -27592,10 +27592,10 @@
         {
           "key": "2026-09",
           "label": "Sep 2026",
-          "headcountEnd": 2,
+          "headcountEnd": 3,
           "femaleEnd": 0,
           "entityEnd": {
-            "AU": 2,
+            "AU": 3,
             "UK": 0
           },
           "hires": 0,
@@ -27615,10 +27615,10 @@
         {
           "key": "2026-10",
           "label": "Oct 2026",
-          "headcountEnd": 1,
+          "headcountEnd": 2,
           "femaleEnd": 0,
           "entityEnd": {
-            "AU": 1,
+            "AU": 2,
             "UK": 0
           },
           "hires": 0,
@@ -27638,10 +27638,10 @@
         {
           "key": "2026-11",
           "label": "Nov 2026",
-          "headcountEnd": 1,
+          "headcountEnd": 2,
           "femaleEnd": 0,
           "entityEnd": {
-            "AU": 1,
+            "AU": 2,
             "UK": 0
           },
           "hires": 0,
@@ -27655,322 +27655,322 @@
         {
           "k": "2023-01",
           "label": "Jan 2023",
-          "h": 2,
+          "h": 3,
           "l": 0,
           "v": 0
         },
         {
           "k": "2023-02",
           "label": "Feb 2023",
-          "h": 2,
+          "h": 3,
           "l": 0,
           "v": 0
         },
         {
           "k": "2023-03",
           "label": "Mar 2023",
-          "h": 2,
+          "h": 3,
           "l": 0,
           "v": 0
         },
         {
           "k": "2023-04",
           "label": "Apr 2023",
-          "h": 2,
+          "h": 3,
           "l": 0,
           "v": 0
         },
         {
           "k": "2023-05",
           "label": "May 2023",
-          "h": 2,
+          "h": 3,
           "l": 0,
           "v": 0
         },
         {
           "k": "2023-06",
           "label": "Jun 2023",
-          "h": 3,
+          "h": 4,
           "l": 0,
           "v": 0
         },
         {
           "k": "2023-07",
           "label": "Jul 2023",
-          "h": 3,
+          "h": 4,
           "l": 0,
           "v": 0
         },
         {
           "k": "2023-08",
           "label": "Aug 2023",
-          "h": 3,
+          "h": 4,
           "l": 0,
           "v": 0
         },
         {
           "k": "2023-09",
           "label": "Sep 2023",
-          "h": 4,
+          "h": 5,
           "l": 0,
           "v": 0
         },
         {
           "k": "2023-10",
           "label": "Oct 2023",
-          "h": 3,
+          "h": 4,
           "l": 1,
           "v": 1
         },
         {
           "k": "2023-11",
           "label": "Nov 2023",
-          "h": 3,
+          "h": 4,
           "l": 0,
           "v": 0
         },
         {
           "k": "2023-12",
           "label": "Dec 2023",
-          "h": 3,
+          "h": 4,
           "l": 0,
           "v": 0
         },
         {
           "k": "2024-01",
           "label": "Jan 2024",
-          "h": 3,
+          "h": 4,
           "l": 0,
           "v": 0
         },
         {
           "k": "2024-02",
           "label": "Feb 2024",
-          "h": 4,
+          "h": 5,
           "l": 0,
           "v": 0
         },
         {
           "k": "2024-03",
           "label": "Mar 2024",
-          "h": 4,
+          "h": 5,
           "l": 0,
           "v": 0
         },
         {
           "k": "2024-04",
           "label": "Apr 2024",
-          "h": 4,
+          "h": 5,
           "l": 0,
           "v": 0
         },
         {
           "k": "2024-05",
           "label": "May 2024",
-          "h": 4,
+          "h": 5,
           "l": 0,
           "v": 0
         },
         {
           "k": "2024-06",
           "label": "Jun 2024",
-          "h": 5,
+          "h": 6,
           "l": 0,
           "v": 0
         },
         {
           "k": "2024-07",
           "label": "Jul 2024",
-          "h": 5,
+          "h": 6,
           "l": 0,
           "v": 0
         },
         {
           "k": "2024-08",
           "label": "Aug 2024",
-          "h": 4,
+          "h": 5,
           "l": 1,
           "v": 1
         },
         {
           "k": "2024-09",
           "label": "Sep 2024",
-          "h": 4,
+          "h": 5,
           "l": 0,
           "v": 0
         },
         {
           "k": "2024-10",
           "label": "Oct 2024",
-          "h": 4,
+          "h": 5,
           "l": 0,
           "v": 0
         },
         {
           "k": "2024-11",
           "label": "Nov 2024",
-          "h": 4,
+          "h": 5,
           "l": 0,
           "v": 0
         },
         {
           "k": "2024-12",
           "label": "Dec 2024",
-          "h": 4,
+          "h": 5,
           "l": 0,
           "v": 0
         },
         {
           "k": "2025-01",
           "label": "Jan 2025",
-          "h": 4,
+          "h": 5,
           "l": 0,
           "v": 0
         },
         {
           "k": "2025-02",
           "label": "Feb 2025",
-          "h": 4,
+          "h": 5,
           "l": 0,
           "v": 0
         },
         {
           "k": "2025-03",
           "label": "Mar 2025",
-          "h": 4,
+          "h": 5,
           "l": 0,
           "v": 0
         },
         {
           "k": "2025-04",
           "label": "Apr 2025",
-          "h": 4,
+          "h": 5,
           "l": 0,
           "v": 0
         },
         {
           "k": "2025-05",
           "label": "May 2025",
-          "h": 4,
+          "h": 5,
           "l": 0,
           "v": 0
         },
         {
           "k": "2025-06",
           "label": "Jun 2025",
-          "h": 3,
+          "h": 4,
           "l": 1,
           "v": 1
         },
         {
           "k": "2025-07",
           "label": "Jul 2025",
-          "h": 3,
+          "h": 4,
           "l": 0,
           "v": 0
         },
         {
           "k": "2025-08",
           "label": "Aug 2025",
-          "h": 3,
+          "h": 4,
           "l": 0,
           "v": 0
         },
         {
           "k": "2025-09",
           "label": "Sep 2025",
-          "h": 2,
+          "h": 3,
           "l": 1,
           "v": 1
         },
         {
           "k": "2025-10",
           "label": "Oct 2025",
-          "h": 3,
+          "h": 4,
           "l": 0,
           "v": 0
         },
         {
           "k": "2025-11",
           "label": "Nov 2025",
-          "h": 3,
+          "h": 4,
           "l": 0,
           "v": 0
         },
         {
           "k": "2025-12",
           "label": "Dec 2025",
-          "h": 3,
+          "h": 4,
           "l": 0,
           "v": 0
         },
         {
           "k": "2026-01",
           "label": "Jan 2026",
-          "h": 3,
+          "h": 4,
           "l": 0,
           "v": 0
         },
         {
           "k": "2026-02",
           "label": "Feb 2026",
-          "h": 3,
+          "h": 4,
           "l": 0,
           "v": 0
         },
         {
           "k": "2026-03",
           "label": "Mar 2026",
-          "h": 3,
+          "h": 4,
           "l": 0,
           "v": 0
         },
         {
           "k": "2026-04",
           "label": "Apr 2026",
-          "h": 3,
+          "h": 4,
           "l": 0,
           "v": 0
         },
         {
           "k": "2026-05",
           "label": "May 2026",
-          "h": 3,
+          "h": 4,
           "l": 0,
           "v": 0
         },
         {
           "k": "2026-06",
           "label": "Jun 2026",
-          "h": 3,
+          "h": 4,
           "l": 0,
           "v": 0
         },
         {
           "k": "2026-07",
           "label": "Jul 2026",
-          "h": 3,
+          "h": 4,
           "l": 0,
           "v": 0
         },
         {
           "k": "2026-08",
           "label": "Aug 2026",
-          "h": 3,
+          "h": 4,
           "l": 0,
           "v": 0
         },
         {
           "k": "2026-09",
           "label": "Sep 2026",
-          "h": 2,
+          "h": 3,
           "l": 1,
           "v": 0
         },
         {
           "k": "2026-10",
           "label": "Oct 2026",
-          "h": 1,
+          "h": 2,
           "l": 1,
           "v": 1
         }
@@ -52064,878 +52064,6 @@
           "h": 2,
           "l": 1,
           "v": 1
-        },
-        {
-          "k": "2026-05",
-          "label": "May 2026",
-          "h": 2,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2026-06",
-          "label": "Jun 2026",
-          "h": 2,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2026-07",
-          "label": "Jul 2026",
-          "h": 2,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2026-08",
-          "label": "Aug 2026",
-          "h": 2,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2026-09",
-          "label": "Sep 2026",
-          "h": 2,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2026-10",
-          "label": "Oct 2026",
-          "h": 2,
-          "l": 0,
-          "v": 0
-        }
-      ],
-      "last30": {
-        "hireNames": [],
-        "leaverNames": []
-      }
-    },
-    {
-      "location": "Sydney",
-      "costCentre": "NAT-SPL",
-      "discipline": "Intern",
-      "headcount": 2,
-      "headcountPrior": 2,
-      "female": 1,
-      "femalePrior": 1,
-      "male": 1,
-      "genderNotRecorded": 0,
-      "femalePct": "50.0",
-      "femalePctPrior": "50.0",
-      "hiresMonth": 0,
-      "hiresMonthPrior": 0,
-      "leaversMonth": 0,
-      "leaversMonthPrior": 0,
-      "leaversVoluntaryMonth": 0,
-      "leaversVoluntaryMonthPrior": 0,
-      "avgHeadcountLtm": "2.0",
-      "churnTotal": "0.0",
-      "churnVoluntary": "0.0",
-      "turnoverPeriods": [
-        {
-          "key": "ltm",
-          "label": "Rolling 12 months",
-          "months": 11,
-          "avgHeadcount": "2.0",
-          "avgHeadcountValue": 2,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "leaversRegrettable": 0,
-          "total": "0.0",
-          "voluntary": "0.0",
-          "regrettable": "0.0",
-          "totalAnnualised": "0.0",
-          "voluntaryAnnualised": "0.0",
-          "regrettableShareOfLeavers": "0.0",
-          "rehireFlagMissing": 0
-        },
-        {
-          "key": "ytd",
-          "label": "Year to date",
-          "months": 10,
-          "avgHeadcount": "2.0",
-          "avgHeadcountValue": 2,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "leaversRegrettable": 0,
-          "total": "0.0",
-          "voluntary": "0.0",
-          "regrettable": "0.0",
-          "totalAnnualised": "0.0",
-          "voluntaryAnnualised": "0.0",
-          "regrettableShareOfLeavers": "0.0",
-          "rehireFlagMissing": 0
-        },
-        {
-          "key": "fytd",
-          "label": "FYTD",
-          "months": 4,
-          "avgHeadcount": "2.0",
-          "avgHeadcountValue": 2,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "leaversRegrettable": 0,
-          "total": "0.0",
-          "voluntary": "0.0",
-          "regrettable": "0.0",
-          "totalAnnualised": "0.0",
-          "voluntaryAnnualised": "0.0",
-          "regrettableShareOfLeavers": "0.0",
-          "rehireFlagMissing": 0
-        },
-        {
-          "key": "last6",
-          "label": "Last 6 months",
-          "months": 5,
-          "avgHeadcount": "2.0",
-          "avgHeadcountValue": 2,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "leaversRegrettable": 0,
-          "total": "0.0",
-          "voluntary": "0.0",
-          "regrettable": "0.0",
-          "totalAnnualised": "0.0",
-          "voluntaryAnnualised": "0.0",
-          "regrettableShareOfLeavers": "0.0",
-          "rehireFlagMissing": 0
-        },
-        {
-          "key": "last3",
-          "label": "Last 3 months",
-          "months": 2,
-          "avgHeadcount": "2.0",
-          "avgHeadcountValue": 2,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "leaversRegrettable": 0,
-          "total": "0.0",
-          "voluntary": "0.0",
-          "regrettable": "0.0",
-          "totalAnnualised": "0.0",
-          "voluntaryAnnualised": "0.0",
-          "regrettableShareOfLeavers": "0.0",
-          "rehireFlagMissing": 0
-        },
-        {
-          "key": "lastcy",
-          "label": "2025",
-          "months": 12,
-          "avgHeadcount": "1.3",
-          "avgHeadcountValue": 1.25,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "leaversRegrettable": 0,
-          "total": "0.0",
-          "voluntary": "0.0",
-          "regrettable": "0.0",
-          "totalAnnualised": "0.0",
-          "voluntaryAnnualised": "0.0",
-          "regrettableShareOfLeavers": "0.0",
-          "rehireFlagMissing": 0
-        }
-      ],
-      "headcountTrend": [
-        {
-          "month": "Dec",
-          "headcount": 2
-        },
-        {
-          "month": "Jan",
-          "headcount": 2
-        },
-        {
-          "month": "Feb",
-          "headcount": 2
-        },
-        {
-          "month": "Mar",
-          "headcount": 2
-        },
-        {
-          "month": "Apr",
-          "headcount": 2
-        },
-        {
-          "month": "May",
-          "headcount": 2
-        },
-        {
-          "month": "Jun",
-          "headcount": 2
-        },
-        {
-          "month": "Jul",
-          "headcount": 2
-        },
-        {
-          "month": "Aug",
-          "headcount": 2
-        },
-        {
-          "month": "Sep",
-          "headcount": 2
-        },
-        {
-          "month": "Oct",
-          "headcount": 2
-        },
-        {
-          "month": "Nov",
-          "headcount": 2
-        }
-      ],
-      "months": [
-        {
-          "key": "2024-12",
-          "label": "Dec 2024",
-          "headcountEnd": 1,
-          "femaleEnd": 0,
-          "entityEnd": {
-            "AU": 1,
-            "UK": 0
-          },
-          "hires": 0,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
-        },
-        {
-          "key": "2025-01",
-          "label": "Jan 2025",
-          "headcountEnd": 1,
-          "femaleEnd": 0,
-          "entityEnd": {
-            "AU": 1,
-            "UK": 0
-          },
-          "hires": 0,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
-        },
-        {
-          "key": "2025-02",
-          "label": "Feb 2025",
-          "headcountEnd": 1,
-          "femaleEnd": 0,
-          "entityEnd": {
-            "AU": 1,
-            "UK": 0
-          },
-          "hires": 0,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
-        },
-        {
-          "key": "2025-03",
-          "label": "Mar 2025",
-          "headcountEnd": 1,
-          "femaleEnd": 0,
-          "entityEnd": {
-            "AU": 1,
-            "UK": 0
-          },
-          "hires": 0,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
-        },
-        {
-          "key": "2025-04",
-          "label": "Apr 2025",
-          "headcountEnd": 1,
-          "femaleEnd": 0,
-          "entityEnd": {
-            "AU": 1,
-            "UK": 0
-          },
-          "hires": 0,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
-        },
-        {
-          "key": "2025-05",
-          "label": "May 2025",
-          "headcountEnd": 1,
-          "femaleEnd": 0,
-          "entityEnd": {
-            "AU": 1,
-            "UK": 0
-          },
-          "hires": 0,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
-        },
-        {
-          "key": "2025-06",
-          "label": "Jun 2025",
-          "headcountEnd": 1,
-          "femaleEnd": 0,
-          "entityEnd": {
-            "AU": 1,
-            "UK": 0
-          },
-          "hires": 0,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
-        },
-        {
-          "key": "2025-07",
-          "label": "Jul 2025",
-          "headcountEnd": 1,
-          "femaleEnd": 0,
-          "entityEnd": {
-            "AU": 1,
-            "UK": 0
-          },
-          "hires": 0,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
-        },
-        {
-          "key": "2025-08",
-          "label": "Aug 2025",
-          "headcountEnd": 1,
-          "femaleEnd": 0,
-          "entityEnd": {
-            "AU": 1,
-            "UK": 0
-          },
-          "hires": 0,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
-        },
-        {
-          "key": "2025-09",
-          "label": "Sep 2025",
-          "headcountEnd": 1,
-          "femaleEnd": 0,
-          "entityEnd": {
-            "AU": 1,
-            "UK": 0
-          },
-          "hires": 0,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
-        },
-        {
-          "key": "2025-10",
-          "label": "Oct 2025",
-          "headcountEnd": 2,
-          "femaleEnd": 1,
-          "entityEnd": {
-            "AU": 2,
-            "UK": 0
-          },
-          "hires": 1,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "hireNames": [
-            {
-              "name": "Galappaththige Jinadasa",
-              "date": "2025-10-21T00:00:00+00:00",
-              "costCentre": "NAT-SPL"
-            }
-          ],
-          "leaverNames": []
-        },
-        {
-          "key": "2025-11",
-          "label": "Nov 2025",
-          "headcountEnd": 2,
-          "femaleEnd": 1,
-          "entityEnd": {
-            "AU": 2,
-            "UK": 0
-          },
-          "hires": 0,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
-        },
-        {
-          "key": "2025-12",
-          "label": "Dec 2025",
-          "headcountEnd": 2,
-          "femaleEnd": 1,
-          "entityEnd": {
-            "AU": 2,
-            "UK": 0
-          },
-          "hires": 0,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
-        },
-        {
-          "key": "2026-01",
-          "label": "Jan 2026",
-          "headcountEnd": 2,
-          "femaleEnd": 1,
-          "entityEnd": {
-            "AU": 2,
-            "UK": 0
-          },
-          "hires": 0,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
-        },
-        {
-          "key": "2026-02",
-          "label": "Feb 2026",
-          "headcountEnd": 2,
-          "femaleEnd": 1,
-          "entityEnd": {
-            "AU": 2,
-            "UK": 0
-          },
-          "hires": 0,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
-        },
-        {
-          "key": "2026-03",
-          "label": "Mar 2026",
-          "headcountEnd": 2,
-          "femaleEnd": 1,
-          "entityEnd": {
-            "AU": 2,
-            "UK": 0
-          },
-          "hires": 0,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
-        },
-        {
-          "key": "2026-04",
-          "label": "Apr 2026",
-          "headcountEnd": 2,
-          "femaleEnd": 1,
-          "entityEnd": {
-            "AU": 2,
-            "UK": 0
-          },
-          "hires": 0,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
-        },
-        {
-          "key": "2026-05",
-          "label": "May 2026",
-          "headcountEnd": 2,
-          "femaleEnd": 1,
-          "entityEnd": {
-            "AU": 2,
-            "UK": 0
-          },
-          "hires": 0,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
-        },
-        {
-          "key": "2026-06",
-          "label": "Jun 2026",
-          "headcountEnd": 2,
-          "femaleEnd": 1,
-          "entityEnd": {
-            "AU": 2,
-            "UK": 0
-          },
-          "hires": 0,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
-        },
-        {
-          "key": "2026-07",
-          "label": "Jul 2026",
-          "headcountEnd": 2,
-          "femaleEnd": 1,
-          "entityEnd": {
-            "AU": 2,
-            "UK": 0
-          },
-          "hires": 0,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
-        },
-        {
-          "key": "2026-08",
-          "label": "Aug 2026",
-          "headcountEnd": 2,
-          "femaleEnd": 1,
-          "entityEnd": {
-            "AU": 2,
-            "UK": 0
-          },
-          "hires": 0,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
-        },
-        {
-          "key": "2026-09",
-          "label": "Sep 2026",
-          "headcountEnd": 2,
-          "femaleEnd": 1,
-          "entityEnd": {
-            "AU": 2,
-            "UK": 0
-          },
-          "hires": 0,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
-        },
-        {
-          "key": "2026-10",
-          "label": "Oct 2026",
-          "headcountEnd": 2,
-          "femaleEnd": 1,
-          "entityEnd": {
-            "AU": 2,
-            "UK": 0
-          },
-          "hires": 0,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
-        },
-        {
-          "key": "2026-11",
-          "label": "Nov 2026",
-          "headcountEnd": 2,
-          "femaleEnd": 1,
-          "entityEnd": {
-            "AU": 2,
-            "UK": 0
-          },
-          "hires": 0,
-          "leavers": 0,
-          "leaversVoluntary": 0,
-          "hireNames": [],
-          "leaverNames": []
-        }
-      ],
-      "turnoverSeries": [
-        {
-          "k": "2023-01",
-          "label": "Jan 2023",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2023-02",
-          "label": "Feb 2023",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2023-03",
-          "label": "Mar 2023",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2023-04",
-          "label": "Apr 2023",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2023-05",
-          "label": "May 2023",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2023-06",
-          "label": "Jun 2023",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2023-07",
-          "label": "Jul 2023",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2023-08",
-          "label": "Aug 2023",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2023-09",
-          "label": "Sep 2023",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2023-10",
-          "label": "Oct 2023",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2023-11",
-          "label": "Nov 2023",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2023-12",
-          "label": "Dec 2023",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2024-01",
-          "label": "Jan 2024",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2024-02",
-          "label": "Feb 2024",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2024-03",
-          "label": "Mar 2024",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2024-04",
-          "label": "Apr 2024",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2024-05",
-          "label": "May 2024",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2024-06",
-          "label": "Jun 2024",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2024-07",
-          "label": "Jul 2024",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2024-08",
-          "label": "Aug 2024",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2024-09",
-          "label": "Sep 2024",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2024-10",
-          "label": "Oct 2024",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2024-11",
-          "label": "Nov 2024",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2024-12",
-          "label": "Dec 2024",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2025-01",
-          "label": "Jan 2025",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2025-02",
-          "label": "Feb 2025",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2025-03",
-          "label": "Mar 2025",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2025-04",
-          "label": "Apr 2025",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2025-05",
-          "label": "May 2025",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2025-06",
-          "label": "Jun 2025",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2025-07",
-          "label": "Jul 2025",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2025-08",
-          "label": "Aug 2025",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2025-09",
-          "label": "Sep 2025",
-          "h": 1,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2025-10",
-          "label": "Oct 2025",
-          "h": 2,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2025-11",
-          "label": "Nov 2025",
-          "h": 2,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2025-12",
-          "label": "Dec 2025",
-          "h": 2,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2026-01",
-          "label": "Jan 2026",
-          "h": 2,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2026-02",
-          "label": "Feb 2026",
-          "h": 2,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2026-03",
-          "label": "Mar 2026",
-          "h": 2,
-          "l": 0,
-          "v": 0
-        },
-        {
-          "k": "2026-04",
-          "label": "Apr 2026",
-          "h": 2,
-          "l": 0,
-          "v": 0
         },
         {
           "k": "2026-05",
@@ -88312,6 +87440,878 @@
       }
     },
     {
+      "location": "Sydney",
+      "costCentre": "NAT-SPL",
+      "discipline": "Intern",
+      "headcount": 1,
+      "headcountPrior": 1,
+      "female": 1,
+      "femalePrior": 1,
+      "male": 0,
+      "genderNotRecorded": 0,
+      "femalePct": "100.0",
+      "femalePctPrior": "100.0",
+      "hiresMonth": 0,
+      "hiresMonthPrior": 0,
+      "leaversMonth": 0,
+      "leaversMonthPrior": 0,
+      "leaversVoluntaryMonth": 0,
+      "leaversVoluntaryMonthPrior": 0,
+      "avgHeadcountLtm": "1.0",
+      "churnTotal": "0.0",
+      "churnVoluntary": "0.0",
+      "turnoverPeriods": [
+        {
+          "key": "ltm",
+          "label": "Rolling 12 months",
+          "months": 11,
+          "avgHeadcount": "1.0",
+          "avgHeadcountValue": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "leaversRegrettable": 0,
+          "total": "0.0",
+          "voluntary": "0.0",
+          "regrettable": "0.0",
+          "totalAnnualised": "0.0",
+          "voluntaryAnnualised": "0.0",
+          "regrettableShareOfLeavers": "0.0",
+          "rehireFlagMissing": 0
+        },
+        {
+          "key": "ytd",
+          "label": "Year to date",
+          "months": 10,
+          "avgHeadcount": "1.0",
+          "avgHeadcountValue": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "leaversRegrettable": 0,
+          "total": "0.0",
+          "voluntary": "0.0",
+          "regrettable": "0.0",
+          "totalAnnualised": "0.0",
+          "voluntaryAnnualised": "0.0",
+          "regrettableShareOfLeavers": "0.0",
+          "rehireFlagMissing": 0
+        },
+        {
+          "key": "fytd",
+          "label": "FYTD",
+          "months": 4,
+          "avgHeadcount": "1.0",
+          "avgHeadcountValue": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "leaversRegrettable": 0,
+          "total": "0.0",
+          "voluntary": "0.0",
+          "regrettable": "0.0",
+          "totalAnnualised": "0.0",
+          "voluntaryAnnualised": "0.0",
+          "regrettableShareOfLeavers": "0.0",
+          "rehireFlagMissing": 0
+        },
+        {
+          "key": "last6",
+          "label": "Last 6 months",
+          "months": 5,
+          "avgHeadcount": "1.0",
+          "avgHeadcountValue": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "leaversRegrettable": 0,
+          "total": "0.0",
+          "voluntary": "0.0",
+          "regrettable": "0.0",
+          "totalAnnualised": "0.0",
+          "voluntaryAnnualised": "0.0",
+          "regrettableShareOfLeavers": "0.0",
+          "rehireFlagMissing": 0
+        },
+        {
+          "key": "last3",
+          "label": "Last 3 months",
+          "months": 2,
+          "avgHeadcount": "1.0",
+          "avgHeadcountValue": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "leaversRegrettable": 0,
+          "total": "0.0",
+          "voluntary": "0.0",
+          "regrettable": "0.0",
+          "totalAnnualised": "0.0",
+          "voluntaryAnnualised": "0.0",
+          "regrettableShareOfLeavers": "0.0",
+          "rehireFlagMissing": 0
+        },
+        {
+          "key": "lastcy",
+          "label": "2025",
+          "months": 12,
+          "avgHeadcount": "0.3",
+          "avgHeadcountValue": 0.25,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "leaversRegrettable": 0,
+          "total": "0.0",
+          "voluntary": "0.0",
+          "regrettable": "0.0",
+          "totalAnnualised": "0.0",
+          "voluntaryAnnualised": "0.0",
+          "regrettableShareOfLeavers": "0.0",
+          "rehireFlagMissing": 0
+        }
+      ],
+      "headcountTrend": [
+        {
+          "month": "Dec",
+          "headcount": 1
+        },
+        {
+          "month": "Jan",
+          "headcount": 1
+        },
+        {
+          "month": "Feb",
+          "headcount": 1
+        },
+        {
+          "month": "Mar",
+          "headcount": 1
+        },
+        {
+          "month": "Apr",
+          "headcount": 1
+        },
+        {
+          "month": "May",
+          "headcount": 1
+        },
+        {
+          "month": "Jun",
+          "headcount": 1
+        },
+        {
+          "month": "Jul",
+          "headcount": 1
+        },
+        {
+          "month": "Aug",
+          "headcount": 1
+        },
+        {
+          "month": "Sep",
+          "headcount": 1
+        },
+        {
+          "month": "Oct",
+          "headcount": 1
+        },
+        {
+          "month": "Nov",
+          "headcount": 1
+        }
+      ],
+      "months": [
+        {
+          "key": "2024-12",
+          "label": "Dec 2024",
+          "headcountEnd": 0,
+          "femaleEnd": 0,
+          "entityEnd": {
+            "AU": 0,
+            "UK": 0
+          },
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-01",
+          "label": "Jan 2025",
+          "headcountEnd": 0,
+          "femaleEnd": 0,
+          "entityEnd": {
+            "AU": 0,
+            "UK": 0
+          },
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-02",
+          "label": "Feb 2025",
+          "headcountEnd": 0,
+          "femaleEnd": 0,
+          "entityEnd": {
+            "AU": 0,
+            "UK": 0
+          },
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-03",
+          "label": "Mar 2025",
+          "headcountEnd": 0,
+          "femaleEnd": 0,
+          "entityEnd": {
+            "AU": 0,
+            "UK": 0
+          },
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-04",
+          "label": "Apr 2025",
+          "headcountEnd": 0,
+          "femaleEnd": 0,
+          "entityEnd": {
+            "AU": 0,
+            "UK": 0
+          },
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-05",
+          "label": "May 2025",
+          "headcountEnd": 0,
+          "femaleEnd": 0,
+          "entityEnd": {
+            "AU": 0,
+            "UK": 0
+          },
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-06",
+          "label": "Jun 2025",
+          "headcountEnd": 0,
+          "femaleEnd": 0,
+          "entityEnd": {
+            "AU": 0,
+            "UK": 0
+          },
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-07",
+          "label": "Jul 2025",
+          "headcountEnd": 0,
+          "femaleEnd": 0,
+          "entityEnd": {
+            "AU": 0,
+            "UK": 0
+          },
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-08",
+          "label": "Aug 2025",
+          "headcountEnd": 0,
+          "femaleEnd": 0,
+          "entityEnd": {
+            "AU": 0,
+            "UK": 0
+          },
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-09",
+          "label": "Sep 2025",
+          "headcountEnd": 0,
+          "femaleEnd": 0,
+          "entityEnd": {
+            "AU": 0,
+            "UK": 0
+          },
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-10",
+          "label": "Oct 2025",
+          "headcountEnd": 1,
+          "femaleEnd": 1,
+          "entityEnd": {
+            "AU": 1,
+            "UK": 0
+          },
+          "hires": 1,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [
+            {
+              "name": "Galappaththige Jinadasa",
+              "date": "2025-10-21T00:00:00+00:00",
+              "costCentre": "NAT-SPL"
+            }
+          ],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-11",
+          "label": "Nov 2025",
+          "headcountEnd": 1,
+          "femaleEnd": 1,
+          "entityEnd": {
+            "AU": 1,
+            "UK": 0
+          },
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2025-12",
+          "label": "Dec 2025",
+          "headcountEnd": 1,
+          "femaleEnd": 1,
+          "entityEnd": {
+            "AU": 1,
+            "UK": 0
+          },
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-01",
+          "label": "Jan 2026",
+          "headcountEnd": 1,
+          "femaleEnd": 1,
+          "entityEnd": {
+            "AU": 1,
+            "UK": 0
+          },
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-02",
+          "label": "Feb 2026",
+          "headcountEnd": 1,
+          "femaleEnd": 1,
+          "entityEnd": {
+            "AU": 1,
+            "UK": 0
+          },
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-03",
+          "label": "Mar 2026",
+          "headcountEnd": 1,
+          "femaleEnd": 1,
+          "entityEnd": {
+            "AU": 1,
+            "UK": 0
+          },
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-04",
+          "label": "Apr 2026",
+          "headcountEnd": 1,
+          "femaleEnd": 1,
+          "entityEnd": {
+            "AU": 1,
+            "UK": 0
+          },
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-05",
+          "label": "May 2026",
+          "headcountEnd": 1,
+          "femaleEnd": 1,
+          "entityEnd": {
+            "AU": 1,
+            "UK": 0
+          },
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-06",
+          "label": "Jun 2026",
+          "headcountEnd": 1,
+          "femaleEnd": 1,
+          "entityEnd": {
+            "AU": 1,
+            "UK": 0
+          },
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-07",
+          "label": "Jul 2026",
+          "headcountEnd": 1,
+          "femaleEnd": 1,
+          "entityEnd": {
+            "AU": 1,
+            "UK": 0
+          },
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-08",
+          "label": "Aug 2026",
+          "headcountEnd": 1,
+          "femaleEnd": 1,
+          "entityEnd": {
+            "AU": 1,
+            "UK": 0
+          },
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-09",
+          "label": "Sep 2026",
+          "headcountEnd": 1,
+          "femaleEnd": 1,
+          "entityEnd": {
+            "AU": 1,
+            "UK": 0
+          },
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-10",
+          "label": "Oct 2026",
+          "headcountEnd": 1,
+          "femaleEnd": 1,
+          "entityEnd": {
+            "AU": 1,
+            "UK": 0
+          },
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        },
+        {
+          "key": "2026-11",
+          "label": "Nov 2026",
+          "headcountEnd": 1,
+          "femaleEnd": 1,
+          "entityEnd": {
+            "AU": 1,
+            "UK": 0
+          },
+          "hires": 0,
+          "leavers": 0,
+          "leaversVoluntary": 0,
+          "hireNames": [],
+          "leaverNames": []
+        }
+      ],
+      "turnoverSeries": [
+        {
+          "k": "2023-01",
+          "label": "Jan 2023",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2023-02",
+          "label": "Feb 2023",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2023-03",
+          "label": "Mar 2023",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2023-04",
+          "label": "Apr 2023",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2023-05",
+          "label": "May 2023",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2023-06",
+          "label": "Jun 2023",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2023-07",
+          "label": "Jul 2023",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2023-08",
+          "label": "Aug 2023",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2023-09",
+          "label": "Sep 2023",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2023-10",
+          "label": "Oct 2023",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2023-11",
+          "label": "Nov 2023",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2023-12",
+          "label": "Dec 2023",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2024-01",
+          "label": "Jan 2024",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2024-02",
+          "label": "Feb 2024",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2024-03",
+          "label": "Mar 2024",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2024-04",
+          "label": "Apr 2024",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2024-05",
+          "label": "May 2024",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2024-06",
+          "label": "Jun 2024",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2024-07",
+          "label": "Jul 2024",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2024-08",
+          "label": "Aug 2024",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2024-09",
+          "label": "Sep 2024",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2024-10",
+          "label": "Oct 2024",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2024-11",
+          "label": "Nov 2024",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2024-12",
+          "label": "Dec 2024",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2025-01",
+          "label": "Jan 2025",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2025-02",
+          "label": "Feb 2025",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2025-03",
+          "label": "Mar 2025",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2025-04",
+          "label": "Apr 2025",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2025-05",
+          "label": "May 2025",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2025-06",
+          "label": "Jun 2025",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2025-07",
+          "label": "Jul 2025",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2025-08",
+          "label": "Aug 2025",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2025-09",
+          "label": "Sep 2025",
+          "h": 0,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2025-10",
+          "label": "Oct 2025",
+          "h": 1,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2025-11",
+          "label": "Nov 2025",
+          "h": 1,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2025-12",
+          "label": "Dec 2025",
+          "h": 1,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2026-01",
+          "label": "Jan 2026",
+          "h": 1,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2026-02",
+          "label": "Feb 2026",
+          "h": 1,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2026-03",
+          "label": "Mar 2026",
+          "h": 1,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2026-04",
+          "label": "Apr 2026",
+          "h": 1,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2026-05",
+          "label": "May 2026",
+          "h": 1,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2026-06",
+          "label": "Jun 2026",
+          "h": 1,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2026-07",
+          "label": "Jul 2026",
+          "h": 1,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2026-08",
+          "label": "Aug 2026",
+          "h": 1,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2026-09",
+          "label": "Sep 2026",
+          "h": 1,
+          "l": 0,
+          "v": 0
+        },
+        {
+          "k": "2026-10",
+          "label": "Oct 2026",
+          "h": 1,
+          "l": 0,
+          "v": 0
+        }
+      ],
+      "last30": {
+        "hireNames": [],
+        "leaverNames": []
+      }
+    },
+    {
       "location": "Adelaide",
       "costCentre": "NAT-SPL",
       "discipline": "ICT/AV",
@@ -103097,7 +103097,7 @@
     }
   ],
   "recruitment": {
-    "openRoles": 26,
+    "openRoles": 25,
     "filledMonth": 0,
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
@@ -103117,7 +103117,7 @@
     },
     {
       "stage": "1. Search & Secure",
-      "count": 7
+      "count": 6
     }
   ],
   "stageDetail": [
@@ -103139,7 +103139,7 @@
     },
     {
       "stage": "New",
-      "count": 7
+      "count": 6
     },
     {
       "stage": "Present to HM",
@@ -103167,7 +103167,7 @@
       "churnVoluntary": "35.2",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "91.0",
-      "openRoles": 5
+      "openRoles": 4
     },
     {
       "code": "Sydney",
@@ -103416,6 +103416,6 @@
     "notYetStarted": 14,
     "excludedNoSalary": 302,
     "casualsConverted": 64,
-    "partTimeConverted": 45
+    "partTimeConverted": 44
   }
 }
