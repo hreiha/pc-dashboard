@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-19T08:00:54.719Z",
+  "generatedUtc": "2026-11-20T01:42:01.669Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -10,10 +10,10 @@
     "genderNotRecorded": 0,
     "femalePct": "26.2",
     "femalePctPrior": "26.3",
-    "leaversMonth": 6,
-    "leaversMonthPrior": 13,
-    "leaversVoluntaryMonth": 6,
-    "leaversVoluntaryMonthPrior": 12,
+    "leaversMonth": 5,
+    "leaversMonthPrior": 14,
+    "leaversVoluntaryMonth": 5,
+    "leaversVoluntaryMonthPrior": 13,
     "hiresMonth": 6,
     "hiresMonthPrior": 4,
     "churnTotal": "37.7",
@@ -8951,10 +8951,10 @@
       "femalePctPrior": "16.7",
       "hiresMonth": 0,
       "hiresMonthPrior": 0,
-      "leaversMonth": 1,
-      "leaversMonthPrior": 0,
-      "leaversVoluntaryMonth": 1,
-      "leaversVoluntaryMonthPrior": 0,
+      "leaversMonth": 0,
+      "leaversMonthPrior": 1,
+      "leaversVoluntaryMonth": 0,
+      "leaversVoluntaryMonthPrior": 1,
       "avgHeadcountLtm": "7.6",
       "churnTotal": "65.9",
       "churnVoluntary": "52.7",
@@ -9896,15 +9896,7 @@
       ],
       "last30": {
         "hireNames": [],
-        "leaverNames": [
-          {
-            "name": "Nicholas Lobo",
-            "date": "2026-10-21T00:00:00+00:00",
-            "costCentre": "Melbourne",
-            "type": "Voluntary cessation",
-            "voluntary": true
-          }
-        ]
+        "leaverNames": []
       }
     },
     {
@@ -103073,7 +103065,7 @@
     }
   ],
   "historyQuality": {
-    "recordsWithStartDate": 1092,
+    "recordsWithStartDate": 1093,
     "leaversWithoutStartDate": 18,
     "firstLeaverMonth": "2012-08",
     "impossibleTerminationDates": 0
@@ -103086,7 +103078,7 @@
       "headcountPrior": 286,
       "female": 75,
       "femalePct": "26.0",
-      "leaversMonth": 6,
+      "leaversMonth": 5,
       "hiresMonth": 6,
       "gpgMean": "0.0",
       "gpgMedian": "0.0"
@@ -103421,7 +103413,7 @@
     "excludedContractors": 0,
     "excludedIncomplete": 0,
     "excludedNoCostCentre": 350,
-    "notYetStarted": 15,
+    "notYetStarted": 16,
     "excludedNoSalary": 302,
     "casualsConverted": 64,
     "partTimeConverted": 45
