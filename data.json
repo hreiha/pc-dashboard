@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-20T01:42:01.669Z",
+  "generatedUtc": "2026-11-20T03:00:53.132Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -103097,7 +103097,7 @@
     }
   ],
   "recruitment": {
-    "openRoles": 26,
+    "openRoles": 25,
     "filledMonth": 0,
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
@@ -103105,21 +103105,25 @@
   "pipeline": [
     {
       "stage": "2. Search & Prepare",
-      "count": 17
+      "count": 14
     },
     {
-      "stage": "3. Waiting for Approval",
-      "count": 2
+      "stage": "4. Role On Hold",
+      "count": 3
     },
     {
       "stage": "1. Search & Secure",
       "count": 7
+    },
+    {
+      "stage": "3. Waiting for Approval",
+      "count": 1
     }
   ],
   "stageDetail": [
     {
       "stage": "Phone Screen",
-      "count": 7
+      "count": 6
     },
     {
       "stage": "1st Interview",
@@ -103142,8 +103146,8 @@
       "count": 3
     },
     {
-      "stage": "Unknown",
-      "count": 0
+      "stage": "Offered",
+      "count": 1
     },
     {
       "stage": "Offer Pending",
@@ -103195,7 +103199,7 @@
       "churnVoluntary": "14.2",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "42.3",
-      "openRoles": 4
+      "openRoles": 2
     },
     {
       "code": "Brisbane",
@@ -103209,7 +103213,7 @@
       "churnVoluntary": "23.2",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "34.4",
-      "openRoles": 6
+      "openRoles": 5
     },
     {
       "code": "NAT-CORP",
@@ -103293,7 +103297,7 @@
       "churnTotal": "37.3",
       "churnVoluntary": "26.9",
       "avgHeadcountLtm": "144.8",
-      "activeRoles": 9
+      "activeRoles": 8
     },
     {
       "name": "Sydney",
@@ -103305,7 +103309,7 @@
       "churnTotal": "45.5",
       "churnVoluntary": "35.8",
       "avgHeadcountLtm": "92.3",
-      "activeRoles": 9
+      "activeRoles": 8
     },
     {
       "name": "Brisbane",
@@ -103317,7 +103321,7 @@
       "churnTotal": "35.8",
       "churnVoluntary": "25.9",
       "avgHeadcountLtm": "50.3",
-      "activeRoles": 10
+      "activeRoles": 9
     },
     {
       "name": "Adelaide",
