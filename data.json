@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-20T03:00:53.132Z",
+  "generatedUtc": "2026-11-20T04:01:18.690Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -103065,7 +103065,7 @@
     }
   ],
   "historyQuality": {
-    "recordsWithStartDate": 1093,
+    "recordsWithStartDate": 1091,
     "leaversWithoutStartDate": 18,
     "firstLeaverMonth": "2012-08",
     "impossibleTerminationDates": 0
@@ -103112,12 +103112,12 @@
       "count": 3
     },
     {
-      "stage": "1. Search & Secure",
-      "count": 7
+      "stage": "3. Waiting for Approval",
+      "count": 2
     },
     {
-      "stage": "3. Waiting for Approval",
-      "count": 1
+      "stage": "1. Search & Secure",
+      "count": 6
     }
   ],
   "stageDetail": [
@@ -103131,7 +103131,7 @@
     },
     {
       "stage": "Declined",
-      "count": 1
+      "count": 2
     },
     {
       "stage": "Needs approval",
@@ -103147,10 +103147,6 @@
     },
     {
       "stage": "Offered",
-      "count": 1
-    },
-    {
-      "stage": "Offer Pending",
       "count": 1
     },
     {
@@ -103213,7 +103209,7 @@
       "churnVoluntary": "23.2",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "34.4",
-      "openRoles": 5
+      "openRoles": 4
     },
     {
       "code": "NAT-CORP",
@@ -103321,7 +103317,7 @@
       "churnTotal": "35.8",
       "churnVoluntary": "25.9",
       "avgHeadcountLtm": "50.3",
-      "activeRoles": 9
+      "activeRoles": 8
     },
     {
       "name": "Adelaide",
@@ -103333,7 +103329,7 @@
       "churnTotal": "21.6",
       "churnVoluntary": "16.2",
       "avgHeadcountLtm": "18.5",
-      "activeRoles": 1
+      "activeRoles": 2
     },
     {
       "name": "London",
@@ -103417,7 +103413,7 @@
     "excludedContractors": 0,
     "excludedIncomplete": 0,
     "excludedNoCostCentre": 350,
-    "notYetStarted": 16,
+    "notYetStarted": 14,
     "excludedNoSalary": 302,
     "casualsConverted": 64,
     "partTimeConverted": 45
