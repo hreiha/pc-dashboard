@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-24T03:01:02.209Z",
+  "generatedUtc": "2026-11-24T04:01:27.430Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -103115,7 +103115,7 @@
   "stageDetail": [
     {
       "stage": "Phone Screen",
-      "count": 8
+      "count": 6
     },
     {
       "stage": "1st Interview",
@@ -103135,7 +103135,7 @@
     },
     {
       "stage": "Present to HM",
-      "count": 2
+      "count": 3
     },
     {
       "stage": "Offered",
@@ -103143,6 +103143,10 @@
     },
     {
       "stage": "Withdrawn",
+      "count": 1
+    },
+    {
+      "stage": "2nd Interview",
       "count": 1
     }
   ],
