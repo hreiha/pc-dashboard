@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-25T01:01:01.431Z",
+  "generatedUtc": "2026-11-25T02:00:58.154Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -835,7 +835,7 @@
           "leaversVoluntary": 1,
           "hireNames": [
             {
-              "name": "Sajawal Khalid",
+              "name": "Muhammad Sajawal Khalid",
               "date": "2026-04-20T00:00:00+00:00",
               "costCentre": "NAT-CORP"
             }
@@ -103109,11 +103109,11 @@
   "stageDetail": [
     {
       "stage": "Phone Screen",
-      "count": 6
+      "count": 7
     },
     {
       "stage": "1st Interview",
-      "count": 6
+      "count": 5
     },
     {
       "stage": "Declined",
