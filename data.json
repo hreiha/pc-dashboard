@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-25T02:00:58.154Z",
+  "generatedUtc": "2026-11-25T03:00:53.242Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -103083,7 +103083,7 @@
     }
   ],
   "recruitment": {
-    "openRoles": 26,
+    "openRoles": 27,
     "filledMonth": 0,
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
@@ -103103,7 +103103,7 @@
     },
     {
       "stage": "1. Search & Secure",
-      "count": 7
+      "count": 8
     }
   ],
   "stageDetail": [
@@ -103125,7 +103125,7 @@
     },
     {
       "stage": "New",
-      "count": 5
+      "count": 6
     },
     {
       "stage": "Present to HM",
@@ -103213,7 +103213,7 @@
       "churnVoluntary": "18.4",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "27.2",
-      "openRoles": 0
+      "openRoles": 1
     },
     {
       "code": "NAT-ESD",
@@ -103307,7 +103307,7 @@
       "churnTotal": "35.8",
       "churnVoluntary": "25.9",
       "avgHeadcountLtm": "50.3",
-      "activeRoles": 8
+      "activeRoles": 9
     },
     {
       "name": "Adelaide",
