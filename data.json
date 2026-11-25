@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-25T05:00:52.254Z",
+  "generatedUtc": "2026-11-25T23:01:03.475Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -103051,7 +103051,7 @@
     }
   ],
   "historyQuality": {
-    "recordsWithStartDate": 1091,
+    "recordsWithStartDate": 1092,
     "leaversWithoutStartDate": 18,
     "firstLeaverMonth": "2012-08",
     "impossibleTerminationDates": 0
@@ -103091,7 +103091,7 @@
   "pipeline": [
     {
       "stage": "2. Search & Prepare",
-      "count": 14
+      "count": 13
     },
     {
       "stage": "4. Role On Hold",
@@ -103103,7 +103103,7 @@
     },
     {
       "stage": "1. Search & Secure",
-      "count": 8
+      "count": 9
     }
   ],
   "stageDetail": [
@@ -103112,8 +103112,8 @@
       "count": 8
     },
     {
-      "stage": "1st Interview",
-      "count": 6
+      "stage": "2nd Interview",
+      "count": 1
     },
     {
       "stage": "Declined",
@@ -103136,11 +103136,15 @@
       "count": 1
     },
     {
+      "stage": "1st Interview",
+      "count": 5
+    },
+    {
       "stage": "Withdrawn",
       "count": 1
     },
     {
-      "stage": "2nd Interview",
+      "stage": "KM to get SC Approval",
       "count": 1
     }
   ],
@@ -103157,7 +103161,7 @@
       "churnVoluntary": "35.2",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "91.0",
-      "openRoles": 5
+      "openRoles": 6
     },
     {
       "code": "Sydney",
@@ -103171,7 +103175,7 @@
       "churnVoluntary": "40.3",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "67.0",
-      "openRoles": 4
+      "openRoles": 3
     },
     {
       "code": "NAT-SPL",
@@ -103403,7 +103407,7 @@
     "excludedContractors": 0,
     "excludedIncomplete": 0,
     "excludedNoCostCentre": 350,
-    "notYetStarted": 14,
+    "notYetStarted": 15,
     "excludedNoSalary": 302,
     "casualsConverted": 64,
     "partTimeConverted": 45
