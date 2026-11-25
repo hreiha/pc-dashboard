@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-24T04:39:52.020Z",
+  "generatedUtc": "2026-11-25T01:01:01.431Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -14,8 +14,8 @@
     "leaversMonthPrior": 14,
     "leaversVoluntaryMonth": 4,
     "leaversVoluntaryMonthPrior": 14,
-    "hiresMonth": 6,
-    "hiresMonthPrior": 4,
+    "hiresMonth": 5,
+    "hiresMonthPrior": 5,
     "churnTotal": "37.7",
     "churnTotalPrior": "39.4",
     "churnVoluntary": "28.1",
@@ -53849,8 +53849,8 @@
       "genderNotRecorded": 0,
       "femalePct": "100.0",
       "femalePctPrior": "100.0",
-      "hiresMonth": 1,
-      "hiresMonthPrior": 0,
+      "hiresMonth": 0,
+      "hiresMonthPrior": 1,
       "leaversMonth": 0,
       "leaversMonthPrior": 0,
       "leaversVoluntaryMonth": 0,
@@ -54713,13 +54713,7 @@
         }
       ],
       "last30": {
-        "hireNames": [
-          {
-            "name": "Shivani Deoji",
-            "date": "2026-10-26T00:00:00+00:00",
-            "costCentre": "NAT-SPL"
-          }
-        ],
+        "hireNames": [],
         "leaverNames": []
       }
     },
@@ -103057,7 +103051,7 @@
     }
   ],
   "historyQuality": {
-    "recordsWithStartDate": 1092,
+    "recordsWithStartDate": 1091,
     "leaversWithoutStartDate": 18,
     "firstLeaverMonth": "2012-08",
     "impossibleTerminationDates": 0
@@ -103071,7 +103065,7 @@
       "female": 75,
       "femalePct": "26.0",
       "leaversMonth": 4,
-      "hiresMonth": 6,
+      "hiresMonth": 5,
       "gpgMean": "0.0",
       "gpgMedian": "0.0"
     },
@@ -103089,7 +103083,7 @@
     }
   ],
   "recruitment": {
-    "openRoles": 25,
+    "openRoles": 26,
     "filledMonth": 0,
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
@@ -103109,7 +103103,7 @@
     },
     {
       "stage": "1. Search & Secure",
-      "count": 6
+      "count": 7
     }
   ],
   "stageDetail": [
@@ -103119,7 +103113,7 @@
     },
     {
       "stage": "1st Interview",
-      "count": 5
+      "count": 6
     },
     {
       "stage": "Declined",
@@ -103163,7 +103157,7 @@
       "churnVoluntary": "35.2",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "91.0",
-      "openRoles": 4
+      "openRoles": 5
     },
     {
       "code": "Sydney",
@@ -103289,7 +103283,7 @@
       "churnTotal": "37.3",
       "churnVoluntary": "26.9",
       "avgHeadcountLtm": "144.8",
-      "activeRoles": 8
+      "activeRoles": 9
     },
     {
       "name": "Sydney",
@@ -103409,7 +103403,7 @@
     "excludedContractors": 0,
     "excludedIncomplete": 0,
     "excludedNoCostCentre": 350,
-    "notYetStarted": 15,
+    "notYetStarted": 14,
     "excludedNoSalary": 302,
     "casualsConverted": 64,
     "partTimeConverted": 45
