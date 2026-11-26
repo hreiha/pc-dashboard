@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-26T02:42:08.884Z",
+  "generatedUtc": "2026-11-26T05:00:59.231Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -103098,7 +103098,7 @@
     }
   ],
   "recruitment": {
-    "openRoles": 27,
+    "openRoles": 26,
     "filledMonth": 0,
     "avgDaysOpen": "0.0",
     "avgDaysToHire": "0.0"
@@ -103106,7 +103106,7 @@
   "pipeline": [
     {
       "stage": "2. Search & Prepare",
-      "count": 13
+      "count": 12
     },
     {
       "stage": "4. Role On Hold",
@@ -103152,7 +103152,7 @@
     },
     {
       "stage": "1st Interview",
-      "count": 6
+      "count": 5
     },
     {
       "stage": "Withdrawn",
@@ -103190,7 +103190,7 @@
       "churnVoluntary": "40.3",
       "churnRegrettable": "0.0",
       "avgHeadcountLtm": "67.0",
-      "openRoles": 3
+      "openRoles": 2
     },
     {
       "code": "NAT-SPL",
@@ -103314,7 +103314,7 @@
       "churnTotal": "45.5",
       "churnVoluntary": "35.8",
       "avgHeadcountLtm": "92.3",
-      "activeRoles": 8
+      "activeRoles": 7
     },
     {
       "name": "Brisbane",
