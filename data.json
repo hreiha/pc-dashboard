@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-27T02:41:37.508Z",
+  "generatedUtc": "2026-11-27T08:00:56.913Z",
   "periodLabel": "Nov 2026",
   "priorLabel": "Oct 2026",
   "people": {
@@ -103075,7 +103075,7 @@
     }
   ],
   "historyQuality": {
-    "recordsWithStartDate": 1093,
+    "recordsWithStartDate": 1094,
     "leaversWithoutStartDate": 18,
     "firstLeaverMonth": "2012-08",
     "impossibleTerminationDates": 0
@@ -103323,7 +103323,7 @@
       "churnTotal": "46.6",
       "churnVoluntary": "35.8",
       "avgHeadcountLtm": "92.3",
-      "activeRoles": 7
+      "activeRoles": 8
     },
     {
       "name": "Brisbane",
@@ -103431,9 +103431,9 @@
     "excludedContractors": 0,
     "excludedIncomplete": 0,
     "excludedNoCostCentre": 350,
-    "notYetStarted": 16,
+    "notYetStarted": 17,
     "excludedNoSalary": 301,
-    "casualsConverted": 65,
+    "casualsConverted": 66,
     "partTimeConverted": 45
   }
 }
